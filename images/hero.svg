@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Illustration of a comparison checklist beside a clinician consultation on a phone">
+<rect x="0" y="0" width="420" height="320" rx="18" fill="#E8F0EC"/>
+<rect x="40" y="36" width="210" height="250" rx="14" fill="#fff" stroke="#D5E0DB" stroke-width="2"/>
+<rect x="110" y="26" width="70" height="22" rx="6" fill="#1B2A41"/>
+<g font-family="Arial,sans-serif" font-size="13" fill="#1B2A41">
+<g transform="translate(64,78)"><rect width="20" height="20" rx="5" fill="#2F7D6D"/><path d="M5 10l4 4 7-8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/><rect x="32" y="4" width="120" height="10" rx="5" fill="#D5E0DB"/></g>
+<g transform="translate(64,122)"><rect width="20" height="20" rx="5" fill="#2F7D6D"/><path d="M5 10l4 4 7-8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/><rect x="32" y="4" width="96" height="10" rx="5" fill="#D5E0DB"/></g>
+<g transform="translate(64,166)"><rect width="20" height="20" rx="5" fill="#2F7D6D"/><path d="M5 10l4 4 7-8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/><rect x="32" y="4" width="136" height="10" rx="5" fill="#D5E0DB"/></g>
+<g transform="translate(64,210)"><rect width="20" height="20" rx="5" fill="none" stroke="#2F7D6D" stroke-width="2"/><rect x="32" y="4" width="84" height="10" rx="5" fill="#D5E0DB"/></g>
+</g>
+<rect x="250" y="92" width="130" height="200" rx="18" fill="#1B2A41"/>
+<rect x="260" y="108" width="110" height="168" rx="10" fill="#fff"/>
+<circle cx="315" cy="150" r="22" fill="#DCE8E3"/><circle cx="315" cy="143" r="9" fill="#2F7D6D"/><path d="M299 166c4-9 28-9 32 0" fill="#2F7D6D"/>
+<rect x="274" y="186" width="82" height="9" rx="4.5" fill="#D5E0DB"/><rect x="284" y="202" width="62" height="9" rx="4.5" fill="#D5E0DB"/>
+<rect x="276" y="228" width="78" height="28" rx="7" fill="#2F7D6D"/>
+<circle cx="360" cy="70" r="26" fill="#fff" stroke="#C98A12" stroke-width="3"/><path d="M360 56l4 9 10 1-7.5 6.5 2.3 10L360 77l-8.8 5.5 2.3-10L346 66l10-1z" fill="#C98A12"/>
+</svg>
