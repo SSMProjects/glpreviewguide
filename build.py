@@ -1,6 +1,6 @@
-SITE = "WeightCare Compare"
-DOMAIN = "weightcarecompare.com"
-EMAIL = "hello@weightcarecompare.com"
+SITE = "GLP1ReviewGuide.com"
+DOMAIN = "glp1reviewguide.com"
+EMAIL = "hello@glp1reviewguide.com"
 UPDATED = "September 2026"
 
 def page(fname, title, desc, body, canonical=""):
@@ -17,11 +17,22 @@ def page(fname, title, desc, body, canonical=""):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
+gtag('consent','default',{{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500}});
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+</script>
+<link rel="stylesheet" href="consent.css">
+<script src="consent.js" defer></script>
+<!-- Non-essential tags must be blocked until consent, e.g.:
+<script type="text/plain" data-gr-consent="analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script type="text/plain" data-gr-consent="advertising">/* Taboola / Outbrain / Google Ads pixel */</script> -->
 </head>
 <body>
 <div class="adbar">Advertising disclosure: we may earn a commission when you visit providers from this page. This does not affect our scores. <a href="disclosure.html">Learn more</a></div>
 <header class="site"><div class="wrap">
-  <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"><span>WeightCare<b style="color:#5B3E8C">Compare</b></span></a>
+  <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b style="color:#5B3E8C">Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
   <nav class="main" aria-label="Main">
     <a href="index.html">Best GLP-1 programs</a>
     <a href="review-pallas-health.html">Reviews</a>
@@ -36,8 +47,8 @@ def page(fname, title, desc, body, canonical=""):
 <footer class="site"><div class="wrap">
   <div class="cols">
     <div><h4>{SITE}</h4><p>Independent comparisons of online weight-care programs that offer GLP-1 medications, so you can arrive at your doctor's appointment with better questions.</p></div>
-    <div><h4>Site</h4><ul><li><a href="how-we-review.html">How we review</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><h4>Legal</h4><ul><li><a href="disclosure.html">Advertising disclosure</a></li><li><a href="disclosure.html#medical">Medical disclaimer</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="terms.html">Terms of use</a></li></ul></div>
+    <div><h4>Site</h4><ul><li><a href="how-we-review.html">How we review</a></li><li><a href="team.html">Our team</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="disclosure.html">Advertising disclosure</a></li><li><a href="disclosure.html#medical">Medical disclaimer</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="consumer-health-data-privacy.html">Consumer health data privacy</a></li><li><a href="cookie-policy.html">Cookie policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a class="pc" href="your-privacy-choices.html"><img src="images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices / Do Not Sell or Share My Personal Information</a></li><li><button type="button" class="linklike" data-gr-open-consent>Cookie settings</button></li></ul></div>
   </div>
   <div class="legal">
     <p>The content on this site is for general information only and is not medical advice. GLP-1 medications are available by prescription only and are not right for everyone. Talk to a licensed healthcare provider about the benefits and risks, including serious side effects, before starting any medication. Individual results vary.</p>
@@ -190,7 +201,7 @@ FAQ = [
 faq_html = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q,a in FAQ)
 faq_ld = ",".join('{"@type":"Question","name":"%s","acceptedAnswer":{"@type":"Answer","text":"%s"}}' % (q,a) for q,a in FAQ)
 
-# ---------- index.html (original WeightCare Compare layout) ----------
+# ---------- index.html (homepage layout) ----------
 import math
 def ring(score, size=96, stroke=9, color="#5B3E8C"):
     r=(size-stroke)/2; c=2*math.pi*r; off=c*(1-float(score)/10)
@@ -256,6 +267,17 @@ index_html = f"""<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="main.css">
+<!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
+gtag('consent','default',{{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500}});
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+</script>
+<link rel="stylesheet" href="consent.css">
+<script src="consent.js" defer></script>
+<!-- Non-essential tags must be blocked until consent, e.g.:
+<script type="text/plain" data-gr-consent="analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script type="text/plain" data-gr-consent="advertising">/* Taboola / Outbrain / Google Ads pixel */</script> -->
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"Best Online GLP-1 Weight-Loss Programs (2026): Top 5 Compared","author":{{"@type":"Person","name":"[Author Name]"}},"publisher":{{"@type":"Organization","name":"{SITE}"}},"dateModified":"2026-09-24"}}</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{faq_ld}]}}</script>
 </head>
@@ -264,7 +286,7 @@ index_html = f"""<!DOCTYPE html>
 <p class="adnote">Advertising disclosure: we may earn a commission when you visit providers from this page. It never changes our scores. <a href="disclosure.html">How we make money</a></p>
 
 <header class="nav"><div class="w">
- <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"><span>WeightCare<b>Compare</b></span></a>
+ <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
  <nav aria-label="Main"><a href="#top5">Top 5</a><a href="#fit">Find your fit</a><a href="how-we-review.html">How we review</a><a href="about.html">About</a></nav>
 </div></header>
 
@@ -386,11 +408,11 @@ index_html = f"""<!DOCTYPE html>
 </main>
 
 <footer class="foot"><div class="w foot_grid">
- <div><a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="28" height="28"><span>WeightCare<b>Compare</b></span></a>
+ <div><a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="28" height="28"><span>GLP1Review<b>Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
   <p>Independent comparisons of online GLP-1 programs, so you can walk into your consultation with better questions.</p>
   <p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
- <div><h4>Explore</h4><ul><li><a href="#top5">Top 5 programs</a></li><li><a href="#fit">Find your fit</a></li><li><a href="how-we-review.html">How we review</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
- <div><h4>Legal</h4><ul><li><a href="disclosure.html">Advertising disclosure</a></li><li><a href="disclosure.html#medical">Medical disclaimer</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="terms.html">Terms of use</a></li></ul></div>
+ <div><h4>Explore</h4><ul><li><a href="#top5">Top 5 programs</a></li><li><a href="#fit">Find your fit</a></li><li><a href="how-we-review.html">How we review</a></li><li><a href="team.html">Our team</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></div>
+ <div><h4>Legal</h4><ul><li><a href="disclosure.html">Advertising disclosure</a></li><li><a href="disclosure.html#medical">Medical disclaimer</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="consumer-health-data-privacy.html">Consumer health data privacy</a></li><li><a href="cookie-policy.html">Cookie policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a class="pc" href="your-privacy-choices.html"><img src="images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices / Do Not Sell or Share My Personal Information</a></li><li><button type="button" class="linklike" data-gr-open-consent>Cookie settings</button></li></ul></div>
  <p class="foot_legal">Content is for information only and is not medical advice. GLP-1 medications require a prescription; talk to a licensed clinician about benefits and risks. {SITE} is an independent publisher, not a healthcare provider or pharmacy. We may earn commissions from links on this page, which may affect where programs appear. &copy; 2026 {SITE}.</p>
 </div></footer>
 
@@ -467,7 +489,7 @@ for i,p in enumerate(P,1):
 
 # ---------- simple pages ----------
 def simple(fname, title, desc, h1, inner):
-    page(fname, f"{title} | {SITE}", desc, f'<section class="section"><div class="wrap prose"><h1 style="font:600 40px/1.15 var(--serif);margin:0 0 18px">{h1}</h1>{inner}</div></section>')
+    page(fname, f"{title} | {SITE}", desc, f'<section class="section"><div class="wrap prose"><h1 style="font:600 clamp(30px,8vw,40px)/1.15 var(--serif);margin:0 0 18px;overflow-wrap:anywhere">{h1}</h1>{inner}</div></section>')
 
 ic = lambda d: f'<svg viewBox="0 0 24 24" fill="none" stroke="#2F7D6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{d}</svg>'
 simple("how-we-review.html","How We Review","Our methodology for comparing online GLP-1 weight-care programs.","How we review GLP-1 programs",f'''
@@ -510,22 +532,8 @@ simple("disclosure.html","Advertising Disclosure & Medical Disclaimer","How we e
 <p>GLP-1 medications are available by prescription only. They carry risks including gastrointestinal side effects, pancreatitis, gallbladder disease and a boxed warning about thyroid C-cell tumors. They are not appropriate for everyone. Results vary between individuals.</p>
 <p>{SITE} does not prescribe, sell or dispense medication and is not a pharmacy or healthcare provider.</p>''')
 
-simple("privacy.html","Privacy Policy","How "+SITE+" collects and uses information.","Privacy policy",f'''
-<p><em>Last updated: {UPDATED}. Template text: have a lawyer review before publishing.</em></p>
-<h2>Information we collect</h2>
-<p>We collect information you send us (such as your email when you contact us) and technical data collected automatically, such as IP address, browser type, pages viewed and referring site, through cookies and similar technologies.</p>
-<h2>How we use information</h2>
-<p>To operate and improve the site, measure traffic, attribute referrals to partner sites, respond to messages and comply with the law. We do not ask for or store health information on this site.</p>
-<h2>Cookies and advertising</h2>
-<p>We and our partners, including [Google Analytics, Google Ads, Taboola, Outbrain], may use cookies to measure ad performance. You can control cookies in your browser settings and opt out of personalized ads at <a href="https://adssettings.google.com">adssettings.google.com</a>.</p>
-<h2>Sharing</h2>
-<p>We don't sell personal information. We share data with service providers who help run the site, and with partners when you click an affiliate link (limited to referral tracking).</p>
-<h2>Your rights</h2>
-<p>Depending on where you live (for example California under the CCPA/CPRA), you may have the right to access, delete or opt out of certain uses of your information. Email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
-<h2>Children</h2>
-<p>This site is not intended for anyone under 18.</p>
-<h2>Contact</h2>
-<p>[Legal company name], [address], <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>''')
+# privacy.html is now a standalone page (with consumer-health-data, cookie and Do Not Sell pages).
+# Edit privacy.html directly. It is intentionally NOT generated here any more.
 
 simple("terms.html","Terms of Use","Terms governing use of "+SITE+".","Terms of use",f'''
 <p><em>Last updated: {UPDATED}. Template text: have a lawyer review before publishing.</em></p>

@@ -14,8 +14,8 @@
   var COOKIE = "gr_consent";
   var VERSION = 1;               // bump to re-ask everyone after a policy change
   var DAYS = 365;
-  var POLICY_URL = "/cookie-policy";
-  var CHOICES_URL = "/your-privacy-choices";
+  var POLICY_URL = "/cookie-policy.html";
+  var CHOICES_URL = "/your-privacy-choices.html";
 
   var gpc = navigator.globalPrivacyControl === true;
 
@@ -111,7 +111,7 @@
     el.innerHTML =
       '<h2 id="gr-cc-title">Your privacy choices</h2>' +
       '<p>We use essential cookies to run this site. With your permission we also use analytics cookies to see which pages help people, and advertising cookies to measure our ads. ' +
-      'Because this site covers a health topic, we keep these <strong>off unless you turn them on</strong>. See our <a href="' + POLICY_URL + '">Cookie Policy</a> and <a href="/consumer-health-data-privacy">Consumer Health Data Privacy Policy</a>.</p>' +
+      'Because this site covers a health topic, we keep these <strong>off unless you turn them on</strong>. See our <a href="' + POLICY_URL + '">Cookie Policy</a> and <a href="/consumer-health-data-privacy.html">Consumer Health Data Privacy Policy</a>.</p>' +
       (gpc ? '<p class="gr-note">We detected a Global Privacy Control signal from your browser, so advertising cookies and any sale or sharing of your data are turned off.</p>' : '') +
       '<div class="gr-cc-prefs" hidden>' +
         '<div class="switch_row"><div><b>Essential</b><p>Needed for security, load balancing and remembering these choices. Always on.</p></div><label class="switch"><input type="checkbox" checked disabled aria-label="Essential cookies, always on"><span></span></label></div>' +
