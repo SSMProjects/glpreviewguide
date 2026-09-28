@@ -36,9 +36,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <nav class="main" aria-label="Main">
     <a href="index.html">Best GLP-1 programs</a>
     <a href="review-pallas-health.html">Reviews</a>
-    <a href="how-we-review.html">How we review</a>
     <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
   </nav>
 </div></header>
 <main>
@@ -47,7 +45,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <footer class="site"><div class="wrap">
   <div class="cols">
     <div><h4>{SITE}</h4><p>Independent comparisons of online weight-care programs that offer GLP-1 medications, so you can arrive at your doctor's appointment with better questions.</p></div>
-    <div><h4>Site</h4><ul><li><a href="how-we-review.html">How we review</a></li><li><a href="team.html">Our team</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></div>
+    <div><h4>Site</h4><ul><li><a href="index.html">Best GLP-1 programs</a></li><li><a href="index.html#method">How we score</a></li><li><a href="about.html">About us</a></li><li><a href="mailto:{EMAIL}">{EMAIL}</a></li></ul></div>
     <div><h4>Legal</h4><ul><li><a href="disclosure.html">Advertising disclosure</a></li><li><a href="disclosure.html#medical">Medical disclaimer</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="consumer-health-data-privacy.html">Consumer health data privacy</a></li><li><a href="cookie-policy.html">Cookie policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a class="pc" href="your-privacy-choices.html"><img src="images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices / Do Not Sell or Share My Personal Information</a></li><li><button type="button" class="linklike" data-gr-open-consent>Cookie settings</button></li></ul></div>
   </div>
   <div class="legal">
@@ -287,7 +285,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
 <header class="nav"><div class="w">
  <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
- <nav aria-label="Main"><a href="#top5">Top 5</a><a href="#fit">Find your fit</a><a href="how-we-review.html">How we review</a><a href="about.html">About</a></nav>
+ <nav aria-label="Main"><a href="#top5">Top 5</a><a href="#fit">Find your fit</a><a href="index.html#method">How we score</a><a href="about.html">About</a></nav>
 </div></header>
 
 <main>
@@ -299,7 +297,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <div class="hero_actions"><a class="btn_dark" href="#top5">See the top 5</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
    <details><summary>Editorial disclosure</summary><p>We research programs independently. If you sign up through our links we may earn a commission at no cost to you. Brands can't pay to change our scores.</p></details>
-   <details><summary>About our rankings</summary><p>Scores combine clinical care (30%), medication access (25%), price transparency (25%) and ongoing support (20%). <a href="how-we-review.html">Methodology</a>.</p></details>
+   <details><summary>About our rankings</summary><p>Scores combine clinical care (30%), medication access (25%), price transparency (25%) and ongoing support (20%). <a href="#method">Methodology</a>.</p></details>
   </div>
  </div>
  <aside class="hero_card" aria-label="Our top pick">
@@ -346,7 +344,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  </div>
 </div></section>
 
-<section class="method"><div class="w">
+<section class="method" id="method"><div class="w">
  <h2 class="sec">How we scored them</h2>
  <p class="sec_dek">Every program is scored on the same four criteria. We don't take medications ourselves or publish personal weight-loss results; we compare programs as services, using public pricing and each program's own sign-up flow.</p>
  <div class="weights" role="img" aria-label="Clinical care 30 percent, medication access 25 percent, price transparency 25 percent, ongoing support 20 percent">
@@ -411,7 +409,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  <div><a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="28" height="28"><span>GLP1Review<b>Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
   <p>Independent comparisons of online GLP-1 programs, so you can walk into your consultation with better questions.</p>
   <p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
- <div><h4>Explore</h4><ul><li><a href="#top5">Top 5 programs</a></li><li><a href="#fit">Find your fit</a></li><li><a href="how-we-review.html">How we review</a></li><li><a href="team.html">Our team</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></div>
+ <div><h4>Explore</h4><ul><li><a href="#top5">Top 5 programs</a></li><li><a href="#fit">Find your fit</a></li><li><a href="#method">How we score</a></li><li><a href="about.html">About us</a></li></ul></div>
  <div><h4>Legal</h4><ul><li><a href="disclosure.html">Advertising disclosure</a></li><li><a href="disclosure.html#medical">Medical disclaimer</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="consumer-health-data-privacy.html">Consumer health data privacy</a></li><li><a href="cookie-policy.html">Cookie policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a class="pc" href="your-privacy-choices.html"><img src="images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices / Do Not Sell or Share My Personal Information</a></li><li><button type="button" class="linklike" data-gr-open-consent>Cookie settings</button></li></ul></div>
  <p class="foot_legal">Content is for information only and is not medical advice. GLP-1 medications require a prescription; talk to a licensed clinician about benefits and risks. {SITE} is an independent publisher, not a healthcare provider or pharmacy. We may earn commissions from links on this page, which may affect where programs appear. &copy; 2026 {SITE}.</p>
 </div></footer>
@@ -492,41 +490,25 @@ def simple(fname, title, desc, h1, inner):
     page(fname, f"{title} | {SITE}", desc, f'<section class="section"><div class="wrap prose"><h1 style="font:600 clamp(30px,8vw,40px)/1.15 var(--serif);margin:0 0 18px;overflow-wrap:anywhere">{h1}</h1>{inner}</div></section>')
 
 ic = lambda d: f'<svg viewBox="0 0 24 24" fill="none" stroke="#2F7D6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{d}</svg>'
-simple("how-we-review.html","How We Review","Our methodology for comparing online GLP-1 weight-care programs.","How we review GLP-1 programs",f'''
-<p>We review telehealth weight-care programs as services. We don't take medications as part of our reviews and we don't publish personal before-and-after results. Every score comes from the same criteria, documented below.</p>
-<div class="criteria">
-<div>{ic('<path d="M12 21s-7-4.5-7-11a4 4 0 017-2.6A4 4 0 0119 10c0 6.5-7 11-7 11z"/>')}<h3>Clinical care (30%)</h3><p>Licensed clinicians, medical history review, lab requirements, follow-up access.</p></div>
-<div>{ic('<rect x="3" y="8" width="18" height="8" rx="4"/><path d="M12 8v8"/>')}<h3>Medication access (25%)</h3><p>FDA-approved options, licensed U.S. pharmacy partners, clear labeling of any compounded products.</p></div>
-<div>{ic('<path d="M3 7h18M3 12h18M3 17h10"/>')}<h3>Price transparency (25%)</h3><p>Total monthly cost shown before sign-up, no hidden fees, simple cancellation.</p></div>
-<div>{ic('<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 14.5-4 16 0"/>')}<h3>Ongoing support (20%)</h3><p>Coaching, nutrition guidance, side-effect help, app quality.</p></div>
-</div>
-<h2>Our process</h2>
-<p>For each program we [describe your real process: e.g. complete the intake flow up to payment, review pricing pages and terms, verify pharmacy licensing, contact customer support with standard questions, and check state availability]. A medical reviewer checks health information for accuracy before publication.</p>
-<h2>How we make money</h2>
-<p>Some providers pay us a commission when readers sign up through our links. Payment never buys a higher score, and we include programs we don't earn from. See our <a href="disclosure.html">advertising disclosure</a>.</p>
-<h2>Updates and corrections</h2>
-<p>We recheck prices and availability at least every [90] days. Spotted an error? <a href="contact.html">Tell us</a> and we'll correct it.</p>''')
+# how-we-review.html removed (methodology lives in the homepage #method section).
 
 simple("about.html","About Us","Who we are and why we compare online weight-care programs.","About "+SITE,f'''
 <p>{SITE} helps people understand their options for online weight care before they talk to a clinician. The number of telehealth programs offering GLP-1 medications has grown quickly, and their pricing, medications and level of care vary a lot. We lay those differences out side by side.</p>
-<h2>Our team</h2>
+<h2 id="team">Our team</h2>
 <p><strong>[Author Name]</strong>, health editor. [Short bio with relevant experience.]</p>
 <p><strong>[Reviewer Name, MD]</strong>, medical reviewer. [Specialty, board certification, and what they review.]</p>
 <div class="img-slot" style="aspect-ratio:3/1">Image slot: add real team headshots (square, at least 400 × 400px).</div>
 <h2>Our editorial standards</h2>
-<p>We base health information on FDA prescribing information and peer-reviewed research, link to sources, and never promise specific results. Commercial relationships don't influence our rankings. Read <a href="how-we-review.html">how we review</a>.</p>
-<h2>Company information</h2>
-<p>[Legal company name]<br>[Street address]<br>[City, State ZIP]<br>Email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>''')
-
-simple("contact.html","Contact","Contact the "+SITE+" team.","Contact us",f'''
-<p>Questions, corrections or partnership inquiries: email <a href="mailto:{EMAIL}">{EMAIL}</a>. We reply within two business days.</p>
-<p>We can't give medical advice or help with prescriptions or orders. For questions about your treatment, contact your provider directly. In a medical emergency, call 911.</p>
-<h2>Mailing address</h2>
+<p>We base health information on FDA prescribing information and peer-reviewed research, link to sources, and never promise specific results. Commercial relationships don't influence our rankings. See <a href="index.html#method">how we score programs</a>.</p>
+<h2 id="contact">Contact us</h2>
+<p>Questions, corrections or partnership inquiries: email <a href="mailto:{EMAIL}">{EMAIL}</a>. We reply within two business days. We can't give medical advice or help with prescriptions or orders; contact your provider directly. In a medical emergency, call 911.</p>
 <p>[Legal company name]<br>[Street address]<br>[City, State ZIP]</p>''')
+
+# contact.html removed (contact details live on about.html#contact and in every footer).
 
 simple("disclosure.html","Advertising Disclosure & Medical Disclaimer","How we earn money and important medical information.","Advertising disclosure",f'''
 <p>{SITE} is a free, independent comparison site. To keep it free, we may receive compensation from some companies listed when you click a link and sign up. Links that may earn us a commission are marked as sponsored in our code.</p>
-<p>Compensation may affect which companies we feature and where they appear on the page, but it does not affect our scores, which follow our <a href="how-we-review.html">published methodology</a>. We don't list every program available.</p>
+<p>Compensation may affect which companies we feature and where they appear on the page, but it does not affect our scores, which follow our <a href="index.html#method">published methodology</a>. We don't list every program available.</p>
 <h2 id="medical">Medical disclaimer</h2>
 <p>Content on this site is for informational purposes only and is not a substitute for professional medical advice, diagnosis or treatment. Always consult a qualified healthcare provider before starting, stopping or changing any medication.</p>
 <p>GLP-1 medications are available by prescription only. They carry risks including gastrointestinal side effects, pancreatitis, gallbladder disease and a boxed warning about thyroid C-cell tumors. They are not appropriate for everyone. Results vary between individuals.</p>

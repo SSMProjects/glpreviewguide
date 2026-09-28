@@ -1,0 +1,9 @@
+# Removed pages: permanent redirects (the "!" forces the redirect even if an old file is still in the repo)
+/how-we-review.html   /#method        301!
+/how-we-review        /#method        301!
+/team.html            /about.html#team     301!
+/team                 /about.html#team     301!
+/contact.html         /about.html#contact  301!
+/contact              /about.html#contact  301!
+/accessibility.html   /               301!
+/accessibility        /               301!
