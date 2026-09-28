@@ -178,15 +178,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .faq summary{cursor:pointer;font-weight:700}
 .faq details p{margin:10px 0 0}
 
-/* byline */
-.byline_sec{padding:0 0 50px}
-.byline_card{display:flex;gap:20px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
-.photo_slot{flex:none;width:96px;height:96px;border-radius:50%;border:2px dashed #C6C6E6;display:grid;place-items:center;text-align:center;font-size:12px;color:var(--muted)}
-.by_label{margin:0;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.byline_card h3{font:700 20px var(--disp);margin:2px 0 6px}
-.byline_card p{margin:0 0 6px;font-size:15px}
-.by_rev i{color:var(--plum)}
-
 /* footer */
 .foot{background:#fff;border-top:1px solid var(--line);padding:40px 0 30px;font-size:14.5px}
 .foot_grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:30px}
