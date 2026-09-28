@@ -1,6 +1,6 @@
 /* GLP1ReviewGuide.com: consent banner styles only. Safe to load next to main.css or styles.css. */
 .gr-cc,.gr-cc *{box-sizing:border-box}
-.gr-cc{--ink:#1F1B2E;--plum:#5B3E8C;--plum-s:#EFE8F7;--cream:#FBF7F2;--coral:#E8604C;--line:#E6DFD6;--muted:#615B6B;--disp:"Fraunces",Georgia,serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.gr-cc{--ink:#1F1B2E;--plum:#0000FF;--plum-s:#E8E8FF;--cream:#FBF7F2;--coral:#E8604C;--line:#E6DFD6;--muted:#615B6B;--disp:"Fraunces",Georgia,serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
 .linklike{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer}
 .pc{display:inline-flex;align-items:center;gap:6px}
 .pc img{display:inline-block}
@@ -9,7 +9,7 @@
 .gr-cc .switch_row p{margin:2px 0 0;font-size:14.5px;color:var(--muted)}
 .gr-cc .switch{position:relative;flex:none;width:52px;height:30px}
 .gr-cc .switch input{opacity:0;width:100%;height:100%;margin:0;position:absolute;inset:0;cursor:pointer;z-index:1}
-.gr-cc .switch span{position:absolute;inset:0;background:#CFC6D9;border-radius:999px;transition:background .15s}
+.gr-cc .switch span{position:absolute;inset:0;background:#C6C6E6;border-radius:999px;transition:background .15s}
 .gr-cc .switch span::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .15s}
 .gr-cc .switch input:checked+span{background:var(--plum)}
 .gr-cc .switch input:checked+span::after{transform:translateX(22px)}

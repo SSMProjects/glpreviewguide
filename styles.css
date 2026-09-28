@@ -154,7 +154,7 @@ footer.site .legal{border-top:1px solid #34445C;padding-top:18px;font-size:12.5p
 @media(max-width:820px){.card-rank{left:10px}}
 
 /* ===== Advertorial theme (overrides) ===== */
-:root{--serif:"Fraunces",Georgia,serif;--sans:"DM Sans",system-ui,Arial,sans-serif;--teal:#5B3E8C;--teal-dark:#472F6F;--ink:#1F1B2E;--paper:#FBF7F2;--line:#E6DFD6;--muted:#615B6B}
+:root{--serif:"Fraunces",Georgia,serif;--sans:"DM Sans",system-ui,Arial,sans-serif;--teal:#0000FF;--teal-dark:#0000FF;--ink:#1F1B2E;--paper:#FBF7F2;--line:#E6DFD6;--muted:#615B6B}
 body{background:#FBF7F2;font-size:17px}
 header.site{border-bottom:1px solid #E6DFD6;background:#FBF7F2}
 .brand{font:600 20px/1 var(--serif)}
@@ -231,6 +231,6 @@ dialog h3{font:700 20px var(--sans);margin:0 0 8px}
 dialog button{margin-top:10px;background:#1565C0;color:#fff;border:0;border-radius:6px;padding:10px 18px;font:700 15px var(--sans);cursor:pointer}
 .adbar{background:#1F1B2E}
 footer.site{background:#1F1B2E}
-.btn{background:#E8604C;border-radius:999px}.btn:hover{background:#C94A37}.btn.ghost{background:transparent;color:#472F6F;border-color:#5B3E8C}
+.btn{background:#E8604C;border-radius:999px}.btn:hover{background:#C94A37}.btn.ghost{background:transparent;color:#0000FF;border-color:#0000FF}
 .hero{background:#fff}
 @media(max-width:840px){.ribbon{padding-left:62px}}

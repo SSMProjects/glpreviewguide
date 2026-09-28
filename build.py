@@ -32,7 +32,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <body>
 <div class="adbar">Advertising disclosure: we may earn a commission when you visit providers from this page. This does not affect our scores. <a href="disclosure.html">Learn more</a></div>
 <header class="site"><div class="wrap">
-  <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b style="color:#5B3E8C">Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
+  <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b style="color:#0000FF">Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
   <nav class="main" aria-label="Main">
     <a href="index.html">Best GLP-1 programs</a>
     <a href="review-pallas-health.html">Reviews</a>
@@ -201,10 +201,10 @@ faq_ld = ",".join('{"@type":"Question","name":"%s","acceptedAnswer":{"@type":"An
 
 # ---------- index.html (homepage layout) ----------
 import math
-def ring(score, size=96, stroke=9, color="#5B3E8C"):
+def ring(score, size=96, stroke=9, color="#0000FF"):
     r=(size-stroke)/2; c=2*math.pi*r; off=c*(1-float(score)/10)
     return f"""<svg class="ring" viewBox="0 0 {size} {size}" width="{size}" height="{size}" role="img" aria-label="Score {score} out of 10">
-<circle cx="{size/2}" cy="{size/2}" r="{r}" fill="none" stroke="#EAE4F2" stroke-width="{stroke}"/>
+<circle cx="{size/2}" cy="{size/2}" r="{r}" fill="none" stroke="#E6E6FF" stroke-width="{stroke}"/>
 <circle cx="{size/2}" cy="{size/2}" r="{r}" fill="none" stroke="{color}" stroke-width="{stroke}" stroke-linecap="round" stroke-dasharray="{c:.1f}" stroke-dashoffset="{off:.1f}" transform="rotate(-90 {size/2} {size/2})"/>
 <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="{size*0.3:.0f}" font-weight="700" fill="#1F1B2E">{score}</text></svg>"""
 
@@ -227,7 +227,7 @@ def card(i,p):
    <h2>{p["name"]}</h2>
    <p class="pick_sum">{p["summary"]}</p>
   </div>
-  <div class="pick_ring">{ring(p["total"], 96, 9, "#5B3E8C" if top else "#8C7AAE")}<span>overall</span></div>
+  <div class="pick_ring">{ring(p["total"], 96, 9, "#0000FF" if top else "#0000FF")}<span>overall</span></div>
  </header>
  <div class="pick_body">
   <a class="pick_logo" href="{link(p)}" {REL}><img src="images/provider-{p["k"]}.svg" alt="{p["name"]}" width="160" height="80"></a>
