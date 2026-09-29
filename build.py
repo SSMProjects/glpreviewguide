@@ -117,7 +117,7 @@ P = [
   bestfor="Budget-focused patients who understand the trade-offs of compounded medication, or who want brand-name options with a lower membership fee."),
 ]
 
-# ----- Offers keyed by original key, then re-rank with Pallas Health at #1 -----
+# ----- Offers keyed by original key; final order is set below -----
 OFFERS={'a': ('$74/mo', '$25', 'first month of membership', 'Then $74/mo on a 12-month plan. Medication from $199/mo.', 'Brand-name GLP-1s only'), 'b': ('$149/mo', '$39', 'first month of membership', 'Then $149/mo. Medication from $149/mo.', 'Insurance concierge included'), 'c': ('', '$129', 'per video visit', 'Optional membership $19.99/mo. Wegovy from $199/mo.', 'Prescription sent to your pharmacy'), 'd': ('$149/mo', '$39', 'first month of membership', 'Then $149/mo. Medication from $149/mo.', 'Unlimited provider messaging'), 'e': ('', '$79', 'per month membership', 'Compounded semaglutide from $60. Brand-name costs more.', '24/7 patient support')}
 for _p in P: _p["was"],_p["now"],_p["now_note"],_p["then"],_p["perk"]=OFFERS[_p["k"]]
 
@@ -144,14 +144,40 @@ PALLAS = dict(name="Pallas Health", short="Pallas", flag="Best overall value",
   was="$199/mo", now="$139", now_note="first month (compounded semaglutide)",
   then="Then about $199/mo, or $159/mo on the annual plan. Refunded if not prescribed.", perk="No membership fee + free shipping")
 
-P = [PALLAS] + [p for p in P if p["name"] != "Mochi Health"]
+DIRECTMEDS = dict(name="DirectMeds", short="DirectMeds", flag="Best all-inclusive monthly price",
+  url="https://directmeds.com/dm-offers-stc/?oid=12&amp;uid=61&amp;affid=1020&amp;sub1={affiliate_id}&amp;sub2={transaction_id}&amp;sub3={sub1}&amp;sub4={sub2}&amp;sub5={sub3}",
+  summary="One monthly price that includes the medication, doctor visits, supplies and shipping, with compounded semaglutide or tirzepatide as an injection or under-the-tongue drops.",
+  price="Compounded semaglutide $147 first month ($150 off), then $297/mo; compounded tirzepatide $399/mo. Medication, doctor visits, supplies and shipping included.",
+  price_short="From $147 first month", meds="Compounded semaglutide and tirzepatide (injection or sublingual drops)",
+  ins="No insurance needed (cash-pay)", visit="Online intake; doctor review within 24 hours",
+  compounded="Yes (not FDA-approved)", cancel="Confirm cancellation terms at checkout",
+  scores=[("Clinical care",92),("Medication access",90),("Price transparency",97),("Ongoing support",90)],
+  pros=["One monthly price covers medication, doctor visits, supplies and shipping, with no membership fee",
+        "$150 off the first month: compounded semaglutide is $147 to start",
+        "Choose injections or sublingual (under-the-tongue) drops",
+        "A licensed doctor reviews your intake within 24 hours",
+        "Full refund if your prescription isn't approved",
+        "LegitScript certified; ships from U.S.-based 503A compounding pharmacies in 1–2 days"],
+  cons=["Compounded medications are not FDA-approved",
+        "No brand-name options such as Wegovy or Zepbound",
+        "After the first month, semaglutide is $297/mo and tirzepatide $399/mo, more than some programs on this list",
+        "There's less research on sublingual drops than on injections",
+        "Not available in Mississippi or Louisiana; doesn't take insurance"],
+  care="You complete a 5-minute health qualifier, choose a medication and pay for the first month, then finish a medical intake in the patient portal. A licensed doctor reviews it within 24 hours and decides whether a prescription is appropriate. Doctor visits are included in the price, and support is available by phone (888-696-7176) and email.",
+  pricing="Compounded semaglutide is $297 a month and compounded tirzepatide $399 a month. That price includes the medication, doctor visits, supplies and shipping, with no separate membership fee. New patients get $150 off the first month, so semaglutide starts at $147. If your prescription isn't approved, you get a full refund.",
+  bestfor="People paying out of pocket who want one all-inclusive price, fast doctor review and quick delivery, and who are comfortable with compounded medication. If you want brand-name drugs or to use insurance, compare Ro, WeightWatchers Med+ or PlushCare.",
+  was="$297/mo", now="$147", now_note="first month (compounded semaglutide, $150 off)",
+  then="Then $297/mo; tirzepatide $399/mo. Full refund if not approved.", perk="Doctor visits, supplies + shipping included")
+
+# DirectMeds is a paid featured placement at #1 (disclosed on the page). Its score is calculated the same way as everyone else's.
+P = [DIRECTMEDS, PALLAS] + [p for p in P if p["name"] not in ("Mochi Health", "Hims & Hers")]
 W=[.30,.25,.25,.20]
 for idx,_p in enumerate(P):
     _p["k"]="abcde"[idx]
     _p["total"]=f'{sum(w*s for w,(_,s) in zip(W,_p["scores"]))/10:.1f}'
-SLUGS={"Pallas Health":"pallas-health","WeightWatchers Med+":"weightwatchers-med-plus","Ro":"ro","PlushCare":"plushcare","Hims & Hers":"hims-and-hers"}
+SLUGS={"DirectMeds":"directmeds","Pallas Health":"pallas-health","WeightWatchers Med+":"weightwatchers-med-plus","Ro":"ro","PlushCare":"plushcare","Hims & Hers":"hims-and-hers"}
 for _p in P: _p["slug"]=SLUGS[_p["name"]]
-P[1]["flag"]="Best for nutrition coaching"
+P[2]["flag"]="Best for nutrition coaching"
 
 def bars(s):
     return "".join(f'<div class="bar"><span>{n}<em>{v/10:.1f}</em></span><i><b style="width:{v}%"></b></i></div>' for n,v in s)
@@ -164,7 +190,7 @@ def pick(i,p):
   <div class="pick-body">
     <div class="pick-logo">
       <span class="num" aria-label="Rank {i}">{i}</span>
-      <img src="images/provider-{p["k"]}.svg" alt="{p["name"]} logo" width="160" height="80">
+      <img src="images/provider-{p["slug"]}.svg" alt="{p["name"]} logo" width="160" height="80">
       <a href="review-{p["slug"]}.html">Read full review</a>
     </div>
     <div>
@@ -178,7 +204,7 @@ def pick(i,p):
     <div class="score">
       <div class="score-total">{p["total"]}<small> / 10 our score</small></div>
       {bars(p["scores"])}
-      <a class="btn" href="https://AFFILIATE-LINK-{p["k"].upper()}" rel="sponsored nofollow noopener" target="_blank">Visit {p["name"]}</a>
+      <a class="btn" href="{link(p)}" rel="sponsored nofollow noopener" target="_blank">Visit {p["name"]}</a>
       <p class="fine">{p["price"]}. Prescription requires a medical consultation.</p>
     </div>
   </div>
@@ -209,10 +235,10 @@ def ring(score, size=96, stroke=9, color="#0000FF"):
 <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="{size*0.3:.0f}" font-weight="700" fill="#1F1B2E">{score}</text></svg>"""
 
 REL='rel="sponsored nofollow noopener" target="_blank"'
-def link(p): return f'https://AFFILIATE-LINK-{p["k"].upper()}'
+def link(p): return p.get("url") or f'https://AFFILIATE-LINK-{p["k"].upper()}'
 
 def tile(i,p):
-    return f'<a class="tile{" tile_top" if i==1 else ""}" href="#pick-{i}"><span class="tile_rank">{i}</span><span class="tile_name">{p["name"]}</span><span class="tile_flag">{p["flag"]}</span><span class="tile_score">{p["total"]}<small>/10</small></span></a>'
+    return f'<a class="tile{" tile_top" if i==1 else ""}" href="#pick-{i}"><span class="tile_rank">{i}</span><span class="tile_name">{p["name"]}</span><span class="tile_flag">{"Featured partner · " if i==1 else ""}{p["flag"]}</span><span class="tile_score">{p["total"]}<small>/10</small></span></a>'
 
 def card(i,p):
     top=i==1
@@ -223,14 +249,14 @@ def card(i,p):
  <header class="pick_head">
   <span class="pick_rank">{'<i class="fa-solid fa-crown"></i>' if top else ''}#{i}</span>
   <div class="pick_id">
-   <p class="pick_flag">{'Our top pick · ' if top else ''}{p["flag"]}</p>
+   <p class="pick_flag">{'Featured partner · ' if top else ''}{p["flag"]}</p>
    <h2>{p["name"]}</h2>
    <p class="pick_sum">{p["summary"]}</p>
   </div>
   <div class="pick_ring">{ring(p["total"], 96, 9, "#0000FF" if top else "#0000FF")}<span>overall</span></div>
  </header>
  <div class="pick_body">
-  <a class="pick_logo" href="{link(p)}" {REL}><img src="images/provider-{p["k"]}.svg" alt="{p["name"]}" width="160" height="80"></a>
+  <a class="pick_logo" href="{link(p)}" {REL}><img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80"></a>
   <div class="pick_lists">
    <div><h3>Why it stands out</h3><ul class="plus">{"".join(f"<li>{x}</li>" for x in p["pros"])}</ul></div>
    <div><h3>Worth knowing</h3><ul class="minus">{"".join(f"<li>{x}</li>" for x in p["cons"])}</ul></div>
@@ -300,8 +326,8 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <details><summary>About our rankings</summary><p>Scores combine clinical care (30%), medication access (25%), price transparency (25%) and ongoing support (20%). <a href="#method">Methodology</a>.</p></details>
   </div>
  </div>
- <aside class="hero_card" aria-label="Our top pick">
-  <p class="hc_label"><i class="fa-solid fa-crown"></i> Our #1 pick</p>
+ <aside class="hero_card" aria-label="Featured partner">
+  <p class="hc_label"><i class="fa-solid fa-crown"></i> Featured partner</p>
   <div class="hc_row">{ring(top["total"],84,8)}<div><h2>{top["name"]}</h2><p>{top["flag"]}</p></div></div>
   <dl class="hc_facts">
    <div><dt>First month</dt><dd>{top["now"]}</dd></div>
@@ -309,7 +335,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <div><dt>If not prescribed</dt><dd>Full refund</dd></div>
   </dl>
   <a class="cta" href="{link(top)}" {REL}>See if I qualify</a>
-  <p class="hc_fine">Prescription requires a medical evaluation. Compounded medications are not FDA-approved.</p>
+  <p class="hc_fine">Paid placement. Prescription requires a medical evaluation. Compounded medications are not FDA-approved.</p>
  </aside>
 </div></section>
 
@@ -363,32 +389,30 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
 <section class="feature"><div class="w feature_grid">
  <aside class="feat_panel">
-  <p class="hc_label"><i class="fa-solid fa-crown"></i> Editor's pick 2026</p>
+  <p class="hc_label"><i class="fa-solid fa-crown"></i> Featured partner</p>
   {ring(top["total"],120,11,"#fff")}
   <h2>{top["name"]}</h2>
   <dl>
    <div><dt>First month</dt><dd>{top["now"]}</dd></div>
-   <div><dt>After that</dt><dd>~$199/mo</dd></div>
-   <div><dt>Annual plan</dt><dd>~$159/mo</dd></div>
+   <div><dt>After that</dt><dd>$297/mo</dd></div>
+   <div><dt>Tirzepatide</dt><dd>$399/mo</dd></div>
    <div><dt>Membership fee</dt><dd>None</dd></div>
   </dl>
   <a class="cta light" href="{link(top)}" {REL}>See if I qualify</a>
-  <p class="feat_fine">Refunded in full if a clinician decides treatment isn't right for you.</p>
+  <p class="feat_fine">Refunded in full if your prescription isn't approved. Paid placement.</p>
  </aside>
  <div class="feat_copy">
-  <h2 class="sec">Why {top["name"]} is our #1 pick</h2>
-   <p>Out of the programs we compared, {top["name"]} came out on top for overall value. It was the only program in our top five with no membership fee at all, a single price that doesn't rise as your dose goes up, and a choice between compounded and FDA-approved brand-name medications.</p>
-   <h3>Simple, all-in pricing</h3>
-   <p>Most programs charge a monthly membership and then bill medication separately, and the medication price usually climbs with each dose increase. With {top["name"]}, clinician visits, follow-ups, messaging and shipping are included, and compounded plans stay the same price at every dose.</p>
-   <h3>Low risk to start</h3>
-   <p>Nothing is charged at checkout. You're billed only once a clinician prescribes, and refunded in full if they decide treatment isn't right for you. You can cancel or pause anytime with no cancellation fees.</p>
-   <h3>Medical care</h3>
-   <p>{top["care"]}</p>
+  <h2 class="sec">Why we feature {top["name"]}</h2>
+   <p>{top["name"]} is our featured partner, which means it pays for its position at the top of this page. Its score is calculated with the same method as every other program. What stands out is how simple the pricing is: one monthly price covers the medication, doctor visits, supplies and shipping.</p>
+   <h3>All-inclusive pricing</h3>
+   <p>Most programs charge a membership and bill medication separately. {top["pricing"]}</p>
+   <h3>Fast review and delivery</h3>
+   <p>{top["care"]} Approved prescriptions ship from U.S.-based 503A compounding pharmacies, usually within 1–2 days.</p>
    <h3>Medication choice</h3>
-   <p>Clinicians can prescribe compounded semaglutide or tirzepatide, prepared by US-licensed compounding pharmacies, or brand-name Wegovy, Zepbound, Ozempic or Mounjaro. Compounded medications are not FDA-approved and are not generic versions of brand-name drugs. The brand-name options are cash-pay and cost considerably more.</p>
+   <p>Doctors can prescribe compounded semaglutide or tirzepatide, as a weekly injection or as sublingual (under-the-tongue) drops. Compounded medications are not FDA-approved and are not generic versions of brand-name drugs. There's less research on sublingual forms than on injections, so ask your doctor which is right for you.</p>
    <h3>Things to weigh</h3>
-   <p>{top["name"]} launched in 2026, so there's little independent customer feedback yet, and it doesn't accept insurance. It is LegitScript certified, which means its pharmacy and prescribing practices have been independently reviewed.</p>
-   <p>A licensed clinician decides whether a GLP-1 medication is right for you. If you're paying out of pocket and want one predictable price, this is the program we'd start with.</p>
+   <p>{top["name"]} doesn't offer brand-name medications or take insurance, and it isn't available in Mississippi or Louisiana. After the first month its price is higher than some programs on this list, including our highest-scoring program, {P[1]["name"]}. It is LegitScript certified, which means its pharmacy and prescribing practices have been independently reviewed.</p>
+   <p>A licensed clinician decides whether a GLP-1 medication is right for you.</p>
  </div>
 </div></section>
 
@@ -422,7 +446,8 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
     if(pri==='coach') return ['WeightWatchers Med+','Pairs obesity medicine specialists with one-on-one dietitian support and a full nutrition app.'];
     if(pri==='doctor') return ['PlushCare','Video visits with board-certified physicians licensed in all 50 states.'];
     if(med==='brand') return ['Ro','Brand-name GLP-1s only, with a low intro month and no long-term contract.'];
-    return ['Pallas Health','No membership fee, one price at every dose, and a full refund if you are not prescribed.'];
+    if(med==='any') return ['DirectMeds','One monthly price that includes medication, doctor visits and shipping, with $150 off your first month.'];
+    return ['Pallas Health','Offers both compounded and brand-name options, with no membership fee and one price at every dose.'];
   }}
   document.getElementById('quiz_go').addEventListener('click',function(){{
     var q=document.getElementById('quiz'), out=document.getElementById('quiz_out');
@@ -447,17 +472,17 @@ for i,p in enumerate(P,1):
     <p class="dek">{p["summary"]}</p>
     {AUTHOR}
   </div>
-  <div class="hero-art"><img src="images/provider-{p["k"]}.svg" alt="{p["name"]} logo" width="320" height="160"></div>
+  <div class="hero-art"><img src="images/provider-{p["slug"]}.svg" alt="{p["name"]} logo" width="320" height="160"></div>
 </div></section>
 <div class="wrap"><div class="notice"><strong>Prescription required</strong>A licensed clinician decides whether a GLP-1 medication is appropriate. This review is not medical advice. <a href="disclosure.html#medical">Medical disclaimer</a>.</div></div>
 <section class="section"><div class="wrap">
   <article class="pick top"><div class="pick-flag">Ranked #{i}: {p["flag"]}</div><div class="pick-body">
-    <div class="pick-logo"><img src="images/provider-{p["k"]}.svg" alt="" width="160" height="80"></div>
+    <div class="pick-logo"><img src="images/provider-{p["slug"]}.svg" alt="" width="160" height="80"></div>
     <div><div class="proscons">
       <div><h4>What we like</h4><ul>{"".join(f"<li>{x}</li>" for x in p["pros"])}</ul></div>
       <div><h4>Things to know</h4><ul>{"".join(f"<li>{x}</li>" for x in p["cons"])}</ul></div></div></div>
     <div class="score"><div class="score-total">{p["total"]}<small> / 10</small></div>{bars(p["scores"])}
-      <a class="btn" href="https://AFFILIATE-LINK-{p["k"].upper()}" rel="sponsored nofollow noopener" target="_blank">Visit {p["name"]}</a>
+      <a class="btn" href="{link(p)}" rel="sponsored nofollow noopener" target="_blank">Visit {p["name"]}</a>
       <p class="fine">{p["price"]}. Prescription not guaranteed.</p></div>
   </div></article>
 </div></section>

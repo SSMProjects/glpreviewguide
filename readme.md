@@ -5,10 +5,10 @@ Static HTML. Upload the whole folder (keep `images/` and `styles.css`) to any ho
 ## Before you launch (find & replace)
 - Brand, domain and email are set at the top of build.py (GLP1ReviewGuide.com / glp1reviewguide.com / hello@glp1reviewguide.com). Run `python3 build.py` to regenerate the homepage, reviews, About, Disclosure and Terms.
 - NOT generated (edit directly): privacy.html, consumer-health-data-privacy.html, your-privacy-choices.html, cookie-policy.html, lp/*.html. See SETUP-NOTES.md.
-- Providers (in rank order): Pallas Health, WeightWatchers Med+, Ro, PlushCare, Hims & Hers. Pallas details come from pallashealth.co (checked September 2026). Facts and prices were checked in September 2026 (Forbes Health, Sept 2026 update; provider sites). Re-verify every price on each provider's site before launch and every 60–90 days after.
+- Providers (in order): DirectMeds (featured partner), Pallas Health, WeightWatchers Med+, Ro, PlushCare. Pallas details come from pallashealth.co (checked September 2026). Facts and prices were checked in September 2026 (Forbes Health, Sept 2026 update; provider sites). Re-verify every price on each provider's site before launch and every 60–90 days after.
 - Overall scores are calculated automatically from the four criteria scores using the weights on the How We Review page (30/25/25/20). Edit the criteria scores in build.py, not the totals.
 - Scores are editorial starting points. Adjust them to your own evaluation so you can stand behind them.
-- `https://AFFILIATE-LINK-A` … `-E` → your tracking links (keep rel="sponsored nofollow"). A = Pallas Health, B = WW Med+, C = Ro, D = PlushCare, E = Hims & Hers.
+- `https://AFFILIATE-LINK-A` … `-E` → your tracking links (keep rel="sponsored nofollow"). Order: DirectMeds (featured, link set), Pallas Health, WW Med+, Ro, PlushCare. Set each provider's `url` in build.py.
 - `[Author Name]`, `[Reviewer Name, MD]`, company address, `[State]` → real people and details
 - `images/provider-*.svg` → official logos from each affiliate program's brand-asset kit
 - Dashed "Image slot" boxes → your own screenshots or photos
