@@ -6,6 +6,7 @@
 - **New footer on every page:** Consumer health data privacy, Cookie policy, the "Your Privacy Choices / Do Not Sell or Share" link with its icon, and a Cookie settings button. 
 - **New pages:** privacy.html (replaced), consumer-health-data-privacy.html, your-privacy-choices.html, cookie-policy.html, and the pre-landers in lp/.
 - **Removed pages:** How we review, Our team, Accessibility and Contact. Their old URLs redirect through `_redirects` (Netlify): methodology goes to the homepage `#method` section, team to `about.html#team`, contact to `about.html#contact`.
+- **Offer list:** DirectMeds is #1 as a labeled "Featured partner" (paid placement) with its calculated score of 9.2. Hims & Hers was removed, and its review page redirects to the Top 5.
 - **Generator safety:** build.py no longer generates privacy.html, so rebuilding won't overwrite the new policy.
 
 ## Which files are generated
@@ -30,7 +31,9 @@ Put these after the consent snippet in the `<head>`. For generated pages, add th
 - [ ] Ad platforms and affiliate partner names in the consumer-health-data sharing table
 - [ ] Hosting/CDN cookie row and analytics retention period (cookie-policy)
 - [ ] Privacy request form: your-privacy-choices.html posts to `/api/privacy-request`. Point it at a form service (Formspree, Netlify Forms, etc.).
-- [ ] Affiliate links: `https://AFFILIATE-LINK-A` … `-E` in build.py
+- [ ] Affiliate links: DirectMeds is set (the `url` field in build.py). Pallas, WW Med+, Ro and PlushCare still use `https://AFFILIATE-LINK-B` … `-E`. Add a `url=` to each one's entry in build.py.
+- [ ] DirectMeds link contains network macros (`{affiliate_id}`, `{transaction_id}`, `{sub1}`…). Confirm with the network whether you should replace them with your own sub-IDs.
+- [ ] Provider logos: `images/provider-<slug>.svg` (for example provider-directmeds.svg). Replace them with the official brand-kit logos.
 - [ ] Set up mailboxes: hello@ and privacy@glp1reviewguide.com
 - [ ] `[State]` in Terms (governing law)
 
