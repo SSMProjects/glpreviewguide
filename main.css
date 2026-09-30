@@ -25,13 +25,18 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 [id]{scroll-margin-top:84px}
 
 /* hero */
-.hero{padding:52px 0 44px}
+.hero{padding:40px 0 32px;background:#F4F6FA;border-bottom:1px solid var(--line)}
 .hero_grid{display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
+.hero_copy{max-width:800px}
+.intro{background:#fff;padding:28px 0 32px;border-bottom:1px solid var(--line)}
+.intro .dek{font-size:16px;color:#4F4A57;margin:0;max-width:none}
 .kicker{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;font-size:13.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--plum)}
 .kicker.light{color:#DCDCFF}
 .hero h1{font:700 clamp(24.48px,3.4vw,38.08px)/1.05 var(--disp);margin:0 0 16px;letter-spacing:-.015em;color:#000}
 .hero h1 em{font-style:italic}
 .dek{font-size:16px;color:var(--muted);margin:0 0 24px;max-width:56ch}
+.dek p{margin:0 0 12px}
+.dek p:last-child{margin-bottom:0}
 .hero_actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
 .btn_dark,.btn_line{display:inline-block;text-decoration:none;font:700 16px var(--body);padding:13px 22px;border-radius:999px;border:2px solid var(--ink);cursor:pointer}
 .btn_dark{background:var(--ink);color:#fff}
@@ -52,7 +57,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .hc_facts dt{font-size:12px;color:var(--muted)}
 .hc_facts dd{margin:2px 0 0;font:700 18px var(--disp)}
 .hc_fine{font-size:12px;color:var(--muted);margin:10px 0 0;text-align:center}
-@media(max-width:880px){.hero_grid{grid-template-columns:1fr}}
 
 .cta{display:block;text-align:center;background:var(--coral);color:#fff;text-decoration:none;font:700 17px var(--body);padding:14px 20px;border-radius:999px;transition:background .15s}
 .cta:hover{background:var(--coral-d)}
