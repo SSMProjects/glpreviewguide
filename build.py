@@ -375,7 +375,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 </div></section>
 
 <div class="w">
- <div class="safety"><i class="fa-solid fa-circle-info"></i><p><strong>Before you compare:</strong> GLP-1 medications require a prescription and a medical evaluation, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="disclosure.html#medical">Medical disclaimer</a></p></div>
+ <div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications require a prescription and a medical evaluation, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="disclosure.html#medical">Medical disclaimer</a></p></div>
 </div>
 
 <section class="picks"><div class="w">
