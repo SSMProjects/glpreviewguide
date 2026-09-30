@@ -165,7 +165,7 @@ DIRECTMEDS = dict(name="DirectMeds", short="DirectMeds", flag="Best all-inclusiv
   pricing="Compounded semaglutide is $297 a month and compounded tirzepatide $399 a month. That price includes the medication, doctor visits, supplies and shipping, with no separate membership fee. New patients get $150 off the first month, so semaglutide starts at $147. If your prescription isn't approved, you get a full refund.",
   bestfor="People paying out of pocket who want one all-inclusive price, fast doctor review and quick delivery, and who are comfortable with compounded medication. If you want brand-name drugs or to use insurance, compare Ro, WeightWatchers Med+ or PlushCare.",
   was="$297/mo", now="$147", now_note="first month (compounded semaglutide, $150 off)",
-  then="Then $297/mo; tirzepatide $399/mo. Full refund if not approved.", perk="Doctor visits, supplies + shipping included")
+  then="", perk="Doctor visits, supplies + shipping included")
 
 # DirectMeds is a paid featured placement at #1 (disclosed on the page). Its score is calculated the same way as everyone else's.
 P = [DIRECTMEDS, PALLAS] + [p for p in P if p["name"] not in ("Mochi Health", "Hims & Hers")]
@@ -281,6 +281,7 @@ def card(i,p):
            "perk":"24/7 support + free expedited delivery"}
     crit="".join(f'<li><span>{n}</span><i><b style="width:{v}%"></b></i><em>{v/10:.1f}</em></li>' for n,v in p["scores"])
     was=f'<s>{p["was"]}</s>' if p["was"] else ""
+    then_markup=f'{p["then"]}<br>' if p["then"] else ""
     logo=f'<span class="pick_logo_text">{p["name"]}</span>' if i in (2,3,4) else f'<img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80">'
     review='<span class="more">Full review</span>' if i in (2,3,4) else f'<a class="more" href="review-{p["slug"]}.html">Full review</a>'
     return f"""
@@ -304,7 +305,7 @@ def card(i,p):
  </div>
  <footer class="pick_foot">
   <div class="pick_price"><span class="pp_label">Starting price</span><span class="pp_now">{was}{p["now"]}</span><span class="pp_note">{p["now_note"]}</span></div>
-  <p class="pick_then">{p["then"]}<br><strong>{p["perk"]}</strong></p>
+  <p class="pick_then">{then_markup}<strong>{p["perk"]}</strong></p>
   <div class="pick_cta"><a class="cta" href="{link(p)}" {REL}>See if I qualify</a>{review}</div>
  </footer>
 </article>"""
@@ -356,7 +357,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <main>
 <section class="hero"><div class="w hero_grid">
  <div class="hero_copy">
-  <p class="kicker"><i class="fa-solid fa-scale-balanced"></i> Independent comparison · Updated {UPDATED}</p>
+  <p class="kicker"><i class="fa-solid fa-scale-balanced"></i> Independent comparison · LAST Updated {UPDATED}</p>
   <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared honestly (2026). How ONE Program fixed everything&nbsp;&nbsp;</h1>
   <div class="hero_actions"><a class="btn_dark" href="#pick-1">See the top 5</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
