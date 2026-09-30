@@ -86,6 +86,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .pick_id h2{font:700 30px/1.1 var(--disp);margin:2px 0 6px}
 .pick_sum{margin:0;color:var(--muted);font-size:15.5px;max-width:62ch}
 .pick_ring{text-align:center}
+.pick_ring .ring{width:105.6px;height:105.6px}
 .ring text{font-size:45px}
 .pick_ring span{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:-2px}
 .pick_body{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr) minmax(0,220px);gap:26px;padding:24px 26px}
