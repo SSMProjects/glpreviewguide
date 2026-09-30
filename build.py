@@ -237,9 +237,6 @@ def ring(score, size=96, stroke=9, color="#0000FF"):
 REL='rel="sponsored nofollow noopener" target="_blank"'
 def link(p): return p.get("url") or f'https://AFFILIATE-LINK-{p["k"].upper()}'
 
-def tile(i,p):
-    return f'<a class="tile{" tile_top" if i==1 else ""}" href="#pick-{i}"><span class="tile_rank">{i}</span><span class="tile_name">{p["name"]}</span><span class="tile_flag">{"Featured partner · " if i==1 else ""}{p["flag"]}</span><span class="tile_score">{p["total"]}<small>/10</small></span></a>'
-
 def card(i,p):
     top=i==1
     crit="".join(f'<li><span>{n}</span><i><b style="width:{v}%"></b></i><em>{v/10:.1f}</em></li>' for n,v in p["scores"])
@@ -288,7 +285,7 @@ index_html = f"""<!DOCTYPE html>
 <link rel="icon" href="images/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="main.css">
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
@@ -311,37 +308,28 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
 <header class="nav"><div class="w">
  <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
- <nav aria-label="Main"><a href="#top5">Top 5</a><a href="#fit">Find your fit</a><a href="index.html#method">How we score</a><a href="about.html">About</a></nav>
+ <nav aria-label="Main"><a href="#pick-1">Top 5</a><a href="#fit">Find your fit</a><a href="index.html#method">How we score</a><a href="about.html">About</a></nav>
 </div></header>
 
 <main>
 <section class="hero"><div class="w hero_grid">
  <div class="hero_copy">
   <p class="kicker"><i class="fa-solid fa-scale-balanced"></i> Independent comparison · Updated {UPDATED}</p>
-  <h1>Online GLP-1 programs, <em>compared honestly.</em></h1>
-  <p class="dek">We lined up five popular telehealth programs and compared what matters: who reviews your case, which medications you can get, what you'll really pay each month, and how easy it is to leave.</p>
-  <div class="hero_actions"><a class="btn_dark" href="#top5">See the top 5</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
+  <h1>Online GLP-1 programs, <em>compared honestly (2026). How ONE Program fixed everything&nbsp;&nbsp;</em></h1>
+  <div class="hero_actions"><a class="btn_dark" href="#pick-1">See the top 5</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
    <details><summary>Editorial disclosure</summary><p>We research programs independently. If you sign up through our links we may earn a commission at no cost to you. Brands can't pay to change our scores.</p></details>
-   <details><summary>About our rankings</summary><p>Scores combine clinical care (30%), medication access (25%), price transparency (25%) and ongoing support (20%). <a href="#method">Methodology</a>.</p></details>
   </div>
  </div>
- <aside class="hero_card" aria-label="Featured partner">
-  <p class="hc_label"><i class="fa-solid fa-crown"></i> Featured partner</p>
-  <div class="hc_row">{ring(top["total"],84,8)}<div><h2>{top["name"]}</h2><p>{top["flag"]}</p></div></div>
-  <dl class="hc_facts">
-   <div><dt>First month</dt><dd>{top["now"]}</dd></div>
-   <div><dt>Membership fee</dt><dd>$0</dd></div>
-   <div><dt>If not prescribed</dt><dd>Full refund</dd></div>
-  </dl>
-  <a class="cta" href="{link(top)}" {REL}>See if I qualify</a>
-  <p class="hc_fine">Paid placement. Prescription requires a medical evaluation. Compounded medications are not FDA-approved.</p>
- </aside>
 </div></section>
 
-<section class="glance" id="top5"><div class="w">
- <h2 class="sec">The top 5 at a glance</h2>
- <div class="tiles">{"".join(tile(i,p) for i,p in enumerate(P,1))}</div>
+<section class="intro"><div class="w narrow">
+ <div class="dek">
+  <p>We started by comparing 15 GLP-1 and medical weight-management programs available online. We looked beyond the headline price and compared what people actually get for their money: the medical consultation process, medication options, ongoing provider support, recurring fees, shipping costs, cancellation policies, and what happens if a patient isn't prescribed treatment.</p>
+  <p>The differences were bigger than we expected. One&nbsp;stood out for their combination of transparent pricing, access to licensed medical providers, ongoing support, and overall simplicity.</p>
+  <p style="font-size:17px">We've narrowed the field to five programs below and explain how each compares. Our rankings consider factors such as clinical care, medication access, price transparency, and ongoing support—not promises of a particular weight-loss result. Eligibility and treatment are determined by a licensed healthcare provider, and results vary from person to person.</p>
+  <p>Scroll down to compare the five programs, see what each includes, and decide which options are worth discussing with a healthcare professional.</p>
+ </div>
 </div></section>
 
 <div class="w">

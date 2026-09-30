@@ -28,13 +28,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 /* hero */
 .hero{padding:40px 0 32px;background:#F4F6FA;border-bottom:1px solid var(--line)}
 .hero_grid{display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
-.hero_copy{max-width:800px}
+.hero_copy{max-width:1110px}
 .intro{background:#fff;padding:28px 0 32px;border-bottom:1px solid var(--line);margin-right:auto}
 .intro .w.narrow{max-width:1100px;margin-left:auto;margin-right:auto}
 .intro .dek{font-size:18px;color:#4F4A57;margin:0;max-width:none}
+.intro .dek p:nth-child(3){font-size:17px}
 .kicker{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;font-size:13.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--plum)}
 .kicker.light{color:#DCDCFF}
-.hero h1{font:700 clamp(24.48px,3.75vw,42px)/1.05 var(--disp);margin:0 0 16px;letter-spacing:-.015em;color:#000}
+.hero h1{font:700 clamp(24.48px,3.75vw,42px)/1.05 var(--disp);max-width:1100px;margin:0 0 16px;letter-spacing:-.015em;color:var(--plum)}
 .hero h1 em{font-style:italic}
 .dek{font-size:16px;color:var(--muted);margin:0 0 24px;max-width:56ch}
 .dek p{margin:0 0 12px}
@@ -65,20 +66,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .cta.light{background:#fff;color:var(--plum-d)}
 .cta.light:hover{background:var(--plum-s)}
 
-/* at a glance */
-.glance{padding:10px 0 30px}
 .sec{font:700 clamp(26px,3.4vw,34px)/1.15 var(--disp);margin:0 0 18px}
 .sec_dek{color:var(--muted);max-width:70ch;margin:-6px 0 22px}
-.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.tile{display:flex;min-width:0;flex-direction:column;gap:3px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
-.tile:hover{transform:translateY(-3px);box-shadow:0 10px 24px -14px rgba(31,27,46,.4)}
-.tile_top{background:var(--plum);color:#fff;border-color:var(--plum)}
-.tile_rank{font:700 14px var(--disp);opacity:.7}
-.tile_name{font:700 18px/1.2 var(--disp)}
-.tile_flag{font-size:13px;opacity:.8;flex:1}
-.tile_score{font:700 26px var(--disp);margin-top:6px}
-.tile_score small{font:500 13px var(--body);opacity:.7}
-@media(max-width:900px){.tiles{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
 
 .safety{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--coral);border-radius:14px;padding:16px 18px;font-size:15px;margin:8px 0 10px}
 .safety i{color:var(--coral);font-size:20px;margin-top:3px}
@@ -195,4 +184,4 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .foot p{color:var(--muted)}
 .foot_legal{grid-column:1/-1;border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;margin:0}
 @media(max-width:720px){.foot_grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tile,.cta{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta{transition:none}}
