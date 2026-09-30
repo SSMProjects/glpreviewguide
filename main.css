@@ -118,7 +118,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .more{font-size:14px;font-weight:500}
 @media(max-width:980px){.pick_body{grid-template-columns:1fr 1fr}.pick_logo{grid-column:1/-1;max-width:200px}.pick_lists{grid-column:1/-1}.pick_crit{grid-column:1/-1}.pick_foot{grid-template-columns:minmax(0,1fr) minmax(210px,auto)}.pick_price{grid-column:1/-1}}
 @media(max-width:700px){.pick_head{grid-template-columns:auto 1fr;padding:20px;align-items:start}.pick_rank{width:52px;height:52px;font-size:19px;border-radius:14px}.pick_id h2{font-size:25px}.pick_ring{grid-column:1/-1;display:flex;align-items:center;gap:10px}.pick_ring span{margin:0}.pick_body,.pick_foot{padding:20px}.pick_lists{grid-template-columns:1fr}.pick_foot{grid-template-columns:1fr}.pick_cta{min-width:0}}
-@media(min-width:981px){#pick-3 .pick_foot{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(210px,auto)}}
+@media(min-width:981px){#pick-3 .pick_foot,#pick-4 .pick_foot{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(210px,auto)}}
 
 /* quiz */
 .fit{background:var(--plum-d);color:#fff;padding:56px 0;margin-top:20px}
