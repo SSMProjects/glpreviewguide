@@ -31,7 +31,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .kicker.light{color:#DCDCFF}
 .hero h1{font:700 clamp(24.48px,3.4vw,38.08px)/1.05 var(--disp);margin:0 0 16px;letter-spacing:-.015em;color:#000}
 .hero h1 em{font-style:italic}
-.dek{font-size:19px;color:var(--muted);margin:0 0 24px;max-width:56ch}
+.dek{font-size:16px;color:var(--muted);margin:0 0 24px;max-width:56ch}
 .hero_actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
 .btn_dark,.btn_line{display:inline-block;text-decoration:none;font:700 16px var(--body);padding:13px 22px;border-radius:999px;border:2px solid var(--ink);cursor:pointer}
 .btn_dark{background:var(--ink);color:#fff}
@@ -76,7 +76,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 
 .safety{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--coral);border-radius:14px;padding:16px 18px;font-size:15px;margin:8px 0 10px}
 .safety i{color:var(--coral);font-size:20px;margin-top:3px}
-.safety p{margin:0}
+.safety p{font-size:13px;margin:0}
 
 /* pick cards */
 .picks{padding:24px 0 20px}
