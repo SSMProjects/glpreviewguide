@@ -251,10 +251,24 @@ def card(i,p):
            "now_note":"Weight-loss plans currently start at $168. No monthly membership fee, no hidden fees, and free shipping.",
            "then":"Eligibility and treatment require evaluation by a licensed medical provider.",
            "perk":"No membership fee + free shipping"}
+    elif i==3:
+        p={**p,
+           "name":"MEDVi",
+           "flag":"BEST FOR PRICE-LOCKED GLP-1 CARE",
+           "summary":"Online GLP-1 care with medication, physician review, ongoing guidance, and free shipping included, plus price-locked options with no membership fee.",
+           "total":"9.0",
+           "scores":[("Clinical care",90),("Medication access",92),("Price transparency",91),("Ongoing support",92)],
+           "pros":["No membership or hidden fees on eligible compounded plans","Medication and physician review are included in the program price","Price-lock pricing is available for compounded treatment options","Free shipping directly to your door","Care coaching and dietitian support are included on eligible plans","No insurance is required for cash-pay compounded treatment","HSA/FSA-eligible options are advertised"],
+           "cons":["Treatment requires medical review and a prescription from a licensed provider","Compounded medications are not FDA-approved","Pricing differs depending on medication and treatment option","Brand-name options may have separate membership and medication costs"],
+           "was":"",
+           "now":"$116/mo",
+           "now_note":"Current MEDVi promotional pricing advertises compounded semaglutide starting at $116/month and tirzepatide starting at $166/month on the referenced offer page. Pricing and promotions may change.",
+           "then":"Treatment requires medical review and a prescription from a licensed provider.",
+           "perk":"Price-lock options + free shipping"}
     crit="".join(f'<li><span>{n}</span><i><b style="width:{v}%"></b></i><em>{v/10:.1f}</em></li>' for n,v in p["scores"])
     was=f'<s>{p["was"]}</s>' if p["was"] else ""
-    logo=f'<span class="pick_logo_text">{p["name"]}</span>' if i==2 else f'<img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80">'
-    review='<span class="more">Full review</span>' if i==2 else f'<a class="more" href="review-{p["slug"]}.html">Full review</a>'
+    logo=f'<span class="pick_logo_text">{p["name"]}</span>' if i in (2,3) else f'<img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80">'
+    review='<span class="more">Full review</span>' if i in (2,3) else f'<a class="more" href="review-{p["slug"]}.html">Full review</a>'
     return f"""
 <article class="pick{' pick_top' if top else ''}" id="pick-{i}">
  <header class="pick_head">
