@@ -283,7 +283,6 @@ def card(i,p):
     was=f'<s>{p["was"]}</s>' if p["was"] else ""
     then_markup=f'{p["then"]}<br>' if p["then"] else ""
     logo=f'<span class="pick_logo_text">{p["name"]}</span>' if i in (2,3,4) else f'<img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80">'
-    review='<span class="more">Full review</span>' if i in (2,3,4) else f'<a class="more" href="review-{p["slug"]}.html">Full review</a>'
     return f"""
 <article class="pick{' pick_top' if top else ''}" id="pick-{i}">
  <header class="pick_head">
@@ -306,7 +305,7 @@ def card(i,p):
  <footer class="pick_foot">
   <div class="pick_price"><span class="pp_label">Starting price</span><span class="pp_now">{was}{p["now"]}</span><span class="pp_note">{p["now_note"]}</span></div>
   <p class="pick_then">{then_markup}<strong>{p["perk"]}</strong></p>
-  <div class="pick_cta"><a class="cta" href="{link(p)}" {REL}>See if I qualify</a>{review}</div>
+  <div class="pick_cta"><a class="cta" href="{link(p)}" {REL}>See if I qualify</a></div>
  </footer>
 </article>"""
 
