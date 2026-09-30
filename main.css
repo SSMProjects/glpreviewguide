@@ -90,6 +90,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .pick_ring span{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:-2px}
 .pick_body{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr) minmax(0,220px);gap:26px;padding:24px 26px}
 .pick_logo img{border-radius:12px}
+.pick_logo_text{display:flex;width:160px;height:80px;align-items:center;justify-content:center;color:var(--ink);font:700 24px/1.2 var(--disp)}
 .pick_lists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;min-width:0}
 .pick_lists>div{min-width:0}
 .pick_lists h3{font:700 16px var(--body);margin:0 0 8px}

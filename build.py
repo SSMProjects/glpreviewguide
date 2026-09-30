@@ -239,8 +239,24 @@ def link(p): return p.get("url") or f'https://AFFILIATE-LINK-{p["k"].upper()}'
 
 def card(i,p):
     top=i==1
+    if i==2:
+        p={**p,
+           "name":"TrimRx",
+           "flag":"BEST FOR SIMPLE PRICING",
+           "summary":"Online GLP-1 care with no monthly membership fee, same-price dosing, free shipping, and telemedicine visits included.",
+           "total":"9.2",
+           "scores":[("Clinical care",91),("Medication access",92),("Price transparency",95),("Ongoing support",90)],
+           "pros":["No monthly membership fee","Same price at every dose with no hidden fees","Telemedicine visits are included","Free shipping is included","No insurance is required","Patients can cancel anytime","Licensed medical providers evaluate eligibility and prescribe when appropriate"],
+           "cons":["Compounded medications are not FDA-approved","TrimRx also allows providers to prescribe FDA-approved branded medications, but TrimRx does not dispense or ship those branded medications","If prescribed a branded medication, the patient is responsible for filling it at a pharmacy and paying the associated medication cost","Individual results vary and weight loss is not guaranteed"],
+           "was":"",
+           "now":"$168",
+           "now_note":"Weight-loss plans currently start at $168. No monthly membership fee, no hidden fees, and free shipping.",
+           "then":"Eligibility and treatment require evaluation by a licensed medical provider.",
+           "perk":"No membership fee + free shipping"}
     crit="".join(f'<li><span>{n}</span><i><b style="width:{v}%"></b></i><em>{v/10:.1f}</em></li>' for n,v in p["scores"])
     was=f'<s>{p["was"]}</s>' if p["was"] else ""
+    logo=f'<span class="pick_logo_text">{p["name"]}</span>' if i==2 else f'<img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80">'
+    review='<span class="more">Full review</span>' if i==2 else f'<a class="more" href="review-{p["slug"]}.html">Full review</a>'
     return f"""
 <article class="pick{' pick_top' if top else ''}" id="pick-{i}">
  <header class="pick_head">
@@ -253,7 +269,7 @@ def card(i,p):
   <div class="pick_ring">{ring(p["total"], 96, 9, "#0000FF" if top else "#0000FF")}<span>overall</span></div>
  </header>
  <div class="pick_body">
-  <a class="pick_logo" href="{link(p)}" {REL}><img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80"></a>
+  <a class="pick_logo" href="{link(p)}" {REL}>{logo}</a>
   <div class="pick_lists">
    <div><h3>Why it stands out</h3><ul class="plus">{"".join(f"<li>{x}</li>" for x in p["pros"])}</ul></div>
    <div><h3>Worth knowing</h3><ul class="minus">{"".join(f"<li>{x}</li>" for x in p["cons"])}</ul></div>
@@ -263,7 +279,7 @@ def card(i,p):
  <footer class="pick_foot">
   <div class="pick_price"><span class="pp_label">Starting price</span><span class="pp_now">{was}{p["now"]}</span><span class="pp_note">{p["now_note"]}</span></div>
   <p class="pick_then">{p["then"]}<br><strong>{p["perk"]}</strong></p>
-  <div class="pick_cta"><a class="cta" href="{link(p)}" {REL}>See if I qualify</a><a class="more" href="review-{p["slug"]}.html">Full review</a></div>
+  <div class="pick_cta"><a class="cta" href="{link(p)}" {REL}>See if I qualify</a>{review}</div>
  </footer>
 </article>"""
 
