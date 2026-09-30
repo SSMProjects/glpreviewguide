@@ -30,6 +30,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .hero_grid{display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
 .hero_copy{max-width:800px}
 .intro{background:#fff;padding:28px 0 32px;border-bottom:1px solid var(--line)}
+.intro .w.narrow{margin-left:auto;margin-right:auto}
 .intro .dek{font-size:18px;color:#4F4A57;margin:0;max-width:none}
 .kicker{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;font-size:13.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--plum)}
 .kicker.light{color:#DCDCFF}
