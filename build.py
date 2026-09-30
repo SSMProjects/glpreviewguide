@@ -265,10 +265,24 @@ def card(i,p):
            "now_note":"Current MEDVi promotional pricing advertises compounded semaglutide starting at $116/month and tirzepatide starting at $166/month on the referenced offer page. Pricing and promotions may change.",
            "then":"Treatment requires medical review and a prescription from a licensed provider.",
            "perk":"Price-lock options + free shipping"}
+    elif i==4:
+        p={**p,
+           "name":"Embody",
+           "flag":"BEST FOR ONGOING SUPPORT",
+           "summary":"Online GLP-1 care combining clinician-guided treatment, medication delivery, transparent pricing, and ongoing 24/7 care-team support.",
+           "total":"8.8",
+           "scores":[("Clinical care",90),("Medication access",88),("Price transparency",90),("Ongoing support",94)],
+           "pros":["Compounded GLP-1 injections are currently advertised starting at $79/month","Compounded GLP-1/GIP injections are currently advertised starting at $129/month","No membership or hidden fees are advertised","Medication is included in applicable program pricing","Free expedited delivery","24/7 access to the care team","Unlimited appointments and messaging","Optional care coaching is included at no additional charge"],
+           "cons":["Compounded medications are not FDA-approved or evaluated by the FDA for safety, efficacy, or quality","A licensed provider determines whether treatment and a prescription are appropriate","Pricing varies by treatment and selected plan length","Cancel before the next medication shipment to avoid the next billing cycle"],
+           "was":"",
+           "now":"$79/mo",
+           "now_note":"Compounded GLP-1 injections currently start at $79/month, while GLP-1/GIP injections start at $129/month. Pricing depends on the treatment and plan selected and may change.",
+           "then":"Treatment and prescriptions require review by a licensed healthcare provider.",
+           "perk":"24/7 support + free expedited delivery"}
     crit="".join(f'<li><span>{n}</span><i><b style="width:{v}%"></b></i><em>{v/10:.1f}</em></li>' for n,v in p["scores"])
     was=f'<s>{p["was"]}</s>' if p["was"] else ""
-    logo=f'<span class="pick_logo_text">{p["name"]}</span>' if i in (2,3) else f'<img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80">'
-    review='<span class="more">Full review</span>' if i in (2,3) else f'<a class="more" href="review-{p["slug"]}.html">Full review</a>'
+    logo=f'<span class="pick_logo_text">{p["name"]}</span>' if i in (2,3,4) else f'<img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80">'
+    review='<span class="more">Full review</span>' if i in (2,3,4) else f'<a class="more" href="review-{p["slug"]}.html">Full review</a>'
     return f"""
 <article class="pick{' pick_top' if top else ''}" id="pick-{i}">
  <header class="pick_head">
