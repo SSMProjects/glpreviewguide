@@ -56,7 +56,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <section class="hero wl-comparison-hero"><div class="w hero_grid">
  <div class="hero_copy">
   <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;LAST Updated September 2026</p>
-  <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared honestly (2026). How ONE Program fixed everything&nbsp;&nbsp;</h1>
+  <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared side by side (2026)</h1>
   <div class="hero_actions"><a class="btn_dark" href="#pick-1">See the top 5</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
    <details><summary>Editorial disclosure</summary><p>We research each program ourselves. If you sign up through our links we may earn a commission at no cost to you. Compensation, including paid featured placements, can affect rankings and scores.</p></details>
@@ -287,14 +287,14 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
 <script>
 (function(){
-  var T={"DirectMeds": {"rank": 1, "id": "pick-1", "name": "DirectMeds"}, "Pallas Health": {"rank": 2, "id": "pick-2", "name": "Pallas Health"}, "WeightWatchers Med+": {"rank": 3, "id": "pick-3", "name": "WeightWatchers Med+"}, "Ro": {"rank": 4, "id": "pick-4", "name": "Ro"}, "PlushCare": {"rank": 5, "id": "pick-5", "name": "PlushCare"}};
+  var T={"DirectMeds":{"rank":1,"id":"pick-1","name":"DirectMeds"},"TrimRx":{"rank":2,"id":"pick-2","name":"TrimRx"},"MEDVi":{"rank":3,"id":"pick-3","name":"MEDVi"},"Embody":{"rank":4,"id":"pick-4","name":"Embody"},"PlushCare":{"rank":5,"id":"pick-5","name":"PlushCare"}};
   function pick(ins,med,pri){
-    if(ins==='yes') return pri==='doctor' ? ['PlushCare','Takes insurance and gives you a real video visit with a board-certified physician.'] : ['Ro','Its insurance concierge checks whether your plan covers a GLP-1 before you commit.'];
-    if(pri==='coach') return ['WeightWatchers Med+','Pairs obesity medicine specialists with one-on-one dietitian support and a full nutrition app.'];
+    if(ins==='yes') return ['PlushCare','Takes insurance and gives you a real video visit with a board-certified physician.'];
     if(pri==='doctor') return ['PlushCare','Video visits with board-certified physicians licensed in all 50 states.'];
-    if(med==='brand') return ['Ro','Brand-name GLP-1s only, with a low intro month and no long-term contract.'];
+    if(med==='brand') return ['PlushCare','Its physicians can prescribe brand-name GLP-1s and send them to your pharmacy.'];
+    if(pri==='coach') return ['MEDVi','Care coaching and dietitian support are included on eligible plans.'];
     if(med==='any') return ['DirectMeds','One monthly price that includes medication, doctor visits and shipping, with $150 off your first month.'];
-    return ['Pallas Health','Offers both compounded and brand-name options, with no membership fee and one price at every dose.'];
+    return ['TrimRx','No membership fee and the same price at every dose.'];
   }
   document.getElementById('quiz_go').addEventListener('click',function(){
     var q=document.getElementById('quiz'), out=document.getElementById('quiz_out');
