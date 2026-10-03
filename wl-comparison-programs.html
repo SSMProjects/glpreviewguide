@@ -311,5 +311,22 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   });
 })();
 </script>
+<script>
+(function(){
+  var fields=['gclid','campaignid','adgroupid','creative','keyword','matchtype','device','network','placement','targetid'];
+  var incoming=new URLSearchParams(window.location.search);
+  fields.forEach(function(field){if(incoming.has(field)) sessionStorage.setItem('gads.'+field,incoming.get(field));});
+  document.querySelectorAll('a[href]').forEach(function(anchor){
+    var url;
+    try{url=new URL(anchor.href,window.location.href);}catch(error){return;}
+    if(!url.hostname.includes('go.glp1reviewguide.com')) return;
+    fields.forEach(function(field,index){
+      var value=sessionStorage.getItem('gads.'+field);
+      if(value) url.searchParams.set('sub'+(index+1),value);
+    });
+    anchor.href=url.href;
+  });
+})();
+</script>
 </body>
 </html>
