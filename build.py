@@ -158,16 +158,14 @@ DIRECTMEDS = dict(name="DirectMeds", short="DirectMeds", flag="Best all-inclusiv
         "A licensed doctor reviews your intake within 24 hours",
         "Full refund if your prescription isn't approved",
         "LegitScript certified; ships from U.S.-based 503A compounding pharmacies in 1–2 days"],
-  cons=["Compounded medications are not FDA-approved",
-        "No brand-name options such as Wegovy or Zepbound",
+  cons=["No brand-name options such as Wegovy or Zepbound",
         "After the first month, semaglutide is $297/mo and tirzepatide $399/mo, more than some programs on this list",
-        "There's less research on sublingual drops than on injections",
         "Not available in Mississippi or Louisiana; doesn't take insurance"],
   care="You complete a 5-minute health qualifier, choose a medication and pay for the first month, then finish a medical intake in the patient portal. A licensed doctor reviews it within 24 hours and decides whether a prescription is appropriate. Doctor visits are included in the price, and support is available by phone (888-696-7176) and email.",
   pricing="Compounded semaglutide is $297 a month and compounded tirzepatide $399 a month. That price includes the medication, doctor visits, supplies and shipping, with no separate membership fee. New patients get $150 off the first month, so semaglutide starts at $147. If your prescription isn't approved, you get a full refund.",
   bestfor="People paying out of pocket who want one all-inclusive price, fast doctor review and quick delivery, and who are comfortable with compounded medication. If you want brand-name drugs or to use insurance, compare Ro, WeightWatchers Med+ or PlushCare.",
   was="$297/mo", now="$147", now_note="first month (compounded semaglutide, $150 off)",
-  then="Then $297/mo; tirzepatide $399/mo. Full refund if not approved.", perk="Doctor visits, supplies + shipping included")
+  then="", perk="Doctor visits, supplies + shipping included")
 
 # DirectMeds is a paid featured placement at #1 (disclosed on the page). Its score is calculated the same way as everyone else's.
 P = [DIRECTMEDS, PALLAS] + [p for p in P if p["name"] not in ("Mochi Health", "Hims & Hers")]
@@ -237,13 +235,54 @@ def ring(score, size=96, stroke=9, color="#0000FF"):
 REL='rel="sponsored nofollow noopener" target="_blank"'
 def link(p): return p.get("url") or f'https://AFFILIATE-LINK-{p["k"].upper()}'
 
-def tile(i,p):
-    return f'<a class="tile{" tile_top" if i==1 else ""}" href="#pick-{i}"><span class="tile_rank">{i}</span><span class="tile_name">{p["name"]}</span><span class="tile_flag">{"Featured partner · " if i==1 else ""}{p["flag"]}</span><span class="tile_score">{p["total"]}<small>/10</small></span></a>'
-
 def card(i,p):
     top=i==1
+    if i==2:
+        p={**p,
+           "name":"TrimRx",
+           "flag":"BEST FOR SIMPLE PRICING",
+           "summary":"Online GLP-1 care with no monthly membership fee, same-price dosing, free shipping, and telemedicine visits included.",
+           "total":"9.2",
+           "scores":[("Clinical care",91),("Medication access",92),("Price transparency",95),("Ongoing support",90)],
+           "pros":["No monthly membership fee","Same price at every dose with no hidden fees","Telemedicine visits are included","Free shipping is included","No insurance is required","Patients can cancel anytime","Licensed medical providers evaluate eligibility and prescribe when appropriate"],
+           "cons":["Compounded medications are not FDA-approved","TrimRx also allows providers to prescribe FDA-approved branded medications, but TrimRx does not dispense or ship those branded medications","If prescribed a branded medication, the patient is responsible for filling it at a pharmacy and paying the associated medication cost","Individual results vary and weight loss is not guaranteed"],
+           "was":"",
+           "now":"$168",
+           "now_note":"Weight-loss plans currently start at $168. No monthly membership fee, no hidden fees, and free shipping.",
+           "then":"Eligibility and treatment require evaluation by a licensed medical provider.",
+           "perk":"No membership fee + free shipping"}
+    elif i==3:
+        p={**p,
+           "name":"MEDVi",
+           "flag":"BEST FOR PRICE-LOCKED GLP-1 CARE",
+           "summary":"Online GLP-1 care with medication, physician review, ongoing guidance, and free shipping included, plus price-locked options with no membership fee.",
+           "total":"9.0",
+           "scores":[("Clinical care",90),("Medication access",92),("Price transparency",91),("Ongoing support",92)],
+           "pros":["No membership or hidden fees on eligible compounded plans","Medication and physician review are included in the program price","Price-lock pricing is available for compounded treatment options","Free shipping directly to your door","Care coaching and dietitian support are included on eligible plans","No insurance is required for cash-pay compounded treatment","HSA/FSA-eligible options are advertised"],
+           "cons":["Treatment requires medical review and a prescription from a licensed provider","Compounded medications are not FDA-approved","Pricing differs depending on medication and treatment option","Brand-name options may have separate membership and medication costs"],
+           "was":"",
+           "now":"$116/mo",
+           "now_note":"Current MEDVi promotional pricing advertises compounded semaglutide starting at $116/month and tirzepatide starting at $166/month on the referenced offer page. Pricing and promotions may change.",
+           "then":"Treatment requires medical review and a prescription from a licensed provider.",
+           "perk":"Price-lock options + free shipping"}
+    elif i==4:
+        p={**p,
+           "name":"Embody",
+           "flag":"BEST FOR ONGOING SUPPORT",
+           "summary":"Online GLP-1 care combining clinician-guided treatment, medication delivery, transparent pricing, and ongoing 24/7 care-team support.",
+           "total":"8.8",
+           "scores":[("Clinical care",90),("Medication access",88),("Price transparency",90),("Ongoing support",94)],
+           "pros":["Compounded GLP-1 injections are currently advertised starting at $79/month","Compounded GLP-1/GIP injections are currently advertised starting at $129/month","No membership or hidden fees are advertised","Medication is included in applicable program pricing","Free expedited delivery","24/7 access to the care team","Unlimited appointments and messaging","Optional care coaching is included at no additional charge"],
+           "cons":["Compounded medications are not FDA-approved or evaluated by the FDA for safety, efficacy, or quality","A licensed provider determines whether treatment and a prescription are appropriate","Pricing varies by treatment and selected plan length","Cancel before the next medication shipment to avoid the next billing cycle"],
+           "was":"",
+           "now":"$79/mo",
+           "now_note":"Compounded GLP-1 injections currently start at $79/month, while GLP-1/GIP injections start at $129/month. Pricing depends on the treatment and plan selected and may change.",
+           "then":"Treatment and prescriptions require review by a licensed healthcare provider.",
+           "perk":"24/7 support + free expedited delivery"}
     crit="".join(f'<li><span>{n}</span><i><b style="width:{v}%"></b></i><em>{v/10:.1f}</em></li>' for n,v in p["scores"])
     was=f'<s>{p["was"]}</s>' if p["was"] else ""
+    then_markup=f'{p["then"]}<br>' if p["then"] else ""
+    logo=f'<span class="pick_logo_text">{p["name"]}</span>' if i in (2,3,4) else f'<img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80">'
     return f"""
 <article class="pick{' pick_top' if top else ''}" id="pick-{i}">
  <header class="pick_head">
@@ -256,7 +295,7 @@ def card(i,p):
   <div class="pick_ring">{ring(p["total"], 96, 9, "#0000FF" if top else "#0000FF")}<span>overall</span></div>
  </header>
  <div class="pick_body">
-  <a class="pick_logo" href="{link(p)}" {REL}><img src="images/provider-{p["slug"]}.svg" alt="{p["name"]}" width="160" height="80"></a>
+  <a class="pick_logo" href="{link(p)}" {REL}>{logo}</a>
   <div class="pick_lists">
    <div><h3>Why it stands out</h3><ul class="plus">{"".join(f"<li>{x}</li>" for x in p["pros"])}</ul></div>
    <div><h3>Worth knowing</h3><ul class="minus">{"".join(f"<li>{x}</li>" for x in p["cons"])}</ul></div>
@@ -265,8 +304,8 @@ def card(i,p):
  </div>
  <footer class="pick_foot">
   <div class="pick_price"><span class="pp_label">Starting price</span><span class="pp_now">{was}{p["now"]}</span><span class="pp_note">{p["now_note"]}</span></div>
-  <p class="pick_then">{p["then"]}<br><strong>{p["perk"]}</strong></p>
-  <div class="pick_cta"><a class="cta" href="{link(p)}" {REL}>See if I qualify</a><a class="more" href="review-{p["slug"]}.html">Full review</a></div>
+  <p class="pick_then">{then_markup}<strong>{p["perk"]}</strong></p>
+  <div class="pick_cta"><a class="cta" href="{link(p)}" {REL}>See if I qualify</a></div>
  </footer>
 </article>"""
 
@@ -288,7 +327,7 @@ index_html = f"""<!DOCTYPE html>
 <link rel="icon" href="images/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="main.css">
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
@@ -311,41 +350,32 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
 <header class="nav"><div class="w">
  <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
- <nav aria-label="Main"><a href="#top5">Top 5</a><a href="#fit">Find your fit</a><a href="index.html#method">How we score</a><a href="about.html">About</a></nav>
+ <nav aria-label="Main"><a href="#pick-1">Top 5</a><a href="#fit">Find your fit</a><a href="index.html#method">How we score</a><a href="about.html">About</a></nav>
 </div></header>
 
 <main>
 <section class="hero"><div class="w hero_grid">
  <div class="hero_copy">
-  <p class="kicker"><i class="fa-solid fa-scale-balanced"></i> Independent comparison · Updated {UPDATED}</p>
-  <h1>Online GLP-1 programs, <em>compared honestly.</em></h1>
-  <p class="dek">We lined up five popular telehealth programs and compared what matters: who reviews your case, which medications you can get, what you'll really pay each month, and how easy it is to leave.</p>
-  <div class="hero_actions"><a class="btn_dark" href="#top5">See the top 5</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
+  <p class="kicker"><i class="fa-solid fa-scale-balanced"></i> Independent comparison · LAST Updated {UPDATED}</p>
+  <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared honestly (2026). How ONE Program fixed everything&nbsp;&nbsp;</h1>
+  <div class="hero_actions"><a class="btn_dark" href="#pick-1">See the top 5</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
    <details><summary>Editorial disclosure</summary><p>We research programs independently. If you sign up through our links we may earn a commission at no cost to you. Brands can't pay to change our scores.</p></details>
-   <details><summary>About our rankings</summary><p>Scores combine clinical care (30%), medication access (25%), price transparency (25%) and ongoing support (20%). <a href="#method">Methodology</a>.</p></details>
   </div>
  </div>
- <aside class="hero_card" aria-label="Featured partner">
-  <p class="hc_label"><i class="fa-solid fa-crown"></i> Featured partner</p>
-  <div class="hc_row">{ring(top["total"],84,8)}<div><h2>{top["name"]}</h2><p>{top["flag"]}</p></div></div>
-  <dl class="hc_facts">
-   <div><dt>First month</dt><dd>{top["now"]}</dd></div>
-   <div><dt>Membership fee</dt><dd>$0</dd></div>
-   <div><dt>If not prescribed</dt><dd>Full refund</dd></div>
-  </dl>
-  <a class="cta" href="{link(top)}" {REL}>See if I qualify</a>
-  <p class="hc_fine">Paid placement. Prescription requires a medical evaluation. Compounded medications are not FDA-approved.</p>
- </aside>
 </div></section>
 
-<section class="glance" id="top5"><div class="w">
- <h2 class="sec">The top 5 at a glance</h2>
- <div class="tiles">{"".join(tile(i,p) for i,p in enumerate(P,1))}</div>
+<section class="intro"><div class="w narrow">
+ <div class="dek">
+  <p>We started by comparing <strong>15 GLP-1 and medical weight-management programs</strong> available online. We looked beyond the headline price and compared what people actually get for their money: the medical consultation process, medication options, ongoing provider support, recurring fees, shipping costs, cancellation policies, and what happens if a patient isn't prescribed treatment.</p>
+  <p>The differences were bigger than we expected. <strong>One&nbsp;stood out for their combination of transparent pricing, access to licensed medical providers, ongoing support, and overall simplicity.</strong></p>
+  <p style="font-size:17px">We've narrowed the field to five programs below and explain how each compares. Our rankings consider factors such as clinical care, medication access, price transparency, and ongoing support—not promises of a particular weight-loss result. Eligibility and treatment are determined by a licensed healthcare provider, and results vary from person to person.</p>
+  <p><strong>Scroll down to compare the five programs</strong>, see what each includes, and decide which options are worth discussing with a healthcare professional.</p>
+ </div>
 </div></section>
 
 <div class="w">
- <div class="safety"><i class="fa-solid fa-circle-info"></i><p><strong>Before you compare:</strong> GLP-1 medications require a prescription and a medical evaluation, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="disclosure.html#medical">Medical disclaimer</a></p></div>
+ <div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications require a prescription and a medical evaluation, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="disclosure.html#medical">Medical disclaimer</a></p></div>
 </div>
 
 <section class="picks"><div class="w">

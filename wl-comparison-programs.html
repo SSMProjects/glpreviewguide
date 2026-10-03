@@ -13,6 +13,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="main.css">
+<style>
+.wl-comparison-cards .pick_head{display:flex;align-items:center;gap:16px;padding:12px 20px}
+.wl-comparison-cards .pick_id{min-width:0}
+.wl-comparison-cards .pick_id h2{margin:2px 0 0}
+.wl-comparison-cards .pick_body{display:grid;grid-template-columns:minmax(130px,160px) minmax(0,1fr) minmax(0,1fr) minmax(190px,220px);gap:18px;padding:18px 20px;align-items:start}
+.wl-comparison-cards .pick_lists{display:contents}
+.wl-comparison-cards .pick_lists>div,.wl-comparison-cards .pick_ratings{min-width:0}
+.wl-comparison-cards .pick_crit{width:100%;padding:12px}
+.wl-comparison-cards .pick_ratings .pick_ring{display:flex;flex-direction:column;align-items:center;margin-top:8px}
+.wl-comparison-cards .pick_ratings .pick_ring .ring{width:106.26px;height:106.26px}
+.wl-comparison-cards .pick_ratings .pick_ring .ring text{font-size:36.685px}
+.wl-comparison-cards .pick_foot{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(180px,220px);gap:18px;padding:12px 20px}
+.wl-comparison-cards .pick_cta{min-width:0}
+@media(max-width:980px){.wl-comparison-cards .pick_body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.wl-comparison-cards .pick_logo,.wl-comparison-cards .pick_ratings{grid-column:1/-1}.wl-comparison-cards .pick_foot{grid-template-columns:minmax(0,1fr) minmax(210px,auto)}.wl-comparison-cards .pick_price{grid-column:1/-1}}
+@media(max-width:700px){.wl-comparison-cards .pick_head{padding:14px 16px}.wl-comparison-cards .pick_body,.wl-comparison-cards .pick_foot{grid-template-columns:1fr;padding:16px}.wl-comparison-cards .pick_body{gap:16px}.wl-comparison-cards .pick_foot{gap:12px}}
+</style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -37,9 +53,9 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 </div></header>
 
 <main>
-<section class="hero"><div class="w hero_grid">
+<section class="hero wl-comparison-hero"><div class="w hero_grid">
  <div class="hero_copy">
-  <p class="kicker"><i class="fa-solid fa-scale-balanced"></i> Independent comparison · LAST Updated September 2026</p>
+  <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;LAST Updated September 2026</p>
   <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared side by side (2026)</h1>
   <div class="hero_actions"><a class="btn_dark" href="#pick-1">See the top 5</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
@@ -52,7 +68,6 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  <div class="dek">
   <p>We started by comparing <strong>15 GLP-1 and medical weight-management programs</strong> available online. We looked beyond the headline price and compared what people actually get for their money: the medical consultation process, medication options, ongoing provider support, recurring fees, shipping costs, cancellation policies, and what happens if a patient isn't prescribed treatment.</p>
   <p>The differences were bigger than we expected. <strong>One&nbsp;stood out for their combination of transparent pricing, access to licensed medical providers, ongoing support, and overall simplicity.</strong></p>
-  <p>We've narrowed the field to five programs below and explain how each compares. Our rankings consider factors such as clinical care, medication access, price transparency, and ongoing support—not promises of a particular weight-loss result. Eligibility and treatment are determined by a licensed healthcare provider, and results vary from person to person.</p>
   <p><strong>Scroll down to compare the five programs</strong>, see what each includes, and decide which options are worth discussing with a healthcare professional.</p>
  </div>
 </div></section>
@@ -61,7 +76,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  <div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications require a prescription and a medical evaluation, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="disclosure.html#medical">Medical disclaimer</a></p></div>
 </div>
 
-<section class="picks"><div class="w">
+<section class="picks wl-comparison-cards"><div class="w">
  
 <article class="pick pick_top" id="pick-1">
  <header class="pick_head">
@@ -69,12 +84,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <div class="pick_id">
    <p class="pick_flag">Featured partner · Best all-inclusive monthly price</p>
    <h2>DirectMeds</h2>
-   <p class="pick_sum">One monthly price that includes the medication, doctor visits, supplies and shipping, with compounded semaglutide or tirzepatide as an injection or under-the-tongue drops.</p>
-  </div>
-  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 9.5 out of 10">
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/>
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="13.7" transform="rotate(-90 48.0 48.0)"/>
-<text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">9.5</text></svg><span>overall</span></div>
+   </div>
  </header>
  <div class="pick_body">
   <a class="pick_logo" href="https://directmeds.com/dm-offers-stc/?oid=12&amp;uid=61&amp;affid=1020&amp;sub1={affiliate_id}&amp;sub2={transaction_id}&amp;sub3={sub1}&amp;sub4={sub2}&amp;sub5={sub3}" rel="sponsored nofollow noopener" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F78788a01b0f54994a49e55659b334045?format=webp&amp;width=800&amp;height=1200" alt="DirectMeds" width="160" height="80"></a>
@@ -82,7 +92,9 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <div><h3>Why it stands out</h3><ul class="plus"><li>One monthly price covers medication, doctor visits, supplies and shipping, with no membership fee</li><li>$150 off the first month: compounded semaglutide is $147 to start</li><li>Choose injections or sublingual (under-the-tongue) drops</li><li>A licensed doctor reviews your intake within 24 hours</li><li>Full refund if your prescription isn't approved</li><li>LegitScript certified; ships from U.S.-based 503A compounding pharmacies in 1–2 days</li></ul></div>
    <div><h3>Worth knowing</h3><ul class="minus"><li>No brand-name options such as Wegovy or Zepbound</li><li>Not available in Mississippi or Louisiana; doesn't take insurance</li></ul></div>
   </div>
-  <ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:94%"></b></i><em>9.4</em></li><li><span>Medication access</span><i><b style="width:92%"></b></i><em>9.2</em></li><li><span>Price transparency</span><i><b style="width:99%"></b></i><em>9.9</em></li><li><span>Ongoing support</span><i><b style="width:96%"></b></i><em>9.6</em></li></ul>
+  <div class="pick_ratings"><ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:94%"></b></i><em>9.4</em></li><li><span>Medication access</span><i><b style="width:92%"></b></i><em>9.2</em></li><li><span>Price transparency</span><i><b style="width:99%"></b></i><em>9.9</em></li><li><span>Ongoing support</span><i><b style="width:96%"></b></i><em>9.6</em></li></ul>
+  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 9.5 out of 10"><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="13.7" transform="rotate(-90 48.0 48.0)"/><text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">9.5</text></svg><span>overall</span></div>
+  </div>
  </div>
  <footer class="pick_foot">
   <div class="pick_price"><span class="pp_label">Starting price</span><span class="pp_now"><s>$297/mo</s>$147</span><span class="pp_note">first month (compounded semaglutide, $150 off)</span></div>
@@ -96,12 +108,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <div class="pick_id">
    <p class="pick_flag">BEST FOR SIMPLE PRICING</p>
    <h2>TrimRx</h2>
-   <p class="pick_sum">Online GLP-1 care with no monthly membership fee, same-price dosing, free shipping, and telemedicine visits included.</p>
-  </div>
-  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 9.2 out of 10">
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/>
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="21.9" transform="rotate(-90 48.0 48.0)"/>
-<text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">9.2</text></svg><span>overall</span></div>
+   </div>
  </header>
  <div class="pick_body">
   <a class="pick_logo" href="https://AFFILIATE-LINK-B" rel="sponsored nofollow noopener" target="_blank"><span class="pick_logo_text">TrimRx</span></a>
@@ -109,7 +116,9 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <div><h3>Why it stands out</h3><ul class="plus"><li>No monthly membership fee</li><li>Same price at every dose with no hidden fees</li><li>Telemedicine visits are included</li><li>Free shipping is included</li><li>No insurance is required</li><li>Patients can cancel anytime</li><li>Licensed medical providers evaluate eligibility and prescribe when appropriate</li></ul></div>
    <div><h3>Worth knowing</h3><ul class="minus"><li>Compounded medications are not FDA-approved</li><li>TrimRx also allows providers to prescribe FDA-approved branded medications, but TrimRx does not dispense or ship those branded medications</li><li>If prescribed a branded medication, the patient is responsible for filling it at a pharmacy and paying the associated medication cost</li></ul></div>
   </div>
-  <ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:91%"></b></i><em>9.1</em></li><li><span>Medication access</span><i><b style="width:92%"></b></i><em>9.2</em></li><li><span>Price transparency</span><i><b style="width:95%"></b></i><em>9.5</em></li><li><span>Ongoing support</span><i><b style="width:90%"></b></i><em>9.0</em></li></ul>
+  <div class="pick_ratings"><ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:91%"></b></i><em>9.1</em></li><li><span>Medication access</span><i><b style="width:92%"></b></i><em>9.2</em></li><li><span>Price transparency</span><i><b style="width:95%"></b></i><em>9.5</em></li><li><span>Ongoing support</span><i><b style="width:90%"></b></i><em>9.0</em></li></ul>
+  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 9.2 out of 10"><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="21.9" transform="rotate(-90 48.0 48.0)"/><text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">9.2</text></svg><span>overall</span></div>
+  </div>
  </div>
  <footer class="pick_foot">
   <div class="pick_price"><span class="pp_label">Starting price</span><span class="pp_now">$168</span><span class="pp_note">Weight-loss plans currently start at $168. No monthly membership fee, no hidden fees, and free shipping.</span></div>
@@ -123,12 +132,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <div class="pick_id">
    <p class="pick_flag">Best for compounded + brand-name options</p>
    <h2>MEDGm</h2>
-   <p class="pick_sum">Compounded and brand-name GLP-1s with labs included and clear pricing.</p>
-  </div>
-  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 9.0 out of 10">
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/>
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="27.3" transform="rotate(-90 48.0 48.0)"/>
-<text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">9.0</text></svg><span>overall</span></div>
+   </div>
  </header>
  <div class="pick_body">
   <a class="pick_logo" href="https://medgm.org/glp-1?utm_source=Katalys&amp;amp;utm_campaign=affiliate&amp;amp;utm_medium=performance&amp;amp;offer_id=1656&amp;amp;publisher_id=13653&amp;amp;transaction_id=1028848c88f17af01bcb391760a9a1" rel="sponsored nofollow noopener" target="_blank"><img src="https://medgm.org/glp-1/logomedgm.svg" alt="MEDGm" width="160" height="80"></a>
@@ -136,7 +140,9 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <div><h3>Why it stands out</h3><ul class="plus"><li>Compounded GLP-1 injections start at $169; oral tablets start at $239</li><li>Brand-name Wegovy, Zepbound or Ozempic for a $99 membership plus medication cost</li><li>Labs included, with licensed medical providers and provider-led coaching</li><li>Free, expedited delivery to your door</li><li>100% refund if a provider decides you don't qualify</li><li>HSA/FSA accepted; LegitScript certified</li></ul></div>
    <div><h3>Worth knowing</h3><ul class="minus"><li>Compounded medications are not FDA-approved and haven't been evaluated for safety, efficacy or quality</li><li>Brand-name medication costs are billed on top of the $99 membership</li><li>A licensed provider decides whether treatment is appropriate</li></ul></div>
   </div>
-  <ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:91%"></b></i><em>9.1</em></li><li><span>Medication access</span><i><b style="width:90%"></b></i><em>9.0</em></li><li><span>Price transparency</span><i><b style="width:90%"></b></i><em>9.0</em></li><li><span>Ongoing support</span><i><b style="width:88%"></b></i><em>8.8</em></li></ul>
+  <div class="pick_ratings"><ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:91%"></b></i><em>9.1</em></li><li><span>Medication access</span><i><b style="width:90%"></b></i><em>9.0</em></li><li><span>Price transparency</span><i><b style="width:90%"></b></i><em>9.0</em></li><li><span>Ongoing support</span><i><b style="width:88%"></b></i><em>8.8</em></li></ul>
+  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 9.0 out of 10"><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="27.3" transform="rotate(-90 48.0 48.0)"/><text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">9.0</text></svg><span>overall</span></div>
+  </div>
  </div>
  <footer class="pick_foot">
   <div class="pick_price"><span class="pp_label">Starting price</span><span class="pp_now">From $169</span><span class="pp_note">compounded injections · tablets from $239</span></div>
@@ -150,12 +156,8 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <div class="pick_id">
    <p class="pick_flag">Best for one price at every dose</p>
    <h2>Pallas Health</h2>
-   <p class="pick_sum">No membership fee and the same compounded price at every dose, plus brand-name options.</p>
-  </div>
-  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 8.8 out of 10">
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/>
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="32.8" transform="rotate(-90 48.0 48.0)"/>
-<text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">8.8</text></svg><span>overall</span></div>
+   </div>
+
  </header>
  <div class="pick_body">
   <a class="pick_logo" href="https://www.pallashealth.co/lp/weight-loss?ktly=1&amp;amp;utm_source=Katalys&amp;amp;utm_campaign=affiliate&amp;amp;utm_medium=performance&amp;amp;offer_id=1622&amp;amp;publisher_id=13653&amp;amp;transaction_id=1021f68044eb55e1168e69c72c0510" rel="sponsored nofollow noopener" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F9d2f0834e77a442ea573882e9014f1f9?format=webp&amp;width=800&amp;height=1200" alt="Pallas Health" width="160" height="80"></a>
@@ -163,7 +165,9 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <div><h3>Why it stands out</h3><ul class="plus"><li>No membership fee: provider visits, follow-ups and messaging included</li><li>Compounded semaglutide from $139 the first month, then $199 every 4 weeks or about $139/mo on the annual plan</li><li>Compounded tirzepatide from $179 the first month, then $299 every 4 weeks or about $239/mo on the annual plan</li><li>One price at every dose on compounded plans</li><li>Free, discreet shipping from U.S. pharmacies; cancel anytime</li><li>Full refund if a clinician decides treatment isn't right for you; FSA/HSA eligible; LegitScript certified</li></ul></div>
    <div><h3>Worth knowing</h3><ul class="minus"><li>Compounded medications are not FDA-approved and are not generic versions of brand-name drugs</li><li>Brand-name medications are cash-pay and expensive (e.g. Wegovy $1,349/mo)</li><li>Doesn't bill insurance; 7 states plus Washington, D.C. require one video visit to start</li></ul></div>
   </div>
-  <ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:88%"></b></i><em>8.8</em></li><li><span>Medication access</span><i><b style="width:90%"></b></i><em>9.0</em></li><li><span>Price transparency</span><i><b style="width:89%"></b></i><em>8.9</em></li><li><span>Ongoing support</span><i><b style="width:86%"></b></i><em>8.6</em></li></ul>
+  <div class="pick_ratings"><ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:88%"></b></i><em>8.8</em></li><li><span>Medication access</span><i><b style="width:90%"></b></i><em>9.0</em></li><li><span>Price transparency</span><i><b style="width:89%"></b></i><em>8.9</em></li><li><span>Ongoing support</span><i><b style="width:86%"></b></i><em>8.6</em></li></ul>
+  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 8.8 out of 10"><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="32.8" transform="rotate(-90 48.0 48.0)"/><text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">8.8</text></svg><span>overall</span></div>
+  </div>
  </div>
  <footer class="pick_foot">
   <div class="pick_price"><span class="pp_label">Starting price</span><span class="pp_now"><s>$199</s>$139</span><span class="pp_note">first month · compounded semaglutide</span></div>
@@ -177,12 +181,8 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <div class="pick_id">
    <p class="pick_flag">Best for 24/7 care team access</p>
    <h2>Trimi</h2>
-   <p class="pick_sum">Medication, supplies, provider care and shipping in one plan, with a care team available 24/7.</p>
-  </div>
-  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 8.8 out of 10">
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/>
-<circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="32.8" transform="rotate(-90 48.0 48.0)"/>
-<text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">8.8</text></svg><span>overall</span></div>
+   </div>
+
  </header>
  <div class="pick_body">
   <a class="pick_logo" href="https://trytrimi.com/" rel="sponsored nofollow noopener" target="_blank"><img src="https://trytrimi.com/images/homepage/trimi-logo.png" alt="Trimi" width="160" height="80"></a>
@@ -190,7 +190,9 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <div><h3>Why it stands out</h3><ul class="plus"><li>Medication, supplies, provider care and shipping included in one plan</li><li>Compounded semaglutide from $99/mo and tirzepatide from $125/mo on the 12-month plan</li><li>Monthly, 3-, 6- and 12-month plans available</li><li>Care team available 24/7, with replies within 1 hour</li><li>Free overnight shipping once your medication is compounded</li><li>6-month money-back policy (see Trimi's terms); LegitScript certified</li></ul></div>
    <div><h3>Worth knowing</h3><ul class="minus"><li>Compounded medications are not FDA-approved; the FDA doesn't review them for safety, effectiveness or quality</li><li>The lowest prices require a 12-month plan; monthly plans cost more</li><li>No brand-name medication options</li></ul></div>
   </div>
-  <ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:87%"></b></i><em>8.7</em></li><li><span>Medication access</span><i><b style="width:86%"></b></i><em>8.6</em></li><li><span>Price transparency</span><i><b style="width:89%"></b></i><em>8.9</em></li><li><span>Ongoing support</span><i><b style="width:92%"></b></i><em>9.2</em></li></ul>
+  <div class="pick_ratings"><ul class="pick_crit" aria-label="Score breakdown"><li><span>Clinical care</span><i><b style="width:87%"></b></i><em>8.7</em></li><li><span>Medication access</span><i><b style="width:86%"></b></i><em>8.6</em></li><li><span>Price transparency</span><i><b style="width:89%"></b></i><em>8.9</em></li><li><span>Ongoing support</span><i><b style="width:92%"></b></i><em>9.2</em></li></ul>
+  <div class="pick_ring"><svg class="ring" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Score 8.8 out of 10"><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#E6E6FF" stroke-width="9"/><circle cx="48.0" cy="48.0" r="43.5" fill="none" stroke="#0000FF" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3" stroke-dashoffset="32.8" transform="rotate(-90 48.0 48.0)"/><text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#1F1B2E">8.8</text></svg><span>overall</span></div>
+  </div>
  </div>
  <footer class="pick_foot">
   <div class="pick_price"><span class="pp_label">Starting price</span><span class="pp_now">From $99/mo</span><span class="pp_note">semaglutide, 12-month plan · tirzepatide from $125/mo</span></div>

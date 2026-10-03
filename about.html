@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>About Us | GLP1ReviewGuide.com</title>
-<meta name="description" content="Who we are and why we compare online weight-care programs.">
+<meta name="description" content="Who we are, how we research online GLP-1 weight-care programs, how we keep our reviews independent, and how to reach our editorial team.">
 <link rel="canonical" href="https://glp1reviewguide.com/about.html">
 <link rel="icon" href="images/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,75 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <!-- Non-essential tags must be blocked until consent, e.g.:
 <script type="text/plain" data-gr-consent="analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
 <script type="text/plain" data-gr-consent="advertising">/* Taboola / Outbrain / Google Ads pixel */</script> -->
+
+<!-- About-page styles. Scoped under .about so nothing leaks into the rest of the site.
+     Fonts and brand blue match the homepage; change the tokens below in one place if needed. -->
+<style>
+.about{
+  --ab-serif: var(--serif, "Fraunces", Georgia, "Times New Roman", serif);
+  --ab-sans: var(--sans, "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+  --ab-ink: #1E1B24;
+  --ab-muted: #615B6B;
+  --ab-accent: #0000FF;
+  --ab-accent-soft: #EEF0FF;
+  --ab-line: #E4E1EA;
+  --ab-panel: #F7F7FA;
+  font-family: var(--ab-sans);
+  color: var(--ab-ink);
+}
+.about *{box-sizing:border-box}
+.about .ab-wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.about .ab-narrow{max-width:720px}
+
+/* Intro */
+.about .ab-hero{padding:56px 0 40px;border-bottom:1px solid var(--ab-line)}
+.about .ab-updated{font-size:14px;color:var(--ab-muted);margin:0 0 14px}
+.about .ab-hero h1{font:700 clamp(34px,6vw,54px)/1.08 var(--ab-serif);letter-spacing:-.01em;margin:0 0 20px;max-width:16ch;overflow-wrap:anywhere}
+.about .ab-lede{font-size:clamp(18px,2.2vw,21px);line-height:1.6;color:var(--ab-ink);margin:0;max-width:62ch}
+
+/* Body sections */
+.about .ab-section{padding:48px 0;border-bottom:1px solid var(--ab-line)}
+.about .ab-section:last-of-type{border-bottom:0}
+.about .ab-grid{display:grid;grid-template-columns:1fr;gap:12px 48px}
+@media (min-width:860px){.about .ab-grid{grid-template-columns:240px 1fr}}
+.about h2{font:600 clamp(24px,3.2vw,30px)/1.2 var(--ab-serif);margin:0 0 8px}
+.about h3{font:700 17px/1.35 var(--ab-sans);margin:0 0 6px}
+.about p{font-size:17px;line-height:1.7;margin:0 0 16px;max-width:66ch}
+.about p:last-child{margin-bottom:0}
+.about a{color:var(--ab-accent);text-underline-offset:3px}
+.about a:focus-visible{outline:2px solid var(--ab-accent);outline-offset:3px;border-radius:2px}
+
+/* Research steps (a real sequence, so numbered) */
+.about .ab-steps{list-style:none;margin:24px 0 0;padding:0;counter-reset:step}
+.about .ab-steps li{counter-increment:step;position:relative;padding:0 0 22px 52px}
+.about .ab-steps li:last-child{padding-bottom:0}
+.about .ab-steps li::before{content:counter(step);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--ab-accent-soft);color:var(--ab-accent);font:700 15px/34px var(--ab-sans);text-align:center}
+.about .ab-steps li:not(:last-child)::after{content:"";position:absolute;left:16px;top:40px;bottom:6px;width:2px;background:var(--ab-line)}
+.about .ab-steps p{font-size:16px;color:var(--ab-muted)}
+
+/* Scoring weights */
+.about .ab-weights{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--ab-line);border:1px solid var(--ab-line);border-radius:10px;overflow:hidden;margin:24px 0 16px}
+@media (min-width:640px){.about .ab-weights{grid-template-columns:repeat(4,1fr)}}
+.about .ab-weights div{background:#fff;padding:18px 16px}
+.about .ab-weights b{display:block;font:700 28px/1 var(--ab-serif);color:var(--ab-accent);margin-bottom:6px}
+.about .ab-weights span{font-size:14px;color:var(--ab-muted)}
+
+/* Are / aren't */
+.about .ab-split{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}
+@media (min-width:700px){.about .ab-split{grid-template-columns:1fr 1fr}}
+.about .ab-col{border:1px solid var(--ab-line);border-radius:10px;padding:22px}
+.about .ab-col.is-not{background:var(--ab-panel)}
+.about .ab-col ul{margin:10px 0 0;padding:0 0 0 18px}
+.about .ab-col li{font-size:16px;line-height:1.6;margin:0 0 8px}
+
+/* Contact */
+.about .ab-contact{background:var(--ab-accent-soft);border-radius:12px;padding:28px;margin-top:20px;display:grid;grid-template-columns:1fr;gap:24px}
+@media (min-width:700px){.about .ab-contact{grid-template-columns:1.3fr 1fr}}
+.about .ab-contact address{font-style:normal;font-size:16px;line-height:1.7}
+.about .ab-note{font-size:14px!important;color:var(--ab-muted)}
+
+@media (prefers-reduced-motion:reduce){.about *{scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
 <div class="adbar">Advertising disclosure: we may earn a commission when you visit providers from this page. This does not affect our scores. <a href="disclosure.html">Learn more</a></div>
@@ -30,22 +99,102 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <nav class="main" aria-label="Main">
     <a href="index.html">Best GLP-1 programs</a>
     <a href="review-pallas-health.html">Reviews</a>
-    <a href="about.html">About</a>
+    <a href="about.html" aria-current="page">About</a>
   </nav>
 </div></header>
-<main>
-<section class="section"><div class="wrap prose"><h1 style="font:600 clamp(30px,8vw,40px)/1.15 var(--serif);margin:0 0 18px;overflow-wrap:anywhere">About GLP1ReviewGuide.com</h1>
-<p>GLP1ReviewGuide.com helps people understand their options for online weight care before they talk to a clinician. The number of telehealth programs offering GLP-1 medications has grown quickly, and their pricing, medications and level of care vary a lot. We lay those differences out side by side.</p>
-<h2 id="team">Our team</h2>
-<p><strong>[Author Name]</strong>, health editor. [Short bio with relevant experience.]</p>
-<p><strong>[Reviewer Name, MD]</strong>, medical reviewer. [Specialty, board certification, and what they review.]</p>
-<div class="img-slot" style="aspect-ratio:3/1">Image slot: add real team headshots (square, at least 400 × 400px).</div>
-<h2>Our editorial standards</h2>
-<p>We base health information on FDA prescribing information and peer-reviewed research, link to sources, and never promise specific results. Commercial relationships don't influence our rankings. See <a href="index.html#method">how we score programs</a>.</p>
-<h2 id="contact">Contact us</h2>
-<p>Questions, corrections or partnership inquiries: email <a href="mailto:hello@glp1reviewguide.com">hello@glp1reviewguide.com</a>. We reply within two business days. We can't give medical advice or help with prescriptions or orders; contact your provider directly. In a medical emergency, call 911.</p>
-<p>[Legal company name]<br>[Street address]<br>[City, State ZIP]</p></div></section>
+
+<main class="about">
+
+  <section class="ab-hero"><div class="ab-wrap">
+    <p class="ab-updated">Last updated September 2026</p>
+    <h1>We read the fine print so you don't have to.</h1>
+    <p class="ab-lede">GLP1ReviewGuide.com is an independent publisher that compares online weight-care programs offering GLP-1 medications. Our goal is simple: give you a clear, honest picture of what each program includes and what it really costs, so you can walk into your consultation informed and ready to ask the right questions.</p>
+  </div></section>
+
+  <section class="ab-section"><div class="ab-wrap ab-grid">
+    <h2>Why we exist</h2>
+    <div>
+      <p>Telehealth weight-care programs have multiplied quickly, and on the surface many of them look alike. The real differences tend to sit in places most people never reach: an introductory price that rises after the first month, medication costs that climb with every dose increase, membership fees billed separately, or cancellation terms that lock you into a full year.</p>
+      <p>Comparing programs properly means working through pricing pages, terms of service, FAQs and sign-up flows one by one. That takes hours, and most people simply don't have them. We do that work and present what we find in a consistent, side-by-side format.</p>
+    </div>
+  </div></section>
+
+  <section class="ab-section" id="method"><div class="ab-wrap ab-grid">
+    <h2>How we research</h2>
+    <div>
+      <p>Every program we cover goes through the same process. We evaluate programs as services. We don't take the medications ourselves or publish personal weight-loss results.</p>
+      <ol class="ab-steps">
+        <li><h3>Gather the public facts</h3><p>We collect each program's published pricing, medication options, clinician model, state availability and refund and cancellation policies directly from its own website and terms.</p></li>
+        <li><h3>Walk through the sign-up</h3><p>We go through each program's intake flow to see what it asks, when you're charged, and whether the price shown at the start matches the price at checkout.</p></li>
+        <li><h3>Compare long-term cost</h3><p>We look past the first month to the ongoing monthly price, including how it changes as your dose goes up and what is billed on top of the membership.</p></li>
+        <li><h3>Score on fixed criteria</h3><p>Each program is rated against the same four weighted criteria, so scores can be compared fairly across providers.</p></li>
+        <li><h3>Review and recheck</h3><p>Health information is checked against FDA prescribing information and peer-reviewed research, and a medical reviewer reads our content before it's published. We recheck prices regularly and update pages when programs change.</p></li>
+      </ol>
+      <div class="ab-weights" role="list" aria-label="Scoring weights">
+        <div role="listitem"><b>30%</b><span>Clinical care</span></div>
+        <div role="listitem"><b>25%</b><span>Medication access</span></div>
+        <div role="listitem"><b>25%</b><span>Price transparency</span></div>
+        <div role="listitem"><b>20%</b><span>Ongoing support</span></div>
+      </div>
+      <p>For a full breakdown of what each criterion covers, see <a href="index.html#method">how we score programs</a>.</p>
+    </div>
+  </div></section>
+
+  <section class="ab-section"><div class="ab-wrap ab-grid">
+    <h2>What we are, and what we're not</h2>
+    <div>
+      <p>It matters to be clear about our role. We help you compare the programs that provide care. We do not provide care ourselves.</p>
+      <div class="ab-split">
+        <div class="ab-col">
+          <h3>We are</h3>
+          <ul>
+            <li>An independent consumer publisher</li>
+            <li>Researchers of pricing, policies and program features</li>
+            <li>Committed to correcting errors quickly and openly</li>
+          </ul>
+        </div>
+        <div class="ab-col is-not">
+          <h3>We are not</h3>
+          <ul>
+            <li>A healthcare provider, clinic or pharmacy</li>
+            <li>Able to prescribe, assess eligibility or give medical advice</li>
+            <li>Affiliated with or endorsed by any medication manufacturer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="ab-section"><div class="ab-wrap ab-grid">
+    <h2>How we make money</h2>
+    <div>
+      <p>GLP1ReviewGuide.com is free to read. We earn revenue through affiliate partnerships with some of the programs we cover: if you visit a provider through one of our links and sign up, we may receive a commission at no extra cost to you.</p>
+      <p>These relationships never determine our scores. Every program is rated on the same published criteria, and providers cannot pay to improve their rating or remove unfavorable information. Full details are in our <a href="disclosure.html">advertising disclosure</a>.</p>
+    </div>
+  </div></section>
+
+  <section class="ab-section" id="contact"><div class="ab-wrap ab-grid">
+    <h2>Contact us</h2>
+    <div>
+      <p>Spotted an error, have a question, or want to suggest a program we should review? We'd like to hear from you.</p>
+      <div class="ab-contact">
+        <div>
+          <h3>Email the editorial team</h3>
+          <p><a href="mailto:hello@glp1reviewguide.com">hello@glp1reviewguide.com</a></p>
+          <p class="ab-note">We aim to reply within two business days. We can't give medical advice or help with prescriptions, orders or billing; please contact your provider directly. In a medical emergency, call 911.</p>
+        </div>
+        <address>
+          <strong>GLP1 Review Guide</strong><br>
+         30 N Gould St Ste N<br>
+          Sheridan, WY 82801<br>
+          United States
+        </address>
+      </div>
+    </div>
+  </div></section>
+
 </main>
+
 <footer class="site"><div class="wrap">
   <div class="cols">
     <div><h4>GLP1ReviewGuide.com</h4><p>Independent comparisons of online weight-care programs that offer GLP-1 medications, so you can arrive at your doctor's appointment with better questions.</p></div>
@@ -54,7 +203,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   </div>
   <div class="legal">
     <p>The content on this site is for general information only and is not medical advice. GLP-1 medications are available by prescription only and are not right for everyone. Talk to a licensed healthcare provider about the benefits and risks, including serious side effects, before starting any medication. Individual results vary.</p>
-    <p>GLP1ReviewGuide.com is an independent publisher. We are not a healthcare provider or pharmacy and do not sell, prescribe or dispense medications. Product names and trademarks belong to their respective owners and are used for identification only.</p>
+    <p>GLP1ReviewGuide.com is an independent publisher. We are not a healthcare provider or pharmacy and do not sell, prescribe or dispense medications. Compounded medications are not FDA-approved. Product names and trademarks belong to their respective owners and are used for identification only.</p>
     <p>&copy; 2026 GLP1ReviewGuide.com. All rights reserved.</p>
   </div>
 </div></footer>
