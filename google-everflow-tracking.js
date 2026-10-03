@@ -1,68 +1,35 @@
 (function () {
   'use strict';
-
-  var keys = [
-    'gclid',
-    'campaignid',
-    'adgroupid',
-    'creative',
-    'keyword',
-    'matchtype',
-    'device',
-    'network',
-    'placement',
-    'targetid'
-  ];
-
+  var KEYS = ['gclid','campaignid','adgroupid','creative','keyword','matchtype','device','network','placement','targetid'];
+  var SUBS = ['sub1','sub2','sub3','sub4','sub5','sub6','sub7','sub8','sub9','sub10'];
   var params = new URLSearchParams(window.location.search);
-
-  keys.forEach(function (key) {
-    var value = params.get(key);
-    if (value) {
-      sessionStorage.setItem('glp1_' + key, value);
-    }
-  });
-
-  function getValue(key) {
-    return params.get(key) ||
-           sessionStorage.getItem('glp1_' + key) ||
-           '';
+  // Bing click ID goes into sub1 when there is no gclid
+  if (!params.get('gclid') && params.get('msclkid')) params.set('gclid', params.get('msclkid'));
+  function canTrack() {
+    return !!(window.GRConsent && window.GRConsent.get().advertising);
   }
-
-  var mapping = {
-    sub1: getValue('gclid'),
-    sub2: getValue('campaignid'),
-    sub3: getValue('adgroupid'),
-    sub4: getValue('creative'),
-    sub5: getValue('keyword'),
-    sub6: getValue('matchtype'),
-    sub7: getValue('device'),
-    sub8: getValue('network'),
-    sub9: getValue('placement'),
-    sub10: getValue('targetid')
-  };
-
-  function updateEverflowLinks() {
-    document.querySelectorAll('a[href*="go.glp1reviewguide.com"]').forEach(function (link) {
+  function save() {
+    if (!canTrack()) return;
+    KEYS.forEach(function (k) { var v = params.get(k); if (v) { try { sessionStorage.setItem('glp1_' + k, v); } catch (e) {} } });
+  }
+  function val(k) {
+    if (!canTrack()) return '';
+    var v = params.get(k); if (v) return v;
+    try { return sessionStorage.getItem('glp1_' + k) || ''; } catch (e) { return ''; }
+  }
+  function update() {
+    save();
+    document.querySelectorAll('a[href*="go.glp1reviewguide.com"]').forEach(function (a) {
       try {
-        var url = new URL(link.href, window.location.origin);
-
-        Object.keys(mapping).forEach(function (sub) {
-          if (mapping[sub]) {
-            url.searchParams.set(sub, mapping[sub]);
-          }
+        var u = new URL(a.getAttribute('href'), window.location.origin);
+        SUBS.forEach(function (s, i) {
+          var v = val(KEYS[i]);
+          if (v) u.searchParams.set(s, v); else u.searchParams.delete(s);
         });
-
-        link.href = url.toString();
-      } catch (e) {
-        console.error('Everflow tracking URL error:', e);
-      }
+        a.href = u.toString();
+      } catch (e) {}
     });
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', updateEverflowLinks);
-  } else {
-    updateEverflowLinks();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', update); else update();
+  document.addEventListener('gr:consent', update);
 })();
