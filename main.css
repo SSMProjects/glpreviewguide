@@ -111,16 +111,16 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .pick_foot{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:18px 26px;background:var(--cream);border-top:1px solid var(--line)}
 .pick_price{display:flex;flex-direction:column}
 .pp_label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.pp_now{font:700 30px/1.1 var(--disp)}
-.pp_now s{font:400 16px var(--body);color:#9A93A5;margin-right:8px}
+.pp_now{font:700 33px/1.1 var(--disp)}
+.pp_now s{font:400 17.6px var(--body);color:#9A93A5;margin-right:8px}
 .pp_note{font-size:13px;color:var(--muted)}
 .pick_then{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
 .pick_then strong{color:var(--sage)}
 .pick_cta{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:210px}
-.pick_cta .cta{width:100%;font-size:15.3px;padding:12.6px 18px}
-.pick_cta .pick_price{text-align:center}
+.pick_cta .cta{order:0;width:100%;font-size:15.3px;padding:12.6px 18px}
+.pick_cta .pick_price{order:1;text-align:center}
 .pick_cta .pp_label{display:none}
-.pick_cta .pp_now{font-size:20px}
+.pick_cta .pp_now{font-size:22px}
 .pick_cta .pp_note{font-size:12px}
 .more{font-size:14px;font-weight:500}
 @media(max-width:980px){.pick_body{grid-template-columns:1fr 1fr}.pick_logo{grid-column:1/-1;max-width:200px}.pick_lists{grid-column:1/-1}.pick_crit{grid-column:1/-1}.pick_foot{grid-template-columns:minmax(0,1fr) minmax(210px,auto)}.pick_price{grid-column:1/-1}}
