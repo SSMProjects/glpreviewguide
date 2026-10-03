@@ -112,11 +112,12 @@
       '<h2 id="gr-cc-title">Your privacy choices</h2>' +
       '<p>We use essential cookies to run this site. With your permission we also use analytics cookies to see which pages help people, and advertising cookies to measure our ads. ' +
       'Because this site covers a health topic, we keep these <strong>off unless you turn them on</strong>. See our <a href="' + POLICY_URL + '">Cookie Policy</a> and <a href="/consumer-health-data-privacy.html">Consumer Health Data Privacy Policy</a>.</p>' +
+      '<p>Separately, if you arrived from a Google ad, the link you clicked includes Google\'s ad click ID. Unless you choose <strong>Reject non-essential</strong>, turn off Advertising below, or use Global Privacy Control, we keep that ID in your browser for this visit and pass it to our affiliate tracking platform (Everflow) when you click through to a program, so we can be credited for referrals and report results back to Google Ads.</p>' +
       (gpc ? '<p class="gr-note">We detected a Global Privacy Control signal from your browser, so advertising cookies and any sale or sharing of your data are turned off.</p>' : '') +
       '<div class="gr-cc-prefs" hidden>' +
         '<div class="switch_row"><div><b>Essential</b><p>Needed for security, load balancing and remembering these choices. Always on.</p></div><label class="switch"><input type="checkbox" checked disabled aria-label="Essential cookies, always on"><span></span></label></div>' +
         '<div class="switch_row"><div><b>Analytics</b><p>Aggregate traffic measurement (for example Google Analytics). Never used to build a health profile.</p></div><label class="switch"><input type="checkbox" data-k="analytics" aria-label="Analytics cookies"><span></span></label></div>' +
-        '<div class="switch_row"><div><b>Advertising</b><p>Lets ad partners (Google Ads, Taboola, Outbrain) measure which ads led to a visit. Turning this on may count as "sharing" under some state laws.</p></div><label class="switch"><input type="checkbox" data-k="advertising" aria-label="Advertising cookies"' + (gpc ? " disabled" : "") + '><span></span></label></div>' +
+        '<div class="switch_row"><div><b>Advertising</b><p>Lets ad partners (Google Ads, Taboola, Outbrain) set cookies and pixels to measure which ads led to a visit. Saving with this off also stops ad click ID attribution. Advertising may count as "sharing" under some state laws.</p></div><label class="switch"><input type="checkbox" data-k="advertising" aria-label="Advertising cookies"' + (gpc ? " disabled" : "") + '><span></span></label></div>' +
       '</div>' +
       '<div class="gr-cc-actions">' +
         '<button type="button" class="gr-primary" data-act="reject">Reject non-essential</button>' +
