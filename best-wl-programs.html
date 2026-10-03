@@ -60,7 +60,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 
 /* ranked rows */
 .list{padding:24px 0 6px}
-.list_head{display:grid;grid-template-columns:44px 170px 200px 1fr 120px 180px;gap:18px;padding:0 20px 8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.list_head{display:grid;grid-template-columns:44px 170px 200px minmax(0,1fr) 120px 180px;padding:0 20px 8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.list_head span{padding:0 18px}
+.list_head span:first-child{padding:0;text-align:center}
+.list_head span:nth-child(2){padding-left:18px}
 .list_head span:nth-child(5){text-align:center}
 @media(max-width:980px){.list_head{display:none}}
 .row{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 8px 22px -16px rgba(31,27,46,.35);margin:0 0 16px;overflow:hidden;transition:box-shadow .15s}
@@ -71,7 +74,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .promo .badge svg{width:14px;height:14px;color:var(--gold)}
 .promo .deal{background:#fff;color:var(--blue);border-radius:999px;padding:3px 12px;font-size:13px}
 .tagline{display:inline-block;margin:0;background:var(--ink);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:0 0 10px 0}
-.rgrid{display:grid;grid-template-columns:44px 170px 200px 1fr 120px 180px;gap:18px;align-items:center;padding:18px 20px}
+.rgrid{display:grid;grid-template-columns:44px 170px 200px minmax(0,1fr) 120px 180px;align-items:center;padding:18px 20px}
+.rgrid>.rnum{padding:0 12px}
+.rgrid>.logo{margin:0 18px}
+.rgrid>.who,.rgrid>.hl{padding:0 18px}
+.rgrid>.scorebox{margin:0 18px}
+.rgrid>.act{padding:0}
+@media(min-width:981px){.rgrid{background-image:linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line));background-repeat:no-repeat;background-size:1px 100%;background-position:234px 0,434px 0,calc(100% - 320px) 0,calc(100% - 200px) 0;background-origin:border-box}}
 .rnum{font:700 30px/1 var(--disp);color:var(--blue);text-align:center}
 .row:not(.top) .rnum{color:var(--ink)}
 .logo{display:grid;place-items:center;height:78px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:8px;text-decoration:none}
@@ -97,11 +106,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .act{display:flex;flex-direction:column;gap:8px;text-align:center}
 .btn{display:block;text-decoration:none;font-weight:800;font-size:16.5px;border-radius:999px;padding:13px 12px;text-align:center;background:var(--coral);color:#fff;box-shadow:0 3px 0 var(--coral-d);transition:background .15s}
 .btn:hover{background:var(--coral-d)}
-.row .act .btn{font-size:11.14px;padding:8.78px 8.1px}
+.row .act .btn{width:85%;margin:0 auto;font-size:11.14px;padding:8.78px 8.1px}
 .act .site{font-size:13px;font-weight:700;color:var(--blue)}
 .act .fine{font-size:11.5px;color:var(--muted);margin:0;line-height:1.35}
 @media(max-width:980px){
- .rgrid{grid-template-columns:40px 1fr 110px;grid-template-areas:"num logo score" "who who who" "feats feats feats" "act act act";gap:14px;padding:16px}
+ .rgrid{grid-template-columns:40px 1fr 110px;grid-template-areas:"num logo score" "who who who" "feats feats feats" "act act act";gap:14px;padding:16px;background-image:none}
+ .rgrid>.rnum,.rgrid>.logo,.rgrid>.who,.rgrid>.hl,.rgrid>.scorebox,.rgrid>.act{margin:0;padding:0}
  .rnum{grid-area:num}.logo{grid-area:logo}.who{grid-area:who}.hl{grid-area:feats}.scorebox{grid-area:score}.act{grid-area:act}
  .act{max-width:420px;width:100%;margin:0 auto}
 }
@@ -205,7 +215,7 @@ body.has-banner .sticky{display:none!important}
     <li>Full refund if your prescription isn't approved</li>
    </ul><div class="pills"><span class="pill">No membership fee</span><span class="pill">LegitScript certified</span></div></div>
    <div class="scorebox"><span class="n">9.6</span><span class="stars" aria-label="5 out of 5 stars"><i style="width:100%"></i></span><span class="l">Exceptional</span></div>
-   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/62M42X/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">See if you qualify.</a><p class="fine"></p></div>
+   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/62M42X/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">SEE IF YOU QUALIFY</a><p class="fine"></p></div>
   </div>
  </article>
 
@@ -223,7 +233,7 @@ body.has-banner .sticky{display:none!important}
     <li>No insurance required; cancel anytime</li>
    </ul><div class="pills"><span class="pill">Free shipping</span></div></div>
    <div class="scorebox"><span class="n">9.4</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Excellent</span></div>
-   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/641ZRJ/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">See if you qualify.</a></div>
+   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/641ZRJ/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">SEE IF YOU QUALIFY</a></div>
   </div>
  </article>
 
@@ -241,7 +251,7 @@ body.has-banner .sticky{display:none!important}
     <li>100% refund if a provider decides you don't qualify</li>
    </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Free expedited delivery</span></div></div>
    <div class="scorebox"><span class="n">9.3</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Excellent</span></div>
-   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/69KHPZ/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">See if you qualify.</a></div>
+   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/69KHPZ/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">SEE IF YOU QUALIFY</a></div>
   </div>
  </article>
 
@@ -259,7 +269,7 @@ body.has-banner .sticky{display:none!important}
     <li>Full refund if a clinician decides treatment isn't right for you</li>
    </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Brand-name options</span></div></div>
    <div class="scorebox"><span class="n">9.1</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Very good</span></div>
-   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/6BZDGK/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">See if you qualify.</a></div>
+   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/6BZDGK/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">SEE IF YOU QUALIFY</a></div>
   </div>
  </article>
 
@@ -277,7 +287,7 @@ body.has-banner .sticky{display:none!important}
     <li>Free overnight shipping once compounded</li>
    </ul><div class="pills"><span class="pill">LegitScript certified</span></div></div>
    <div class="scorebox"><span class="n">8.9</span><span class="stars" aria-label="3.75 out of 5 stars"><i style="width:75%"></i></span><span class="l">Very good</span></div>
-   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/686M1C/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">See if you qualify.</a></div>
+   <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/686M1C/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">SEE IF YOU QUALIFY</a></div>
   </div>
  </article>
 </div></section>
