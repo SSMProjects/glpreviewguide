@@ -446,7 +446,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  </div>
 </div></section>
 
-<section class="faq"><div class="w narrow">
+<section class="faq" id="faq"><div class="w narrow">
  <h2 class="sec">Questions people ask</h2>
  {faq_html}
 </div></section>
@@ -463,7 +463,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  <div><a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="28" height="28"><span>GLP1Review<b>Guide</b><small style="font-size:13px;font-weight:500;color:#615B6B">.com</small></span></a>
   <p>Independent comparisons of online GLP-1 programs, so you can walk into your consultation with better questions.</p>
   <p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
- <div><h4>Explore</h4><ul><li><a href="#top5">Top 5 programs</a></li><li><a href="#fit">Find your fit</a></li><li><a href="#method">How we score</a></li><li><a href="about.html">About us</a></li></ul></div>
+ <div><h4>Explore</h4><ul><li><a href="#fit">Find your fit</a></li><li><a href="#method">How we score</a></li><li><a href="about.html">About us</a></li></ul></div>
  <div><h4>Legal</h4><ul><li><a href="disclosure.html">Advertising disclosure</a></li><li><a href="disclosure.html#medical">Medical disclaimer</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="consumer-health-data-privacy.html">Consumer health data privacy</a></li><li><a href="cookie-policy.html">Cookie policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a class="pc" href="your-privacy-choices.html"><img src="images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices / Do Not Sell or Share My Personal Information</a></li><li><button type="button" class="linklike" data-gr-open-consent>Cookie settings</button></li></ul></div>
  <p class="foot_legal">Content is for information only and is not medical advice. GLP-1 medications require a prescription; talk to a licensed clinician about benefits and risks. {SITE} is an independent publisher, not a healthcare provider or pharmacy. We may earn commissions from links on this page, which may affect where programs appear. &copy; 2026 {SITE}.</p>
 </div></footer>

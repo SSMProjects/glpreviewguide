@@ -1,23 +1,20 @@
 (function () {
   'use strict';
 
+  var CLICK_ID_KEYS = ['gclid', 'wbraid', 'gbraid'];
+  var ATTR_KEYS = ['campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device', 'network', 'placement', 'targetid'];
+  var ALL_ATTR_KEYS = ['gclid', 'wbraid', 'gbraid'].concat(ATTR_KEYS);
+
   var KEYS = ['gclid', 'campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device', 'network', 'placement', 'targetid'];
   var SUBS = ['sub1', 'sub2', 'sub3', 'sub4', 'sub5', 'sub6', 'sub7', 'sub8', 'sub9', 'sub10'];
-
-  function decodeSafely(v) {
-    if (!v || typeof v !== 'string') return '';
-    try {
-      return decodeURIComponent(v.replace(/\+/g, ' '));
-    } catch (e) {
-      return v;
-    }
-  }
 
   function isMacro(v) {
     if (!v || typeof v !== 'string') return true;
     var s = v.trim();
     if (!s) return true;
-    return s.charAt(0) === '{' || s.charAt(s.length - 1) === '}' || s.indexOf('{') !== -1 || s.indexOf('}') !== -1;
+    return s.indexOf('{') !== -1 || s.indexOf('}') !== -1 ||
+           s.indexOf('%7B') !== -1 || s.indexOf('%7D') !== -1 ||
+           s.indexOf('%7b') !== -1 || s.indexOf('%7d') !== -1;
   }
 
   function cleanValue(v) {
@@ -39,7 +36,7 @@
       var m = document.cookie.match(/(?:^|; )gr_consent=([^;]*)/);
       if (m) {
         var p = JSON.parse(decodeURIComponent(m[1]));
-        return !!(p && p.advertising === true && !p.saleOptOut);
+        return !!(p && p.advertising === true && !p.saleOptOut && !p.gpc);
       }
     } catch (e) {}
     return false;
@@ -49,7 +46,7 @@
   // Preserves functional and security storage (e.g. gr_consent).
   function clearAttributionStorage() {
     try {
-      KEYS.forEach(function (k) {
+      ALL_ATTR_KEYS.forEach(function (k) {
         sessionStorage.removeItem('glp1_' + k);
         sessionStorage.removeItem('gads.' + k);
         sessionStorage.removeItem('gads_' + k);
@@ -77,7 +74,7 @@
       var params = new URLSearchParams(window.location.search);
       var raw = params.get(k);
       if (!raw) return '';
-      return cleanValue(decodeSafely(raw));
+      return cleanValue(raw);
     } catch (e) {
       return '';
     }
@@ -92,27 +89,59 @@
     }
   }
 
+  function getIncomingClick() {
+    for (var i = 0; i < CLICK_ID_KEYS.length; i++) {
+      var key = CLICK_ID_KEYS[i];
+      var val = getUrlParam(key);
+      if (val) return { key: key, value: val };
+    }
+    return null;
+  }
+
+  function getStoredClick() {
+    for (var i = 0; i < CLICK_ID_KEYS.length; i++) {
+      var key = CLICK_ID_KEYS[i];
+      var val = getStoredParam(key);
+      if (val) return { key: key, value: val };
+    }
+    return null;
+  }
+
   // Priority: current URL parameter -> valid consented stored value -> blank.
+  // For Sub1 (click ID): prefers gclid, falls back to wbraid/gbraid if gclid is absent.
   function getAttributionValue(k) {
     var fromUrl = getUrlParam(k);
     if (fromUrl) return fromUrl;
+    if (k === 'gclid') {
+      var altFromUrl = getUrlParam('wbraid') || getUrlParam('gbraid');
+      if (altFromUrl) return altFromUrl;
+    }
     if (hasAdvertisingConsent()) {
-      return getStoredParam(k);
+      var stored = getStoredParam(k);
+      if (stored) return stored;
+      if (k === 'gclid') {
+        return getStoredParam('wbraid') || getStoredParam('gbraid');
+      }
     }
     return '';
   }
 
   function storeAttribution() {
-    var incomingGclid = getUrlParam('gclid');
-    if (incomingGclid) {
-      var storedGclid = getStoredParam('gclid');
-      if (storedGclid && storedGclid !== incomingGclid) {
-        // A new paid click replaces attribution from an older visit
+    var incomingClick = getIncomingClick();
+    if (incomingClick) {
+      var storedClick = getStoredClick();
+      // When a new Google ad click identifier arrives, clear the previous attribution record
+      // before saving the new click's values so missing fields remain empty and stale values
+      // from older clicks are never inherited.
+      if (!storedClick || storedClick.key !== incomingClick.key || storedClick.value !== incomingClick.value) {
         clearAttributionStorage();
       }
+      try {
+        sessionStorage.setItem('glp1_' + incomingClick.key, incomingClick.value);
+      } catch (e) {}
     }
 
-    KEYS.forEach(function (k) {
+    ATTR_KEYS.forEach(function (k) {
       var v = getUrlParam(k);
       if (v) {
         try {
@@ -156,9 +185,11 @@
     hasConsent: hasAdvertisingConsent,
     clearStorage: clearAttributionStorage,
     update: updateLinks,
+    getIncomingClick: getIncomingClick,
+    getStoredClick: getStoredClick,
     getStoredKeys: function () {
       var active = [];
-      KEYS.forEach(function (k) {
+      ALL_ATTR_KEYS.forEach(function (k) {
         try {
           if (sessionStorage.getItem('glp1_' + k)) active.push(k);
         } catch (e) {}
