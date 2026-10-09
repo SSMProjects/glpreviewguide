@@ -29,7 +29,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <p class="adnote"><b>Advertising</b>We may earn a commission when you visit providers from this site. This can affect where programs appear. <a href="/disclosure.html">Learn more</a></p>
 <header class="nav"><div class="w">
  <a class="brand" href="/"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
- <nav aria-label="Main"><a href="/#top5">Top 5</a><a href="/#fit">Find your fit</a><a href="/#method">How we score</a><a href="/about.html">About</a></nav>
+ <nav aria-label="Main"><a href="/#fit">Find your fit</a><a href="/#method">How we score</a><a href="/about.html">About</a></nav>
 </div></header>
 <main id="main">
 <!-- LEGAL REVIEW: template. Run a cookie scan (e.g. in Chrome DevTools > Application > Cookies, with consent granted)
@@ -38,7 +38,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  <p class="kicker">Privacy</p>
  <h1>Cookie Policy</h1>
  <p class="dek">What cookies and similar technologies we use, why, and how to turn them off.</p>
- <p class="updated">Last updated: September 27, 2026</p>
+ <p class="updated">Last updated: October 3, 2026</p>
 </div></section>
 
 <div class="w legal_wrap">
@@ -55,6 +55,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
   <h2 id="default">Our default: non-essential cookies are off</h2>
   <p>Because this site covers a health topic, analytics and advertising cookies stay <b>off for everyone</b> until you choose to turn them on in our cookie banner. We also treat a <a href="https://globalprivacycontrol.org" rel="noopener">Global Privacy Control</a> signal as a "no" to advertising cookies.</p>
+  <p><strong>One exception: ad click attribution.</strong> If you arrive from a Google ad, we pass the ad click ID in the web address to our affiliate tracking platform when you click through to a program, unless you opt out. This doesn't set advertising cookies. It uses your browser's session storage, described below.</p>
   <p><button type="button" class="btn_dark" data-gr-open-consent>Open cookie settings</button></p>
 
   <h2 id="list">Cookies we use</h2>
@@ -62,6 +63,8 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <thead><tr><th>Category</th><th>Provider &amp; cookie</th><th>Purpose</th><th>Expires</th></tr></thead>
    <tbody>
     <tr><td><b>Essential</b><br>always on</td><td>GLP1ReviewGuide.com: <code>gr_consent</code></td><td>Remembers your cookie and privacy choices</td><td>12 months</td></tr>
+    <tr><td><b>Ad click attribution</b><br>on unless you opt out</td><td>GLP1ReviewGuide.com, session storage: <code>glp1_gclid</code>, <code>glp1_campaignid</code>, <code>glp1_adgroupid</code>, <code>glp1_creative</code>, <code>glp1_keyword</code>, <code>glp1_matchtype</code>, <code>glp1_device</code>, <code>glp1_network</code>, <code>glp1_placement</code>, <code>glp1_targetid</code></td><td>Keeps the Google ad click ID and campaign details from the ad you clicked, so they can be added to our tracking link when you click through to a program</td><td>Until you close the tab or window</td></tr>
+    <tr><td><b>Ad click attribution</b><br>on unless you opt out</td><td>Everflow, on go.glp1reviewguide.com and the program's site</td><td>Records your click on a tracking link, the ad click ID and referral ID, and matches them to a later sign-up for commission and Google Ads conversion reporting</td><td>Set by Everflow and the program; see their policies</td></tr>
     <tr><td><b>Essential</b></td><td><span class="todo">[Hosting/CDN, e.g. Cloudflare: <code>__cf_bm</code>]</span></td><td>Bot protection and security</td><td>30 minutes</td></tr>
     <tr><td><b>Analytics</b><br>opt-in</td><td>Google Analytics: <code>_ga</code>, <code>_ga_*</code></td><td>Counts visits and page views in aggregate</td><td>Up to 14 months</td></tr>
     <tr><td><b>Advertising</b><br>opt-in</td><td>Google Ads: <code>_gcl_au</code>, <code>_gcl_aw</code></td><td>Measures conversions from Google ads</td><td>90 days</td></tr>
@@ -73,13 +76,14 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
   <h2 id="control">How to control cookies</h2>
   <ul>
+   <li><b>Ad click attribution:</b> choose "Reject non-essential," turn off Advertising in Cookie settings, use the opt-out on <a href="/your-privacy-choices.html">Your Privacy Choices</a>, or turn on Global Privacy Control. Any of these stops us from passing ad click IDs and clears the ones stored for your visit.</li>
    <li><b>On this site:</b> use <button type="button" class="linklike" data-gr-open-consent>Cookie settings</button> (also in the footer of every page) or <a href="/your-privacy-choices.html">Your Privacy Choices</a>.</li>
    <li><b>In your browser:</b> block or delete cookies in its settings. If you delete cookies, we'll ask for your choices again.</li>
    <li><b>Industry tools:</b> <a href="https://adssettings.google.com" rel="noopener">Google ad settings</a>, <a href="https://optout.aboutads.info" rel="noopener">DAA WebChoices</a> and <a href="https://optout.networkadvertising.org" rel="noopener">NAI opt-out</a>.</li>
   </ul>
 
   <h2 id="links">Affiliate links</h2>
-  <p>When you click a provider link, the provider's own site may set its own cookies to record that you came from us. That's covered by the provider's privacy policy, not ours. We pass a referral ID only, never your quiz answers.</p>
+  <p>When you click a provider link, the provider's own site may set its own cookies to record that you came from us. That's covered by the provider's privacy policy, not ours. We pass a referral ID and, unless you've opted out, the ad click identifiers described above. We never pass your quiz answers.</p>
   <p>Questions? Email <a href="mailto:privacy@glp1reviewguide.com">privacy@glp1reviewguide.com</a>.</p>
  </div>
 </div>
@@ -89,11 +93,12 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  <div><a class="brand" href="/"><img src="/images/logo.svg" alt="" width="28" height="28"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
   <p>Independent comparisons of online GLP-1 programs, so you can walk into your consultation with better questions.</p>
   <p><a href="mailto:hello@glp1reviewguide.com">hello@glp1reviewguide.com</a></p></div>
- <div><h4>Explore</h4><ul><li><a href="/#top5">Top 5 programs</a></li><li><a href="/#fit">Find your fit</a></li><li><a href="/#method">How we score</a></li><li><a href="/about.html">About us</a></li></ul></div>
+ <div><h4>Explore</h4><ul><li><a href="/#fit">Find your fit</a></li><li><a href="/#method">How we score</a></li><li><a href="/about.html">About us</a></li></ul></div>
  <div><h4>Legal</h4><ul><li><a href="/disclosure.html">Advertising disclosure</a></li><li><a href="/disclosure.html#medical">Medical disclaimer</a></li><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/consumer-health-data-privacy.html">Consumer health data privacy</a></li><li><a href="/cookie-policy.html">Cookie policy</a></li><li><a href="/terms.html">Terms of use</a></li>
   <li><a class="pc" href="/your-privacy-choices.html"><img src="/images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices / Do Not Sell or Share My Personal Information</a></li>
   <li><button type="button" class="linklike" data-gr-open-consent>Cookie settings</button></li></ul></div>
  <p class="foot_legal">Content is for information only and is not medical advice. GLP-1 medications require a prescription and are not right for everyone; talk to a licensed clinician about benefits and risks. GLP1ReviewGuide.com is an independent publisher, not a healthcare provider or pharmacy, and does not sell, prescribe or dispense medication. We may earn commissions from links on this site, which may affect where programs appear. Product names and trademarks belong to their owners and are used for identification only. &copy; 2026 GLP1ReviewGuide.com.</p>
 </div></footer>
+<script src="/google-everflow-tracking.js"></script>
 </body>
 </html>
