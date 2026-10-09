@@ -367,7 +367,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
 <section class="intro"><div class="w narrow">
  <div class="dek">
-  <p>We started by comparing <strong>15 GLP-1 and medical weight-management programs</strong> available online. We looked beyond the headline price and compared what people actually get for their money: the medical consultation process, medication options, ongoing provider support, recurring fees, shipping costs, cancellation policies, and what happens if a patient isn't prescribed treatment.</p>
+  <p>We started by omparing <strong>15 GLP-1 and medical weight-management programs</strong> available online. We looked beyond the headline price and compared what people actually get for their money: the medical consultation process, medication options, ongoing provider support, recurring fees, shipping costs, cancellation policies, and what happens if a patient isn't prescribed treatment.</p>
   <p>The differences were bigger than we expected. <strong>One&nbsp;stood out for their combination of transparent pricing, access to licensed medical providers, ongoing support, and overall simplicity.</strong></p>
   <p style="font-size:17px">We've narrowed the field to five programs below and explain how each compares. Our rankings consider factors such as clinical care, medication access, price transparency, and ongoing support—not promises of a particular weight-loss result. Eligibility and treatment are determined by a licensed healthcare provider, and results vary from person to person.</p>
   <p><strong>Scroll down to compare the five programs</strong>, see what each includes, and decide which options are worth discussing with a healthcare professional.</p>
