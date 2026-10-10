@@ -12,6 +12,10 @@
      Image slots use <div class="ph"> — swap each for your own <img>.
 ===================================================================== -->
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+
 <style>
   :root{
     --ink:#1f2630; --muted:#5a6a7d; --line:#dbe2ea; --paper:#fff;
@@ -120,6 +124,80 @@
   .sf-links a{color:#c6d2df;text-decoration:none;}
   .sf-links a:hover{color:#fff;text-decoration:underline;}
   .sf-copy{font-size:12px;color:#7f8a99;line-height:1.5;}
+
+  /* Publisher branding, scoped to this lander. */
+  .mast{background:#FBF7F2;border-bottom-color:#0000FF;}
+  .bar-inner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;}
+  .mast .menu{justify-self:start;}
+  .mast .brand,.sitefoot .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:#1F1B2E;font:600 20px/1.2 "Fraunces",Georgia,"Times New Roman",serif;white-space:nowrap;}
+  .brand img{display:block;width:32px;height:32px;flex:none;}
+  .mast .brand b,.sitefoot .brand b{color:#0000FF;font-weight:700;}
+  .mast .brand small,.sitefoot .brand small{font-size:13px;font-weight:500;color:#615B6B;}
+  .mast .tagline{justify-self:end;margin-left:0;max-width:180px;text-align:right;line-height:1.5;color:#615B6B;}
+  .btn{background:#0000FF;color:#fff;box-shadow:0 8px 20px -8px rgba(0,0,255,.4);}
+  .btn:hover{background:#0000CC;}
+  .btn:focus-visible,.brand:focus-visible{outline:3px solid #0000FF;outline-offset:4px;}
+  .kicker{background:transparent;color:#615B6B;padding:0;border-radius:0;line-height:1.5;}
+  .sitefoot{background:#FBF7F2;}
+  .sf-brand{margin-bottom:14px;}
+  .sf-links a{color:#0000FF;}
+  .sf-links a:hover{color:#0000CC;text-decoration:underline;}
+  .sf-copy{color:#615B6B;}
+  @media(max-width:760px){.mast .tagline{display:none}}
+  @media(max-width:420px){
+    .bar-inner{padding:15px 12px;gap:4px;}
+    .mast .brand{font-size:16px;gap:6px;}
+    .mast .brand small{font-size:11px;}
+    .mast .brand img{width:26px;height:26px;}
+    .mast .menu{width:28px;height:28px;}
+  }
+
+  /* Requested editorial and footer refinements. */
+  .adflag{background:#1F1B2E;}
+  .mast{border-bottom-width:2px;}
+  .mast .brand{grid-column:2;}
+  .mast .tagline{grid-column:3;}
+  .kicker{display:block;margin-bottom:10px;}
+  .exclusive{display:table;background:#0000FF;color:#fff;padding:8.8px 11px;margin:0 0 16px;font:700 12.1px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:.2em;text-transform:uppercase;}
+  .byline{display:flex;align-items:center;gap:14px;padding:14px 0;}
+  .author-avatar{display:flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border-radius:50%;background:#E3EEF5;color:#00396D;font-weight:700;}
+  .author-details{line-height:1.5;}
+  .author-role{color:var(--muted);}
+  .steps .n{background:#0000FF;}
+  .sitefoot .brand>span{color:#1F1B2E;}
+  .sitefoot .brand{font-size:20px;}
+  .legal{padding-bottom:16px;}
+  .sf-inner{padding:16px 24px;}
+  .sf-brand{margin-bottom:10px;}
+  .sf-links{margin-bottom:10px;}
+
+  /* Reader feedback layout, matching the supplied visual reference. */
+  .comments{padding:28px 24px 24px;border-top:0;background:#fff;font-family:Arial,Helvetica,sans-serif;}
+  .comments-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:22px;border-bottom:1px solid #dedede;margin-bottom:20px;}
+  .comments-heading h3{margin:0;font:700 16px/1.4 Arial,Helvetica,sans-serif;color:#333;}
+  .comments-count{font-size:12px;color:#555;white-space:nowrap;}
+  .comments .cmt{border:0;padding:0;margin:0 0 22px;gap:10px;align-items:flex-start;font-size:14px;}
+  .comments .av{width:40px;height:40px;background:#e3eef5;border:0;overflow:hidden;}
+  .comments .body{min-width:0;background:#f0f2f5;border-radius:12px;padding:8px 10px 10px;}
+  .comments .meta{margin-bottom:3px;color:#0866c6;font-size:14px;line-height:1.4;font-weight:700;}
+  .comments .ctext{margin:0;color:#222;font:400 14px/1.5 Arial,Helvetica,sans-serif;}
+  .comments-more{margin:2px 0 0 50px;color:#0866c6;font:700 14px/1.5 Arial,Helvetica,sans-serif;}
+  @media(max-width:420px){.comments{padding:24px 20px;}.comments-heading{gap:10px;padding-bottom:18px;}}
+
+  .comments .body{background:transparent;padding:0;border-radius:0;}
+  .comment-bubble{background:#f0f2f5;border-radius:12px;padding:8px 10px 10px;}
+  .comments .av img{display:block;width:40px;height:40px;object-fit:cover;border-radius:50%;}
+  .comment-actions{display:flex;align-items:center;gap:4px;padding:6px 10px 0;color:#999;font:700 12px/1.4 Arial,Helvetica,sans-serif;}
+  .comment-actions button{border:0;background:none;padding:0;color:#999;font:inherit;cursor:pointer;}
+  .comment-actions button:hover{text-decoration:underline;}
+  .comment-actions button:focus-visible{outline:2px solid #0866c6;outline-offset:3px;}
+  .comment-actions .comment-like[aria-pressed="true"]{color:#0866c6;}
+  .reaction-pill{display:inline-flex;align-items:center;gap:4px;margin-left:6px;padding:3px 8px 3px 4px;border-radius:999px;background:#fff;box-shadow:0 1px 4px #0002;color:#606770;font-size:11px;font-weight:400;}
+  .reaction-icon{display:flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:#0084ff;color:#fff;}
+  .comments-demo-note{margin:0 0 12px 50px;font:400 11px/1.5 Arial,Helvetica,sans-serif;color:#666;}
+  .reply-draft{padding:10px 0 0;font:400 12px/1.5 Arial,Helvetica,sans-serif;color:#606770;}
+  .reply-draft label{display:block;margin-bottom:4px;}
+  .reply-draft textarea{width:100%;box-sizing:border-box;border:1px solid #ccd0d5;border-radius:8px;padding:8px;font:400 14px/1.5 Arial,Helvetica,sans-serif;resize:vertical;}
 </style>
 </head>
 <body>
@@ -127,19 +205,19 @@
   <div class="adflag">Advertorial</div>
 
   <header class="mast"><div class="bar-inner">
-    <button class="menu" aria-label="Menu"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <div class="brand">GLP-1 Review Guide</div>
+    <a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
     <div class="tagline">Investigative Health Reporting</div>
   </div></header>
 
 <main class="wrap">
 
   <article class="article">
-    <div class="kicker">Health Investigation</div>
+    <div class="kicker">Last updated <time id="lander-updated" datetime="2026-10-10">October 10, 2026</time></div>
+    <div class="exclusive">Exclusive</div>
     <h1>Why Thousands of Americans Over 40 Are Skipping the Pharmacy — and Accessing GLP-1 Treatment From Home</h1>
     <p class="dek">A look at the telehealth route quietly giving people access to GLP-1 weight-loss treatment — without insurance, without a clinic visit, and without the $1,200-a-month pharmacy bill.</p>
 
-    <div class="byline">By <strong>Antonio Pomponio</strong><span class="sep">|</span>Wellness Contributor</div>
+    <div class="byline"><span class="author-avatar" aria-hidden="true">AP</span><div class="author-details"><div>By <strong>Antwain Pompulus</strong></div><div class="author-role">Wellness Contributor</div></div></div>
 
     <figure class="figure">
       <img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F85dcfc8dce3f43cf885eaca426cd5c8f?format=webp&width=800&height=1200" alt="Woman in her 40s or 50s looking down at her midsection in a bright bathroom" style="display:block;width:100%;height:auto;border-radius:6px;">
@@ -302,11 +380,13 @@
   </article>
 
   <section class="comments">
-    <h3>Reader Comments</h3>
-    <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Jessica R. · Verified</div><p class="ctext">&ldquo;I've never felt more confident and supported. The team truly cares about your progress and it shows.&rdquo;</p></div></div>
-    <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Mary · Verified</div><p class="ctext">&ldquo;Today, in one week since my first injection, I lost 6 lbs. The last diet took me 3 months to lose 10 lbs by starving myself.&rdquo;</p></div></div>
-    <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Johnny J. · Verified</div><p class="ctext">&ldquo;A miracle — it's changed my life mentally and physically. I didn't do anything, this is all science. Great delivery system.&rdquo;</p></div></div>
-    <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Amy J. · Verified</div><p class="ctext">&ldquo;I've lost 6 lbs in the first 2 weeks. No side effects whatsoever so far. I'm 64 and I think it's amazing.&rdquo;</p></div></div>
+    <div class="comments-heading"><h3>Reader Comments</h3><span class="comments-count">4 comments</span></div>
+    <div class="cmt"><span class="av"><img src="https://i.pravatar.cc/80?img=47" alt="Illustrative profile photo" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"></span><div class="body"><div class="comment-bubble"><div class="meta">Jessica R. · Verified</div><p class="ctext">&ldquo;I've never felt more confident and supported. The team truly cares about your progress and it shows.&rdquo;</p></div><div class="comment-actions"><button type="button" class="comment-like" aria-pressed="false">Like</button><span aria-hidden="true">·</span><button type="button" class="comment-reply" aria-expanded="false" aria-controls="reply-draft-0">Reply</button><span class="reaction-pill" aria-label="63 sample reactions"><span class="reaction-icon"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="currentColor"><path d="M2 10h4v11H2zm6 11V10l5-8c2 0 3 2 2 4l-1 4h6c2 0 3 1 2 3l-2 6c0 1-1 2-3 2z"/></svg></span><span class="reaction-count" data-base-count="63">63</span></span></div><div class="reply-draft" id="reply-draft-0" hidden><label for="reply-text-0">Reply draft (not posted)</label><textarea id="reply-text-0" rows="2" placeholder="Write a reply…"></textarea></div></div></div>
+    <div class="cmt"><span class="av"><img src="https://i.pravatar.cc/80?img=44" alt="Illustrative profile photo" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"></span><div class="body"><div class="comment-bubble"><div class="meta">Mary · Verified</div><p class="ctext">&ldquo;Today, in one week since my first injection, I lost 6 lbs. The last diet took me 3 months to lose 10 lbs by starving myself.&rdquo;</p></div><div class="comment-actions"><button type="button" class="comment-like" aria-pressed="false">Like</button><span aria-hidden="true">·</span><button type="button" class="comment-reply" aria-expanded="false" aria-controls="reply-draft-1">Reply</button><span class="reaction-pill" aria-label="94 sample reactions"><span class="reaction-icon"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="currentColor"><path d="M2 10h4v11H2zm6 11V10l5-8c2 0 3 2 2 4l-1 4h6c2 0 3 1 2 3l-2 6c0 1-1 2-3 2z"/></svg></span><span class="reaction-count" data-base-count="94">94</span></span></div><div class="reply-draft" id="reply-draft-1" hidden><label for="reply-text-1">Reply draft (not posted)</label><textarea id="reply-text-1" rows="2" placeholder="Write a reply…"></textarea></div></div></div>
+    <div class="cmt"><span class="av"><img src="https://i.pravatar.cc/80?img=12" alt="Illustrative profile photo" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"></span><div class="body"><div class="comment-bubble"><div class="meta">Johnny J. · Verified</div><p class="ctext">&ldquo;A miracle — it's changed my life mentally and physically. I didn't do anything, this is all science. Great delivery system.&rdquo;</p></div><div class="comment-actions"><button type="button" class="comment-like" aria-pressed="false">Like</button><span aria-hidden="true">·</span><button type="button" class="comment-reply" aria-expanded="false" aria-controls="reply-draft-2">Reply</button><span class="reaction-pill" aria-label="124 sample reactions"><span class="reaction-icon"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="currentColor"><path d="M2 10h4v11H2zm6 11V10l5-8c2 0 3 2 2 4l-1 4h6c2 0 3 1 2 3l-2 6c0 1-1 2-3 2z"/></svg></span><span class="reaction-count" data-base-count="124">124</span></span></div><div class="reply-draft" id="reply-draft-2" hidden><label for="reply-text-2">Reply draft (not posted)</label><textarea id="reply-text-2" rows="2" placeholder="Write a reply…"></textarea></div></div></div>
+    <div class="cmt"><span class="av"><img src="https://i.pravatar.cc/80?img=49" alt="Illustrative profile photo" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"></span><div class="body"><div class="comment-bubble"><div class="meta">Amy J. · Verified</div><p class="ctext">&ldquo;I've lost 6 lbs in the first 2 weeks. No side effects whatsoever so far. I'm 64 and I think it's amazing.&rdquo;</p></div><div class="comment-actions"><button type="button" class="comment-like" aria-pressed="false">Like</button><span aria-hidden="true">·</span><button type="button" class="comment-reply" aria-expanded="false" aria-controls="reply-draft-3">Reply</button><span class="reaction-pill" aria-label="89 sample reactions"><span class="reaction-icon"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="currentColor"><path d="M2 10h4v11H2zm6 11V10l5-8c2 0 3 2 2 4l-1 4h6c2 0 3 1 2 3l-2 6c0 1-1 2-3 2z"/></svg></span><span class="reaction-count" data-base-count="89">89</span></span></div><div class="reply-draft" id="reply-draft-3" hidden><label for="reply-text-3">Reply draft (not posted)</label><textarea id="reply-text-3" rows="2" placeholder="Write a reply…"></textarea></div></div></div>
+    <p class="comments-demo-note">Illustrative profile photos and sample reaction counts. Like and Reply work only in this preview.</p>
+    <p class="comments-more">View more comments</p>
   </section>
 
   <div class="legal">
@@ -319,12 +399,13 @@
 </main>
 
 <footer class="sitefoot"><div class="sf-inner">
-  <div class="sf-brand">GLP-1 <span>Review Guide</span></div>
+  <div class="sf-brand"><a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a></div>
   <nav class="sf-links">
-    <a href="https://directmeds.com/dmo/privacy" target="_blank" rel="nofollow noopener">Privacy Policy</a>
-    <a href="https://directmeds.com/dmo/terms" target="_blank" rel="nofollow noopener">Terms &amp; Conditions</a>
+    <a href="https://glp1reviewguide.com/privacy.html" target="_blank" rel="nofollow noopener">Privacy Policy</a>
+    <a href="https://glp1reviewguide.com/terms.html" target="_blank" rel="nofollow noopener">Terms and Conditions</a>
+    <a href="https://glp1reviewguide.com/about.html#contact" target="_blank" rel="noopener">Contact Us</a>
   </nav>
-  <div class="sf-copy">&copy; 2026 GLP-1 Review Guide &middot; support@glp1review.com &middot; This page contains paid advertising.</div>
+  <div class="sf-copy">&copy; 2026 GLP1ReviewGuide.com &middot; support@glp1review.com &middot; This page contains paid advertising.</div>
 </div></footer>
 
 <script>
@@ -332,6 +413,35 @@
    Replace the {affiliate_id}/{transaction_id}/... tokens with your network's REAL macros. */
 var OFFER_URL = "https://directmeds.com/dm-offers-stc/?oid=12&uid=61&affid=1020&sub1={affiliate_id}&sub2={transaction_id}&sub3={sub1}&sub4={sub2}&sub5={sub3}";
 document.querySelectorAll('a.offerlink').forEach(function(a){ a.setAttribute('href', OFFER_URL); a.setAttribute('rel','nofollow sponsored'); });
+</script>
+
+
+
+
+
+<script>
+/* Local demonstration controls; no reactions or replies are transmitted. */
+(function () {
+  var comments = document.querySelector('.comments');
+  comments.addEventListener('click', function (event) {
+    var like = event.target.closest('.comment-like');
+    var reply = event.target.closest('.comment-reply');
+    if (like) {
+      var active = like.getAttribute('aria-pressed') !== 'true';
+      like.setAttribute('aria-pressed', String(active));
+      var count = like.closest('.body').querySelector('.reaction-count');
+      var value = Number(count.getAttribute('data-base-count')) + (active ? 1 : 0);
+      count.textContent = value;
+      count.parentNode.setAttribute('aria-label', value + ' sample reactions');
+    }
+    if (reply) {
+      var panel = document.getElementById(reply.getAttribute('aria-controls'));
+      panel.hidden = !panel.hidden;
+      reply.setAttribute('aria-expanded', String(!panel.hidden));
+      if (!panel.hidden) panel.querySelector('textarea').focus();
+    }
+  });
+})();
 </script>
 
 </body>
