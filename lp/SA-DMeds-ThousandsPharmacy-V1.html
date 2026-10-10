@@ -170,6 +170,19 @@
   .sf-inner{padding:16px 24px;}
   .sf-brand{margin-bottom:10px;}
   .sf-links{margin-bottom:10px;}
+
+  /* Reader feedback layout, matching the supplied visual reference. */
+  .comments{padding:28px 24px 24px;border-top:0;background:#fff;font-family:Arial,Helvetica,sans-serif;}
+  .comments-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:22px;border-bottom:1px solid #dedede;margin-bottom:20px;}
+  .comments-heading h3{margin:0;font:700 16px/1.4 Arial,Helvetica,sans-serif;color:#333;}
+  .comments-count{font-size:12px;color:#555;white-space:nowrap;}
+  .comments .cmt{border:0;padding:0;margin:0 0 22px;gap:10px;align-items:flex-start;font-size:14px;}
+  .comments .av{width:40px;height:40px;background:#e3eef5;border:0;overflow:hidden;}
+  .comments .body{min-width:0;background:#f0f2f5;border-radius:12px;padding:8px 10px 10px;}
+  .comments .meta{margin-bottom:3px;color:#0866c6;font-size:14px;line-height:1.4;font-weight:700;}
+  .comments .ctext{margin:0;color:#222;font:400 14px/1.5 Arial,Helvetica,sans-serif;}
+  .comments-more{margin:2px 0 0 50px;color:#0866c6;font:700 14px/1.5 Arial,Helvetica,sans-serif;}
+  @media(max-width:420px){.comments{padding:24px 20px;}.comments-heading{gap:10px;padding-bottom:18px;}}
 </style>
 </head>
 <body>
@@ -352,11 +365,12 @@
   </article>
 
   <section class="comments">
-    <h3>Reader Comments</h3>
+    <div class="comments-heading"><h3>Reader Comments</h3><span class="comments-count">4 comments</span></div>
     <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Jessica R. · Verified</div><p class="ctext">&ldquo;I've never felt more confident and supported. The team truly cares about your progress and it shows.&rdquo;</p></div></div>
     <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Mary · Verified</div><p class="ctext">&ldquo;Today, in one week since my first injection, I lost 6 lbs. The last diet took me 3 months to lose 10 lbs by starving myself.&rdquo;</p></div></div>
     <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Johnny J. · Verified</div><p class="ctext">&ldquo;A miracle — it's changed my life mentally and physically. I didn't do anything, this is all science. Great delivery system.&rdquo;</p></div></div>
     <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Amy J. · Verified</div><p class="ctext">&ldquo;I've lost 6 lbs in the first 2 weeks. No side effects whatsoever so far. I'm 64 and I think it's amazing.&rdquo;</p></div></div>
+    <p class="comments-more">View more comments</p>
   </section>
 
   <div class="legal">
