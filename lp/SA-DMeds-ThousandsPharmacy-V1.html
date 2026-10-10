@@ -158,7 +158,7 @@
   .mast .brand{grid-column:2;}
   .mast .tagline{grid-column:3;}
   .kicker{display:block;margin-bottom:10px;}
-  .exclusive{display:table;background:#0000FF;color:#fff;padding:8px 10px;margin:0 0 16px;font:700 11px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:.2em;text-transform:uppercase;}
+  .exclusive{display:table;background:#0000FF;color:#fff;padding:8.8px 11px;margin:0 0 16px;font:700 12.1px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:.2em;text-transform:uppercase;}
   .byline{display:flex;align-items:center;gap:14px;padding:14px 0;}
   .author-avatar{display:flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border-radius:50%;background:#E3EEF5;color:#00396D;font-weight:700;}
   .author-details{line-height:1.5;}
@@ -416,27 +416,7 @@ document.querySelectorAll('a.offerlink').forEach(function(a){ a.setAttribute('hr
 </script>
 
 
-<script>
-/* Display the visitor's current local date and refresh it at local midnight. */
-(function () {
-  var timer;
-  var node = document.getElementById('lander-updated');
-  if (!node) return;
-  var formatter = new Intl.DateTimeFormat('en-US', {month:'long',day:'numeric',year:'numeric'});
-  function refreshDate() {
-    var now = new Date();
-    node.textContent = formatter.format(now);
-    node.setAttribute('datetime', now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0'));
-    clearTimeout(timer);
-    var midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1);
-    timer = setTimeout(refreshDate, midnight.getTime()-now.getTime()+100);
-  }
-  refreshDate();
-  window.addEventListener('pageshow', refreshDate);
-  window.addEventListener('focus', refreshDate);
-  document.addEventListener('visibilitychange', function () { if (!document.hidden) refreshDate(); });
-})();
-</script>
+
 
 
 <script>
