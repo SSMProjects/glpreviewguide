@@ -12,6 +12,10 @@
      Image slots use <div class="ph"> — swap each for your own <img>.
 ===================================================================== -->
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+
 <style>
   :root{
     --ink:#1f2630; --muted:#5a6a7d; --line:#dbe2ea; --paper:#fff;
@@ -120,6 +124,33 @@
   .sf-links a{color:#c6d2df;text-decoration:none;}
   .sf-links a:hover{color:#fff;text-decoration:underline;}
   .sf-copy{font-size:12px;color:#7f8a99;line-height:1.5;}
+
+  /* Publisher branding, scoped to this lander. */
+  .mast{background:#FBF7F2;border-bottom-color:#0000FF;}
+  .bar-inner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;}
+  .mast .menu{justify-self:start;}
+  .mast .brand,.sitefoot .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:#1F1B2E;font:600 20px/1.2 "Fraunces",Georgia,"Times New Roman",serif;white-space:nowrap;}
+  .brand img{display:block;width:32px;height:32px;flex:none;}
+  .mast .brand b,.sitefoot .brand b{color:#0000FF;font-weight:700;}
+  .mast .brand small,.sitefoot .brand small{font-size:13px;font-weight:500;color:#615B6B;}
+  .mast .tagline{justify-self:end;margin-left:0;max-width:180px;text-align:right;line-height:1.5;color:#615B6B;}
+  .btn{background:#0000FF;color:#fff;box-shadow:0 8px 20px -8px rgba(0,0,255,.4);}
+  .btn:hover{background:#0000CC;}
+  .btn:focus-visible,.brand:focus-visible{outline:3px solid #0000FF;outline-offset:4px;}
+  .kicker{background:transparent;color:#615B6B;padding:0;border-radius:0;line-height:1.5;}
+  .sitefoot{background:#FBF7F2;}
+  .sf-brand{margin-bottom:14px;}
+  .sf-links a{color:#0000FF;}
+  .sf-links a:hover{color:#0000CC;text-decoration:underline;}
+  .sf-copy{color:#615B6B;}
+  @media(max-width:760px){.mast .tagline{display:none}}
+  @media(max-width:420px){
+    .bar-inner{padding:15px 12px;gap:4px;}
+    .mast .brand{font-size:16px;gap:6px;}
+    .mast .brand small{font-size:11px;}
+    .mast .brand img{width:26px;height:26px;}
+    .mast .menu{width:28px;height:28px;}
+  }
 </style>
 </head>
 <body>
@@ -128,14 +159,14 @@
 
   <header class="mast"><div class="bar-inner">
     <button class="menu" aria-label="Menu"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <div class="brand">GLP-1 Review Guide</div>
+    <a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
     <div class="tagline">Investigative Health Reporting</div>
   </div></header>
 
 <main class="wrap">
 
   <article class="article">
-    <div class="kicker">Health Investigation</div>
+    <div class="kicker">Last updated <time id="lander-updated" datetime="2026-10-10">October 10, 2026</time></div>
     <h1>Why Thousands of Americans Over 40 Are Skipping the Pharmacy — and Accessing GLP-1 Treatment From Home</h1>
     <p class="dek">A look at the telehealth route quietly giving people access to GLP-1 weight-loss treatment — without insurance, without a clinic visit, and without the $1,200-a-month pharmacy bill.</p>
 
@@ -319,10 +350,11 @@
 </main>
 
 <footer class="sitefoot"><div class="sf-inner">
-  <div class="sf-brand">GLP-1 <span>Review Guide</span></div>
+  <div class="sf-brand"><a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a></div>
   <nav class="sf-links">
-    <a href="https://directmeds.com/dmo/privacy" target="_blank" rel="nofollow noopener">Privacy Policy</a>
-    <a href="https://directmeds.com/dmo/terms" target="_blank" rel="nofollow noopener">Terms &amp; Conditions</a>
+    <a href="https://glp1reviewguide.com/privacy.html" target="_blank" rel="nofollow noopener">Privacy Policy</a>
+    <a href="https://glp1reviewguide.com/terms.html" target="_blank" rel="nofollow noopener">Terms and Conditions</a>
+    <a href="https://glp1reviewguide.com/about.html#contact" target="_blank" rel="noopener">Contact Us</a>
   </nav>
   <div class="sf-copy">&copy; 2026 GLP-1 Review Guide &middot; support@glp1review.com &middot; This page contains paid advertising.</div>
 </div></footer>
@@ -332,6 +364,29 @@
    Replace the {affiliate_id}/{transaction_id}/... tokens with your network's REAL macros. */
 var OFFER_URL = "https://directmeds.com/dm-offers-stc/?oid=12&uid=61&affid=1020&sub1={affiliate_id}&sub2={transaction_id}&sub3={sub1}&sub4={sub2}&sub5={sub3}";
 document.querySelectorAll('a.offerlink').forEach(function(a){ a.setAttribute('href', OFFER_URL); a.setAttribute('rel','nofollow sponsored'); });
+</script>
+
+
+<script>
+/* Display the visitor's current local date and refresh it at local midnight. */
+(function () {
+  var timer;
+  var node = document.getElementById('lander-updated');
+  if (!node) return;
+  var formatter = new Intl.DateTimeFormat('en-US', {month:'long',day:'numeric',year:'numeric'});
+  function refreshDate() {
+    var now = new Date();
+    node.textContent = formatter.format(now);
+    node.setAttribute('datetime', now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0'));
+    clearTimeout(timer);
+    var midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1);
+    timer = setTimeout(refreshDate, midnight.getTime()-now.getTime()+100);
+  }
+  refreshDate();
+  window.addEventListener('pageshow', refreshDate);
+  window.addEventListener('focus', refreshDate);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) refreshDate(); });
+})();
 </script>
 
 </body>
