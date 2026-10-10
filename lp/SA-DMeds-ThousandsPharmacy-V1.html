@@ -183,6 +183,21 @@
   .comments .ctext{margin:0;color:#222;font:400 14px/1.5 Arial,Helvetica,sans-serif;}
   .comments-more{margin:2px 0 0 50px;color:#0866c6;font:700 14px/1.5 Arial,Helvetica,sans-serif;}
   @media(max-width:420px){.comments{padding:24px 20px;}.comments-heading{gap:10px;padding-bottom:18px;}}
+
+  .comments .body{background:transparent;padding:0;border-radius:0;}
+  .comment-bubble{background:#f0f2f5;border-radius:12px;padding:8px 10px 10px;}
+  .comments .av img{display:block;width:40px;height:40px;object-fit:cover;border-radius:50%;}
+  .comment-actions{display:flex;align-items:center;gap:4px;padding:6px 10px 0;color:#999;font:700 12px/1.4 Arial,Helvetica,sans-serif;}
+  .comment-actions button{border:0;background:none;padding:0;color:#999;font:inherit;cursor:pointer;}
+  .comment-actions button:hover{text-decoration:underline;}
+  .comment-actions button:focus-visible{outline:2px solid #0866c6;outline-offset:3px;}
+  .comment-actions .comment-like[aria-pressed="true"]{color:#0866c6;}
+  .reaction-pill{display:inline-flex;align-items:center;gap:4px;margin-left:6px;padding:3px 8px 3px 4px;border-radius:999px;background:#fff;box-shadow:0 1px 4px #0002;color:#606770;font-size:11px;font-weight:400;}
+  .reaction-icon{display:flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:#0084ff;color:#fff;}
+  .comments-demo-note{margin:0 0 12px 50px;font:400 11px/1.5 Arial,Helvetica,sans-serif;color:#666;}
+  .reply-draft{padding:10px 0 0;font:400 12px/1.5 Arial,Helvetica,sans-serif;color:#606770;}
+  .reply-draft label{display:block;margin-bottom:4px;}
+  .reply-draft textarea{width:100%;box-sizing:border-box;border:1px solid #ccd0d5;border-radius:8px;padding:8px;font:400 14px/1.5 Arial,Helvetica,sans-serif;resize:vertical;}
 </style>
 </head>
 <body>
@@ -366,10 +381,11 @@
 
   <section class="comments">
     <div class="comments-heading"><h3>Reader Comments</h3><span class="comments-count">4 comments</span></div>
-    <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Jessica R. · Verified</div><p class="ctext">&ldquo;I've never felt more confident and supported. The team truly cares about your progress and it shows.&rdquo;</p></div></div>
-    <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Mary · Verified</div><p class="ctext">&ldquo;Today, in one week since my first injection, I lost 6 lbs. The last diet took me 3 months to lose 10 lbs by starving myself.&rdquo;</p></div></div>
-    <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Johnny J. · Verified</div><p class="ctext">&ldquo;A miracle — it's changed my life mentally and physically. I didn't do anything, this is all science. Great delivery system.&rdquo;</p></div></div>
-    <div class="cmt"><span class="av"><svg viewBox="0 0 24 24" width="22" height="22" fill="#1b3a5b"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><div class="body"><div class="meta">Amy J. · Verified</div><p class="ctext">&ldquo;I've lost 6 lbs in the first 2 weeks. No side effects whatsoever so far. I'm 64 and I think it's amazing.&rdquo;</p></div></div>
+    <div class="cmt"><span class="av"><img src="https://i.pravatar.cc/80?img=47" alt="Illustrative profile photo" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"></span><div class="body"><div class="comment-bubble"><div class="meta">Jessica R. · Verified</div><p class="ctext">&ldquo;I've never felt more confident and supported. The team truly cares about your progress and it shows.&rdquo;</p></div><div class="comment-actions"><button type="button" class="comment-like" aria-pressed="false">Like</button><span aria-hidden="true">·</span><button type="button" class="comment-reply" aria-expanded="false" aria-controls="reply-draft-0">Reply</button><span class="reaction-pill" aria-label="63 sample reactions"><span class="reaction-icon"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="currentColor"><path d="M2 10h4v11H2zm6 11V10l5-8c2 0 3 2 2 4l-1 4h6c2 0 3 1 2 3l-2 6c0 1-1 2-3 2z"/></svg></span><span class="reaction-count" data-base-count="63">63</span></span></div><div class="reply-draft" id="reply-draft-0" hidden><label for="reply-text-0">Reply draft (not posted)</label><textarea id="reply-text-0" rows="2" placeholder="Write a reply…"></textarea></div></div></div>
+    <div class="cmt"><span class="av"><img src="https://i.pravatar.cc/80?img=44" alt="Illustrative profile photo" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"></span><div class="body"><div class="comment-bubble"><div class="meta">Mary · Verified</div><p class="ctext">&ldquo;Today, in one week since my first injection, I lost 6 lbs. The last diet took me 3 months to lose 10 lbs by starving myself.&rdquo;</p></div><div class="comment-actions"><button type="button" class="comment-like" aria-pressed="false">Like</button><span aria-hidden="true">·</span><button type="button" class="comment-reply" aria-expanded="false" aria-controls="reply-draft-1">Reply</button><span class="reaction-pill" aria-label="94 sample reactions"><span class="reaction-icon"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="currentColor"><path d="M2 10h4v11H2zm6 11V10l5-8c2 0 3 2 2 4l-1 4h6c2 0 3 1 2 3l-2 6c0 1-1 2-3 2z"/></svg></span><span class="reaction-count" data-base-count="94">94</span></span></div><div class="reply-draft" id="reply-draft-1" hidden><label for="reply-text-1">Reply draft (not posted)</label><textarea id="reply-text-1" rows="2" placeholder="Write a reply…"></textarea></div></div></div>
+    <div class="cmt"><span class="av"><img src="https://i.pravatar.cc/80?img=12" alt="Illustrative profile photo" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"></span><div class="body"><div class="comment-bubble"><div class="meta">Johnny J. · Verified</div><p class="ctext">&ldquo;A miracle — it's changed my life mentally and physically. I didn't do anything, this is all science. Great delivery system.&rdquo;</p></div><div class="comment-actions"><button type="button" class="comment-like" aria-pressed="false">Like</button><span aria-hidden="true">·</span><button type="button" class="comment-reply" aria-expanded="false" aria-controls="reply-draft-2">Reply</button><span class="reaction-pill" aria-label="124 sample reactions"><span class="reaction-icon"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="currentColor"><path d="M2 10h4v11H2zm6 11V10l5-8c2 0 3 2 2 4l-1 4h6c2 0 3 1 2 3l-2 6c0 1-1 2-3 2z"/></svg></span><span class="reaction-count" data-base-count="124">124</span></span></div><div class="reply-draft" id="reply-draft-2" hidden><label for="reply-text-2">Reply draft (not posted)</label><textarea id="reply-text-2" rows="2" placeholder="Write a reply…"></textarea></div></div></div>
+    <div class="cmt"><span class="av"><img src="https://i.pravatar.cc/80?img=49" alt="Illustrative profile photo" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"></span><div class="body"><div class="comment-bubble"><div class="meta">Amy J. · Verified</div><p class="ctext">&ldquo;I've lost 6 lbs in the first 2 weeks. No side effects whatsoever so far. I'm 64 and I think it's amazing.&rdquo;</p></div><div class="comment-actions"><button type="button" class="comment-like" aria-pressed="false">Like</button><span aria-hidden="true">·</span><button type="button" class="comment-reply" aria-expanded="false" aria-controls="reply-draft-3">Reply</button><span class="reaction-pill" aria-label="89 sample reactions"><span class="reaction-icon"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="currentColor"><path d="M2 10h4v11H2zm6 11V10l5-8c2 0 3 2 2 4l-1 4h6c2 0 3 1 2 3l-2 6c0 1-1 2-3 2z"/></svg></span><span class="reaction-count" data-base-count="89">89</span></span></div><div class="reply-draft" id="reply-draft-3" hidden><label for="reply-text-3">Reply draft (not posted)</label><textarea id="reply-text-3" rows="2" placeholder="Write a reply…"></textarea></div></div></div>
+    <p class="comments-demo-note">Illustrative profile photos and sample reaction counts. Like and Reply work only in this preview.</p>
     <p class="comments-more">View more comments</p>
   </section>
 
@@ -419,6 +435,32 @@ document.querySelectorAll('a.offerlink').forEach(function(a){ a.setAttribute('hr
   window.addEventListener('pageshow', refreshDate);
   window.addEventListener('focus', refreshDate);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) refreshDate(); });
+})();
+</script>
+
+
+<script>
+/* Local demonstration controls; no reactions or replies are transmitted. */
+(function () {
+  var comments = document.querySelector('.comments');
+  comments.addEventListener('click', function (event) {
+    var like = event.target.closest('.comment-like');
+    var reply = event.target.closest('.comment-reply');
+    if (like) {
+      var active = like.getAttribute('aria-pressed') !== 'true';
+      like.setAttribute('aria-pressed', String(active));
+      var count = like.closest('.body').querySelector('.reaction-count');
+      var value = Number(count.getAttribute('data-base-count')) + (active ? 1 : 0);
+      count.textContent = value;
+      count.parentNode.setAttribute('aria-label', value + ' sample reactions');
+    }
+    if (reply) {
+      var panel = document.getElementById(reply.getAttribute('aria-controls'));
+      panel.hidden = !panel.hidden;
+      reply.setAttribute('aria-expanded', String(!panel.hidden));
+      if (!panel.hidden) panel.querySelector('textarea').focus();
+    }
+  });
 })();
 </script>
 
