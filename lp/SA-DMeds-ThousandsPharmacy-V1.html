@@ -151,6 +151,25 @@
     .mast .brand img{width:26px;height:26px;}
     .mast .menu{width:28px;height:28px;}
   }
+
+  /* Requested editorial and footer refinements. */
+  .adflag{background:#1F1B2E;}
+  .mast{border-bottom-width:2px;}
+  .mast .brand{grid-column:2;}
+  .mast .tagline{grid-column:3;}
+  .kicker{display:block;margin-bottom:10px;}
+  .exclusive{display:table;background:#0000FF;color:#fff;padding:8px 10px;margin:0 0 16px;font:700 11px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:.2em;text-transform:uppercase;}
+  .byline{display:flex;align-items:center;gap:14px;padding:14px 0;}
+  .author-avatar{display:flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border-radius:50%;background:#E3EEF5;color:#00396D;font-weight:700;}
+  .author-details{line-height:1.5;}
+  .author-role{color:var(--muted);}
+  .steps .n{background:#0000FF;}
+  .sitefoot .brand>span{color:#1F1B2E;}
+  .sitefoot .brand{font-size:20px;}
+  .legal{padding-bottom:16px;}
+  .sf-inner{padding:16px 24px;}
+  .sf-brand{margin-bottom:10px;}
+  .sf-links{margin-bottom:10px;}
 </style>
 </head>
 <body>
@@ -158,7 +177,6 @@
   <div class="adflag">Advertorial</div>
 
   <header class="mast"><div class="bar-inner">
-    <button class="menu" aria-label="Menu"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
     <div class="tagline">Investigative Health Reporting</div>
   </div></header>
@@ -167,10 +185,11 @@
 
   <article class="article">
     <div class="kicker">Last updated <time id="lander-updated" datetime="2026-10-10">October 10, 2026</time></div>
+    <div class="exclusive">Exclusive</div>
     <h1>Why Thousands of Americans Over 40 Are Skipping the Pharmacy — and Accessing GLP-1 Treatment From Home</h1>
     <p class="dek">A look at the telehealth route quietly giving people access to GLP-1 weight-loss treatment — without insurance, without a clinic visit, and without the $1,200-a-month pharmacy bill.</p>
 
-    <div class="byline">By <strong>Antonio Pomponio</strong><span class="sep">|</span>Wellness Contributor</div>
+    <div class="byline"><span class="author-avatar" aria-hidden="true">AP</span><div class="author-details"><div>By <strong>Antwain Pompulus</strong></div><div class="author-role">Wellness Contributor</div></div></div>
 
     <figure class="figure">
       <img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F85dcfc8dce3f43cf885eaca426cd5c8f?format=webp&width=800&height=1200" alt="Woman in her 40s or 50s looking down at her midsection in a bright bathroom" style="display:block;width:100%;height:auto;border-radius:6px;">
@@ -356,7 +375,7 @@
     <a href="https://glp1reviewguide.com/terms.html" target="_blank" rel="nofollow noopener">Terms and Conditions</a>
     <a href="https://glp1reviewguide.com/about.html#contact" target="_blank" rel="noopener">Contact Us</a>
   </nav>
-  <div class="sf-copy">&copy; 2026 GLP-1 Review Guide &middot; support@glp1review.com &middot; This page contains paid advertising.</div>
+  <div class="sf-copy">&copy; 2026 GLP1ReviewGuide.com &middot; support@glp1review.com &middot; This page contains paid advertising.</div>
 </div></footer>
 
 <script>
