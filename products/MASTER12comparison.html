@@ -41,13 +41,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .hdr nav{display:flex;align-items:center;gap:22px}
 .hdr nav a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:500}
 .hdr nav a:hover{color:var(--blue)}
-.hdr .upd{font-size:13px;color:var(--muted);border-left:1px solid var(--line);padding-left:18px}
-@media(max-width:760px){.hdr nav a{display:none}.hdr .upd{border:0;padding:0;font-size:12px;white-space:nowrap}}@media(max-width:420px){.hdr .upd{display:none}}
+@media(max-width:760px){.hdr nav a{display:none}}
 
 /* hero */
 .hero{background:#fff;border-bottom:1px solid var(--line);padding:30px 0 20px;text-align:left}
 .hero h1{font:700 clamp(25.5px,4.08vw,40.8px)/1.08 var(--disp);margin:0 0 10px;letter-spacing:-.015em}
 .hero h1 em{font-style:italic;color:var(--blue)}
+.hero .updated{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 10px}
 .hero .sub{font-size:15.3px;color:var(--muted);max-width:720px;margin:0 0 14px}
 .trust{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px}
 .trust span{display:inline-flex;align-items:center;gap:6px;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:11.9px;font-weight:500}
@@ -60,7 +60,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 
 /* ranked rows */
 .list{padding:24px 0 6px}
-.list_head{display:grid;grid-template-columns:44px 290px minmax(0,1fr) 168px 180px;padding:0 20px 8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.list_head{display:grid;grid-template-columns:44px 132px minmax(0,1fr) 168px 180px;padding:0 20px 8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .list_head span{padding:0 18px}
 .list_head span:first-child{padding:0;text-align:center}
 .list_head span:nth-child(2){padding-left:12px}
@@ -74,26 +74,23 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .promo .badge svg{width:14px;height:14px;color:var(--gold)}
 .promo .deal{background:#fff;color:var(--blue);border-radius:999px;padding:3px 12px;font-size:13px}
 .tagline{display:inline-block;margin:0;background:var(--ink);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:0 0 10px 0}
-.rgrid{display:grid;grid-template-columns:44px 132px 158px minmax(0,1fr) 168px 180px;align-items:center;padding:18px 20px}
+.rgrid{display:grid;grid-template-columns:44px 132px minmax(0,1fr) 168px 180px;align-items:center;padding:18px 20px}
 .rgrid>.rnum{padding:0 12px}
 .rgrid>.logo{margin:0 12px}
-.rgrid>.who{padding:0 12px}
 .rgrid>.hl{padding:0 18px}
 .rgrid>.scorebox{margin:0 auto}
 .rgrid>.act{padding:0}
-@media(min-width:981px){.rgrid{background-image:linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line));background-repeat:no-repeat;background-size:1px 100%;background-position:354px 0,calc(100% - 368px) 0,calc(100% - 200px) 0;background-origin:border-box}}
+@media(min-width:981px){.rgrid{background-image:linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line));background-repeat:no-repeat;background-size:1px 100%;background-position:196px 0,calc(100% - 368px) 0,calc(100% - 200px) 0;background-origin:border-box}}
 .rnum{font:700 30px/1 var(--disp);color:var(--blue);text-align:center}
 .row:not(.top) .rnum{color:var(--ink)}
 .logo{display:grid;place-items:center;height:78px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:8px;text-decoration:none}
 .logo img{max-height:60px;width:auto;object-fit:contain}
 .logo .wm{font:800 22px var(--body);color:var(--ink)}
-.who h2{font:700 21px/1.15 var(--disp);margin:0 0 4px}
 .act .offer{display:flex;flex-direction:column;align-items:center;margin:0;color:var(--ink);font-size:16.5px;line-height:1.3}
 .offer-price-line{display:flex;align-items:baseline;justify-content:center;gap:8px}
 .offer-price{font-size:20.625px;font-weight:800;line-height:1}
 .offer-label,.offer-note{margin-top:3px;color:var(--muted);font-size:13.5px;font-weight:500;line-height:1.2}
 .act .offer s{color:#9A93A5;font-size:13.5px;font-weight:500}
-.who a.rev{font-size:13.5px;font-weight:700}
 .feats{list-style:none;margin:0;padding:0;font-size:14.5px}
 .feats li{position:relative;padding-left:24px;margin-bottom:6px;line-height:1.4}
 .feats li::before{content:"";position:absolute;left:0;top:2px;width:17px;height:17px;border-radius:50%;background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
@@ -103,6 +100,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .scorebox{display:flex;width:120px;min-width:120px;min-height:118px;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--cream);border-radius:12px;padding:18px 20px;transform:scale(1.15)}
 .scorebox .n{font:700 38px/1 var(--disp);color:var(--ink)}
 .scorebox .l{display:block;font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--blue);margin-top:4px}
+.score-trust{display:flex;align-items:flex-start;justify-content:center;gap:4px;width:100%;margin-top:8px;font-size:11px;font-weight:700;line-height:1.25;color:var(--ink);text-align:center}
+.score-trust svg{flex:none;width:13px;height:13px;margin-top:1px;color:var(--sage)}
 .stars{position:relative;display:inline-block;font-size:15px;letter-spacing:1px;line-height:1;margin-top:5px;color:#D9D3E3}
 .stars::before{content:"★★★★★"}
 .stars i{position:absolute;left:0;top:0;overflow:hidden;white-space:nowrap;color:var(--gold);font-style:normal}
@@ -114,9 +113,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .act .site{font-size:13px;font-weight:700;color:var(--blue)}
 .act .fine{font-size:11.5px;color:var(--muted);margin:0;line-height:1.35}
 @media(max-width:980px){
- .rgrid{grid-template-columns:40px 1fr 110px;grid-template-areas:"num logo score" "who who who" "feats feats feats" "act act act";gap:14px;padding:16px;background-image:none}
- .rgrid>.rnum,.rgrid>.logo,.rgrid>.who,.rgrid>.hl,.rgrid>.scorebox,.rgrid>.act{margin:0;padding:0}
- .rnum{grid-area:num}.logo{grid-area:logo}.who{grid-area:who}.hl{grid-area:feats}.scorebox{grid-area:score;width:100%;min-width:0;padding:18px 12px;transform:scale(1.05)}.act{grid-area:act}
+ .rgrid{grid-template-columns:40px 1fr 110px;grid-template-areas:"num logo score" "feats feats feats" "act act act";gap:14px;padding:16px;background-image:none}
+ .rgrid>.rnum,.rgrid>.logo,.rgrid>.hl,.rgrid>.scorebox,.rgrid>.act{margin:0;padding:0}
+ .rnum{grid-area:num}.logo{grid-area:logo}.hl{grid-area:feats}.scorebox{grid-area:score;width:100%;min-width:0;padding:18px 12px;transform:scale(1.05)}.act{grid-area:act}
  .act{max-width:420px;width:100%;margin:0 auto}
 }
 
@@ -186,15 +185,16 @@ body.has-banner .sticky{display:none!important}
 </head>
 <body>
 
-<p class="adnote" style="font-size:11px;text-align:center">We earn commissions from providers on this page, and compensation can affect how programs are ranked and scored. <a href="../disclosure.html">Advertising Disclosure</a></p>
+<p class="adnote" style="font-size:11px;text-align:center">We earn commissions from brands listed on this site, which influences how listings are presented. <a href="../disclosure.html">Advertising Disclosure</a></p>
 
 <header class="hdr"><div class="w">
  <a class="brand" href="../index.html"><img src="../images/logo.svg" alt="" width="30" height="30"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
- <nav aria-label="Main"><a href="#top5">Compare</a><a href="#what">What is GLP-1?</a><a href="#faq">FAQ</a><span class="upd">Last updated: Oct 2026</span></nav>
+ <nav aria-label="Main"><a href="#top5">Compare</a><a href="#what">What is GLP-1?</a><a href="#faq">FAQ</a></nav>
 </div></header>
 
 <main>
 <section class="hero"><div class="w">
+ <p class="updated">Last Updated: <time id="updated-date" datetime="2026-10-11">October 11, 2026</time></p>
  <h1 style="text-align:left">Best GLP-1 Weight Loss Programs <em>of 2026</em></h1>
  <p class="sub" style="text-align:left">We compared online GLP-1 programs on price, medication options, doctor access and ongoing support, so you can find the right fit before you talk to a clinician.</p>
  <div class="trust">
@@ -211,14 +211,14 @@ body.has-banner .sticky{display:none!important}
   <div class="rgrid">
    <div class="rnum">1</div>
    <a class="logo" href="https://go.glp1reviewguide.com/ZZ2GX/62M42X/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F78788a01b0f54994a49e55659b334045?format=webp&amp;width=800&amp;height=1200" alt="DirectMeds" width="160" height="80"></a>
-   <div class="who"><h2>DirectMeds</h2></div>
-   <div class="hl"><ul class="feats">
+      <div class="hl"><ul class="feats">
+    <li>No insurance needed, HSA accepted</li>
     <li>One price covers medication, doctor visits, supplies and shipping</li>
     <li>Injections or sublingual (under-the-tongue) drops</li>
     <li>Doctor review in 24 hours; ships in 1–2 days</li>
     <li>Full refund if your prescription isn't approved</li>
    </ul><div class="pills"><span class="pill">No membership fee</span><span class="pill">LegitScript certified</span></div></div>
-   <div class="scorebox"><span class="n">9.6</span><span class="stars" aria-label="5 out of 5 stars"><i style="width:100%"></i></span><span class="l">Exceptional</span></div>
+   <div class="scorebox"><span class="n">9.6</span><span class="stars" aria-label="5 out of 5 stars"><i style="width:100%"></i></span><span class="l">Exceptional</span><span class="score-trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>Trusted by 300k+ Customers</span></div>
    <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/62M42X/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">SEE IF YOU QUALIFY</a><p class="offer"><span class="offer-price-line"><s>$297</s><strong class="offer-price">$147</strong></span><span class="offer-note">first month</span></p><p class="fine"></p></div>
   </div>
  </article>
@@ -229,8 +229,7 @@ body.has-banner .sticky{display:none!important}
   <div class="rgrid">
    <div class="rnum">2</div>
    <a class="logo" href="https://go.glp1reviewguide.com/ZZ2GX/641ZRJ/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank"><span class="wm">TrimRx</span></a>
-   <div class="who"><h2>TrimRx</h2></div>
-   <div class="hl"><ul class="feats">
+      <div class="hl"><ul class="feats">
     <li>No monthly membership fee and no hidden fees</li>
     <li>Same price at every dose</li>
     <li>Telemedicine visits and free shipping included</li>
@@ -247,8 +246,7 @@ body.has-banner .sticky{display:none!important}
   <div class="rgrid">
    <div class="rnum">3</div>
    <a class="logo" href="https://go.glp1reviewguide.com/ZZ2GX/69KHPZ/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank"><img src="https://medgm.org/glp-1/logomedgm.svg" alt="MEDGm" width="160" height="80"></a>
-   <div class="who"><h2>MEDGm</h2></div>
-   <div class="hl"><ul class="feats">
+      <div class="hl"><ul class="feats">
     <li>Compounded injections from $169; tablets from $239</li>
     <li>Brand-name Wegovy, Zepbound or Ozempic: $99 membership + medication</li>
     <li>Labs included, with provider-led coaching</li>
@@ -265,8 +263,7 @@ body.has-banner .sticky{display:none!important}
   <div class="rgrid">
    <div class="rnum">4</div>
    <a class="logo" href="https://go.glp1reviewguide.com/ZZ2GX/6BZDGK/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F9d2f0834e77a442ea573882e9014f1f9?format=webp&amp;width=800&amp;height=1200" alt="Pallas Health" width="160" height="80"></a>
-   <div class="who"><h2>Pallas Health</h2></div>
-   <div class="hl"><ul class="feats">
+      <div class="hl"><ul class="feats">
     <li>No membership fee: visits, follow-ups and messaging included</li>
     <li>Same compounded price at every dose</li>
     <li>Compounded tirzepatide from $179 the first month</li>
@@ -283,8 +280,7 @@ body.has-banner .sticky{display:none!important}
   <div class="rgrid">
    <div class="rnum">5</div>
    <a class="logo" href="https://go.glp1reviewguide.com/ZZ2GX/686M1C/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank"><img src="https://trytrimi.com/images/homepage/trimi-logo.png" alt="Trimi" width="160" height="80"></a>
-   <div class="who"><h2>Trimi</h2></div>
-   <div class="hl"><ul class="feats">
+      <div class="hl"><ul class="feats">
     <li>Medication, supplies, provider care and shipping in one plan</li>
     <li>Semaglutide from $99/mo; tirzepatide from $125/mo (12-month plan)</li>
     <li>Care team available 24/7, replies within 1 hour</li>
@@ -399,6 +395,19 @@ body.has-banner .sticky{display:none!important}
   var s=document.getElementById('sticky'), first=document.getElementById('p1');
   if(!s||!first||!('IntersectionObserver' in window)) return;
   new IntersectionObserver(function(e){ s.classList.toggle('show', !e[0].isIntersecting && e[0].boundingClientRect.top<0); }).observe(first);
+})();
+</script>
+<script>
+(function(){
+  var el=document.getElementById('updated-date');
+  if(!el) return;
+  var fmt=new Intl.DateTimeFormat('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var last='';
+  function ymd(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  function render(){var d=new Date(),k=ymd(d);if(k===last) return;last=k;el.dateTime=k;el.textContent=fmt.format(d);}
+  render();
+  setInterval(render,60000);
+  document.addEventListener('visibilitychange',render);
 })();
 </script>
 <script src="/google-everflow-tracking.js"></script>
