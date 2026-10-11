@@ -19,3 +19,13 @@
 /review-ro                            /#top5     301!
 /review-hims-and-hers.html            /#top5     301!
 /review-hims-and-hers                 /#top5     301!
+
+# Comparison pages moved into /products/ (Oct 10, 2026). Query strings (gclid, utm_*, etc.) carry over automatically.
+/best-wl-programs.html          /products/best-wl-programs.html          301!
+/best-wl-programs               /products/best-wl-programs.html          301!
+/online-weight-programs.html    /products/online-weight-programs.html    301!
+/online-weight-programs         /products/online-weight-programs.html    301!
+/weight-guide-programs.html     /products/weight-guide-programs.html     301!
+/weight-guide-programs          /products/weight-guide-programs.html     301!
+/wl-comparison-programs.html    /products/wl-comparison-programs.html    301!
+/wl-comparison-programs         /products/wl-comparison-programs.html    301!
