@@ -76,7 +76,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .tagline{display:inline-block;margin:0;background:var(--ink);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:0 0 10px 0}
 .rgrid{display:grid;grid-template-columns:44px 132px minmax(0,1fr) 168px 180px;align-items:center;padding:18px 20px}
 .rgrid>.rnum{padding:0 12px}
-.rgrid>.logo{margin:0 12px}
+.rgrid>.logo,.rgrid>.rlogo{margin:0 12px}
+.rlogo{display:flex;flex-direction:column;gap:6px}
 .rgrid>.hl{padding:0 18px}
 .rgrid>.scorebox{margin:0 auto}
 .rgrid>.act{padding:0}
@@ -100,7 +101,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .scorebox{display:flex;width:120px;min-width:120px;min-height:118px;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--cream);border-radius:12px;padding:18px 20px;transform:scale(1.15)}
 .scorebox .n{font:700 38px/1 var(--disp);color:var(--ink)}
 .scorebox .l{display:block;font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--blue);margin-top:4px}
-.score-trust{display:flex;align-items:flex-start;justify-content:center;gap:4px;width:100%;margin-top:8px;font-size:11px;font-weight:700;line-height:1.25;color:var(--ink);text-align:center}
+.score-trust{display:flex;align-items:flex-start;justify-content:center;gap:4px;width:100%;margin:0;font-size:11px;font-weight:700;line-height:1.25;color:var(--ink);text-align:center}
 .score-trust svg{flex:none;width:13px;height:13px;margin-top:1px;color:var(--sage)}
 .stars{position:relative;display:inline-block;font-size:15px;letter-spacing:1px;line-height:1;margin-top:5px;color:#D9D3E3}
 .stars::before{content:"★★★★★"}
@@ -114,8 +115,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .act .fine{font-size:11.5px;color:var(--muted);margin:0;line-height:1.35}
 @media(max-width:980px){
  .rgrid{grid-template-columns:40px 1fr 110px;grid-template-areas:"num logo score" "feats feats feats" "act act act";gap:14px;padding:16px;background-image:none}
- .rgrid>.rnum,.rgrid>.logo,.rgrid>.hl,.rgrid>.scorebox,.rgrid>.act{margin:0;padding:0}
- .rnum{grid-area:num}.logo{grid-area:logo}.hl{grid-area:feats}.scorebox{grid-area:score;width:100%;min-width:0;padding:18px 12px;transform:scale(1.05)}.act{grid-area:act}
+ .rgrid>.rnum,.rgrid>.logo,.rgrid>.rlogo,.rgrid>.hl,.rgrid>.scorebox,.rgrid>.act{margin:0;padding:0}
+ .rnum{grid-area:num}.logo,.rlogo{grid-area:logo}.hl{grid-area:feats}.scorebox{grid-area:score;width:100%;min-width:0;padding:18px 12px;transform:scale(1.05)}.act{grid-area:act}
  .act{max-width:420px;width:100%;margin:0 auto}
 }
 
@@ -210,15 +211,15 @@ body.has-banner .sticky{display:none!important}
   <div class="promo"><span class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>Featured partner · Our top choice</span><span class="deal">$150 off your first month</span></div>
   <div class="rgrid">
    <div class="rnum">1</div>
-   <a class="logo" href="https://go.glp1reviewguide.com/ZZ2GX/62M42X/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F78788a01b0f54994a49e55659b334045?format=webp&amp;width=800&amp;height=1200" alt="DirectMeds" width="160" height="80"></a>
-      <div class="hl"><ul class="feats">
+   <div class="rlogo"><span class="score-trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>Trusted by 300k+ Customers</span><a class="logo" href="https://go.glp1reviewguide.com/ZZ2GX/62M42X/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F78788a01b0f54994a49e55659b334045?format=webp&amp;width=800&amp;height=1200" alt="DirectMeds" width="160" height="80"></a></div>
+   <div class="hl"><ul class="feats">
     <li>No insurance needed, HSA accepted</li>
     <li>One price covers medication, doctor visits, supplies and shipping</li>
     <li>Injections or sublingual (under-the-tongue) drops</li>
     <li>Doctor review in 24 hours; ships in 1–2 days</li>
     <li>Full refund if your prescription isn't approved</li>
    </ul><div class="pills"><span class="pill">No membership fee</span><span class="pill">LegitScript certified</span></div></div>
-   <div class="scorebox"><span class="n">9.6</span><span class="stars" aria-label="5 out of 5 stars"><i style="width:100%"></i></span><span class="l">Exceptional</span><span class="score-trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>Trusted by 300k+ Customers</span></div>
+   <div class="scorebox"><span class="n">9.6</span><span class="stars" aria-label="5 out of 5 stars"><i style="width:100%"></i></span><span class="l">Exceptional</span></div>
    <div class="act"><a class="btn" href="https://go.glp1reviewguide.com/ZZ2GX/62M42X/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">SEE IF YOU QUALIFY</a><p class="offer"><span class="offer-price-line"><s>$297</s><strong class="offer-price">$147</strong></span><span class="offer-note">first month</span></p><p class="fine"></p></div>
   </div>
  </article>
