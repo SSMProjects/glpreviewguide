@@ -66,7 +66,7 @@ header.hdr nav a:hover{color:var(--blue)}
 .wl-comparison-cards .scorebox .l{display:block;font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--blue);margin-top:4px}
 .wl-comparison-cards .score-trust{display:flex;align-items:flex-start;justify-content:center;gap:4px;width:100%;margin:0;white-space:nowrap;font-size:14.97px;font-weight:700;line-height:1.25;color:var(--ink);text-align:center}
 .wl-comparison-cards .score-trust svg{flex:none;width:16.445px;height:16.445px;margin-top:1px;color:var(--sage)}
-.wl-comparison-cards #pick-1 .score-trust{white-space:normal;justify-content:flex-start;text-align:left}
+.wl-comparison-cards #pick-1 .score-trust{white-space:normal;justify-content:flex-start;text-align:left;font-size:11.5px}
 .wl-comparison-cards .stars{position:relative;display:inline-block;font-size:15px;letter-spacing:1px;line-height:1;margin-top:5px;color:#D9D3E3}
 .wl-comparison-cards .stars::before{content:"★★★★★"}
 .wl-comparison-cards .stars i{position:absolute;left:0;top:0;overflow:hidden;white-space:nowrap;color:var(--gold);font-style:normal}
@@ -300,11 +300,10 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <div><dt>Intake</dt><dd>2-minute online</dd></div>
   </dl>
   <a class="cta light" href="https://go.glp1reviewguide.com/38JMMX/6DC976/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}" rel="sponsored nofollow noopener" target="_blank">See if you qualify</a>
-  <p class="feat_fine">Paid placement.</p>
  </aside>
  <div class="feat_copy">
   <h2 class="sec">Why we feature Embody</h2>
-   <p>Embody is our featured partner, which means it pays for its position on this page, and compensation can affect rankings and scores. Embody GLP-1 programs start at $149 a month, and the intake takes about 2 minutes online.</p>
+   <p>Embody is our featured partner. Compensation from programs on this page can affect rankings and scores. Embody GLP-1 programs start at $149 a month, and the intake takes about 2 minutes online.</p>
    <h3>Pricing</h3>
    <p>Embody GLP-1 programs are listed starting at $149 per month.</p>
    <h3>Intake and review</h3>
@@ -334,13 +333,13 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
 <script>
 (function(){
-  var T={"DirectMeds":{"rank":3,"id":"pick-3","name":"DirectMeds"},"TrimRx":{"rank":2,"id":"pick-2","name":"TrimRx"},"MEDGm":{"rank":5,"id":"pick-5","name":"MEDGm"},"Pallas Health":{"rank":7,"id":"pick-7","name":"Pallas Health"},"Trimi":{"rank":6,"id":"pick-6","name":"Trimi"}};
+  var T={"Embody":{"rank":1,"id":"pick-1","name":"Embody","url":"https://go.glp1reviewguide.com/38JMMX/6DC976/?sub1={gclid}&amp;sub2={campaignid}&amp;sub3={adgroupid}&amp;sub4={creative}&amp;sub5={keyword}&amp;sub6={matchtype}&amp;sub7={device}&amp;sub8={network}&amp;sub9={placement}&amp;sub10={targetid}","logo":"<img src='https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F4583eb257b7746fb8d29f549c7780dcc?format=webp&amp;width=800&amp;height=1200' alt='Embody' width='160' height='80'>"},"TrimRx":{"rank":2,"id":"pick-2","name":"TrimRx"},"MEDGm":{"rank":5,"id":"pick-5","name":"MEDGm"},"Pallas Health":{"rank":7,"id":"pick-7","name":"Pallas Health"},"Trimi":{"rank":6,"id":"pick-6","name":"Trimi"}};
   function pick(ins,med,pri){
     if(ins==='yes') return ['Pallas Health','It doesn\'t bill insurance, but every plan is HSA/FSA eligible and there\'s no membership fee.'];
     if(med==='brand') return ['MEDGm','Offers brand-name Wegovy, Zepbound or Ozempic for a $99 membership plus medication.'];
     if(pri==='coach') return ['MEDGm','Provider-led plans and coaching, with labs included.'];
     if(pri==='doctor') return ['Trimi','A care team available 24/7 that replies within an hour.'];
-    if(med==='any') return ['DirectMeds','One monthly price that includes medication, doctor visits and shipping, with $150 off your first month.'];
+    if(med==='any') return ['Embody','Embody GLP-1 programs starting at $149/month, with 24/7 doctor messaging and ongoing care support.'];
     return ['TrimRx','No membership fee and the same price at every dose.'];
   }
   document.getElementById('quiz_go').addEventListener('click',function(){
@@ -349,7 +348,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
     var ins=v('ins'),med=v('med'),pri=v('pri');
     if(!ins||!med||!pri){out.innerHTML='<p class="q_warn">Please answer all three questions.</p>';return;}
     var r=pick(ins,med,pri), t=T[r[0]];
-    out.innerHTML='<div class="q_card"><span class="q_rank">#'+t.rank+'</span><div><p class="q_lbl">A good place to start</p><h3>'+t.name+'</h3><p>'+r[1]+'</p><a href="#'+t.id+'">See the full breakdown</a></div></div>';
+    out.innerHTML='<div class="q_card"><span class="q_rank">#'+t.rank+'</span><div><p class="q_lbl">A good place to start</p>'+(t.logo||'')+'<h3>'+t.name+'</h3><p>'+r[1]+'</p>'+(t.url?'<a href="'+t.url+'" rel="sponsored nofollow noopener" target="_blank">See if you qualify</a>':'<a href="#'+t.id+'">See the full breakdown</a>')+'</div></div>';
   });
 })();
 </script>
