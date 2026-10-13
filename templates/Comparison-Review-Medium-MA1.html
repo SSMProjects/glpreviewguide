@@ -97,7 +97,10 @@ section.wl-comparison-hero{padding:16px 0 12px}
 @media(max-width:767px){
  .safety p{font-size:11.7px}
  .feat_panel .hc_label{white-space:nowrap;gap:5px;letter-spacing:.02em}
- .wl-comparison-cards #pick-1 .score-trust{gap:2px}
+ .wl-comparison-cards #pick-1 .rgrid{grid-template-areas:"trust trust" "head score" "feats feats" "act act"}
+ .wl-comparison-cards #pick-1 .rhead{display:contents}
+ .wl-comparison-cards #pick-1 .score-trust{grid-area:trust;white-space:nowrap;gap:2px}
+ .wl-comparison-cards #pick-1 .rnumlogo{grid-area:head}
 }
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
