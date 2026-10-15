@@ -130,15 +130,17 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   .cookie-row button{background:none;border:0;padding:0;font:inherit;color:#0000FF;text-decoration:underline;cursor:pointer;}
   .cookie-row button:hover{color:#0000CC;}
   .sitefoot{background:#0B5E73;color:#fff;font-family:-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;}
-  .sf-inner{max-width:1000px;margin:0 auto;padding:44px 16px;}
-  .sitefoot .brand{display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:#fff;font:700 12.5px/1.2 Georgia,"Times New Roman",serif;white-space:nowrap;}
-  .sitefoot .brand img{display:block;width:20px;height:20px;flex:none;}
-  .sitefoot .brand small{font-size:10px;font-weight:500;}
-  .sf-brand{margin-bottom:24px;}
-  .sf-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;margin:0 0 24px;}
+  .sf-inner{max-width:1000px;margin:0 auto;padding:24px 16px;}
+  .sitefoot .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:#fff;font:600 20px/1.2 "Fraunces",Georgia,"Times New Roman",serif;white-space:nowrap;}
+  .sitefoot .brand img{display:block;width:32px;height:32px;flex:none;}
+  .sitefoot .brand b{font-weight:700;}
+  .sitefoot .brand small{font-size:13px;font-weight:500;}
+  .sf-brand{display:flex;justify-content:center;margin-bottom:16px;}
+  .sf-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;margin:0 0 10px;}
   .sf-links a{color:#fff;font-size:13px;font-weight:700;text-decoration:none;}
   .sf-links a:hover{text-decoration:underline;}
   .sf-copy{font-size:12px;color:#fff;line-height:1.5;}
+  @media(max-width:420px){.sitefoot .brand{font-size:16px;gap:6px;}.sitefoot .brand small{font-size:11px;}.sitefoot .brand img{width:26px;height:26px;}}
   @media(max-width:380px){.sf-inner{padding-left:12px;padding-right:12px;}.sf-links{gap:12px;}}
 
   /* Publisher branding, scoped to this lander. */
@@ -409,7 +411,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <div class="cookie-row"><button type="button" data-gr-open-consent>Cookie settings</button></div>
 
 <footer class="sitefoot"><div class="sf-inner">
-  <div class="sf-brand"><a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="20" height="20"><span>GLP1Review<b>Guide</b><small>.com</small></span></a></div>
+  <div class="sf-brand"><a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a></div>
   <nav class="sf-links">
     <a href="/about.html">About Us</a>
     <a href="/terms.html">Terms of Use</a>
