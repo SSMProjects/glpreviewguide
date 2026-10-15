@@ -80,7 +80,8 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   .reality li b{color:var(--navy);}
   .reality .ic{color:var(--red);font-weight:700;flex:none;}
 
-  .compare{width:100%;border-collapse:collapse;margin:24px 0;font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;border:1px solid var(--line);}
+  .compare-wrap{margin:24px 0;max-width:100%;min-width:0;overflow-x:auto;}
+  .compare{width:100%;border-collapse:collapse;margin:0;font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;border:1px solid var(--line);}
   .compare th,.compare td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
   .compare thead th{background:var(--navy);color:#fff;font-size:14px;}
   .compare thead th:last-child{background:var(--red);}
@@ -303,6 +304,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
     <h2>The Shift: GLP-1 Treatment, From Home</h2>
     <p>Licensed US telehealth providers now connect patients with medical professionals entirely online. When it's appropriate, a provider can prescribe treatment that's prepared by licensed US pharmacies and shipped to the door — no insurance required, and at a fraction of the typical pharmacy price.</p>
 
+    <div class="compare-wrap">
     <table class="compare">
       <thead><tr><th>Reality</th><th>Traditional pharmacy</th><th>At-home telehealth</th></tr></thead>
       <tbody>
@@ -312,6 +314,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
         <tr><td>Delivery</td><td>Pharmacy pickup</td><td class="yes">To your door, 1–2 days</td></tr>
       </tbody>
     </table>
+    </div>
 
     <blockquote>
       "I knew the treatment worked — I just couldn't justify the pharmacy price. Doing the whole thing online and having it delivered changed everything for me."
