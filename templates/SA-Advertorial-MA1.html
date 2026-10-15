@@ -6,6 +6,14 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Why Thousands of Americans Over 40 Are Skipping the Pharmacy for GLP-1</title>
 <meta name="description" content="A look at the at-home telehealth route giving people access to GLP-1 weight-loss treatment without insurance or a $1,200 pharmacy bill.">
+<!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+</script>
+<link rel="stylesheet" href="../consent.css">
+<script src="../consent.js" defer></script>
 
 <!-- =====================================================================
      GLP-1 REVIEW GUIDE — advertorial. Standalone editorial page.
@@ -124,6 +132,8 @@
   .sf-links{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-bottom:12px;font-size:13px;}
   .sf-links a{color:#c6d2df;text-decoration:none;}
   .sf-links a:hover{color:#fff;text-decoration:underline;}
+  .sf-links button.linklike{background:none;border:0;padding:0;font:inherit;color:#c6d2df;cursor:pointer;}
+  .sf-links button.linklike:hover{color:#fff;text-decoration:underline;}
   .sf-copy{font-size:12px;color:#7f8a99;line-height:1.5;}
 
   /* Publisher branding, scoped to this lander. */
@@ -143,6 +153,8 @@
   .sf-brand{margin-bottom:14px;}
   .sf-links a{color:#0000FF;}
   .sf-links a:hover{color:#0000CC;text-decoration:underline;}
+  .sf-links button.linklike{color:#0000FF;}
+  .sf-links button.linklike:hover{color:#0000CC;text-decoration:underline;}
   .sf-copy{color:#615B6B;}
   @media(max-width:760px){.mast .tagline{display:none}}
   @media(max-width:420px){
@@ -405,15 +417,27 @@
     <a href="https://glp1reviewguide.com/privacy.html" target="_blank" rel="nofollow noopener">Privacy Policy</a>
     <a href="https://glp1reviewguide.com/terms.html" target="_blank" rel="nofollow noopener">Terms and Conditions</a>
     <a href="https://glp1reviewguide.com/about.html#contact" target="_blank" rel="noopener">Contact Us</a>
+    <button type="button" class="linklike" data-gr-open-consent>Cookie settings</button>
   </nav>
   <div class="sf-copy">&copy; 2026 GLP1ReviewGuide.com &middot; support@glp1review.com &middot; This page contains paid advertising.</div>
 </div></footer>
 
 <script>
-/* ONE offer link. Every CTA button redirects here.
-   Replace the {affiliate_id}/{transaction_id}/... tokens with your network's REAL macros. */
-var OFFER_URL = "https://directmeds.com/dm-offers-stc/?oid=12&uid=61&affid=1020&sub1={affiliate_id}&sub2={transaction_id}&sub3={sub1}&sub4={sub2}&sub5={sub3}";
+var OFFER_URL = "https://go.glp1reviewguide.com/ZZ2GX/62M42X/?sub1={gclid}&sub2={campaignid}&sub3={adgroupid}&sub4={creative}&sub5={keyword}&sub6={matchtype}&sub7={device}&sub8={network}&sub9={placement}&sub10={targetid}";
 document.querySelectorAll('a.offerlink').forEach(function(a){ a.setAttribute('href', OFFER_URL); a.setAttribute('rel','nofollow sponsored'); });
+</script>
+<script>
+(function(){
+  var el=document.getElementById('lander-updated');
+  if(!el) return;
+  var fmt=new Intl.DateTimeFormat('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var last='';
+  function ymd(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  function render(){var d=new Date(),k=ymd(d);if(k===last) return;last=k;el.dateTime=k;el.textContent=fmt.format(d);}
+  render();
+  setInterval(render,60000);
+  document.addEventListener('visibilitychange',render);
+})();
 </script>
 
 
@@ -445,5 +469,6 @@ document.querySelectorAll('a.offerlink').forEach(function(a){ a.setAttribute('hr
 })();
 </script>
 
+<script src="/google-everflow-tracking.js"></script>
 </body>
 </html>
