@@ -126,37 +126,34 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
   .legal{padding:22px 24px 40px;background:var(--soft2);border-top:1px solid var(--line);font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:11px;line-height:1.5;color:#8a93a0;}
   .legal b{color:#6b7482;} .legal p{margin:0 0 10px;} .refs{font-size:11px;color:#9aa6b4;}
-  .sitefoot{background:#0f1d2e;color:#aeb9c6;font-family:-apple-system,Segoe UI,Roboto,sans-serif;}
-  .sf-inner{max-width:1000px;margin:0 auto;padding:22px 24px;text-align:center;}
-  .sf-brand{font-family:Georgia,serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:10px;}
-  .sf-brand span{color:#ff5a6e;}
-  .sf-links{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-bottom:12px;font-size:13px;}
-  .sf-links a{color:#c6d2df;text-decoration:none;}
-  .sf-links a:hover{color:#fff;text-decoration:underline;}
-  .sf-links button.linklike{background:none;border:0;padding:0;font:inherit;color:#c6d2df;cursor:pointer;}
-  .sf-links button.linklike:hover{color:#fff;text-decoration:underline;}
-  .sf-copy{font-size:12px;color:#7f8a99;line-height:1.5;}
+  .cookie-row{background:#FBF7F2;text-align:center;padding:12px 16px;font:13px/1.4 -apple-system,Segoe UI,Roboto,sans-serif;}
+  .cookie-row button{background:none;border:0;padding:0;font:inherit;color:#0000FF;text-decoration:underline;cursor:pointer;}
+  .cookie-row button:hover{color:#0000CC;}
+  .sitefoot{background:#0B5E73;color:#fff;font-family:-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;}
+  .sf-inner{max-width:1000px;margin:0 auto;padding:44px 16px;}
+  .sitefoot .brand{display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:#fff;font:700 12.5px/1.2 Georgia,"Times New Roman",serif;white-space:nowrap;}
+  .sitefoot .brand img{display:block;width:20px;height:20px;flex:none;}
+  .sitefoot .brand small{font-size:10px;font-weight:500;}
+  .sf-brand{margin-bottom:24px;}
+  .sf-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;margin:0 0 24px;}
+  .sf-links a{color:#fff;font-size:13px;font-weight:700;text-decoration:none;}
+  .sf-links a:hover{text-decoration:underline;}
+  .sf-copy{font-size:12px;color:#fff;line-height:1.5;}
+  @media(max-width:380px){.sf-inner{padding-left:12px;padding-right:12px;}.sf-links{gap:12px;}}
 
   /* Publisher branding, scoped to this lander. */
   .mast{background:#FBF7F2;border-bottom-color:#0000FF;}
   .bar-inner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;}
   .mast .menu{justify-self:start;}
-  .mast .brand,.sitefoot .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:#1F1B2E;font:600 20px/1.2 "Fraunces",Georgia,"Times New Roman",serif;white-space:nowrap;}
+  .mast .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:#1F1B2E;font:600 20px/1.2 "Fraunces",Georgia,"Times New Roman",serif;white-space:nowrap;}
   .brand img{display:block;width:32px;height:32px;flex:none;}
-  .mast .brand b,.sitefoot .brand b{color:#0000FF;font-weight:700;}
-  .mast .brand small,.sitefoot .brand small{font-size:13px;font-weight:500;color:#615B6B;}
+  .mast .brand b{color:#0000FF;font-weight:700;}
+  .mast .brand small{font-size:13px;font-weight:500;color:#615B6B;}
   .mast .tagline{justify-self:end;margin-left:0;max-width:180px;text-align:right;line-height:1.5;color:#615B6B;}
   .btn{background:#0000FF;color:#fff;box-shadow:0 8px 20px -8px rgba(0,0,255,.4);}
   .btn:hover{background:#0000CC;}
   .btn:focus-visible,.brand:focus-visible{outline:3px solid #0000FF;outline-offset:4px;}
   .kicker{background:transparent;color:#615B6B;padding:0;border-radius:0;line-height:1.5;}
-  .sitefoot{background:#FBF7F2;}
-  .sf-brand{margin-bottom:14px;}
-  .sf-links a{color:#0000FF;}
-  .sf-links a:hover{color:#0000CC;text-decoration:underline;}
-  .sf-links button.linklike{color:#0000FF;}
-  .sf-links button.linklike:hover{color:#0000CC;text-decoration:underline;}
-  .sf-copy{color:#615B6B;}
   @media(max-width:760px){.mast .tagline{display:none}}
   @media(max-width:420px){
     .bar-inner{padding:15px 12px;gap:4px;}
@@ -178,12 +175,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   .author-details{line-height:1.5;}
   .author-role{color:var(--muted);}
   .steps .n{background:#0000FF;}
-  .sitefoot .brand>span{color:#1F1B2E;}
-  .sitefoot .brand{font-size:20px;}
   .legal{padding-bottom:16px;}
-  .sf-inner{padding:16px 24px;}
-  .sf-brand{margin-bottom:10px;}
-  .sf-links{margin-bottom:10px;}
 
   /* Reader feedback layout, matching the supplied visual reference. */
   .comments{padding:28px 24px 24px;border-top:0;background:#fff;font-family:Arial,Helvetica,sans-serif;}
@@ -414,15 +406,16 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   </div>
 </main>
 
+<div class="cookie-row"><button type="button" data-gr-open-consent>Cookie settings</button></div>
+
 <footer class="sitefoot"><div class="sf-inner">
-  <div class="sf-brand"><a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a></div>
+  <div class="sf-brand"><a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="20" height="20"><span>GLP1Review<b>Guide</b><small>.com</small></span></a></div>
   <nav class="sf-links">
-    <a href="https://glp1reviewguide.com/privacy.html" target="_blank" rel="nofollow noopener">Privacy Policy</a>
-    <a href="https://glp1reviewguide.com/terms.html" target="_blank" rel="nofollow noopener">Terms and Conditions</a>
-    <a href="https://glp1reviewguide.com/about.html#contact" target="_blank" rel="noopener">Contact Us</a>
-    <button type="button" class="linklike" data-gr-open-consent>Cookie settings</button>
+    <a href="/about.html">About Us</a>
+    <a href="/terms.html">Terms of Use</a>
+    <a href="/privacy.html">Privacy Policy</a>
   </nav>
-  <div class="sf-copy">&copy; 2026 GLP1ReviewGuide.com &middot; support@glp1review.com &middot; This page contains paid advertising.</div>
+  <div class="sf-copy">&copy; 2026 GLP1ReviewGuide.com. All rights reserved.</div>
 </div></footer>
 
 <script>
