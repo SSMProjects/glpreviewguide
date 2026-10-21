@@ -381,18 +381,22 @@ p{margin-bottom:20px}
 
    (function(){
      function buildUrl(base){
-       if(!base || base.indexOf("URL_") === 0) return "#";
+       if(!base || base.indexOf("URL_") !== -1) return "#";
        if(!APPEND_PARAMS) return base;
        return base + (base.indexOf("?") > -1 ? APPEND_PARAMS.replace("?","&") : APPEND_PARAMS);
      }
      document.querySelectorAll('[data-offer]').forEach(function(el){
        var key = el.getAttribute('data-offer');
        var url = buildUrl(OFFERS[key]);
+       if(url === "#"){
+         el.removeAttribute('href');
+         el.setAttribute('aria-disabled', 'true');
+         el.style.opacity = '.55';
+         el.style.cursor = 'not-allowed';
+         el.style.pointerEvents = 'none';
+         return;
+       }
        el.setAttribute('href', url);
-       el.addEventListener('click', function(e){
-         if(url === "#"){ e.preventDefault(); return; }
-         /* Fire pixel events here if needed, e.g. fbq('track','Lead'); */
-       });
      });
      var bar = document.getElementById('stickyBar');
      window.addEventListener('scroll', function(){

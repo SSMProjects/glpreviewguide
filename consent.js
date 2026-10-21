@@ -110,9 +110,8 @@
     el.hidden = true;
     el.innerHTML =
       '<h2 id="gr-cc-title">Your privacy choices</h2>' +
-      '<p>We use essential cookies to run this site. With your permission we also use analytics cookies to see which pages help people, and advertising cookies to measure our ads. ' +
-      'Because this site covers a health topic, we keep these <strong>off unless you turn them on</strong>. See our <a href="' + POLICY_URL + '">Cookie Policy</a> and <a href="/consumer-health-data-privacy.html">Consumer Health Data Privacy Policy</a>.</p>' +
-      '<p>Separately, if you arrived from a Google ad, the link you clicked includes Google\'s ad click ID. Unless you choose <strong>Reject non-essential</strong>, turn off Advertising below, or use Global Privacy Control, we keep that ID in your browser for this visit and pass it to our affiliate tracking platform (Everflow) when you click through to a program, so we can be credited for referrals and report results back to Google Ads.</p>' +
+      '<p>We use essential cookies to run this site. With your permission, we use analytics and advertising technologies\u2014including ad-click identifiers shared with our tracking partners\u2014to measure visits and referrals. Optional tracking stays off until you accept.</p>' +
+      '<p>See our <a href="https://glp1reviewguide.com/cookie-policy.html">Cookie Policy</a> and <a href="https://glp1reviewguide.com/consumer-health-data-privacy.html">Consumer Health Data Privacy</a>.</p>' +
       (gpc ? '<p class="gr-note">We detected a Global Privacy Control signal from your browser, so advertising cookies and any sale or sharing of your data are turned off.</p>' : '') +
       '<div class="gr-cc-prefs" hidden>' +
         '<div class="switch_row"><div><b>Essential</b><p>Needed for security, load balancing and remembering these choices. Always on.</p></div><label class="switch"><input type="checkbox" checked disabled aria-label="Essential cookies, always on"><span></span></label></div>' +
