@@ -217,7 +217,7 @@ FAQ = [
 ("What are GLP-1 medications?","GLP-1 receptor agonists are prescription medications that mimic a hormone involved in appetite and blood sugar regulation. Some are FDA-approved for chronic weight management in adults who meet specific criteria, and others are approved for type 2 diabetes. Only a licensed clinician can decide whether one is appropriate for you."),
 ("Do these programs guarantee a prescription?","No. Every provider on this list requires a medical evaluation, and a clinician may decide a GLP-1 medication is not right for you. Reputable programs will tell you that up front."),
 ("What side effects should I know about?","Commonly reported side effects include nausea, vomiting, diarrhea and constipation. Serious risks can include pancreatitis, gallbladder problems and, in animal studies, thyroid C-cell tumors. Review the full prescribing information and discuss your health history with a clinician."),
-("Are compounded versions the same as brand-name medications?","No. Compounded drugs are not FDA-approved, and the FDA has ended shortage-based compounding allowances for certain GLP-1 medications, including tirzepatide. Ask any provider exactly what medication and pharmacy they use."),
+("Are compounded versions the same as brand-name medications?","No. Compounded drugs are not FDA-approved. Ask any provider exactly what medication and pharmacy they use."),
 ("Will insurance cover a GLP-1 medication?","Coverage varies widely by plan and diagnosis. Some programs help check your benefits or file prior authorization requests, but approval is never guaranteed."),
 ]
 faq_html = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q,a in FAQ)
