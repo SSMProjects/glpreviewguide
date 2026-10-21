@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which GLP-1 Program Is Right for You? (2026) | GLP1ReviewGuide.com</title>
+<meta name="description" content="Answer three quick questions and see which online GLP-1 weight-loss program fits your budget, coverage, and goals. Independent and editor-scored.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1F1B2E; --plum:#0000FF; --plum-s:#E8E8FF; --cream:#FBF7F2; --paper:#fff;
+  --coral:#E8604C; --coral-d:#C94A37; --sage:#2E8A63; --sage-s:#E4F1EA; --rust:#C0533A;
+  --line:#E6DFD6; --muted:#615B6B;
+  --disp:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --wrap:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.1;margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+.cta{display:inline-block;text-align:center;background:var(--coral);color:#fff;text-decoration:none;font:700 17px var(--body);padding:15px 28px;border-radius:999px;transition:background .15s,transform .12s;border:0;cursor:pointer}
+.cta:hover{background:var(--coral-d);transform:translateY(-1px)}
+.btn-line{display:inline-block;text-decoration:none;font:700 16px var(--body);padding:13px 24px;border-radius:999px;border:2px solid var(--ink);color:var(--ink);background:transparent;transition:.15s}
+.btn-line:hover{background:var(--ink);color:#fff}
+.eyebrow{font:700 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+
+.disclose{background:#F3EEE7;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted);text-align:center;padding:7px 16px}
+
+header{position:sticky;top:0;z-index:40;background:rgba(251,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{font-family:var(--disp);font-weight:600;font-size:21px;text-decoration:none;color:var(--ink)}
+.brand b{color:var(--coral-d);font-weight:700}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav a.link{text-decoration:none;font-weight:500;font-size:15.5px;color:var(--ink);opacity:.82}
+.nav a.link:hover{opacity:1;color:var(--sage)}
+.nav .cta{padding:10px 20px;font-size:15px}
+
+/* HERO with quiz */
+.hero{background:linear-gradient(180deg,var(--sage-s) 0%,var(--cream) 70%);padding:60px 0 70px}
+.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,60px);letter-spacing:-.02em;margin:16px 0 18px}
+.hero h1 em{font-style:italic;color:var(--sage)}
+.hero p.sub{font-size:19px;color:var(--muted);max-width:40ch;margin:0 0 24px}
+.hero .pts{list-style:none;margin:0;padding:0}
+.hero .pts li{padding-left:30px;position:relative;margin:11px 0;font-weight:500;font-size:16px}
+.hero .pts li:before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;background:var(--sage);color:#fff;border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center}
+
+/* quiz card */
+.quizcard{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:34px;box-shadow:0 30px 60px -34px rgba(31,27,46,.4)}
+.quizcard .qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.quizcard .qhead .lbl{font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.quizcard .qhead .step{font-size:13px;color:var(--muted);font-weight:600}
+.prog{height:6px;background:var(--sage-s);border-radius:999px;overflow:hidden;margin:12px 0 24px}
+.prog i{display:block;height:100%;background:var(--sage);border-radius:999px;transition:width .3s;width:33%}
+.quizcard h3{font-size:25px;margin:0 0 20px;letter-spacing:-.01em}
+.opts{display:flex;flex-direction:column;gap:12px}
+.opts button{display:flex;align-items:center;gap:14px;border:2px solid var(--line);border-radius:16px;padding:16px 20px;cursor:pointer;font:600 16px var(--body);color:var(--ink);background:var(--cream);text-align:left;transition:.15s}
+.opts button:hover{border-color:var(--sage);background:#fff;transform:translateX(3px)}
+.opts button .emo{font-size:22px}
+.qstage{display:none}
+.qstage.active{display:block}
+/* result */
+#result .rc{text-align:center}
+.rc .cat{font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.rc h3{font-size:30px;margin:6px 0 6px}
+.rc .score{font-family:var(--disp);font-size:16px;color:var(--muted);margin-bottom:16px}
+.rc .score b{color:var(--ink);font-size:24px}
+.rc p.why{color:var(--muted);font-size:15.5px;margin:0 0 20px}
+.rc .cta{display:block;margin-bottom:10px}
+.rc .restart{background:none;border:0;color:var(--muted);font:600 14px var(--body);cursor:pointer;text-decoration:underline}
+
+section.block{padding:72px 0}
+.sechead{max-width:640px;margin:0 0 40px}
+.sechead.center{margin-left:auto;margin-right:auto;text-align:center}
+.sechead h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.015em;margin:12px 0 10px}
+.sechead p{color:var(--muted);font-size:18px;margin:0}
+
+/* comparison simple table-ish rows */
+.rows .r{display:grid;grid-template-columns:48px 1.4fr 1fr auto;gap:20px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 24px;margin:0 0 14px;transition:.15s}
+.rows .r:hover{box-shadow:0 20px 40px -30px rgba(31,27,46,.4)}
+.rows .r.top{border-color:var(--sage);background:#fff}
+.rows .n{font-family:var(--disp);font-size:30px;font-weight:600;color:var(--sage-s)}
+.rows .r.top .n{color:var(--sage)}
+.rows .nm{font-weight:700;font-size:18px}
+.rows .nm small{display:block;font-weight:500;font-size:13px;color:var(--sage);letter-spacing:.06em;text-transform:uppercase}
+.rows .meta{font-size:14px;color:var(--muted)}
+.rows .meta b{color:var(--ink)}
+.rows .r .cta{padding:11px 20px;font-size:15px}
+
+/* trust cards */
+.why3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why3 .w{background:var(--sage-s);border-radius:20px;padding:30px}
+.why3 .w .ic{font-size:26px;margin-bottom:12px}
+.why3 .w h3{font-size:20px;margin:0 0 8px}
+.why3 .w p{color:#3f5a4e;font-size:15px;margin:0}
+
+/* reassurance block */
+.reassure{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--sage);border-radius:16px;padding:28px 30px;max-width:760px}
+.reassure h3{font-size:21px;margin:0 0 10px}
+.reassure p{color:var(--muted);font-size:15.5px;margin:0}
+
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:4px 22px;margin:0 0 12px}
+.faq summary{font-weight:700;font-size:17px;padding:16px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-size:24px;color:var(--sage);font-weight:400}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0 0 18px;color:var(--muted);font-size:15.5px}
+
+footer{background:var(--ink);color:#C9C6D4;padding:52px 0 30px;font-size:14.5px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;margin-bottom:30px}
+footer .brand{color:#fff}
+footer p.ab{max-width:42ch;color:#A9A5B6;margin:14px 0 0;line-height:1.55}
+footer h5{color:#fff;font-family:var(--body);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 16px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:0 0 10px}
+footer a{text-decoration:none;color:#C9C6D4}
+footer a:hover{color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#8B8798}
+.med{font-size:12.5px;color:#8B8798;line-height:1.5;margin-top:20px;max-width:90ch}
+
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .why3{grid-template-columns:1fr}
+  .nav ul{display:none}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .rows .r{grid-template-columns:40px 1fr;row-gap:12px}
+  .rows .r .meta,.rows .r .cta{grid-column:2}
+}
+@media(max-width:520px){.fgrid{grid-template-columns:1fr}section.block{padding:50px 0}}
+</style>
+</head>
+<body>
+
+<div class="disclose">Advertising disclosure: we may earn a commission when you visit providers from this page. Compensation can affect placement but not our editorial scores.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="brand">GLP1Review<b>Guide</b></a>
+    <ul>
+      <li><a class="link" href="#quiz">Find your fit</a></li>
+      <li><a class="link" href="#top5">Top 5</a></li>
+      <li><a class="link" href="#why">Why trust us</a></li>
+      <li><a class="link" href="/about">About</a></li>
+    </ul>
+    <a href="#quiz" class="cta">Find my fit</a>
+  </div>
+</header>
+
+<!-- HERO + QUIZ -->
+<section class="hero" id="quiz">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Independent · Updated October 2026</span>
+      <h1>Which GLP-1 program is <em>right for you?</em></h1>
+      <p class="sub">Everyone's situation is different. Answer three quick questions and we'll point you to the program that actually fits.</p>
+      <ul class="pts">
+        <li>Takes about 20 seconds</li>
+        <li>No sign-up or email required</li>
+        <li>Built on our independent scoring</li>
+      </ul>
+    </div>
+
+    <!-- QUIZ CARD -->
+    <div class="quizcard">
+      <div class="qhead">
+        <span class="lbl">Find your fit</span>
+        <span class="step" id="stepLbl">Question 1 of 3</span>
+      </div>
+      <div class="prog"><i id="bar"></i></div>
+
+      <div class="qstage active" data-q="0">
+        <h3>What matters most to you?</h3>
+        <div class="opts">
+          <button data-pick="cost"><span class="emo">💸</span> The lowest monthly cost</button>
+          <button data-pick="insurance"><span class="emo">🏥</span> Using my insurance</button>
+          <button data-pick="speed"><span class="emo">⚡</span> Starting as fast as possible</button>
+        </div>
+      </div>
+
+      <div class="qstage" data-q="1">
+        <h3>How hands-on do you want your care?</h3>
+        <div class="opts">
+          <button data-pick="light"><span class="emo">📦</span> Keep it simple — just the essentials</button>
+          <button data-pick="deep"><span class="emo">👩‍⚕️</span> Regular check-ins with a care team</button>
+          <button data-pick="coach"><span class="emo">🎯</span> Coaching and habit support too</button>
+        </div>
+      </div>
+
+      <div class="qstage" data-q="2">
+        <h3>What's your priority this time?</h3>
+        <div class="opts">
+          <button data-pick="value"><span class="emo">⭐</span> Best overall value</button>
+          <button data-pick="trust"><span class="emo">🛡️</span> A name I already recognize</button>
+          <button data-pick="structure"><span class="emo">📘</span> A structured plan to follow</button>
+        </div>
+      </div>
+
+      <div class="qstage" id="result">
+        <div class="rc">
+          <div class="cat" id="rCat">Best overall value</div>
+          <h3 id="rName">Direct Meds</h3>
+          <div class="score">Editor score <b id="rScore">9.4</b>/10</div>
+          <p class="why" id="rWhy">Based on your answers, this is the strongest balance of price, speed, and simplicity.</p>
+          <a href="/review-directmeds.html" class="cta" id="rLink">See if I qualify →</a>
+          <button class="restart" id="restart">↺ Start over</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP 5 -->
+<section class="block" id="top5">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">The full ranking</span>
+      <h2>All five, side by side</h2>
+      <p>Prefer to browse? Here's the full top 5, ranked by overall editorial score.</p>
+    </div>
+    <div class="rows">
+      <div class="r top">
+        <div class="n">1</div>
+        <div class="nm">Direct Meds<small>Best overall value</small></div>
+        <div class="meta">from <b>$49</b>/mo · <b>9.4</b>/10 · no insurance needed</div>
+        <a href="/review-directmeds.html" class="cta">See if I qualify</a>
+      </div>
+      <div class="r">
+        <div class="n">2</div>
+        <div class="nm">Hims &amp; Hers<small>Best brand recognition</small></div>
+        <div class="meta">from <b>$79</b>/mo · <b>9.0</b>/10 · polished app</div>
+        <a href="/review-hims-and-hers.html" class="cta">See if I qualify</a>
+      </div>
+      <div class="r">
+        <div class="n">3</div>
+        <div class="nm">Ro<small>Best clinical depth</small></div>
+        <div class="meta">from <b>$99</b>/mo · <b>8.7</b>/10 · dedicated care team</div>
+        <a href="/review-ro.html" class="cta">See if I qualify</a>
+      </div>
+      <div class="r">
+        <div class="n">4</div>
+        <div class="nm">PlushCare<small>Best for insurance</small></div>
+        <div class="meta">from <b>$129</b>/mo* · <b>8.4</b>/10 · takes most insurance</div>
+        <a href="/review-plushcare.html" class="cta">See if I qualify</a>
+      </div>
+      <div class="r">
+        <div class="n">5</div>
+        <div class="nm">WeightWatchers Med Plus<small>Best structured program</small></div>
+        <div class="meta">from <b>$99</b>/mo · <b>8.1</b>/10 · coaching included</div>
+        <a href="/review-weightwatchers-med-plus.html" class="cta">See if I qualify</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TRUST -->
+<section class="block" id="why" style="padding-top:0">
+  <div class="wrap">
+    <div class="sechead center">
+      <span class="eyebrow">Why trust us</span>
+      <h2>We're here to help you choose, not to sell</h2>
+    </div>
+    <div class="why3">
+      <div class="w"><div class="ic">🔍</div><h3>Independent scoring</h3><p>Every program is scored on the same four weighted criteria, set before any commercial relationship.</p></div>
+      <div class="w"><div class="ic">📅</div><h3>Kept current</h3><p>We re-check pricing and offers monthly, and date every page so you know how fresh it is.</p></div>
+      <div class="w"><div class="ic">⚖️</div><h3>The full picture</h3><p>We call out the trade-offs and who each program isn't right for — not just the highlights.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REASSURANCE -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="reassure">
+      <h3>A quick, honest note</h3>
+      <p>This site is for general information and comparison only — it isn't medical advice, and it doesn't replace talking with a licensed clinician. GLP-1 medications are prescription treatments, and whether one is right for you is a decision to make with a qualified provider. Results vary from person to person.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="sechead"><span class="eyebrow">Good to know</span><h2>Common questions</h2></div>
+    <div class="faq">
+      <details open><summary>How does the quiz pick a program?</summary><p>It maps your answers to the program that scores best for your stated priority — cost, insurance use, speed, or structure — based on our independent editorial scoring. It's a starting point, not a prescription.</p></details>
+      <details><summary>Do I need insurance?</summary><p>No. Several programs we rank, including our top pick, offer flat cash pricing with no insurance required. Others are best run through existing coverage — we note which on each review.</p></details>
+      <details><summary>How do you stay independent if you earn commissions?</summary><p>We may earn a commission when you start a program through our links. That can affect placement, but the editorial score is set independently and doesn't change based on any partnership.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="/" class="brand">GLP1Review<b>Guide</b></a>
+        <p class="ab">Independent, editor-scored comparisons of online GLP-1 weight-loss programs. We do the digging so you can choose with confidence.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul><li><a href="#quiz">Find your fit</a></li><li><a href="#top5">Top 5 compared</a></li><li><a href="#why">Why trust us</a></li><li><a href="/about">About us</a></li></ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul><li><a href="/disclosure">Advertising disclosure</a></li><li><a href="/privacy">Privacy policy</a></li><li><a href="/consumer-health-data-privacy">Consumer health data</a></li><li><a href="/terms">Terms of use</a></li><li><a href="/your-privacy-choices">Your privacy choices</a></li></ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 GLP1ReviewGuide.com · support@glp1reviewguide.com</span>
+      <span>Prices and offers subject to change. *Cost with eligible insurance.</span>
+    </div>
+    <p class="med"><strong>Medical disclaimer:</strong> GLP1ReviewGuide.com provides general information and editorial comparisons only. It is not medical advice and does not establish a provider–patient relationship. GLP-1 medications are prescription treatments; eligibility and outcomes are determined by a licensed clinician. Results vary.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var stages=[].slice.call(document.querySelectorAll('.qstage[data-q]'));
+  var result=document.getElementById('result');
+  var bar=document.getElementById('bar');
+  var stepLbl=document.getElementById('stepLbl');
+  var cur=0;
+  var answers=[];
+  var picks={
+    value:{cat:"Best overall value",name:"Direct Meds",score:"9.4",link:"/review-directmeds.html",why:"The strongest balance of price, speed, and simplicity — flat pricing, no insurance needed, delivered to your door."},
+    insurance:{cat:"Best for insurance",name:"PlushCare",score:"8.4",link:"/review-plushcare.html",why:"Backed by a national primary-care network with strong insurance acceptance — ideal for running treatment through your coverage."},
+    speed:{cat:"Fastest start",name:"Direct Meds",score:"9.4",link:"/review-directmeds.html",why:"A fully online intake with no waitlist means you can go from sign-up to treatment quickly."},
+    trust:{cat:"Best brand recognition",name:"Hims & Hers",score:"9.0",link:"/review-hims-and-hers.html",why:"An established, polished platform with a smooth app experience — a safe pick if brand familiarity matters to you."},
+    deep:{cat:"Best clinical depth",name:"Ro",score:"8.7",link:"/review-ro.html",why:"Strong physician oversight with regular check-ins — the right fit when you want a more hands-on clinical relationship."},
+    structure:{cat:"Best structured program",name:"WeightWatchers Med Plus",score:"8.1",link:"/review-weightwatchers-med-plus.html",why:"Pairs medication with coaching and habit tracking — best if you want lifestyle support built into the program."}
+  };
+  function show(i){
+    stages.forEach(function(s){s.classList.remove('active')});
+    if(i<stages.length){
+      stages[i].classList.add('active');
+      bar.style.width=((i+1)/3*100)+'%';
+      stepLbl.textContent='Question '+(i+1)+' of 3';
+    }
+  }
+  function decide(){
+    // priority answer (q1) wins; q2/q3 refine toward structure/trust/deep
+    var p=answers[0]||'value';
+    var map={cost:'value',insurance:'insurance',speed:'speed'};
+    var key=map[p]||'value';
+    if(answers[2]==='trust') key='trust';
+    if(answers[2]==='structure') key='structure';
+    if(answers[1]==='deep' && key==='value') key='deep';
+    if(answers[1]==='coach') key='structure';
+    var r=picks[key]||picks.value;
+    document.getElementById('rCat').textContent=r.cat;
+    document.getElementById('rName').textContent=r.name;
+    document.getElementById('rScore').textContent=r.score;
+    document.getElementById('rWhy').textContent=r.why;
+    document.getElementById('rLink').setAttribute('href',r.link);
+    stages.forEach(function(s){s.classList.remove('active')});
+    result.classList.add('active');
+    bar.style.width='100%';
+    stepLbl.textContent='Your match';
+  }
+  stages.forEach(function(stage,idx){
+    stage.querySelectorAll('.opts button').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        answers[idx]=btn.getAttribute('data-pick');
+        if(idx<2){cur=idx+1;show(cur)}else{decide()}
+      });
+    });
+  });
+  document.getElementById('restart').addEventListener('click',function(){
+    answers=[];cur=0;result.classList.remove('active');show(0);
+  });
+})();
+</script>
+</body>
+</html>
