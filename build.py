@@ -86,7 +86,7 @@ P = [
   summary="Video visits with board-certified physicians licensed in all 50 states, with an optional low-cost membership and prescriptions sent to your pharmacy.",
   price="Visits $129 each; optional membership $19.99/mo; selected treatment from $199/mo",
   price_short="$129/visit", meds="Saxenda; also Contrave and Xenical", ins="Takes insurance; HSA/FSA for visits", visit="Video visits with physicians",
-  compounded="Only during FDA drug shortages", cancel="Membership is optional",
+  compounded="Compounded prescription options", cancel="Membership is optional",
   scores=[("Clinical care",95),("Medication access",86),("Price transparency",88),("Ongoing support",82)],
   pros=["Board-certified physicians licensed in all 50 states","Real video appointments, not just a questionnaire","Membership is optional and low cost","Offers non-GLP-1 weight-loss medications too"],
   cons=["Each visit costs $129 before insurance","Prescriptions go to a pharmacy instead of shipping to your home","Less built-in coaching than dedicated weight-loss programs"],
