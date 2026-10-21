@@ -146,15 +146,15 @@ PALLAS = dict(name="Pallas Health", short="Pallas", flag="Best overall value",
 
 DIRECTMEDS = dict(name="DirectMeds", short="DirectMeds", flag="Best all-inclusive monthly price",
   url="https://directmeds.com/dm-offers-stc/?oid=12&amp;uid=61&amp;affid=1020&amp;sub1={affiliate_id}&amp;sub2={transaction_id}&amp;sub3={sub1}&amp;sub4={sub2}&amp;sub5={sub3}",
-  summary="One monthly price that includes the medication, doctor visits, supplies and shipping, with compounded medication, including tirzepatide, as an injection or under-the-tongue drops.",
+  summary="One monthly price that includes the medication, doctor visits, supplies and shipping, with compounded medication, including tirzepatide. Formulation varies by provider.",
   price="Selected compounded treatment $147 first month ($150 off), then $297/mo; compounded tirzepatide $399/mo. Medication, doctor visits, supplies and shipping included.",
-  price_short="From $147 first month", meds="Compounded medication, including tirzepatide (injection or sublingual drops)",
+  price_short="From $147 first month", meds="Compounded medication, including tirzepatide (formulation varies by provider)",
   ins="No insurance needed (cash-pay)", visit="Online intake; doctor review within 24 hours",
   compounded="Yes (not FDA-approved)", cancel="Confirm cancellation terms at checkout",
   scores=[("Clinical care",92),("Medication access",90),("Price transparency",97),("Ongoing support",90)],
   pros=["One monthly price covers medication, doctor visits, supplies and shipping, with no membership fee",
         "$150 off the first month: the selected compounded treatment is $147 to start",
-        "Choose injections or sublingual (under-the-tongue) drops",
+        "Formulation varies by provider",
         "A licensed doctor reviews your intake within 24 hours",
         "Full refund if your prescription isn't approved",
         "LegitScript certified; ships from U.S.-based 503A compounding pharmacies in 1–2 days"],
@@ -439,7 +439,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <h3>Fast review and delivery</h3>
    <p>{top["care"]} Approved prescriptions ship from U.S.-based 503A compounding pharmacies, usually within 1–2 days.</p>
    <h3>Medication choice</h3>
-   <p>Doctors can prescribe compounded medication, including tirzepatide, as an injection or as sublingual (under-the-tongue) drops. Compounded medications are not FDA-approved and are not generic versions of brand-name drugs. There's less research on sublingual forms than on injections, so ask your doctor which is right for you.</p>
+   <p>Doctors can prescribe compounded medication, including tirzepatide. Formulation varies by provider. Compounded medications are not FDA-approved and are not generic versions of brand-name drugs. Ask your doctor which formulation they prescribe and why.</p>
    <h3>Things to weigh</h3>
    <p>{top["name"]} doesn't offer brand-name medications or take insurance, and it isn't available in Mississippi or Louisiana. After the first month its price is higher than some programs on this list, including our highest-scoring program, {P[1]["name"]}. It is LegitScript certified, which means its pharmacy and prescribing practices have been independently reviewed.</p>
    <p>A licensed clinician decides whether a GLP-1 medication is right for you.</p>
