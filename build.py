@@ -107,13 +107,13 @@ P = [
  dict(k="e", name="Mochi Health", short="Mochi", flag="Best website experience", total="8.1",
   summary="An easy-to-use platform with 24/7 support that offers both brand-name and lower-cost compounded GLP-1s.",
   price="Membership $79/mo; selected compounded treatment from $60 (starting dose); brand-name costs more",
-  price_short="$79/mo + medication", meds="Foundayo; compounded treatment, including tirzepatide", ins="HSA/FSA accepted", visit="Online + provider messaging",
+  price_short="$79/mo + medication", meds="Foundayo; compounded treatment", ins="HSA/FSA accepted", visit="Online + provider messaging",
   compounded="Yes (not FDA-approved)", cancel="Monthly membership",
   scores=[("Clinical care",84),("Medication access",86),("Price transparency",84),("Ongoing support",88)],
   pros=["Easy-to-use website with 24/7 patient support","Direct messaging with your provider","Accepts HSA/FSA","Has published safety test results for recent compounded batches"],
   cons=["Compounded medications are not FDA-approved","A relatively high number of Better Business Bureau complaints","Extra services require a Wellness Plus plan and qualifying insurance"],
   care="Membership is required for a prescription and includes 24/7 patient support and direct messaging with your provider.",
-  pricing="Membership is $79 a month. The selected compounded treatment starts at $60 and compounded tirzepatide at $90 for the starting dose, rising with dose. Brand-name medications cost more.",
+  pricing="Membership is $79 a month. The selected compounded treatment starts at $60 for the starting dose, rising with dose. Brand-name medications cost more.",
   bestfor="Budget-focused patients who understand the trade-offs of compounded medication, or who want brand-name options with a lower membership fee."),
 ]
 
@@ -123,8 +123,8 @@ for _p in P: _p["was"],_p["now"],_p["now_note"],_p["then"],_p["perk"]=OFFERS[_p[
 
 PALLAS = dict(name="Pallas Health", short="Pallas", flag="Best overall value",
   summary="All-in GLP-1 pricing with no membership fee, the same price at every dose, and both compounded and FDA-approved brand-name options.",
-  price="Selected compounded treatment $139 first month, then $597 every 12 weeks (about $199/mo) or $159/mo on the annual plan; compounded tirzepatide from $179",
-  price_short="From $139 first month", meds="Compounded treatment, including tirzepatide; brand-name options (cash-pay)",
+  price="Selected compounded treatment $139 first month, then $597 every 12 weeks (about $199/mo) or $159/mo on the annual plan",
+  price_short="From $139 first month", meds="Compounded treatment; brand-name options (cash-pay)",
   ins="HSA/FSA eligible; no insurance", visit="100% online; 1 video visit required in 7 states + DC",
   compounded="Yes (not FDA-approved), plus brand-name options", cancel="Cancel or pause anytime with no cancellation fees",
   scores=[("Clinical care",92),("Medication access",97),("Price transparency",97),("Ongoing support",93)],
@@ -139,16 +139,16 @@ PALLAS = dict(name="Pallas Health", short="Pallas", flag="Best overall value",
         "Launched in 2026, so there's little independent customer feedback yet",
         "Doesn't accept insurance"],
   care="Intake, clinician review, check-ins and refills all happen online, and review is often same-day. Prescriptions are written by US-licensed clinicians through an affiliated medical group, and the medical team is led by a physician board-certified in obesity medicine. Most states need no video visit; 7 states plus Washington, D.C. require one to start.",
-  pricing="There's no membership fee. The selected compounded treatment is $139 for the first month, then $597 every 12 weeks (about $199 a month) or about $159 a month on the annual plan. Compounded tirzepatide is $179 for the first month, then about $299 a month, or $259 a month on the annual plan. Nothing is charged until a clinician prescribes, and you're refunded in full if they decide treatment isn't right for you. Brand-name medications are cash-pay and billed monthly.",
+  pricing="There's no membership fee. The selected compounded treatment is $139 for the first month, then $597 every 12 weeks (about $199 a month) or about $159 a month on the annual plan. Nothing is charged until a clinician prescribes, and you're refunded in full if they decide treatment isn't right for you. Brand-name medications are cash-pay and billed monthly.",
   bestfor="People paying out of pocket who want one predictable monthly price, including dose increases, and the choice between compounded and brand-name medication. If you want to use insurance, or prefer a company with a longer track record, look at #2 and #3.",
   was="$199/mo", now="$139", now_note="first month (selected compounded treatment)",
   then="Then about $199/mo, or $159/mo on the annual plan. Refunded if not prescribed.", perk="No membership fee + free shipping")
 
 DIRECTMEDS = dict(name="DirectMeds", short="DirectMeds", flag="Best all-inclusive monthly price",
   url="https://directmeds.com/dm-offers-stc/?oid=12&amp;uid=61&amp;affid=1020&amp;sub1={affiliate_id}&amp;sub2={transaction_id}&amp;sub3={sub1}&amp;sub4={sub2}&amp;sub5={sub3}",
-  summary="One monthly price that includes the medication, doctor visits, supplies and shipping, with compounded medication, including tirzepatide. Formulation varies by provider.",
-  price="Selected compounded treatment $147 first month ($150 off), then $297/mo; compounded tirzepatide $399/mo. Medication, doctor visits, supplies and shipping included.",
-  price_short="From $147 first month", meds="Compounded medication, including tirzepatide (formulation varies by provider)",
+  summary="One monthly price that includes the medication, doctor visits, supplies and shipping, with compounded medication. Formulation varies by provider.",
+  price="Selected compounded treatment $147 first month ($150 off), then $297/mo. Medication, doctor visits, supplies and shipping included.",
+  price_short="From $147 first month", meds="Compounded medication (formulation varies by provider)",
   ins="No insurance needed (cash-pay)", visit="Online intake; doctor review within 24 hours",
   compounded="Yes (not FDA-approved)", cancel="Confirm cancellation terms at checkout",
   scores=[("Clinical care",92),("Medication access",90),("Price transparency",97),("Ongoing support",90)],
@@ -159,10 +159,10 @@ DIRECTMEDS = dict(name="DirectMeds", short="DirectMeds", flag="Best all-inclusiv
         "Full refund if your prescription isn't approved",
         "LegitScript certified; ships from U.S.-based 503A compounding pharmacies in 1–2 days"],
   cons=["No brand-name options",
-        "After the first month, the selected treatment is $297/mo and tirzepatide $399/mo, more than some programs on this list",
+        "After the first month, the selected treatment is $297/mo, more than some programs on this list",
         "Not available in Mississippi or Louisiana; doesn't take insurance"],
   care="You complete a 5-minute health qualifier, choose a medication and pay for the first month, then finish a medical intake in the patient portal. A licensed doctor reviews it within 24 hours and decides whether a prescription is appropriate. Doctor visits are included in the price, and support is available by phone (888-696-7176) and email.",
-  pricing="The selected compounded treatment costs $297 a month, and compounded tirzepatide costs $399 a month. That price includes the medication, doctor visits, supplies and shipping, with no separate membership fee. New patients get $150 off the first month, so the selected treatment starts at $147. If your prescription isn't approved, you get a full refund.",
+  pricing="The selected compounded treatment costs $297 a month. That price includes the medication, doctor visits, supplies and shipping, with no separate membership fee. New patients get $150 off the first month, so the selected treatment starts at $147. If your prescription isn't approved, you get a full refund.",
   bestfor="People paying out of pocket who want one all-inclusive price, fast doctor review and quick delivery, and who are comfortable with compounded medication. If you want brand-name drugs or to use insurance, compare Ro, WeightWatchers Med+ or PlushCare.",
   was="$297/mo", now="$147", now_note="first month (selected compounded treatment, $150 off)",
   then="", perk="Doctor visits, supplies + shipping included")
@@ -262,7 +262,7 @@ def card(i,p):
            "cons":["Treatment requires medical review and a prescription from a licensed provider","Compounded medications are not FDA-approved","Pricing differs depending on medication and treatment option","Brand-name options may have separate membership and medication costs"],
            "was":"",
            "now":"$116/mo",
-           "now_note":"Current MEDVi promotional pricing advertises a selected compounded treatment starting at $116/month and tirzepatide starting at $166/month on the referenced offer page. Pricing and promotions may change.",
+           "now_note":"Current MEDVi promotional pricing advertises a selected compounded treatment starting at $116/month on the referenced offer page. Pricing and promotions may change.",
            "then":"Treatment requires medical review and a prescription from a licensed provider.",
            "perk":"Price-lock options + free shipping"}
     elif i==4:
@@ -425,7 +425,6 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <dl>
    <div><dt>First month</dt><dd>{top["now"]}</dd></div>
    <div><dt>After that</dt><dd>$297/mo</dd></div>
-   <div><dt>Tirzepatide</dt><dd>$399/mo</dd></div>
    <div><dt>Membership fee</dt><dd>None</dd></div>
   </dl>
   <a class="cta light" href="{link(top)}" {REL}>See if I qualify</a>
@@ -439,7 +438,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <h3>Fast review and delivery</h3>
    <p>{top["care"]} Approved prescriptions ship from U.S.-based 503A compounding pharmacies, usually within 1–2 days.</p>
    <h3>Medication choice</h3>
-   <p>Doctors can prescribe compounded medication, including tirzepatide. Formulation varies by provider. Compounded medications are not FDA-approved and are not generic versions of brand-name drugs. Ask your doctor which formulation they prescribe and why.</p>
+   <p>Doctors can prescribe compounded medication. Formulation varies by provider. Compounded medications are not FDA-approved and are not generic versions of brand-name drugs. Ask your doctor which formulation they prescribe and why.</p>
    <h3>Things to weigh</h3>
    <p>{top["name"]} doesn't offer brand-name medications or take insurance, and it isn't available in Mississippi or Louisiana. After the first month its price is higher than some programs on this list, including our highest-scoring program, {P[1]["name"]}. It is LegitScript certified, which means its pharmacy and prescribing practices have been independently reviewed.</p>
    <p>A licensed clinician decides whether a GLP-1 medication is right for you.</p>
