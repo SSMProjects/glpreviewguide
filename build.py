@@ -131,7 +131,7 @@ PALLAS = dict(name="Pallas Health", short="Pallas", flag="Best overall value",
   scores=[("Clinical care",92),("Medication access",97),("Price transparency",97),("Ongoing support",93)],
   pros=["No membership fee: clinician visits, follow-ups and messaging are included in the price",
         "Compounded plans cost the same at every dose, including step-ups",
-        "Full refund if a clinician doesn't approve your plan",
+        "Full refund if a clinician doesn't approve your plan; the order is final after a clinician prescribes",
         "Offers both compounded GLP-1s and FDA-approved brand-name medications",
         "LegitScript certified; medication ships free from US-licensed pharmacies",
         "HSA/FSA eligible, and you can cancel or pause anytime with no fees"],
@@ -143,7 +143,7 @@ PALLAS = dict(name="Pallas Health", short="Pallas", flag="Best overall value",
   pricing="There's no membership fee. The selected compounded treatment is $139 for the first month, then $597 every 12 weeks (about $199 a month) or about $159 a month on the annual plan. Nothing is charged until a clinician prescribes, and you're refunded in full if a clinician doesn't approve your plan; after a clinician prescribes, the order is final. Brand-name medications are cash-pay and billed monthly.",
   bestfor="People paying out of pocket who want one predictable monthly price, including dose increases, and the choice between compounded and brand-name medication. If you want to use insurance, or prefer a company with a longer track record, look at #2 and #3.",
   was="$199/mo", now="$139", now_note="first month (selected compounded treatment)",
-  then="Then about $199/mo, or $159/mo on the annual plan. Refunded if not prescribed.", perk="No membership fee + free shipping")
+  then="Then about $199/mo, or $159/mo on the annual plan. Refunded in full if a clinician doesn't approve; the order is final after a clinician prescribes.", perk="No membership fee + free shipping")
 
 DIRECTMEDS = dict(name="DirectMeds", short="DirectMeds", flag="Best all-inclusive monthly price",
   url="https://directmeds.com/dm-offers-stc/?oid=12&amp;uid=61&amp;affid=1020&amp;sub1={affiliate_id}&amp;sub2={transaction_id}&amp;sub3={sub1}&amp;sub4={sub2}&amp;sub5={sub3}",
