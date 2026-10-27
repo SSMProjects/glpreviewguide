@@ -556,7 +556,7 @@ simple("about.html","About Us","Who we are and why we compare online weight-care
 <h2>Our editorial standards</h2>
 <p>We base health information on FDA prescribing information and peer-reviewed research, link to sources, and never promise specific results. Commercial relationships don't influence our rankings. See <a href="index.html#method">how we score programs</a>.</p>
 <h2 id="contact">Contact us</h2>
-<p>Questions, corrections or partnership inquiries: email <a href="mailto:{EMAIL}">{EMAIL}</a>. We reply within two business days. We can't give medical advice or help with prescriptions or orders; contact your provider directly. In a medical emergency, call 911.</p>
+<p>Questions, corrections or partnership inquiries: email <a href="mailto:{EMAIL}">{EMAIL}</a>. We reply within two business days. We can't give medical advice or help with medication orders; contact your provider directly. In a medical emergency, call 911.</p>
 <p>[Legal company name]<br>[Street address]<br>[City, State ZIP]</p>''')
 
 # contact.html removed (contact details live on about.html#contact and in every footer).
