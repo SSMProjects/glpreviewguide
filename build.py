@@ -122,6 +122,7 @@ OFFERS={'a': ('$74/mo', '$25', 'first month of membership', 'Then $74/mo on a 12
 for _p in P: _p["was"],_p["now"],_p["now_note"],_p["then"],_p["perk"]=OFFERS[_p["k"]]
 
 PALLAS = dict(name="Pallas Health", short="Pallas", flag="Best overall value",
+  url="https://www.pallashealth.co/",
   summary="All-in GLP-1 pricing with no membership fee, the same price at every dose, and both compounded and FDA-approved brand-name options.",
   price="Selected compounded treatment $139 first month, then $597 every 12 weeks (about $199/mo) or $159/mo on the annual plan",
   price_short="From $139 first month", meds="Compounded treatment; brand-name options (cash-pay)",
