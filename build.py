@@ -49,7 +49,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
     <div><h4>Legal</h4><ul><li><a href="disclosure.html">Advertising disclosure</a></li><li><a href="disclosure.html#medical">Medical disclaimer</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="consumer-health-data-privacy.html">Consumer health data privacy</a></li><li><a href="cookie-policy.html">Cookie policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a class="pc" href="your-privacy-choices.html"><img src="images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices / Do Not Sell or Share My Personal Information</a></li><li><button type="button" class="linklike" data-gr-open-consent>Cookie settings</button></li></ul></div>
   </div>
   <div class="legal">
-    <p>The content on this site is for general information only and is not medical advice. GLP-1 medications are available by prescription only and are not right for everyone. Talk to a licensed healthcare provider about the benefits and risks, including serious side effects, before starting any medication. Individual results vary.</p>
+    <p>The content on this site is for general information only and is not medical advice. GLP-1 medications are available only through a licensed clinician and are not right for everyone. Talk to a licensed healthcare provider about the benefits and risks, including serious side effects, before starting any medication. Individual results vary.</p>
     <p>{SITE} is an independent publisher. We are not a healthcare provider or pharmacy and do not sell, prescribe or dispense medications. Product names and trademarks belong to their respective owners and are used for identification only.</p>
     <p>&copy; 2026 {SITE}. All rights reserved.</p>
   </div>
@@ -63,7 +63,7 @@ P = [
  dict(k="a", name="WeightWatchers Med+", short="WW Med+", flag="Best overall", total="9.5",
   summary="Obesity medicine specialists, one-on-one dietitian support and a full nutrition and activity app, with brand-name GLP-1s for people who qualify.",
   price="Membership $74/mo (12-month plan) or $149/mo month to month; medication from $199/mo",
-  price_short="$74/mo + medication", meds="Foundayo, Saxenda", ins="HSA/FSA accepted", visit="Obesity medicine specialists",
+  price_short="$74/mo + medication", meds="Foundayo", ins="HSA/FSA accepted", visit="Obesity medicine specialists",
   compounded="No", cancel="12-month plans are billed for the remaining months if you cancel early",
   scores=[("Clinical care",97),("Medication access",95),("Price transparency",86),("Ongoing support",98)],
   pros=["Care from obesity medicine specialists","One-on-one registered dietitian and a GLP-1 member community","App includes meal tracking, recipes, sleep tracking and strength-training videos","Accepts HSA/FSA","Brand-name, FDA-approved medications only"],
@@ -74,7 +74,7 @@ P = [
  dict(k="b", name="Ro", short="Ro", flag="Best for insurance help", total="9.2",
   summary="Brand-name GLP-1s only, unlimited messaging with a provider, and an insurance concierge that checks your coverage for you.",
   price="Membership $149/mo ($39 first month; about $74/mo if prepaid annually); medication from $149/mo",
-  price_short="$149/mo + medication", meds="Foundayo, Saxenda", ins="Insurance concierge checks coverage", visit="Chat-based, unlimited messaging",
+  price_short="$149/mo + medication", meds="Foundayo", ins="Insurance concierge checks coverage", visit="Chat-based, unlimited messaging",
   compounded="No", cancel="Cancel up to 48 hours before renewal; no long-term contract required",
   scores=[("Clinical care",90),("Medication access",95),("Price transparency",91),("Ongoing support",88)],
   pros=["Insurance concierge checks your GLP-1 coverage","Unlimited messaging with your provider","Cancel up to 48 hours before renewal, with no long-term contract","Brand-name, FDA-approved medications only"],
@@ -83,13 +83,13 @@ P = [
   pricing="The Ro Body membership costs $39 for the first month and $149 a month after that, or roughly $74 a month when prepaid annually. Medication is billed separately, starting around $149 a month for the starting dose of an oral GLP-1.",
   bestfor="People with insurance who want help finding out whether their plan covers a GLP-1, and who are comfortable handling care by message."),
  dict(k="c", name="PlushCare", short="PlushCare", flag="Best for doctor visits", total="8.9",
-  summary="Video visits with board-certified physicians licensed in all 50 states, with an optional low-cost membership and prescriptions sent to your pharmacy.",
+  summary="Video visits with board-certified physicians licensed in all 50 states, with an optional low-cost membership and orders sent to your pharmacy.",
   price="Visits $129 each; optional membership $19.99/mo; selected treatment from $199/mo",
-  price_short="$129/visit", meds="Saxenda; also Contrave and Xenical", ins="Takes insurance; HSA/FSA for visits", visit="Video visits with physicians",
-  compounded="Compounded prescription options", cancel="Membership is optional",
+  price_short="$129/visit", meds="Contrave and Xenical", ins="Takes insurance; HSA/FSA for visits", visit="Video visits with physicians",
+  compounded="Compounded medication options", cancel="Membership is optional",
   scores=[("Clinical care",95),("Medication access",86),("Price transparency",88),("Ongoing support",82)],
   pros=["Board-certified physicians licensed in all 50 states","Real video appointments, not just a questionnaire","Membership is optional and low cost","Offers non-GLP-1 weight-loss medications too"],
-  cons=["Each visit costs $129 before insurance","Prescriptions go to a pharmacy instead of shipping to your home","Less built-in coaching than dedicated weight-loss programs"],
+  cons=["Each visit costs $129 before insurance","Orders go to a pharmacy instead of shipping to your home","Less built-in coaching than dedicated weight-loss programs"],
   care="PlushCare is a general telehealth practice. You book a video visit with a board-certified physician, who can prescribe weight-loss medication if it's appropriate and send it to your pharmacy.",
   pricing="Visits cost $129 each, and insurance may cover them. The optional membership is $19.99 a month. Medication is paid separately at the pharmacy; the selected treatment starts around $199 a month.",
   bestfor="People who want a real doctor's appointment and plan to use insurance, and who don't need an app or coaching program."),
@@ -101,7 +101,7 @@ P = [
   scores=[("Clinical care",86),("Medication access",94),("Price transparency",82),("Ongoing support",85)],
   pros=["Wide choice of brand-name oral and injectable GLP-1s","Unlimited messaging with a provider","Membership includes exercise, nutrition and meditation guidance"],
   cons=["GLP-1s aren't available in a few states","Some users report trouble cancelling recurring shipments","In July 2026 the FTC sued the company over billing and data-sharing practices; the company denies the claims"],
-  care="You complete an online intake form, and a medical provider decides whether a prescription is appropriate. Members get unlimited messaging with a provider after that.",
+  care="You complete an online intake form, and a medical provider decides whether treatment is appropriate. Members get unlimited messaging with a provider after that.",
   pricing="The weight-loss membership costs $39 for the first month, then $149 a month. Medication is billed separately, starting around $149 a month for an oral GLP-1 starting dose.",
   bestfor="People who want to choose between several brand-name pills and pens. Read the cancellation steps before you sign up."),
  dict(k="e", name="Mochi Health", short="Mochi", flag="Best website experience", total="8.1",
@@ -112,13 +112,13 @@ P = [
   scores=[("Clinical care",84),("Medication access",86),("Price transparency",84),("Ongoing support",88)],
   pros=["Easy-to-use website with 24/7 patient support","Direct messaging with your provider","Accepts HSA/FSA","Has published safety test results for recent compounded batches"],
   cons=["Compounded medications are not FDA-approved","A relatively high number of Better Business Bureau complaints","Extra services require a Wellness Plus plan and qualifying insurance"],
-  care="Membership is required for a prescription and includes 24/7 patient support and direct messaging with your provider.",
+  care="Membership is required to start treatment and includes 24/7 patient support and direct messaging with your provider.",
   pricing="Membership is $79 a month. The selected compounded treatment starts at $60 for the starting dose, rising with dose. Brand-name medications cost more.",
   bestfor="Budget-focused patients who understand the trade-offs of compounded medication, or who want brand-name options with a lower membership fee."),
 ]
 
 # ----- Offers keyed by original key; final order is set below -----
-OFFERS={'a': ('$74/mo', '$25', 'first month of membership', 'Then $74/mo on a 12-month plan. Medication from $199/mo.', 'Brand-name GLP-1s only'), 'b': ('$149/mo', '$39', 'first month of membership', 'Then $149/mo. Medication from $149/mo.', 'Insurance concierge included'), 'c': ('', '$129', 'per video visit', 'Optional membership $19.99/mo. Selected treatment from $199/mo.', 'Prescription sent to your pharmacy'), 'd': ('$149/mo', '$39', 'first month of membership', 'Then $149/mo. Medication from $149/mo.', 'Unlimited provider messaging'), 'e': ('', '$79', 'per month membership', 'Selected compounded treatment from $60. Brand-name costs more.', '24/7 patient support')}
+OFFERS={'a': ('$74/mo', '$25', 'first month of membership', 'Then $74/mo on a 12-month plan. Medication from $199/mo.', 'Brand-name GLP-1s only'), 'b': ('$149/mo', '$39', 'first month of membership', 'Then $149/mo. Medication from $149/mo.', 'Insurance concierge included'), 'c': ('', '$129', 'per video visit', 'Optional membership $19.99/mo. Selected treatment from $199/mo.', 'Orders sent to your pharmacy'), 'd': ('$149/mo', '$39', 'first month of membership', 'Then $149/mo. Medication from $149/mo.', 'Unlimited provider messaging'), 'e': ('', '$79', 'per month membership', 'Selected compounded treatment from $60. Brand-name costs more.', '24/7 patient support')}
 for _p in P: _p["was"],_p["now"],_p["now_note"],_p["then"],_p["perk"]=OFFERS[_p["k"]]
 
 PALLAS = dict(name="Pallas Health", short="Pallas", flag="Best overall value",
@@ -139,7 +139,7 @@ PALLAS = dict(name="Pallas Health", short="Pallas", flag="Best overall value",
         "Brand-name medications are cash-pay only and expensive (one listed at $1,349/mo)",
         "Launched in 2026, so there's little independent customer feedback yet",
         "Doesn't accept insurance"],
-  care="Intake, clinician review, check-ins and refills all happen online, and review is often same-day. Prescriptions are written by US-licensed clinicians through an affiliated medical group, and the medical team is led by a physician board-certified in obesity medicine. Most states need no video visit; 7 states plus Washington, D.C. require one to start.",
+  care="Intake, clinician review, check-ins and refills all happen online, and review is often same-day. US-licensed clinicians order treatment through an affiliated medical group, and the medical team is led by a physician board-certified in obesity medicine. Most states need no video visit; 7 states plus Washington, D.C. require one to start.",
   pricing="There's no membership fee. The selected compounded treatment is $139 for the first month, then $597 every 12 weeks (about $199 a month) or about $159 a month on the annual plan. Nothing is charged until a clinician prescribes, and you're refunded in full if they decide treatment isn't right for you. Brand-name medications are cash-pay and billed monthly.",
   bestfor="People paying out of pocket who want one predictable monthly price, including dose increases, and the choice between compounded and brand-name medication. If you want to use insurance, or prefer a company with a longer track record, look at #2 and #3.",
   was="$199/mo", now="$139", now_note="first month (selected compounded treatment)",
@@ -157,13 +157,13 @@ DIRECTMEDS = dict(name="DirectMeds", short="DirectMeds", flag="Best all-inclusiv
         "$150 off the first month: the selected compounded treatment is $147 to start",
         "Formulation varies by provider",
         "A licensed doctor reviews your intake within 24 hours",
-        "Full refund if your prescription isn't approved",
+        "Refund policy in <a href='https://directmeds.com/dm-company/terms.html' target='_blank' rel='nofollow noopener'>DirectMeds' terms</a>",
         "LegitScript certified; ships from U.S.-based 503A compounding pharmacies in 1–2 days"],
   cons=["No brand-name options",
         "After the first month, the selected treatment is $297/mo, more than some programs on this list",
         "Not available in Mississippi or Louisiana; doesn't take insurance"],
-  care="You complete a 5-minute health qualifier, choose a medication and pay for the first month, then finish a medical intake in the patient portal. A licensed doctor reviews it within 24 hours and decides whether a prescription is appropriate. Doctor visits are included in the price, and support is available by phone (888-696-7176) and email.",
-  pricing="The selected compounded treatment costs $297 a month. That price includes the medication, doctor visits, supplies and shipping, with no separate membership fee. New patients get $150 off the first month, so the selected treatment starts at $147. If your prescription isn't approved, you get a full refund.",
+  care="You complete a 5-minute health qualifier, choose a medication and pay for the first month, then finish a medical intake in the patient portal. A licensed doctor reviews it within 24 hours and decides whether treatment is appropriate. Doctor visits are included in the price, and support is available by phone (888-696-7176) and email.",
+  pricing="The selected compounded treatment costs $297 a month. That price includes the medication, doctor visits, supplies and shipping, with no separate membership fee. New patients get $150 off the first month, so the selected treatment starts at $147. Refund policy in <a href='https://directmeds.com/dm-company/terms.html' target='_blank' rel='nofollow noopener'>DirectMeds' terms</a>.",
   bestfor="People paying out of pocket who want one all-inclusive price, fast doctor review and quick delivery, and who are comfortable with compounded medication. If you want brand-name drugs or to use insurance, compare Ro, WeightWatchers Med+ or PlushCare.",
   was="$297/mo", now="$147", now_note="first month (selected compounded treatment, $150 off)",
   then="", perk="Doctor visits, supplies + shipping included")
@@ -204,7 +204,7 @@ def pick(i,p):
       <div class="score-total">{p["total"]}<small> / 10 our score</small></div>
       {bars(p["scores"])}
       <a class="btn" href="{link(p)}" rel="sponsored nofollow noopener" target="_blank">Visit {p["name"]}</a>
-      <p class="fine">{p["price"]}. Prescription requires a medical consultation.</p>
+      <p class="fine">{p["price"]}. Treatment requires a medical consultation.</p>
     </div>
   </div>
 </article>'''
@@ -215,8 +215,8 @@ AUTHOR = f'''<div class="byline"><span class="avatar" aria-hidden="true"></span>
 <span>Written by <strong>[Author Name]</strong>, health editor. Medically reviewed by <strong>[Reviewer Name, MD]</strong>. Updated {UPDATED}.</span></div>'''
 
 FAQ = [
-("What are GLP-1 medications?","GLP-1 receptor agonists are prescription medications that mimic a hormone involved in appetite and blood sugar regulation. Some are FDA-approved for chronic weight management in adults who meet specific criteria, and others are approved for type 2 diabetes. Only a licensed clinician can decide whether one is appropriate for you."),
-("Do these programs guarantee a prescription?","No. Every provider on this list requires a medical evaluation, and a clinician may decide a GLP-1 medication is not right for you. Reputable programs will tell you that up front."),
+("What are GLP-1 medications?","GLP-1 receptor agonists are medications a clinician must authorize that mimic a hormone involved in appetite and blood sugar regulation. Some are FDA-approved for chronic weight management in adults who meet specific criteria, and others are approved for type 2 diabetes. Only a licensed clinician can decide whether one is appropriate for you."),
+("Do these programs guarantee treatment?","No. Every provider on this list requires a medical evaluation, and a clinician may decide a GLP-1 medication is not right for you. Reputable programs will tell you that up front."),
 ("What side effects should I know about?","Commonly reported side effects include nausea, vomiting, diarrhea and constipation. Serious risks can include pancreatitis, gallbladder problems and, in animal studies, thyroid C-cell tumors. Review the full prescribing information and discuss your health history with a clinician."),
 ("Are compounded versions the same as brand-name medications?","No. Compounded drugs are not FDA-approved. Ask any provider exactly what medication and pharmacy they use."),
 ("Will insurance cover a GLP-1 medication?","Coverage varies widely by plan and diagnosis. Some programs help check your benefits or file prior authorization requests, but approval is never guaranteed."),
@@ -242,10 +242,10 @@ def card(i,p):
         p={**p,
            "name":"TrimRx",
            "flag":"BEST FOR SIMPLE PRICING",
-           "summary":"Online GLP-1 care with no monthly membership fee, same-price dosing, free shipping, and telemedicine visits included.",
+           "summary":"Online GLP-1 care with no monthly membership fee, same-price dosing, free shipping, and online doctor visits included.",
            "total":"9.2",
            "scores":[("Clinical care",91),("Medication access",92),("Price transparency",95),("Ongoing support",90)],
-           "pros":["No monthly membership fee","Same price at every dose with no hidden fees","Telemedicine visits are included","Free shipping is included","No insurance is required","Patients can cancel anytime","Licensed medical providers evaluate eligibility and prescribe when appropriate"],
+           "pros":["No monthly membership fee","Same price at every dose with no hidden fees","Doctor visits are included","Free shipping is included","No insurance is required","Patients can cancel anytime","Licensed medical providers evaluate eligibility and prescribe when appropriate"],
            "cons":["Compounded medications are not FDA-approved","TrimRx also allows providers to prescribe FDA-approved branded medications, but TrimRx does not dispense or ship those branded medications","If prescribed a branded medication, the patient is responsible for filling it at a pharmacy and paying the associated medication cost","Individual results vary and weight loss is not guaranteed"],
            "was":"",
            "now":"$168",
@@ -260,11 +260,11 @@ def card(i,p):
            "total":"9.0",
            "scores":[("Clinical care",90),("Medication access",92),("Price transparency",91),("Ongoing support",92)],
            "pros":["No membership or hidden fees on eligible compounded plans","Medication and physician review are included in the program price","Price-lock pricing is available for compounded treatment options","Free shipping directly to your door","Care coaching and dietitian support are included on eligible plans","No insurance is required for cash-pay compounded treatment","HSA/FSA-eligible options are advertised"],
-           "cons":["Treatment requires medical review and a prescription from a licensed provider","Compounded medications are not FDA-approved","Pricing differs depending on medication and treatment option","Brand-name options may have separate membership and medication costs"],
+           "cons":["Treatment requires medical review and authorization from a licensed provider","Compounded medications are not FDA-approved","Pricing differs depending on medication and treatment option","Brand-name options may have separate membership and medication costs"],
            "was":"",
            "now":"$116/mo",
            "now_note":"Current MEDVi promotional pricing advertises a selected compounded treatment starting at $116/month on the referenced offer page. Pricing and promotions may change.",
-           "then":"Treatment requires medical review and a prescription from a licensed provider.",
+           "then":"Treatment requires medical review and authorization from a licensed provider.",
            "perk":"Price-lock options + free shipping"}
     elif i==4:
         p={**p,
@@ -274,11 +274,11 @@ def card(i,p):
            "total":"8.8",
            "scores":[("Clinical care",90),("Medication access",88),("Price transparency",90),("Ongoing support",94)],
            "pros":["Compounded GLP-1 injections are currently advertised starting at $79/month","Compounded GLP-1/GIP injections are currently advertised starting at $129/month","No membership or hidden fees are advertised","Medication is included in applicable program pricing","Free expedited delivery","24/7 access to the care team","Unlimited appointments and messaging","Optional care coaching is included at no additional charge"],
-           "cons":["Compounded medications are not FDA-approved or evaluated by the FDA for safety, efficacy, or quality","A licensed provider determines whether treatment and a prescription are appropriate","Pricing varies by treatment and selected plan length","Cancel before the next medication shipment to avoid the next billing cycle"],
+           "cons":["Compounded medications are not FDA-approved or evaluated by the FDA for safety, efficacy, or quality","A licensed provider determines whether treatment is appropriate","Pricing varies by treatment and selected plan length","Cancel before the next medication shipment to avoid the next billing cycle"],
            "was":"",
            "now":"$79/mo",
            "now_note":"Compounded GLP-1 injections currently start at $79/month, while GLP-1/GIP injections start at $129/month. Pricing depends on the treatment and plan selected and may change.",
-           "then":"Treatment and prescriptions require review by a licensed healthcare provider.",
+           "then":"Treatment requires review by a licensed healthcare provider.",
            "perk":"24/7 support + free expedited delivery"}
     crit="".join(f'<li><span>{n}</span><i><b style="width:{v}%"></b></i><em>{v/10:.1f}</em></li>' for n,v in p["scores"])
     was=f'<s>{p["was"]}</s>' if p["was"] else ""
@@ -376,7 +376,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 </div></section>
 
 <div class="w">
- <div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications require a prescription and a medical evaluation, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="disclosure.html#medical">Medical disclaimer</a></p></div>
+ <div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications require clinician authorization and a medical evaluation, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="disclosure.html#medical">Medical disclaimer</a></p></div>
 </div>
 
 <section class="picks"><div class="w">
@@ -412,7 +412,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  </div>
  <div class="wdesc">
   <p><i class="fa-solid fa-user-doctor"></i><span><strong>Clinical care.</strong> Clinician credentials, depth of review, labs and how fast you can reach someone about side effects.</span></p>
-  <p><i class="fa-solid fa-prescription-bottle-medical"></i><span><strong>Medication access.</strong> Which FDA-approved GLP-1s are available, and whether compounded options are clearly labeled.</span></p>
+  <p><i class="fa-solid fa-pills"></i><span><strong>Medication access.</strong> Which FDA-approved GLP-1s are available, and whether compounded options are clearly labeled.</span></p>
   <p><i class="fa-solid fa-receipt"></i><span><strong>Price transparency.</strong> Total monthly cost shown up front, price changes with dose, and cancellation terms.</span></p>
   <p><i class="fa-solid fa-comments"></i><span><strong>Ongoing support.</strong> Coaching, nutrition help, check-ins and app quality.</span></p>
  </div>
@@ -429,7 +429,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <div><dt>Membership fee</dt><dd>None</dd></div>
   </dl>
   <a class="cta light" href="{link(top)}" {REL}>See if I qualify</a>
-  <p class="feat_fine">Refunded in full if your prescription isn't approved. Paid placement.</p>
+  <p class="feat_fine">Paid placement. Refund policy in <a href='https://directmeds.com/dm-company/terms.html' target='_blank' rel='nofollow noopener'>DirectMeds' terms</a>.</p>
  </aside>
  <div class="feat_copy">
   <h2 class="sec">Why we feature {top["name"]}</h2>
@@ -437,7 +437,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <h3>All-inclusive pricing</h3>
    <p>Most programs charge a membership and bill medication separately. {top["pricing"]}</p>
    <h3>Fast review and delivery</h3>
-   <p>{top["care"]} Approved prescriptions ship from U.S.-based 503A compounding pharmacies, usually within 1–2 days.</p>
+   <p>{top["care"]} Approved treatment ships from U.S.-based 503A compounding pharmacies, usually within 1–2 days.</p>
    <h3>Medication choice</h3>
    <p>Doctors can prescribe compounded medication. Formulation varies by provider. Compounded medications are not FDA-approved and are not generic versions of brand-name drugs. Ask your doctor which formulation they prescribe and why.</p>
    <h3>Things to weigh</h3>
@@ -465,7 +465,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
  <div><h4>Explore</h4><ul><li><a href="#fit">Find your fit</a></li><li><a href="#method">How we score</a></li><li><a href="about.html">About us</a></li></ul></div>
  <div><h4>Legal</h4><ul><li><a href="disclosure.html">Advertising disclosure</a></li><li><a href="disclosure.html#medical">Medical disclaimer</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="consumer-health-data-privacy.html">Consumer health data privacy</a></li><li><a href="cookie-policy.html">Cookie policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a class="pc" href="your-privacy-choices.html"><img src="images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices / Do Not Sell or Share My Personal Information</a></li><li><button type="button" class="linklike" data-gr-open-consent>Cookie settings</button></li></ul></div>
- <p class="foot_legal">Content is for information only and is not medical advice. GLP-1 medications require a prescription; talk to a licensed clinician about benefits and risks. {SITE} is an independent publisher, not a healthcare provider or pharmacy. We may earn commissions from links on this page, which may affect where programs appear. &copy; 2026 {SITE}.</p>
+ <p class="foot_legal">Content is for information only and is not medical advice. GLP-1 medications require clinician authorization; talk to a licensed clinician about benefits and risks. {SITE} is an independent publisher, not a healthcare provider or pharmacy. We may earn commissions from links on this page, which may affect where programs appear. &copy; 2026 {SITE}.</p>
 </div></footer>
 
 <script>
@@ -504,7 +504,7 @@ for i,p in enumerate(P,1):
   </div>
   <div class="hero-art"><img src="images/provider-{p["slug"]}.svg" alt="{p["name"]} logo" width="320" height="160"></div>
 </div></section>
-<div class="wrap"><div class="notice"><strong>Prescription required</strong>A licensed clinician decides whether a GLP-1 medication is appropriate. This review is not medical advice. <a href="disclosure.html#medical">Medical disclaimer</a>.</div></div>
+<div class="wrap"><div class="notice"><strong>Clinician authorization required</strong>A licensed clinician decides whether a GLP-1 medication is appropriate. This review is not medical advice. <a href="disclosure.html#medical">Medical disclaimer</a>.</div></div>
 <section class="section"><div class="wrap">
   <article class="pick top"><div class="pick-flag">Ranked #{i}: {p["flag"]}</div><div class="pick-body">
     <div class="pick-logo"><img src="images/provider-{p["slug"]}.svg" alt="" width="160" height="80"></div>
@@ -513,7 +513,7 @@ for i,p in enumerate(P,1):
       <div><h4>Things to know</h4><ul>{"".join(f"<li>{x}</li>" for x in p["cons"])}</ul></div></div></div>
     <div class="score"><div class="score-total">{p["total"]}<small> / 10</small></div>{bars(p["scores"])}
       <a class="btn" href="{link(p)}" rel="sponsored nofollow noopener" target="_blank">Visit {p["name"]}</a>
-      <p class="fine">{p["price"]}. Prescription not guaranteed.</p></div>
+      <p class="fine">{p["price"]}. Treatment not guaranteed.</p></div>
   </div></article>
 </div></section>
 <section class="section" style="padding-top:0"><div class="wrap prose">
@@ -566,7 +566,7 @@ simple("disclosure.html","Advertising Disclosure & Medical Disclaimer","How we e
 <p>Compensation may affect which companies we feature and where they appear on the page, but it does not affect our scores, which follow our <a href="index.html#method">published methodology</a>. We don't list every program available.</p>
 <h2 id="medical">Medical disclaimer</h2>
 <p>Content on this site is for informational purposes only and is not a substitute for professional medical advice, diagnosis or treatment. Always consult a qualified healthcare provider before starting, stopping or changing any medication.</p>
-<p>GLP-1 medications are available by prescription only. They carry risks including gastrointestinal side effects, pancreatitis, gallbladder disease and a boxed warning about thyroid C-cell tumors. They are not appropriate for everyone. Results vary between individuals.</p>
+<p>GLP-1 medications are available only through a licensed clinician. They carry risks including gastrointestinal side effects, pancreatitis, gallbladder disease and a boxed warning about thyroid C-cell tumors. They are not appropriate for everyone. Results vary between individuals.</p>
 <p>{SITE} does not prescribe, sell or dispense medication and is not a pharmacy or healthcare provider.</p>''')
 
 # privacy.html is now a standalone page (with consumer-health-data, cookie and Do Not Sell pages).
