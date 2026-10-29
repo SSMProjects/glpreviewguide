@@ -7,6 +7,7 @@
 
   var KEYS = ['gclid', 'campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device', 'network', 'placement', 'targetid'];
   var SUBS = ['sub1', 'sub2', 'sub3', 'sub4', 'sub5', 'sub6', 'sub7', 'sub8', 'sub9', 'sub10'];
+  var AFFILIATE_SELECTOR = 'a[href*="go.glp1reviewguide.com"], a[href*="www.t8md2lxd.com/23H7P9/"]';
 
   function isMacro(v) {
     if (!v || typeof v !== 'string') return true;
@@ -160,7 +161,7 @@
       clearAttributionStorage();
     }
 
-    var anchors = document.querySelectorAll('a[href*="go.glp1reviewguide.com"]');
+    var anchors = document.querySelectorAll(AFFILIATE_SELECTOR);
     anchors.forEach(function (a) {
       try {
         var href = a.getAttribute('href');
@@ -208,7 +209,7 @@
 
   // Re-verify upon CTA click in case consent or parameters changed
   document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest && e.target.closest('a[href*="go.glp1reviewguide.com"]');
+    var a = e.target && e.target.closest && e.target.closest(AFFILIATE_SELECTOR);
     if (a) {
       updateLinks();
     }
