@@ -89,8 +89,131 @@ p{margin:0}
 /* entrances: content is visible without script; with script, parts rise in reading order */
 .js [data-r]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--out),transform .8s var(--out);transition-delay:calc(var(--i,0)*80ms)}
 .js [data-r].in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js [data-r]{opacity:1;transform:none;transition:none}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.js [data-split]{opacity:0}
+.js [data-split].in{opacity:1}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js [data-r],.js [data-split]{opacity:1;transform:none;transition:none}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 .nw{white-space:nowrap}
+
+/* ---------- shared visuals (replace the stock photographs) ---------- */
+/* GLP-1 signal illustration */
+.sig{width:100%;height:auto;display:block;overflow:visible;--ill-org:#fff;--ill-ink:var(--ink);--ill-line:var(--blue);--ill-soft:var(--blue-s)}
+.sig .org{fill:var(--ill-org);stroke:var(--ill-ink);stroke-width:4;stroke-linejoin:round}
+.sig .fold,.sig .tube{fill:none;stroke:var(--ill-ink);stroke-width:3.5;stroke-linecap:round}
+.sig .meal circle{fill:var(--coral)}
+.sig .sig-path{fill:none;stroke:var(--ill-soft);stroke-width:14;stroke-linecap:round}
+.sig .sig-dash{fill:none;stroke:var(--ill-line);stroke-width:3;stroke-dasharray:2 12;stroke-linecap:round;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.sig .mol polygon{fill:var(--gold);stroke:var(--ill-ink);stroke-width:2.5}
+.sig .mol circle{fill:var(--ill-ink)}
+.sig .mol{opacity:0}
+.sig .glow circle{fill:var(--gold);opacity:0}
+.sig .g-track{fill:none;stroke:var(--ill-soft);stroke-width:12;stroke-linecap:round}
+.sig .g-fill{fill:none;stroke:var(--sage);stroke-width:12;stroke-linecap:round;stroke-dasharray:195;stroke-dashoffset:195}
+.sig .needle path{stroke:var(--ill-ink);stroke-width:4;stroke-linecap:round}
+.sig .needle circle{fill:var(--ill-ink)}
+.sig .needle{transform:rotate(-80deg)}
+.sig text{font:700 14px var(--body);fill:var(--ill-ink)}
+.sig .chip rect{fill:#fff;stroke:var(--ill-ink);stroke-width:2}
+.sig .chip text{font-size:14px;fill:var(--ink)}
+.sig.on-blue{--ill-org:#fff;--ill-ink:#14123a;--ill-line:#fff;--ill-soft:rgba(255,255,255,.22)}
+.sig.on-blue .gauge text{fill:#fff}
+/* when script runs, the static (final) state is replaced by the timeline */
+html:not(.mo) .sig .mol{opacity:1}
+html:not(.mo) .sig .needle{transform:rotate(60deg)}
+html:not(.mo) .sig .g-fill{stroke-dashoffset:40}
+
+/* product-style fragments, built in HTML */
+.ui{background:#fff;color:var(--ink);border-radius:18px;padding:18px 18px 20px;font-family:var(--body);text-align:left}
+.ui-top{display:flex;align-items:center;gap:10px;font-size:15px;margin-bottom:14px}
+.ui-top b{flex:1}
+.ui-dot{width:10px;height:10px;border-radius:50%;background:var(--sage)}
+.ui-tag{font-size:13px;font-weight:700;color:var(--blue-d);background:var(--blue-s);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.ui svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.rc ol{list-style:none;margin:0;padding:0}
+.rc li{display:grid;grid-template-columns:22px minmax(0,1fr) 34% 38px;align-items:center;gap:10px;padding:9px 0;font-size:15px}
+.rc li+li{box-shadow:0 -1px 0 var(--blue-s)}
+.rc-n{font:700 18px var(--disp);color:var(--blue)}
+.rc-nm{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rc-bar{height:8px;border-radius:9px;background:var(--blue-s);overflow:hidden}
+.rc-bar i{display:block;height:100%;width:var(--w);background:var(--blue);border-radius:9px;transform-origin:left}
+.rc li b{font:700 18px var(--disp);text-align:right}
+.rc-foot{font-size:13px;color:var(--muted);margin-top:10px}
+
+.ph{width:260px;max-width:100%;border-radius:34px;padding:16px 16px 20px;box-shadow:0 0 0 8px var(--ink)}
+.ph-notch{width:80px;height:18px;border-radius:0 0 12px 12px;background:var(--ink);margin:-16px auto 14px}
+.ph-h{font:700 20px var(--disp)}
+.ph-prog{height:6px;border-radius:6px;background:var(--blue-s);margin:12px 0 14px;overflow:hidden}
+.ph-prog i{display:block;height:100%;width:100%;background:var(--blue);transform-origin:left}
+.ph ul{list-style:none;margin:0;padding:0}
+.ph li{display:flex;align-items:center;gap:10px;padding:10px 12px;margin-bottom:8px;border-radius:12px;background:var(--cream);font-size:15px;font-weight:500}
+.ck{width:20px;height:20px;border-radius:50%;flex:none;background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.ph-btn{display:block;text-align:center;background:var(--coral);color:#fff;font-weight:800;border-radius:999px;padding:11px;margin-top:6px;font-size:15px}
+
+.rv{width:340px;max-width:100%}
+.rv-av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff}
+.rv-av svg{width:20px;height:20px}
+.bub{border-radius:16px;padding:10px 14px;font-size:15px;max-width:86%;margin:0 0 8px}
+.bub.me{background:var(--blue);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+.bub.them{background:var(--cream);border-bottom-left-radius:4px}
+.typing{display:inline-flex;gap:5px;padding:14px}
+.typing i{width:8px;height:8px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+
+.sh{width:360px;max-width:100%}
+.sh-box{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--coral);color:#fff}
+.sh-box svg{width:20px;height:20px}
+.sh-line{height:8px;border-radius:8px;background:var(--blue-s);margin:6px 8px 0;overflow:hidden}
+.sh-line i{display:block;height:100%;width:100%;background:var(--sage);transform-origin:left}
+.sh ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-size:13px;font-weight:700}
+.sh li{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:-14px}
+.sd{width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 4px var(--sage)}
+.sh li.on .sd{background:var(--sage)}
+
+.pch ol{list-style:none;margin:0;padding:0}
+.pch li{display:grid;grid-template-columns:96px minmax(0,1fr) 44px;gap:10px;align-items:center;padding:7px 0;font-size:14px;transition:opacity .3s}
+.pc-nm{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-bar{height:16px;border-radius:6px;background:var(--cream)}
+.pc-bar i{display:block;height:100%;width:var(--w);background:var(--blue);border-radius:6px;transform-origin:left;transition:background .3s}
+.pch li b{text-align:right;font-weight:800}
+.pch li.over .pc-bar i{background:#C9C9F5}
+.pch li.over{color:var(--muted)}
+.pch{position:relative}
+.pc-budget{position:absolute;top:52px;bottom:30px;left:calc(18px + 96px + 10px + (100% - 36px - 96px - 10px - 54px) * var(--b));width:3px;background:var(--coral);border-radius:2px;transition:left .35s cubic-bezier(.23,1,.32,1)}
+.pc-budget span{position:absolute;top:100%;left:50%;transform:translate(-50%,4px);white-space:nowrap;font-size:12.5px;font-weight:800;color:var(--coral-d)}
+
+.srg{display:flex;align-items:center;gap:28px}
+.srg svg{width:min(300px,100%);flex:none}
+.ring-bg{fill:none;stroke:var(--blue-s);stroke-width:26}
+.ring-seg{fill:none;stroke-width:26;stroke-linecap:butt}
+.srg-n{font:700 52px var(--disp);fill:var(--ink)}
+.srg-l{font:700 15px var(--body);fill:var(--muted)}
+.srg ul{list-style:none;margin:0;padding:0;font-size:16px}
+.srg li{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.srg li i{width:14px;height:14px;border-radius:4px;flex:none}
+.srg li b{font:700 22px var(--disp)}
+
+.orbit{position:relative;aspect-ratio:1}
+.ob-ring{position:absolute;inset:0}
+.ob{position:absolute;width:21%;aspect-ratio:1;margin:-10.5% 0 0 -10.5%;border-radius:50%;background:#fff;display:grid;place-items:center;padding:3.5%;transition:opacity .4s,transform .4s}
+.ob img{max-height:100%;object-fit:contain}
+.orbit.dim .ob{opacity:.25}
+.orbit .ob.hit{opacity:1}
+
+.ico{display:inline-grid;place-items:center;border-radius:50%;background:var(--blue);color:#fff}
+.ico svg{width:58%;height:58%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* split headline lines (React Bits style split text, done with GSAP) */
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.sw>span{display:inline-block;will-change:transform}
+
+/* Lenis */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.rv{min-height:236px}
+.sw{text-indent:0}
 
 /* V2 · One motif: the lens from the GLP1ReviewGuide logo frames photographs, bullets, the quiz result and the footer */
 h2{font-size:clamp(32px,3.6vw,54px);line-height:1.04}
@@ -111,7 +234,8 @@ section{scroll-margin-top:72px}
 .c-links a{color:var(--ink)}
 .room{position:relative;border-radius:var(--r);overflow:hidden;background:var(--blue-s)}
 .lens{position:absolute;left:6%;top:50%;width:150%;aspect-ratio:1;transform:translateY(-50%);border-radius:50%;overflow:hidden;border:14px solid var(--blue)}
-.lens img{width:100%;height:100%;object-fit:cover;object-position:28% 30%;animation:breathe 22s ease-in-out infinite alternate}
+.lens{background:#fff}
+.lens-in{position:absolute;left:3%;top:50%;width:60%;transform:translateY(-50%)}
 @keyframes breathe{from{transform:scale(1.02)}to{transform:scale(1.1)}}
 .pin{position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:10px 18px 10px 10px;font-weight:700;font-size:15px}
 .chk{width:28px;height:28px;border-radius:50%;background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat;flex:none}
@@ -119,6 +243,7 @@ section{scroll-margin-top:72px}
  .hero{grid-template-columns:1fr;min-height:0}
  .room{order:-1;height:46svh;min-height:300px}
  .lens{width:120%;left:-10%;top:-10%;transform:none}
+ .lens-in{left:12%;top:16%;width:72%;transform:none}
  .card{margin-top:-36px;position:relative;z-index:1;margin-inline:8px}
  .c-in{padding:36px 20px 28px}
  .lensrow{padding:14px 20px}.lensrow i{width:16px;height:16px;border-width:3px}
@@ -131,13 +256,13 @@ section{scroll-margin-top:72px}
 /* the live thing: a square plate with the lens over it, three questions beside */
 .match{padding:clamp(96px,11vw,170px) 0}
 .match .w{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:stretch}
-.plate{position:relative;aspect-ratio:1;align-self:center}
-.plate>img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
-.plate .ring{position:absolute;left:7%;top:7%;width:86%;height:86%;border-radius:50%;border:10px solid #fff;display:grid;place-items:center}
+.plate{position:relative;aspect-ratio:1;align-self:center;background:var(--blue);border-radius:var(--r);overflow:hidden}
+.plate .orbit{position:absolute;inset:7%}
+.plate .ring{position:absolute;left:7%;top:7%;width:86%;height:86%;border-radius:50%;border:10px solid rgba(255,255,255,.35);display:grid;place-items:center;z-index:1}
 .res-logo{width:58%;aspect-ratio:1;border-radius:50%;background:#fff;display:grid;place-items:center;padding:12%;transform:scale(.96);opacity:0;transition:transform .7s var(--out),opacity .5s}
 .res-logo img{max-height:100%;object-fit:contain}
 .plate.found .res-logo{transform:scale(1);opacity:1}
-.plate.found .ring{border-color:var(--blue);animation:focus .7s var(--out)}
+.plate.found .ring{border-color:var(--gold-s);animation:focus .7s var(--out)}
 @keyframes focus{from{transform:scale(1.12);opacity:.3}to{transform:scale(1);opacity:1}}
 .qz{display:flex;flex-direction:column;justify-content:space-between;gap:24px}
 fieldset{border:0;margin:0;padding:0}
@@ -201,32 +326,39 @@ fieldset input:focus-visible+span{outline:3px solid var(--coral);outline-offset:
 .s-top{display:grid;grid-template-columns:5fr 6fr;gap:48px;align-items:end;margin-bottom:64px}
 .s-top p{font-size:18px;max-width:52ch}
 .acc{display:flex;height:520px;border-radius:var(--r);overflow:hidden}
-.pn{position:relative;flex:0 0 13%;border:0;padding:0;cursor:pointer;text-align:left;color:#fff;font-family:var(--body);overflow:hidden;transition:flex-basis .45s var(--out)}
+.pn{position:relative;flex:0 0 13%;color:#fff;overflow:hidden;transition:flex-basis .45s var(--out)}
 .pn:nth-child(1){background:var(--blue-d)}.pn:nth-child(2){background:var(--blue)}.pn:nth-child(3){background:#4747FF}.pn:nth-child(4){background:#B8B8FF;color:var(--ink)}
-.pn.open{flex:1 1 61%;cursor:default}
+.pn.open{flex:1 1 61%}
+.hit{position:absolute;inset:0;z-index:2;border:0;background:none;color:transparent;font-size:0;cursor:pointer}
+.pn.open .hit{inset:0 auto auto 0;width:1px;height:1px;overflow:hidden;cursor:default}
 .pn .nm{position:absolute;left:20px;bottom:24px;font:700 22px var(--disp);writing-mode:vertical-rl;transform:rotate(180deg);transition:opacity .3s}
 .pn.open .nm{writing-mode:horizontal-tb;transform:none;top:32px;left:32px;bottom:auto;font-size:clamp(32px,3.6vw,54px)}
-.pn .bd{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;opacity:0;pointer-events:none;transition:opacity .4s .1s}
-.pn.open .bd{opacity:1}
+.pn .bd{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1.1fr;align-items:center;opacity:0;visibility:hidden;transition:opacity .4s .15s}
+.pn.open .bd{opacity:1;visibility:visible}
 .pn .tx{align-self:end;padding:32px;font-size:18px;line-height:1.5;max-width:36ch}
-.pn .bd img{width:100%;height:100%;object-fit:cover;clip-path:circle(46% at 50% 50%)}
+.pn .art{display:grid;place-items:center;padding:24px}
+.pn .art .ui{width:100%;max-width:360px}
 .pn:not(.open):hover{filter:brightness(1.12)}
+.pn .hit:focus-visible{outline:3px solid var(--gold-s);outline-offset:-6px}
 @media(max-width:860px){
  .s-top{grid-template-columns:1fr;gap:20px}
  .acc{flex-direction:column;height:auto}
  .pn{flex:none;min-height:64px}
  .pn .nm,.pn.open .nm{position:static;writing-mode:horizontal-tb;transform:none;display:block;padding:18px 20px;font-size:20px}
+ .pn.open .hit{display:none}
  .pn .bd{position:static;display:none;grid-template-columns:1fr}
  .pn.open .bd{display:grid}
  .pn .tx{padding:0 20px 20px;font-size:17px}
- .pn .bd img{aspect-ratio:4/3;height:auto}
+ .pn .bd{visibility:visible}
+ .pn .art{padding:0 16px 24px}
 }
 
 /* what a program includes: a statement with lens thumbnails inside the line */
 .incl{padding:clamp(80px,8vw,120px) 0 clamp(96px,11vw,170px)}
 .incl .stmt{max-width:26em;margin:0 auto;text-align:center}
 .th{display:inline-block;width:1.1em;height:1.1em;vertical-align:-.2em;margin:0 .12em;border-radius:50%;overflow:hidden;border:3px solid var(--blue)}
-.th img{width:100%;height:100%;object-fit:cover}
+.th.ico{border:0;background:var(--blue);color:#fff}
+.th.ico svg{width:60%;height:60%}
 .g-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:80px}
 .g-sci{width:100%;border-radius:var(--r)}
 .g-row p{max-width:54ch}
@@ -251,7 +383,8 @@ fieldset input:focus-visible+span{outline:3px solid var(--coral);outline-offset:
 /* close: one row of the board, cropped at both edges */
 .cta{display:grid;grid-template-columns:2fr 8fr 2fr;gap:12px;padding:clamp(80px,9vw,140px) 0 0;overflow:hidden}
 .cta .side{height:360px;border-radius:var(--r)}
-.cta .l{margin-left:-40px;overflow:hidden}.cta .l img{width:100%;height:100%;object-fit:cover}
+.cta .l{margin-left:-40px;overflow:hidden;background:var(--blue-s);display:grid;place-items:end center;padding-top:28px}
+.cta .l .ph{width:220px;margin-bottom:-120px}
 .cta .r{margin-right:-40px;background:var(--coral)}
 .mid{background:var(--blue);color:#fff;border-radius:var(--r);height:360px;padding:40px clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px}
 .mid p{max-width:48ch}
@@ -273,6 +406,9 @@ fieldset input:focus-visible+span{outline:3px solid var(--coral);outline-offset:
 @media(max-width:760px){.f-row{grid-template-columns:1fr 1fr}.f-row .ct{grid-column:1/3}}
 
 @media(max-width:600px){.big svg{width:44px}.big p{font-size:clamp(26px,8vw,40px)}.big{gap:12px}}
+
+@media(max-width:760px){.cta .l .ph{width:160px;margin-bottom:-170px}}
+.pn .pc-budget{display:none}
 </style>
 </head>
 <body>
@@ -288,25 +424,51 @@ fieldset input:focus-visible+span{outline:3px solid var(--coral);outline-offset:
  <div class="card">
   <div class="lensrow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="c-in">
-   <h1 id="h1" data-r>Find the right <span class="nw">GLP-1</span> program</h1>
+   <h1 id="h1" data-split>Find the right <span class="nw">GLP-1</span> program</h1>
    <p class="lede" data-r style="--i:1">We review seven online weight-loss programs on care, medication, price and support. Answer three questions and we'll point you to a good place to start.</p>
    <div class="acts" data-r style="--i:2"><a class="btn" href="#match">Find my match <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tl" href="../products/best-wl-programs.html">See all 7 ranked</a></div>
   </div>
   <p class="c-links" data-r style="--i:3"><a href="#method">How we rank</a><a href="#glp1">What a program includes</a><a href="#safety">Safety information</a></p>
  </div>
  <div class="room">
-  <div class="lens"><img src="../images/lp/woman-40s-confident-ease.webp" alt="A smiling woman in her forties standing outdoors by the coast" width="1448" height="1086"></div>
+  <div class="lens"><div class="lens-in"><svg class="sig " data-fx="signal" viewBox="0 0 640 440" role="img" aria-label="How GLP-1 works: after you eat, the gut releases GLP-1, which signals fullness to the brain">
+ <path class="sig-path" d="M266 330 C 336 326 344 166 456 150" />
+ <path class="sig-dash" d="M266 330 C 336 326 344 166 456 150" />
+ <g class="gut">
+  <path class="tube" d="M150 96 C 152 140 160 180 178 214"/>
+  <path class="org" d="M176 206 C 150 226 118 252 110 300 C 98 370 150 412 212 402 C 264 394 292 354 280 318 C 272 294 248 290 236 302 C 222 314 210 302 210 284 C 210 254 198 230 192 212 C 188 202 182 200 176 206 Z"/>
+  <path class="fold" d="M134 318 C 142 352 170 372 206 372"/>
+  <path class="tube" d="M276 330 C 300 346 306 372 292 392 C 278 410 254 404 252 388"/>
+  <g class="meal"><circle cx="150" cy="70" r="9"/><circle cx="170" cy="50" r="7"/><circle cx="134" cy="48" r="6"/></g>
+ </g>
+ <g class="brain">
+  <g class="glow"><circle cx="534" cy="134" r="84"/></g>
+  <path class="org" d="M456 150 C 444 100 484 62 532 64 C 582 60 622 94 618 138 C 620 172 592 198 558 194 C 550 216 522 224 508 208 C 488 212 464 198 464 178 C 454 172 452 162 456 150 Z"/>
+  <path class="fold" d="M492 96 C 506 100 512 116 504 128 M536 84 C 530 102 540 118 558 122 M582 104 C 574 120 584 140 600 144 M500 160 C 518 156 532 164 536 178 M552 150 C 566 146 580 152 584 166"/>
+  <path class="tube" d="M548 196 C 552 212 556 224 566 234"/>
+ </g>
+ <g class="mol" data-mol transform="translate(289 322)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(312 299)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(334 265)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(356 227)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(383 191)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(417 163)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g>
+ <g class="gauge" transform="translate(520 340)">
+  <path class="g-track" d="M-62 0 A62 62 0 0 1 62 0"/>
+  <path class="g-fill" d="M-62 0 A62 62 0 0 1 62 0"/>
+  <g class="needle"><path d="M0 0 L0 -50"/><circle r="7"/></g>
+  <text x="-62" y="26" text-anchor="middle">Hungry</text><text x="62" y="26" text-anchor="middle">Full</text>
+ </g>
+ <g transform="translate(14 8)"><g class="chip c1"><rect width="150" height="34" rx="17"/><text x="75" y="22" text-anchor="middle">1 · You eat a meal</text></g></g>
+ <g transform="translate(250 250)"><g class="chip c2"><rect width="190" height="34" rx="17"/><text x="95" y="22" text-anchor="middle">2 · Gut releases GLP-1</text></g></g>
+ <g transform="translate(330 8)"><g class="chip c3"><rect width="164" height="34" rx="17"/><text x="82" y="22" text-anchor="middle">3 · Brain gets “full”</text></g></g>
+</svg></div></div>
   <p class="pin" data-r style="--i:4"><span class="chk" aria-hidden="true"></span>7 programs reviewed, prices checked October 2026</p>
  </div>
 </section>
 
 <section class="match" id="match" aria-labelledby="q-h"><div class="w">
  <div class="plate" data-r>
-  <img src="../images/lp/woman-relaxing-couch-using-phone.jpg" alt="A woman on her sofa answering questions on her phone" width="1200" height="800" loading="lazy">
+  <div class="orbit " data-fx="orbit" aria-hidden="true"><div class="ob-ring"><span class="ob" style="left:50.0%;top:9.0%" data-name="DirectMeds"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F78788a01b0f54994a49e55659b334045?format=webp&amp;width=800&amp;height=1200" alt="" width="80" height="40" loading="lazy"></span><span class="ob" style="left:82.1%;top:24.4%" data-name="TrimRx"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F78e2e856a41042e094fde0b4ee5bae65?format=webp&amp;width=800&amp;height=1200" alt="" width="80" height="40" loading="lazy"></span><span class="ob" style="left:90.0%;top:59.1%" data-name="Embody"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F4583eb257b7746fb8d29f549c7780dcc?format=webp&amp;width=800&amp;height=1200" alt="" width="80" height="40" loading="lazy"></span><span class="ob" style="left:67.8%;top:86.9%" data-name="Wellorithm"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2Fa690c2ab0d58442e9bf014731272a2b1?format=webp&amp;width=800&amp;height=1200" alt="" width="80" height="40" loading="lazy"></span><span class="ob" style="left:32.2%;top:86.9%" data-name="MEDGm"><img src="https://medgm.org/glp-1/logomedgm.svg" alt="" width="80" height="40" loading="lazy"></span><span class="ob" style="left:10.0%;top:59.1%" data-name="Trimi"><img src="https://trytrimi.com/images/homepage/trimi-logo.png" alt="" width="80" height="40" loading="lazy"></span><span class="ob" style="left:17.9%;top:24.4%" data-name="Pallas Health"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F9d2f0834e77a442ea573882e9014f1f9?format=webp&amp;width=800&amp;height=1200" alt="" width="80" height="40" loading="lazy"></span></div></div>
   <div class="ring" aria-hidden="true"><div class="res-logo"><img id="q-logo" alt="" width="160" height="80"></div></div>
  </div>
  <form class="qz" id="quiz" onsubmit="return false">
-  <h2 id="q-h" data-r>Three questions to your match</h2>
+  <h2 id="q-h" data-split>Three questions to your match</h2>
   <fieldset data-r style="--i:1"><legend>Do you plan to use health insurance?</legend>
    <label><input type="radio" name="ins" value="yes"><span>Yes</span></label><label><input type="radio" name="ins" value="no"><span>No, I'll pay myself</span></label><label><input type="radio" name="ins" value="unsure"><span>Not sure</span></label></fieldset>
   <fieldset data-r style="--i:2"><legend>Which medications are you open to?</legend>
@@ -322,7 +484,7 @@ fieldset input:focus-visible+span{outline:3px solid var(--coral);outline-offset:
 </div></section>
 
 <section class="menu" id="programs" aria-labelledby="p-h"><div class="w">
- <div class="cat"><h2 id="p-h" data-r>Top-rated programs</h2><p data-r style="--i:1">7 programs · ranked by our score</p></div>
+ <div class="cat"><h2 id="p-h" data-split>Top-rated programs</h2><p data-r style="--i:1">7 programs · ranked by our score</p></div>
  <ol class="items">
    <li data-r style="--i:0">
     <a class="dot" href="../products/best-wl-programs.html#p1" aria-label="DirectMeds details"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F78788a01b0f54994a49e55659b334045?format=webp&amp;width=800&amp;height=1200" alt="" width="120" height="60" loading="lazy"></a>
@@ -388,18 +550,37 @@ fieldset input:focus-visible+span{outline:3px solid var(--coral);outline-offset:
 </div></section>
 
 <section class="steps" aria-labelledby="s-h"><div class="w">
- <div class="s-top"><h2 id="s-h" data-r>How starting online works</h2><p data-r style="--i:1">Most programs follow the same four steps. The differences are in price, speed and who you talk to, which is what our rankings compare.</p></div>
+ <div class="s-top"><h2 id="s-h" data-split>How starting online works</h2><p data-r style="--i:1">Most programs follow the same four steps. The differences are in price, speed and who you talk to, which is what our rankings compare.</p></div>
  <div class="acc" data-r style="--i:2">
-  <button type="button" class="pn open" aria-expanded="true"><span class="nm">Compare</span><span class="bd"><span class="tx">Read the rankings, check the full monthly price at your likely dose, and ask which medication and pharmacy each program uses.</span><img src="../images/lp/two-women-talking-over-coffee.jpg" alt="" width="1200" height="800" loading="lazy"></span></button>
-  <button type="button" class="pn" aria-expanded="false"><span class="nm">Intake</span><span class="bd"><span class="tx">Fill in a short online health questionnaire. Most take two to five minutes, and some ask for recent labs or a photo ID.</span><img src="../images/lp/woman-relaxing-couch-using-phone.jpg" alt="" width="1200" height="800" loading="lazy"></span></button>
-  <button type="button" class="pn" aria-expanded="false"><span class="nm">Review</span><span class="bd"><span class="tx">A licensed clinician reviews your history, often within a day, and decides whether a GLP-1 is right for you. They may say no.</span><img src="../images/lp/woman-having-telehealth-video-visit.jpg" alt="" width="1200" height="800" loading="lazy"></span></button>
-  <button type="button" class="pn" aria-expanded="false"><span class="nm">Delivery</span><span class="bd"><span class="tx">If treatment is authorized, medication usually ships within a few days in discreet packaging, with check-ins after.</span><img src="../images/lp/woman-opening-discreet-delivery-box.jpg" alt="" width="1200" height="800" loading="lazy"></span></button>
+  <div class="pn open"><button type="button" class="hit" aria-expanded="true" aria-controls="st0">Compare</button><span class="nm" aria-hidden="true">Compare</span><div class="bd" id="st0"><p class="tx">Read the rankings, check the full monthly price at your likely dose, and ask which medication and pharmacy each program uses.</p><div class="art"><div class="ui pch " data-ui data-fx="price" aria-hidden="true">
+ <div class="ui-top"><span class="ui-dot"></span><b>Starting price, first month</b><span class="ui-tag">USD</span></div>
+ <ol><li data-p="99"><span class="pc-nm">Trimi</span><span class="pc-bar"><i style="--w:33.0%"></i></span><b>$99</b></li><li data-p="139"><span class="pc-nm">Pallas Health</span><span class="pc-bar"><i style="--w:46.3%"></i></span><b>$139</b></li><li data-p="147"><span class="pc-nm">DirectMeds</span><span class="pc-bar"><i style="--w:49.0%"></i></span><b>$147</b></li><li data-p="149"><span class="pc-nm">Embody</span><span class="pc-bar"><i style="--w:49.7%"></i></span><b>$149</b></li><li data-p="168"><span class="pc-nm">TrimRx</span><span class="pc-bar"><i style="--w:56.0%"></i></span><b>$168</b></li><li data-p="169"><span class="pc-nm">MEDGm</span><span class="pc-bar"><i style="--w:56.3%"></i></span><b>$169</b></li></ol>
+ <div class="pc-budget" style="--b:50%"><span>Your budget</span></div>
+</div></div></div></div>
+  <div class="pn"><button type="button" class="hit" aria-expanded="false" aria-controls="st1">Intake</button><span class="nm" aria-hidden="true">Intake</span><div class="bd" id="st1"><p class="tx">Fill in a short online health questionnaire. Most take two to five minutes, and some ask for recent labs or a photo ID.</p><div class="art"><div class="ui ph " data-ui data-fx="intake" aria-hidden="true">
+ <div class="ph-notch"></div>
+ <p class="ph-h">Online intake</p>
+ <div class="ph-prog"><i></i></div>
+ <ul><li><span class="ck"></span>Age and height</li><li><span class="ck"></span>Current weight</li><li><span class="ck"></span>Health history</li><li><span class="ck"></span>Medications you take</li></ul>
+ <span class="ph-btn">Send to a clinician</span>
+</div></div></div></div>
+  <div class="pn"><button type="button" class="hit" aria-expanded="false" aria-controls="st2">Review</button><span class="nm" aria-hidden="true">Review</span><div class="bd" id="st2"><p class="tx">A licensed clinician reviews your history, often within a day, and decides whether a GLP-1 is right for you. They may say no.</p><div class="art"><div class="ui rv " data-ui data-fx="review" aria-hidden="true">
+ <div class="ui-top"><span class="rv-av"><svg viewBox="0 0 24 24"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a4 4 0 0 0 8 0v-3"/><circle cx="19" cy="11" r="2"/></svg></span><b>Licensed clinician</b><span class="ui-tag">Reviewing</span></div>
+ <p class="bub me">I sent my health history.</p>
+ <p class="bub them typing"><i></i><i></i><i></i></p>
+ <p class="bub them msg">Thanks. I've reviewed your history. Here's whether a GLP-1 is right for you.</p>
+</div></div></div></div>
+  <div class="pn"><button type="button" class="hit" aria-expanded="false" aria-controls="st3">Delivery</button><span class="nm" aria-hidden="true">Delivery</span><div class="bd" id="st3"><p class="tx">If treatment is authorized, medication usually ships within a few days in discreet packaging, with check-ins after.</p><div class="art"><div class="ui sh " data-ui data-fx="ship" aria-hidden="true">
+ <div class="ui-top"><span class="sh-box"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></span><b>Your order</b><span class="ui-tag">Discreet packaging</span></div>
+ <div class="sh-line"><i></i></div>
+ <ol><li><span class="sd"></span>Authorized</li><li><span class="sd"></span>Packed</li><li><span class="sd"></span>Shipped</li><li><span class="sd"></span>Delivered</li></ol>
+</div></div></div></div>
  </div>
 </div></section>
 
 <section class="incl" id="glp1" aria-labelledby="g-h"><div class="w">
  <h2 id="g-h" class="sr">What a GLP-1 program includes</h2>
- <p class="stmt" data-r>A GLP-1 program pairs a <span class="th"><img src="../images/doctor.webp" alt="" width="1200" height="900" loading="lazy"></span> licensed clinician, medication <span class="th"><img src="../images/lp/woman-opening-discreet-delivery-box.jpg" alt="" width="1200" height="800" loading="lazy"></span> shipped to your door and <span class="th"><img src="../images/lp/woman-walking-outdoors-sunny-morning.jpg" alt="" width="1200" height="800" loading="lazy"></span> support along the way.</p>
+ <p class="stmt" data-r>A GLP-1 program pairs a <span class="th ico"><svg viewBox="0 0 24 24"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a4 4 0 0 0 8 0v-3"/><circle cx="19" cy="11" r="2"/></svg></span> licensed clinician, medication <span class="th ico"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></span> shipped to your door and <span class="th ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span> support along the way.</p>
  <div class="g-row">
   <img class="g-sci" src="../images/science.webp" alt="Illustration of a signal travelling from the gut to the brain" width="1600" height="900" loading="lazy" data-r>
   <p data-r style="--i:1">GLP-1 is a hormone the gut releases after you eat; it signals fullness to the brain and helps regulate blood sugar. GLP-1 medications act like it. Some are FDA-approved for chronic weight management in adults who meet specific criteria, others for type 2 diabetes. Compounded versions are not FDA-approved.</p>
@@ -407,7 +588,7 @@ fieldset input:focus-visible+span{outline:3px solid var(--coral);outline-offset:
 </div></section>
 
 <section class="faq" id="faq" aria-labelledby="faq-h"><div class="w">
- <h2 id="faq-h" data-r>Questions, answered</h2>
+ <h2 id="faq-h" data-split>Questions, answered</h2>
  <div class="tiles"><details name="faq" data-r style="--i:0" open><summary>Do I need a clinician to approve treatment?<i aria-hidden="true"></i></summary><p>Yes. GLP-1 medications are available only through a licensed clinician. Every program on our list has one review your health history, and they may decide a GLP-1 isn't right for you.</p></details><details name="faq" data-r style="--i:1"><summary>Are compounded GLP-1s the same as brand-name ones?<i aria-hidden="true"></i></summary><p>No. Compounded GLP-1 medications are not FDA-approved and are not generic versions of brand-name drugs. Ask any program which medication and which pharmacy it uses.</p></details><details name="faq" data-r style="--i:2"><summary>How much do online GLP-1 programs cost?<i aria-hidden="true"></i></summary><p>On our list, starting prices run from about $99 a month (Trimi, 12-month plan) to $169 (MEDGm injections), with first-month offers from Pallas Health ($139) and DirectMeds ($147). Price usually depends on the medication, the dose and the plan length.</p></details><details name="faq" data-r style="--i:0"><summary>Will my insurance cover it?<i aria-hidden="true"></i></summary><p>Coverage for weight-management medication varies widely by plan. None of the programs on our list bill insurance directly; MEDGm and Pallas Health accept HSA/FSA.</p></details><details name="faq" data-r style="--i:1"><summary>How fast can I get started?<i aria-hidden="true"></i></summary><p>Most programs start with an online intake that takes a few minutes. A licensed provider reviews it, often within a day, and approved medication usually ships within a few days.</p></details><details name="faq" data-r style="--i:2"><summary>How do you make money?<i aria-hidden="true"></i></summary><p>Programs pay us advertising fees when readers visit them, and those fees affect where programs appear and how they are scored. DirectMeds is a paid featured placement. We never charge readers.</p></details></div>
 </div></section>
 
@@ -425,7 +606,13 @@ fieldset input:focus-visible+span{outline:3px solid var(--coral);outline-offset:
 
 
 <section class="cta" aria-labelledby="c-h">
- <div class="side l" aria-hidden="true"><img src="../images/lp/woman-preparing-healthy-salad-home.jpg" alt="" width="1200" height="800" loading="lazy"></div>
+ <div class="side l" aria-hidden="true"><div class="ui ph " data-ui data-fx="intake" aria-hidden="true">
+ <div class="ph-notch"></div>
+ <p class="ph-h">Online intake</p>
+ <div class="ph-prog"><i></i></div>
+ <ul><li><span class="ck"></span>Age and height</li><li><span class="ck"></span>Current weight</li><li><span class="ck"></span>Health history</li><li><span class="ck"></span>Medications you take</li></ul>
+ <span class="ph-btn">Send to a clinician</span>
+</div></div>
  <div class="mid" data-r>
   <h2 id="c-h">Not sure where to start?</h2>
   <p>Three questions, about thirty seconds, and no sign-up. A licensed clinician still makes every treatment decision.</p>
@@ -478,20 +665,21 @@ fieldset input:focus-visible+span{outline:3px solid var(--coral);outline-offset:
   document.getElementById('q-go').href='../products/best-wl-programs.html#p'+t.rank;
   var img=document.getElementById('q-logo');img.src=t.logo;img.alt=r[0];
   plate.classList.remove('found');void plate.offsetWidth;plate.classList.add('found');
+  document.dispatchEvent(new CustomEvent('match',{detail:r[0]}));
  });
  /* accordion of stages */
  var pn=[].slice.call(document.querySelectorAll('.acc .pn'));
- pn.forEach(function(p){p.addEventListener('click',function(){pn.forEach(function(x){x.classList.toggle('open',x===p);x.setAttribute('aria-expanded',x===p?'true':'false')})})});
+ pn.forEach(function(p){p.querySelector('.hit').addEventListener('click',function(){pn.forEach(function(x){var on=x===p;x.classList.toggle('open',on);x.querySelector('.hit').setAttribute('aria-expanded',on?'true':'false')});if(window.ScrollTrigger)setTimeout(function(){ScrollTrigger.refresh()},500);})});
 })();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="home-motion.js?v=2" defer></script>
 <script>
-(function(){
- var els=[].slice.call(document.querySelectorAll('[data-r]'));
- if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
- els.forEach(function(e){io.observe(e)});
- setTimeout(function(){els.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})},60);
-})();
+/* if the motion layer can't load, show everything */
+window.addEventListener('load',function(){if(window.__mo)return;[].forEach.call(document.querySelectorAll('[data-r],[data-split]'),function(e){e.classList.add('in')});});
 </script>
 <script src="/google-everflow-tracking.js"></script>
 </body>

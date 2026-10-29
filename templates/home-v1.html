@@ -89,42 +89,160 @@ p{margin:0}
 /* entrances: content is visible without script; with script, parts rise in reading order */
 .js [data-r]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--out),transform .8s var(--out);transition-delay:calc(var(--i,0)*80ms)}
 .js [data-r].in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js [data-r]{opacity:1;transform:none;transition:none}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.js [data-split]{opacity:0}
+.js [data-split].in{opacity:1}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js [data-r],.js [data-split]{opacity:1;transform:none;transition:none}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 .nw{white-space:nowrap}
+
+/* ---------- shared visuals (replace the stock photographs) ---------- */
+/* GLP-1 signal illustration */
+.sig{width:100%;height:auto;display:block;overflow:visible;--ill-org:#fff;--ill-ink:var(--ink);--ill-line:var(--blue);--ill-soft:var(--blue-s)}
+.sig .org{fill:var(--ill-org);stroke:var(--ill-ink);stroke-width:4;stroke-linejoin:round}
+.sig .fold,.sig .tube{fill:none;stroke:var(--ill-ink);stroke-width:3.5;stroke-linecap:round}
+.sig .meal circle{fill:var(--coral)}
+.sig .sig-path{fill:none;stroke:var(--ill-soft);stroke-width:14;stroke-linecap:round}
+.sig .sig-dash{fill:none;stroke:var(--ill-line);stroke-width:3;stroke-dasharray:2 12;stroke-linecap:round;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.sig .mol polygon{fill:var(--gold);stroke:var(--ill-ink);stroke-width:2.5}
+.sig .mol circle{fill:var(--ill-ink)}
+.sig .mol{opacity:0}
+.sig .glow circle{fill:var(--gold);opacity:0}
+.sig .g-track{fill:none;stroke:var(--ill-soft);stroke-width:12;stroke-linecap:round}
+.sig .g-fill{fill:none;stroke:var(--sage);stroke-width:12;stroke-linecap:round;stroke-dasharray:195;stroke-dashoffset:195}
+.sig .needle path{stroke:var(--ill-ink);stroke-width:4;stroke-linecap:round}
+.sig .needle circle{fill:var(--ill-ink)}
+.sig .needle{transform:rotate(-80deg)}
+.sig text{font:700 14px var(--body);fill:var(--ill-ink)}
+.sig .chip rect{fill:#fff;stroke:var(--ill-ink);stroke-width:2}
+.sig .chip text{font-size:14px;fill:var(--ink)}
+.sig.on-blue{--ill-org:#fff;--ill-ink:#14123a;--ill-line:#fff;--ill-soft:rgba(255,255,255,.22)}
+.sig.on-blue .gauge text{fill:#fff}
+/* when script runs, the static (final) state is replaced by the timeline */
+html:not(.mo) .sig .mol{opacity:1}
+html:not(.mo) .sig .needle{transform:rotate(60deg)}
+html:not(.mo) .sig .g-fill{stroke-dashoffset:40}
+
+/* product-style fragments, built in HTML */
+.ui{background:#fff;color:var(--ink);border-radius:18px;padding:18px 18px 20px;font-family:var(--body);text-align:left}
+.ui-top{display:flex;align-items:center;gap:10px;font-size:15px;margin-bottom:14px}
+.ui-top b{flex:1}
+.ui-dot{width:10px;height:10px;border-radius:50%;background:var(--sage)}
+.ui-tag{font-size:13px;font-weight:700;color:var(--blue-d);background:var(--blue-s);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.ui svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.rc ol{list-style:none;margin:0;padding:0}
+.rc li{display:grid;grid-template-columns:22px minmax(0,1fr) 34% 38px;align-items:center;gap:10px;padding:9px 0;font-size:15px}
+.rc li+li{box-shadow:0 -1px 0 var(--blue-s)}
+.rc-n{font:700 18px var(--disp);color:var(--blue)}
+.rc-nm{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rc-bar{height:8px;border-radius:9px;background:var(--blue-s);overflow:hidden}
+.rc-bar i{display:block;height:100%;width:var(--w);background:var(--blue);border-radius:9px;transform-origin:left}
+.rc li b{font:700 18px var(--disp);text-align:right}
+.rc-foot{font-size:13px;color:var(--muted);margin-top:10px}
+
+.ph{width:260px;max-width:100%;border-radius:34px;padding:16px 16px 20px;box-shadow:0 0 0 8px var(--ink)}
+.ph-notch{width:80px;height:18px;border-radius:0 0 12px 12px;background:var(--ink);margin:-16px auto 14px}
+.ph-h{font:700 20px var(--disp)}
+.ph-prog{height:6px;border-radius:6px;background:var(--blue-s);margin:12px 0 14px;overflow:hidden}
+.ph-prog i{display:block;height:100%;width:100%;background:var(--blue);transform-origin:left}
+.ph ul{list-style:none;margin:0;padding:0}
+.ph li{display:flex;align-items:center;gap:10px;padding:10px 12px;margin-bottom:8px;border-radius:12px;background:var(--cream);font-size:15px;font-weight:500}
+.ck{width:20px;height:20px;border-radius:50%;flex:none;background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.ph-btn{display:block;text-align:center;background:var(--coral);color:#fff;font-weight:800;border-radius:999px;padding:11px;margin-top:6px;font-size:15px}
+
+.rv{width:340px;max-width:100%}
+.rv-av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff}
+.rv-av svg{width:20px;height:20px}
+.bub{border-radius:16px;padding:10px 14px;font-size:15px;max-width:86%;margin:0 0 8px}
+.bub.me{background:var(--blue);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+.bub.them{background:var(--cream);border-bottom-left-radius:4px}
+.typing{display:inline-flex;gap:5px;padding:14px}
+.typing i{width:8px;height:8px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+
+.sh{width:360px;max-width:100%}
+.sh-box{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--coral);color:#fff}
+.sh-box svg{width:20px;height:20px}
+.sh-line{height:8px;border-radius:8px;background:var(--blue-s);margin:6px 8px 0;overflow:hidden}
+.sh-line i{display:block;height:100%;width:100%;background:var(--sage);transform-origin:left}
+.sh ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-size:13px;font-weight:700}
+.sh li{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:-14px}
+.sd{width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 4px var(--sage)}
+.sh li.on .sd{background:var(--sage)}
+
+.pch ol{list-style:none;margin:0;padding:0}
+.pch li{display:grid;grid-template-columns:96px minmax(0,1fr) 44px;gap:10px;align-items:center;padding:7px 0;font-size:14px;transition:opacity .3s}
+.pc-nm{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-bar{height:16px;border-radius:6px;background:var(--cream)}
+.pc-bar i{display:block;height:100%;width:var(--w);background:var(--blue);border-radius:6px;transform-origin:left;transition:background .3s}
+.pch li b{text-align:right;font-weight:800}
+.pch li.over .pc-bar i{background:#C9C9F5}
+.pch li.over{color:var(--muted)}
+.pch{position:relative}
+.pc-budget{position:absolute;top:52px;bottom:30px;left:calc(18px + 96px + 10px + (100% - 36px - 96px - 10px - 54px) * var(--b));width:3px;background:var(--coral);border-radius:2px;transition:left .35s cubic-bezier(.23,1,.32,1)}
+.pc-budget span{position:absolute;top:100%;left:50%;transform:translate(-50%,4px);white-space:nowrap;font-size:12.5px;font-weight:800;color:var(--coral-d)}
+
+.srg{display:flex;align-items:center;gap:28px}
+.srg svg{width:min(300px,100%);flex:none}
+.ring-bg{fill:none;stroke:var(--blue-s);stroke-width:26}
+.ring-seg{fill:none;stroke-width:26;stroke-linecap:butt}
+.srg-n{font:700 52px var(--disp);fill:var(--ink)}
+.srg-l{font:700 15px var(--body);fill:var(--muted)}
+.srg ul{list-style:none;margin:0;padding:0;font-size:16px}
+.srg li{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.srg li i{width:14px;height:14px;border-radius:4px;flex:none}
+.srg li b{font:700 22px var(--disp)}
+
+.orbit{position:relative;aspect-ratio:1}
+.ob-ring{position:absolute;inset:0}
+.ob{position:absolute;width:21%;aspect-ratio:1;margin:-10.5% 0 0 -10.5%;border-radius:50%;background:#fff;display:grid;place-items:center;padding:3.5%;transition:opacity .4s,transform .4s}
+.ob img{max-height:100%;object-fit:contain}
+.orbit.dim .ob{opacity:.25}
+.orbit .ob.hit{opacity:1}
+
+.ico{display:inline-grid;place-items:center;border-radius:50%;background:var(--blue);color:#fff}
+.ico svg{width:58%;height:58%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* split headline lines (React Bits style split text, done with GSAP) */
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.sw>span{display:inline-block;will-change:transform}
+
+/* Lenis */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.rv{min-height:236px}
+.sw{text-indent:0}
 
 /* V1 · The printed annual: everything hangs from one column line at 5/12 (about 42%) */
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 h2{font-size:clamp(32px,3.6vw,56px);line-height:1.04}
 .stmt{font:600 clamp(22px,2.1vw,30px)/1.3 var(--disp);letter-spacing:-.01em}
 
-/* hero: one photograph that slowly changes, headline on the left, two next-step cards in the corner */
-.hero{position:relative;min-height:calc(100svh - 96px);display:flex;color:#fff;background:var(--ink);overflow:hidden}
-.hero-media{position:absolute;inset:0}
-.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 35%;opacity:0;transition:opacity 1.6s ease;animation:drift 24s ease-in-out infinite alternate}
-.hero-media img.on{opacity:1}
-.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,32,.72) 0,rgba(20,16,32,.5) 38%,rgba(20,16,32,0) 68%)} /* neutral scrim under the text only */
-@keyframes drift{from{transform:scale(1)}to{transform:scale(1.07)}}
-.hero-in{position:relative;width:100%;display:flex;flex-direction:column;justify-content:center;padding-top:64px;padding-bottom:64px}
+/* hero: a blue cover page, the report itself floating beside the title */
+.hero{position:relative;min-height:calc(100svh - 96px);display:flex;color:#fff;background:var(--blue);overflow:hidden}
+.hero-in{position:relative;width:100%;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);align-items:center;gap:40px;padding-top:72px;padding-bottom:72px}
 .hero-copy{max-width:660px}
 .hero h1{font-size:clamp(42px,5.2vw,80px);line-height:1.02;letter-spacing:-.03em;max-width:11.5em}
 .lede{font-size:clamp(17px,1.4vw,20px);margin-top:28px;max-width:40ch}
 .hero-act{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:32px}
 .tl.light{color:#fff}
-.hero-cards{position:absolute;right:var(--m);bottom:32px;display:flex;gap:16px}
-.hc{display:block;width:230px;background:#fff;color:var(--ink);text-decoration:none;border-radius:var(--r);overflow:hidden}
-.hc img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .6s var(--out)}
-.hc span{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 14px;font-weight:700;font-size:15px;position:relative;background:#fff}
-.hc svg{width:16px;height:16px;flex:none;color:var(--blue);transition:transform .3s var(--out)}
-.hc:hover img{transform:scale(1.06)}.hc:hover svg{transform:translateX(4px)}
+.hero-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:40px;font-size:15px}
+.hero-links a{color:#DCDCFF}
+.hero-links a:hover{color:#fff}
+.hero-art{position:relative;min-height:520px}
+.ha-a{position:absolute;left:0;top:6%;width:min(470px,88%)}
+.ha-b{position:absolute;right:0;bottom:0;width:240px}
+.ha-a .ui{padding:24px}
+.ha-b .ph{box-shadow:0 0 0 8px var(--ink),0 30px 60px -20px rgba(0,0,40,.6)} /* a phone floats over the report */
 @media(max-width:900px){
- .hero{min-height:calc(100svh - 90px)}
- .hero-media img{object-position:62% 30%}
- .hero-media::after{background:linear-gradient(0deg,rgba(20,16,32,.78) 0,rgba(20,16,32,.45) 55%,rgba(20,16,32,.1) 100%)}
- .hero-in{justify-content:flex-end;padding-bottom:24px}
+ .hero{min-height:0}
+ .hero-in{grid-template-columns:1fr;padding-top:48px;padding-bottom:40px}
  .hero h1{font-size:clamp(36px,10vw,56px)}
- .hero-cards{position:static;margin-top:36px}
- .hc{width:50%}
- .hc span{font-size:14px;padding:9px 10px}
+ .hero-art{min-height:440px}
+ .ha-a{width:100%;top:0}
+ .ha-b{width:210px;right:-4px}
 }
 
 /* the shortlist: side notes left of the line, the ranked rows hang from it */
@@ -132,10 +250,11 @@ h2{font-size:clamp(32px,3.6vw,56px);line-height:1.04}
 .side{grid-column:1/6;align-self:start;position:sticky;top:110px;padding-right:24px}
 .side>p{margin-top:20px;max-width:40ch}
 .side .note{font-size:14px;color:var(--muted);margin-top:28px}
-.sort{display:inline-flex;margin-top:28px;background:#fff;border-radius:999px;padding:4px}
-.sort button{font:700 15px var(--body);border:0;background:none;color:var(--ink);padding:10px 18px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
-.sort button[aria-pressed=true]{background:var(--blue);color:#fff}
-.sort button:hover:not([aria-pressed=true]){background:var(--blue-s)}
+.sort{position:relative;display:inline-flex;margin-top:28px;background:#fff;border-radius:999px;padding:4px}
+.sort-pill{position:absolute;left:4px;top:4px;bottom:4px;width:0;border-radius:999px;background:var(--blue);transition:transform .35s cubic-bezier(.23,1,.32,1),width .35s cubic-bezier(.23,1,.32,1)}
+.sort button{position:relative;font:700 15px var(--body);border:0;background:none;color:var(--ink);padding:10px 18px;border-radius:999px;cursor:pointer;transition:color .25s}
+.sort button[aria-pressed=true]{color:#fff}
+.sort button:hover:not([aria-pressed=true]){color:var(--blue)}
 html:not(.js) .sort{display:none}
 .rows{grid-column:6/13;list-style:none;margin:0;padding:0}
 .rw{display:grid;grid-template-columns:44px 132px minmax(0,1fr) 92px 128px;grid-template-areas:"rk lg nm sc pr" "rk lg nm sc bt";align-items:center;column-gap:20px;row-gap:6px;padding:22px 24px;background:#fff;border-radius:var(--r);margin-bottom:10px;transition:background .25s}
@@ -188,32 +307,30 @@ html:not(.js) .sort{display:none}
 .g-txt .stmt{margin-top:28px}
 .g-txt p:last-child{margin-top:24px;max-width:62ch}
 .g-fig{grid-column:1/6;grid-row:1;align-self:end;margin:0;padding-right:24px}
-.g-fig img{border-radius:var(--r);width:100%;aspect-ratio:16/10;object-fit:cover}
+.g-fig .sig{background:#fff;border-radius:var(--r);padding:16px}
 .g-fig figcaption{font-size:14px;color:var(--muted);margin-top:12px;max-width:40ch}
 @media(max-width:860px){.g-txt{grid-column:1/13}.g-fig{grid-column:1/13;grid-row:2;margin-top:40px;padding:0}}
 
-/* read before you start: one photograph cut across a board of tiles */
-.read{padding:0 12px}
-.board{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;max-width:1600px;margin:0 auto}
-.tile{aspect-ratio:1;border-radius:4px;overflow:hidden;position:relative}
-.tile.ph i{position:absolute;inset:0;background:url(../images/lp/two-women-talking-over-coffee.jpg) no-repeat;background-size:600% 400%;background-position:calc(var(--c)*20%) calc(var(--r)*33.333%);transition:transform .7s var(--out)}
-.tile.ph:hover i{transform:scale(1.08)}
-.t-blue{background:var(--blue);color:#fff}.t-cream{background:var(--cream)}.t-white{background:#fff}.t-coral{background:var(--coral);color:#fff}
-.tile h2{font-size:clamp(24px,2.5vw,40px);padding:20px;line-height:1.05}
-.tile a{display:flex;flex-direction:column;justify-content:space-between;height:100%;padding:20px;text-decoration:none;color:inherit;transition:background .25s}
-.tile a b{font:700 clamp(17px,1.35vw,21px)/1.25 var(--disp);letter-spacing:-.01em}
-.tile a span{font-size:14px;color:var(--muted)}
-.t-cream a:hover,.t-white a:hover{background:var(--blue-s)}
-.tile .go{justify-content:flex-end;gap:12px}
-.tile .go svg{width:40px;height:40px;transition:transform .3s var(--out)}
-.tile .go:hover{background:var(--coral-d)}.tile .go:hover svg{transform:translateX(6px)}
-@media(max-width:860px){
- .board{grid-template-columns:repeat(2,1fr);gap:6px}
- .board::before{content:"";grid-column:1/3;aspect-ratio:3/2;background:url(../images/lp/two-women-talking-over-coffee.jpg) center/cover;border-radius:4px;order:1}
- .tile.ph{display:none}
- .tile{aspect-ratio:auto;min-height:150px;order:2}
- .tile:first-child{order:0;grid-column:1/3;min-height:0}
-}
+/* before you start: a small board of reads */
+.read{padding:0 0 clamp(40px,5vw,80px)}
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(220px,auto);gap:12px}
+.tile{border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--ink);position:relative;overflow:hidden;transition:background .25s,transform .4s cubic-bezier(.23,1,.32,1)}
+.t-head{grid-column:span 2;justify-content:space-between}
+.t-head p{max-width:36ch;font-size:17px}
+.t-blue{background:var(--blue);color:#fff}.t-white{background:#fff}.t-cream2{background:var(--blue-s)}.t-coral{background:var(--coral);color:#fff}
+.tile h2{font-size:clamp(30px,3.2vw,48px)}
+.tile b{font:700 clamp(18px,1.5vw,22px)/1.25 var(--disp);letter-spacing:-.01em;flex:1}
+.tile .meta{font-size:14px;color:var(--muted)}
+.tile .ico{width:48px;height:48px;transition:transform .4s cubic-bezier(.23,1,.32,1)}
+a.tile:hover{transform:translateY(-4px)}
+a.tile:hover .ico{transform:rotate(-10deg) scale(1.08)}
+.t-white:hover{background:#fff}
+.tile.go{grid-column:span 3;flex-direction:row;align-items:flex-end;justify-content:space-between}
+.tile.go b{font-size:clamp(26px,2.6vw,40px);flex:none;max-width:9em}
+.tile.go svg{width:48px;height:48px;transition:transform .3s var(--out)}
+.tile.go:hover{background:var(--coral-d)}.tile.go:hover svg{transform:translateX(6px)}
+@media(max-width:860px){.board{grid-template-columns:1fr 1fr;grid-auto-rows:auto}.tile{min-height:190px}.t-head,.tile.go{grid-column:1/3}}
+@media(max-width:520px){.board{grid-template-columns:1fr}.t-head,.tile.go{grid-column:auto}}
 
 /* faq: large questions, answers beside, all open */
 .faq{padding:clamp(88px,11vw,170px) 0}
@@ -223,17 +340,24 @@ html:not(.js) .sort{display:none}
 .qa p{grid-column:8/13;font-size:17px;max-width:44ch;padding-top:6px}
 @media(max-width:760px){.qa{margin-bottom:48px}.qa h3,.qa h2,.qa p{grid-column:1/13}.qa p{margin-top:12px;padding:0}}
 
-/* close: three photographs, then a field */
-.strip{display:grid;grid-template-columns:repeat(3,1fr)}
-.strip img{width:100%;height:40svh;min-height:240px;object-fit:cover}
+/* close: three live pieces of the journey, then a field */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:var(--ink);padding:56px var(--m)}
+.st{background:#2B2640;border-radius:var(--r);padding:28px 20px 32px;display:flex;flex-direction:column;align-items:center;gap:20px;min-height:380px}
+.st>p{font:700 clamp(26px,2.6vw,40px) var(--disp);color:#fff;letter-spacing:-.02em;align-self:flex-start}
+.st .ui{width:100%;max-width:340px}
+.st .ph{width:236px}
 .band{background:var(--blue);color:#fff;padding:72px 0}
 .band .w{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
 .c-txt{max-width:720px}
 .c-txt .stmt a{color:#fff;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:6px;text-decoration-color:var(--gold-s);transition:text-decoration-color .25s}
 .c-txt .stmt a:hover{text-decoration-color:#fff}
 .c-txt p:last-child{margin-top:28px;font-size:16px}
-.c-pic{width:170px;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);flex:none}
-@media(max-width:760px){.strip{grid-template-columns:1fr 1fr}.strip img:first-child{grid-column:1/3;height:auto;aspect-ratio:4/3}.strip img{height:auto;min-height:0;aspect-ratio:1}.c-pic{width:110px}.band .w{flex-direction:column;align-items:flex-start}}
+@media(max-width:960px){.strip{grid-template-columns:1fr}.st{min-height:0}.band .w{flex-direction:column;align-items:flex-start}}
+
+/* the criteria band, moving with the scroll speed */
+.marq{overflow:hidden;background:var(--cream);padding:0 0 clamp(40px,5vw,72px)}
+.mq-t{display:flex;width:max-content;will-change:transform}
+.mq-t span{font:700 clamp(48px,7vw,110px)/1 var(--disp);letter-spacing:-.04em;white-space:nowrap;color:transparent;-webkit-text-stroke:2px var(--blue);padding-right:.3em}
 
 /* footer: the name opens it */
 .foot{background:var(--ink);color:#fff;padding:56px 0 48px;overflow:hidden}
@@ -264,29 +388,36 @@ html:not(.js) .sort{display:none}
 <main>
 
 <section class="hero" aria-labelledby="h1">
- <div class="hero-media" aria-hidden="true">
-  <img class="on" src="../images/lp/woman-walking-outdoors-sunny-morning.jpg" alt="" width="1200" height="800">
-  <img src="../images/lp/woman-40s-confident-ease.webp" alt="" width="1448" height="1086">
-  <img src="../images/hero-left.webp" alt="" width="1200" height="900">
- </div>
  <div class="w hero-in">
   <div class="hero-copy">
-   <h1 id="h1" data-r>The 2026 GLP-1 program report</h1>
-   <p class="lede" data-r style="--i:1">Seven online weight-loss programs, ranked on clinical care, medication access, price and support. Prices checked October&nbsp;2026.</p>
-   <div class="hero-act" data-r style="--i:2"><a class="btn" href="../products/best-wl-programs.html">Read the rankings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tl light" href="#method">How we score</a></div>
+   <h1 id="h1" data-split>The 2026 GLP-1 program report</h1>
+   <p class="lede" data-r style="--i:3">Seven online weight-loss programs, ranked on clinical care, medication access, price and support. Prices checked October&nbsp;2026.</p>
+   <div class="hero-act" data-r style="--i:4"><a class="btn" href="../products/best-wl-programs.html">Read the rankings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tl light" href="#method">How we score</a></div>
+   <p class="hero-links" data-r style="--i:5"><a href="../products/best-wl-programs.html">Best programs of 2026</a><a href="../lp/7-things-glp1-online.html">7 things to know first</a></p>
   </div>
-  <div class="hero-cards" data-r style="--i:3">
-   <a class="hc" href="../products/best-wl-programs.html"><img src="../images/doctor.webp" alt="" width="1200" height="900"><span>Best programs of 2026 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-   <a class="hc" href="../lp/7-things-glp1-online.html"><img src="../images/lp/woman-having-telehealth-video-visit.jpg" alt="" width="1200" height="800"><span>7 things to know first <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <div class="hero-art">
+   <div class="ha-a" data-speed="0.6"><div class="ui rc " data-ui data-fx="rank" aria-hidden="true">
+ <div class="ui-top"><span class="ui-dot"></span><b>2026 program report</b><span class="ui-tag">Updated Oct 2026</span></div>
+ <ol><li><span class="rc-n">1</span><span class="rc-nm">DirectMeds</span><span class="rc-bar"><i style="--w:80%"></i></span><b data-count="9.6" data-dec="1">9.6</b></li><li><span class="rc-n">2</span><span class="rc-nm">TrimRx</span><span class="rc-bar"><i style="--w:70%"></i></span><b data-count="9.4" data-dec="1">9.4</b></li><li><span class="rc-n">3</span><span class="rc-nm">Embody</span><span class="rc-bar"><i style="--w:65%"></i></span><b data-count="9.3" data-dec="1">9.3</b></li><li><span class="rc-n">4</span><span class="rc-nm">Wellorithm</span><span class="rc-bar"><i style="--w:55%"></i></span><b data-count="9.1" data-dec="1">9.1</b></li><li><span class="rc-n">5</span><span class="rc-nm">MEDGm</span><span class="rc-bar"><i style="--w:45%"></i></span><b data-count="8.9" data-dec="1">8.9</b></li></ol>
+ <p class="rc-foot">Scores out of 10 · 30% care · 25% medication · 25% price · 20% support</p>
+</div></div>
+   <div class="ha-b" data-speed="-1.2"><div class="ui ph " data-ui data-fx="intake" aria-hidden="true">
+ <div class="ph-notch"></div>
+ <p class="ph-h">Online intake</p>
+ <div class="ph-prog"><i></i></div>
+ <ul><li><span class="ck"></span>Age and height</li><li><span class="ck"></span>Current weight</li><li><span class="ck"></span>Health history</li><li><span class="ck"></span>Medications you take</li></ul>
+ <span class="ph-btn">Send to a clinician</span>
+</div></div>
   </div>
  </div>
 </section>
 
 <section class="list" id="programs" aria-labelledby="list-h"><div class="w grid">
  <div class="side">
-  <h2 id="list-h" data-r>The 2026 shortlist</h2>
+  <h2 id="list-h" data-split>The 2026 shortlist</h2>
   <p data-r style="--i:1">Every program here lets you start online with a short intake and a licensed clinician's review. Sort the list by what matters most to you.</p>
   <div class="sort" role="group" aria-label="Sort programs" data-r style="--i:2">
+   <span class="sort-pill" aria-hidden="true"></span>
    <button type="button" aria-pressed="true" data-sort="rank">Our ranking</button>
    <button type="button" aria-pressed="false" data-sort="price">Lowest starting price</button>
   </div>
@@ -352,43 +483,77 @@ html:not(.js) .sort{display:none}
  </ol>
 </div></section>
 
+<div class="marq" aria-hidden="true"><div class="mq-t"><span>Clinical care · Medication access · Price transparency · Ongoing support · </span><span>Clinical care · Medication access · Price transparency · Ongoing support · </span></div></div>
+
 <section class="method" id="method" aria-labelledby="m-h"><div class="w">
  <div class="m-top">
-  <h2 id="m-h" data-r>How we score a program</h2>
-  <p data-r style="--i:1">Every program starts with 100 points to earn. We read its pricing pages, terms and intake, then weigh what we find in four parts and turn the result into a score out of 10.</p>
+  <h2 id="m-h" data-split>How we score a program</h2>
+  <p data-r style="--i:1">Every program starts with 100 points to earn. We read its pricing pages, terms and intake, then weigh what we find in four parts and turn the result into a score out of 10. Scroll to watch the points fall into place.</p>
  </div>
- <svg class="dots" viewBox="0 0 1000 200" role="img" aria-label="One hundred points, gathered, weighed and ranked in four parts: 30, 25, 25 and 20" data-r style="--i:2"></svg>
+ <svg class="dots" viewBox="0 0 1000 200" role="img" aria-label="One hundred points, gathered, weighed and ranked in four parts: 30, 25, 25 and 20"></svg>
  <div class="m-cols">
   <div data-r><h3>Gather</h3><p>We read each program's pricing pages, terms and intake, and record every price a reader would pay.</p></div>
   <div data-r style="--i:1"><h3>Weigh</h3><p>Clinical care counts most, then medication access and price transparency, then support.</p></div>
   <div data-r style="--i:2"><h3>Rank</h3><p>The weighted points become a score out of 10. Advertising fees also affect placement.</p></div>
  </div>
  <dl class="weights">
-  <div data-r><dt>30%</dt><dd>Clinical care: who reviews your case and how fast you can reach them</dd></div>
-  <div data-r style="--i:1"><dt>25%</dt><dd>Medication access: what's offered and how clearly compounded options are labeled</dd></div>
-  <div data-r style="--i:2"><dt>25%</dt><dd>Price transparency: the full monthly cost, dose changes and cancellation terms</dd></div>
-  <div data-r style="--i:3"><dt>20%</dt><dd>Ongoing support: coaching, check-ins and help with side effects</dd></div>
+  <div data-r><dt><span data-count="30">30</span>%</dt><dd>Clinical care: who reviews your case and how fast you can reach them</dd></div>
+  <div data-r style="--i:1"><dt><span data-count="25">25</span>%</dt><dd>Medication access: what's offered and how clearly compounded options are labeled</dd></div>
+  <div data-r style="--i:2"><dt><span data-count="25">25</span>%</dt><dd>Price transparency: the full monthly cost, dose changes and cancellation terms</dd></div>
+  <div data-r style="--i:3"><dt><span data-count="20">20</span>%</dt><dd>Ongoing support: coaching, check-ins and help with side effects</dd></div>
  </dl>
 </div></section>
 
 <section class="intro" id="glp1" aria-labelledby="g-h"><div class="w grid">
  <figure class="g-fig" data-r style="--i:2">
-  <img src="../images/science.webp" alt="Illustration of a signal travelling from the gut to the brain" width="1600" height="900" loading="lazy">
-  <figcaption>GLP-1 is a hormone your gut releases after you eat. It signals fullness to the brain and helps regulate blood sugar.</figcaption>
+  <svg class="sig " data-fx="signal" viewBox="0 0 640 440" role="img" aria-label="How GLP-1 works: after you eat, the gut releases GLP-1, which signals fullness to the brain">
+ <path class="sig-path" d="M266 330 C 336 326 344 166 456 150" />
+ <path class="sig-dash" d="M266 330 C 336 326 344 166 456 150" />
+ <g class="gut">
+  <path class="tube" d="M150 96 C 152 140 160 180 178 214"/>
+  <path class="org" d="M176 206 C 150 226 118 252 110 300 C 98 370 150 412 212 402 C 264 394 292 354 280 318 C 272 294 248 290 236 302 C 222 314 210 302 210 284 C 210 254 198 230 192 212 C 188 202 182 200 176 206 Z"/>
+  <path class="fold" d="M134 318 C 142 352 170 372 206 372"/>
+  <path class="tube" d="M276 330 C 300 346 306 372 292 392 C 278 410 254 404 252 388"/>
+  <g class="meal"><circle cx="150" cy="70" r="9"/><circle cx="170" cy="50" r="7"/><circle cx="134" cy="48" r="6"/></g>
+ </g>
+ <g class="brain">
+  <g class="glow"><circle cx="534" cy="134" r="84"/></g>
+  <path class="org" d="M456 150 C 444 100 484 62 532 64 C 582 60 622 94 618 138 C 620 172 592 198 558 194 C 550 216 522 224 508 208 C 488 212 464 198 464 178 C 454 172 452 162 456 150 Z"/>
+  <path class="fold" d="M492 96 C 506 100 512 116 504 128 M536 84 C 530 102 540 118 558 122 M582 104 C 574 120 584 140 600 144 M500 160 C 518 156 532 164 536 178 M552 150 C 566 146 580 152 584 166"/>
+  <path class="tube" d="M548 196 C 552 212 556 224 566 234"/>
+ </g>
+ <g class="mol" data-mol transform="translate(289 322)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(312 299)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(334 265)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(356 227)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(383 191)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g><g class="mol" data-mol transform="translate(417 163)"><polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" /><circle r="3" /></g>
+ <g class="gauge" transform="translate(520 340)">
+  <path class="g-track" d="M-62 0 A62 62 0 0 1 62 0"/>
+  <path class="g-fill" d="M-62 0 A62 62 0 0 1 62 0"/>
+  <g class="needle"><path d="M0 0 L0 -50"/><circle r="7"/></g>
+  <text x="-62" y="26" text-anchor="middle">Hungry</text><text x="62" y="26" text-anchor="middle">Full</text>
+ </g>
+ <g transform="translate(14 8)"><g class="chip c1"><rect width="150" height="34" rx="17"/><text x="75" y="22" text-anchor="middle">1 · You eat a meal</text></g></g>
+ <g transform="translate(250 250)"><g class="chip c2"><rect width="190" height="34" rx="17"/><text x="95" y="22" text-anchor="middle">2 · Gut releases GLP-1</text></g></g>
+ <g transform="translate(330 8)"><g class="chip c3"><rect width="164" height="34" rx="17"/><text x="82" y="22" text-anchor="middle">3 · Brain gets “full”</text></g></g>
+</svg>
+  <figcaption>After a meal, your gut releases GLP-1. It tells the brain you're full and helps regulate blood sugar.</figcaption>
  </figure>
  <div class="g-txt">
-  <h2 id="g-h" data-r>What is a GLP-1?</h2>
+  <h2 id="g-h" data-split>What is a GLP-1?</h2>
   <p class="stmt" data-r style="--i:1">GLP-1 medications act like a natural hormone that shapes appetite and blood sugar. Some are FDA-approved for chronic weight management; others for type 2 diabetes.</p>
   <p data-r style="--i:2">They work alongside a reduced-calorie diet and more activity. Online programs connect you with a licensed clinician who reviews your health history and decides whether a GLP-1 is appropriate, and if so, whether an FDA-approved brand-name medication or a compounded version fits. Compounded medications are not FDA-approved.</p>
  </div>
 </div></section>
 
-<section class="read" aria-labelledby="read-h">
- <div class="board"><div class="tile t-blue"><h2 id="read-h">Before you start</h2></div><div class="tile ph" style="--c:1;--r:0" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:2;--r:0" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:3;--r:0" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:4;--r:0" aria-hidden="true"><i></i></div><div class="tile t-cream"><a href="../lp/7-things-glp1-online.html"><b>7 things to know before starting a GLP-1 program online</b><span>Guide · 6 min</span></a></div><div class="tile ph" style="--c:0;--r:1" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:1;--r:1" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:2;--r:1" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:3;--r:1" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:4;--r:1" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:5;--r:1" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:0;--r:2" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:1;--r:2" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:2;--r:2" aria-hidden="true"><i></i></div><div class="tile t-cream"><a href="../products/wl-comparison-programs.html"><b>Seven online programs compared side by side</b><span>Comparison</span></a></div><div class="tile ph" style="--c:4;--r:2" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:5;--r:2" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:0;--r:3" aria-hidden="true"><i></i></div><div class="tile t-white"><a href="../lp/online-glp1-programs.html"><b>What to know before choosing an online GLP-1 program</b><span>Guide · 5 min</span></a></div><div class="tile ph" style="--c:2;--r:3" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:3;--r:3" aria-hidden="true"><i></i></div><div class="tile ph" style="--c:4;--r:3" aria-hidden="true"><i></i></div><div class="tile t-coral"><a class="go" href="../products/best-wl-programs.html"><b>See the 2026 rankings</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
-</section>
+<section class="read" aria-labelledby="read-h"><div class="w">
+ <div class="board">
+  <div class="tile t-blue t-head" data-r><h2 id="read-h">Before you start</h2><p>Three short reads, written for people comparing programs for the first time.</p></div>
+  <a class="tile t-white" href="../lp/7-things-glp1-online.html" data-r style="--i:1"><span class="ico"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg></span><b>7 things to know before starting a GLP-1 program online</b><span class="meta">Guide · 6 min</span></a>
+  <a class="tile t-cream2" href="../lp/online-glp1-programs.html" data-r style="--i:2"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h7"/></svg></span><b>What to know before choosing an online GLP-1 program</b><span class="meta">Guide · 5 min</span></a>
+  <a class="tile t-white" href="../products/wl-comparison-programs.html" data-r style="--i:3"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 4v16M5 20h14M6 8h12"/><path d="M6 8l-3 6a3 3 0 0 0 6 0zM18 8l-3 6a3 3 0 0 0 6 0z"/></svg></span><b>Seven online programs compared side by side</b><span class="meta">Comparison</span></a>
+  <a class="tile t-coral go" href="../products/best-wl-programs.html" data-r style="--i:4"><b>See the 2026 rankings</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+</div></section>
 
 <section class="faq" id="faq" aria-labelledby="faq-h"><div class="w">
- <div class="qa head"><h2 id="faq-h">Common questions</h2><p></p></div>
+ <div class="qa head"><h2 id="faq-h" data-split>Common questions</h2><p></p></div>
  <div class="qa" data-r><h3>Do I need a clinician to approve treatment?</h3><p>Yes. GLP-1 medications are available only through a licensed clinician. Every program on our list has one review your health history, and they may decide a GLP-1 isn't right for you.</p></div><div class="qa" data-r><h3>Are compounded GLP-1s the same as brand-name ones?</h3><p>No. Compounded GLP-1 medications are not FDA-approved and are not generic versions of brand-name drugs. Ask any program which medication and which pharmacy it uses.</p></div><div class="qa" data-r><h3>How much do online GLP-1 programs cost?</h3><p>On our list, starting prices run from about $99 a month (Trimi, 12-month plan) to $169 (MEDGm injections), with first-month offers from Pallas Health ($139) and DirectMeds ($147). Price usually depends on the medication, the dose and the plan length.</p></div><div class="qa" data-r><h3>Will my insurance cover it?</h3><p>Coverage for weight-management medication varies widely by plan. None of the programs on our list bill insurance directly; MEDGm and Pallas Health accept HSA/FSA.</p></div><div class="qa" data-r><h3>How fast can I get started?</h3><p>Most programs start with an online intake that takes a few minutes. A licensed provider reviews it, often within a day, and approved medication usually ships within a few days.</p></div><div class="qa" data-r><h3>How do you make money?</h3><p>Programs pay us advertising fees when readers visit them, and those fees affect where programs appear and how they are scored. DirectMeds is a paid featured placement. We never charge readers.</p></div>
 </div></section>
 
@@ -407,9 +572,24 @@ html:not(.js) .sort{display:none}
 
 <section class="close" aria-labelledby="c-h">
  <div class="strip" aria-hidden="true">
-  <img src="../images/lp/woman-preparing-healthy-salad-home.jpg" alt="" width="1200" height="800" loading="lazy">
-  <img src="../images/lp/woman-relaxing-couch-using-phone.jpg" alt="" width="1200" height="800" loading="lazy">
-  <img src="../images/lp/confident-relieved-doctorguided-plan-home.webp" alt="" width="1448" height="1086" loading="lazy">
+  <div class="st"><p>Answer</p><div class="ui ph " data-ui data-fx="intake" aria-hidden="true">
+ <div class="ph-notch"></div>
+ <p class="ph-h">Online intake</p>
+ <div class="ph-prog"><i></i></div>
+ <ul><li><span class="ck"></span>Age and height</li><li><span class="ck"></span>Current weight</li><li><span class="ck"></span>Health history</li><li><span class="ck"></span>Medications you take</li></ul>
+ <span class="ph-btn">Send to a clinician</span>
+</div></div>
+  <div class="st"><p>Talk</p><div class="ui rv " data-ui data-fx="review" aria-hidden="true">
+ <div class="ui-top"><span class="rv-av"><svg viewBox="0 0 24 24"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a4 4 0 0 0 8 0v-3"/><circle cx="19" cy="11" r="2"/></svg></span><b>Licensed clinician</b><span class="ui-tag">Reviewing</span></div>
+ <p class="bub me">I sent my health history.</p>
+ <p class="bub them typing"><i></i><i></i><i></i></p>
+ <p class="bub them msg">Thanks. I've reviewed your history. Here's whether a GLP-1 is right for you.</p>
+</div></div>
+  <div class="st"><p>Receive</p><div class="ui sh " data-ui data-fx="ship" aria-hidden="true">
+ <div class="ui-top"><span class="sh-box"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></span><b>Your order</b><span class="ui-tag">Discreet packaging</span></div>
+ <div class="sh-line"><i></i></div>
+ <ol><li><span class="sd"></span>Authorized</li><li><span class="sd"></span>Packed</li><li><span class="sd"></span>Shipped</li><li><span class="sd"></span>Delivered</li></ol>
+</div></div>
  </div>
  <div class="band"><div class="w">
   <div class="c-txt">
@@ -417,7 +597,7 @@ html:not(.js) .sort{display:none}
    <p class="stmt" data-r>Before your first intake, <a href="../products/best-wl-programs.html">see all seven programs ranked side by side</a>, with the price you'd really pay each month.</p>
    <p data-r style="--i:1">Free to read. No sign-up. A licensed clinician makes every treatment decision.</p>
   </div>
-  <img class="c-pic" src="../images/lp/woman-opening-discreet-delivery-box.jpg" alt="A woman opening a delivery box at her front door" width="1200" height="800" loading="lazy" data-r style="--i:2">
+  <a class="btn" href="../products/best-wl-programs.html" data-r style="--i:2">Read the rankings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
  </div></div>
 </section>
 
@@ -449,42 +629,51 @@ html:not(.js) .sort{display:none}
 
 <script>
 (function(){
- /* signature: the masthead photograph slowly changes, like light shifting in a room */
- var imgs=[].slice.call(document.querySelectorAll('.hero-media img')),i=0,t;
- var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
- function next(){imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on');}
- function go(){clearInterval(t);if(!still&&!document.hidden)t=setInterval(next,5800);}
- document.addEventListener('visibilitychange',go);go();
- /* 100 squares = the 100 points of our score: scattered, pressed into a ribbon, then ordered in the four weights */
- (function(){var svg=document.querySelector('.dots'),seed=7,o='',k=0,cols=['#FFD27A','#FFFFFF','#9FA0FF','#FFB400'],g=[30,25,25,20];
-  function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647;}
-  g.forEach(function(n,gi){for(var j=0;j<n;j++){
-   o+='<rect class="q a" x="'+(10+rnd()*290).toFixed(0)+'" y="'+(10+rnd()*180).toFixed(0)+'" width="9" height="9" fill="#fff" fill-opacity=".35"/>';
-   o+='<rect class="q b" x="'+(360+Math.floor(k/3)*8.2).toFixed(0)+'" y="'+(86+(k%3)*11)+'" width="7" height="9" fill="#fff" fill-opacity=".7"/>';
-   o+='<rect class="q c" x="'+(700+gi*75+(j%5)*13)+'" y="'+(174-Math.floor(j/5)*13)+'" width="11" height="11" fill="'+cols[gi]+'"/>';k++;}});
-  svg.innerHTML=o;})();
- /* the live thing: sort the shortlist */
- var list=document.querySelector('.rows'),btns=[].slice.call(document.querySelectorAll('.sort button'));
+ var d=document,still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ /* 100 squares = the 100 points of our score. Scrolling gathers them into a ribbon, then sorts them into the four weights. */
+ var svg=d.querySelector('.dots'),seed=7,k=0,cols=['#FFD27A','#FFFFFF','#9FA0FF','#FFB400'],grp=[30,25,25,20],pts=[],o='';
+ function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647;}
+ grp.forEach(function(n,gi){for(var j=0;j<n;j++){
+  pts.push({a:[10+rnd()*290,10+rnd()*180],b:[360+Math.floor(k/3)*8.2,86+(k%3)*11],c:[700+gi*75+(j%5)*13,174-Math.floor(j/5)*13],col:cols[gi]});k++;}});
+ pts.forEach(function(p){o+='<rect x="'+p.c[0].toFixed(0)+'" y="'+p.c[1].toFixed(0)+'" width="11" height="11" fill="'+p.col+'"/>';});
+ svg.innerHTML=o;
+ d.addEventListener('motion:on',function(){
+  var g=window.gsap,rects=[].slice.call(svg.children);
+  rects.forEach(function(r,i){var p=pts[i];g.set(r,{attr:{x:p.a[0],y:p.a[1]},fill:'#fff',opacity:.4});});
+  var tl=g.timeline({scrollTrigger:{trigger:svg,start:'top 85%',end:'bottom 35%',scrub:0.6}});
+  rects.forEach(function(r,i){var p=pts[i];
+   tl.to(r,{attr:{x:p.b[0],y:p.b[1]},opacity:.8,duration:1,ease:'power2.inOut'},i*0.004);
+   tl.to(r,{attr:{x:p.c[0],y:p.c[1]},fill:p.col,opacity:1,duration:1,ease:'power2.inOut'},1.1+i*0.004);
+  });
+  /* the band of criteria slides with the scroll speed (React Bits "ScrollVelocity") */
+  var mq=d.querySelector('.mq-t'),x=0,v=0;
+  if(window.__lenis)window.__lenis.on('scroll',function(e){v=e.velocity||0;});
+  g.ticker.add(function(){x-=0.6+Math.abs(v)*0.35;var w=mq.firstElementChild.offsetWidth;if(-x>=w)x+=w;mq.style.transform='translate3d('+x+'px,0,0)';v*=0.92;});
+ });
+ /* the live thing: sort the shortlist (rows glide to their new places) */
+ var list=d.querySelector('.rows'),btns=[].slice.call(d.querySelectorAll('.sort button')),pill=d.querySelector('.sort-pill');
+ function place(b){pill.style.width=b.offsetWidth+'px';pill.style.transform='translateX('+(b.offsetLeft-4)+'px)';}
+ place(btns[0]);addEventListener('resize',function(){place(d.querySelector('.sort [aria-pressed=true]'));});
  btns.forEach(function(b){b.addEventListener('click',function(){
-  btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});place(b);
   var rows=[].slice.call(list.children),k=b.dataset.sort;
+  var before={};rows.forEach(function(r){before[r.dataset.rank]=r.getBoundingClientRect().top});
   rows.sort(function(a,c){return k==='price'?(a.dataset.price-c.dataset.price)||(a.dataset.rank-c.dataset.rank):a.dataset.rank-c.dataset.rank});
-  var before={};[].slice.call(list.children).forEach(function(r){before[r.dataset.rank]=r.getBoundingClientRect().top});
   rows.forEach(function(r){list.appendChild(r)});
   if(still)return;
-  rows.forEach(function(r){var d=before[r.dataset.rank]-r.getBoundingClientRect().top;if(!d)return;
-   r.animate([{transform:'translateY('+d+'px)'},{transform:'none'}],{duration:600,easing:'cubic-bezier(.16,1,.3,1)'});});
+  rows.forEach(function(r,i){var dy=before[r.dataset.rank]-r.getBoundingClientRect().top;if(!dy)return;
+   r.animate([{transform:'translateY('+dy+'px)'},{transform:'none'}],{duration:650,delay:i*25,easing:'cubic-bezier(.23,1,.32,1)',fill:'backwards'});});
  })});
 })();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="home-motion.js?v=2" defer></script>
 <script>
-(function(){
- var els=[].slice.call(document.querySelectorAll('[data-r]'));
- if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
- els.forEach(function(e){io.observe(e)});
- setTimeout(function(){els.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})},60);
-})();
+/* if the motion layer can't load, show everything */
+window.addEventListener('load',function(){if(window.__mo)return;[].forEach.call(document.querySelectorAll('[data-r],[data-split]'),function(e){e.classList.add('in')});});
 </script>
 <script src="/google-everflow-tracking.js"></script>
 </body>
