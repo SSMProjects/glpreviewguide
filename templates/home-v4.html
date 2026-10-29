@@ -355,30 +355,20 @@ h2{font-size:clamp(34px,4.4vw,64px);line-height:1;letter-spacing:-.03em;text-wra
 .sec{padding:clamp(96px,10vw,160px) 0}
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 
-/* hero: type only, no motion. The headline, one sentence, one action, and the three programs readers ask about first */
-.hero{background:var(--blue);color:#fff;padding:clamp(56px,7vw,104px) 0 clamp(40px,4vw,56px)}
-.hero .w{display:flex;flex-direction:column;gap:clamp(48px,6vw,88px);min-height:calc(100svh - 96px - clamp(96px,11vw,160px))}
-.h-main{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center;flex:1}
-.h-copy{grid-column:1/9}
-.hero h1{font:700 clamp(42px,5.3vw,80px)/.98 var(--disp);letter-spacing:-.035em;margin:0;text-wrap:balance}
-.h-lede{font-size:clamp(18px,1.5vw,21px);line-height:1.5;max-width:44ch;margin-top:28px;color:#E9E9FF}
-.h-act{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:36px}
-.h-act .tl{color:#fff}
-.top3{grid-column:9/13;margin-left:24px;background:var(--blue-d);border-radius:20px;padding:24px 24px 18px}
-.top3 h2{font:700 15px var(--body);letter-spacing:0;color:#C9C9FF;margin:0 0 8px}
-.top3 ol{list-style:none;margin:0;padding:0}
-.top3 a{display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;column-gap:12px;padding:14px 0;color:#fff;text-decoration:none;border-radius:10px;transition:background .2s ease}
-.top3 .r{font:700 24px var(--disp);color:#FFD27A}
-.top3 b{font:700 22px/1.15 var(--disp);letter-spacing:-.01em}
-.top3 small{display:block;font-size:13px;font-weight:700;color:#C9C9FF;margin-top:2px}
-.top3 .s{font:700 24px var(--disp);font-variant-numeric:tabular-nums}
-.top3 .s span{font:500 13px var(--body);color:#C9C9FF;margin-left:2px}
-@media(hover:hover) and (pointer:fine){.top3 a:hover b{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}}
-.top3 .all{display:inline-block;margin-top:10px;color:#fff;font-weight:700;font-size:15px}
-.h-facts{display:flex;flex-wrap:wrap;gap:8px 40px;font-size:15px;color:#C9C9FF}
-.h-facts b{color:#fff;font-weight:700}
-@media(max-width:960px){.h-copy,.top3{grid-column:1/13}.top3{margin:48px 0 0;max-width:520px}.hero .w{min-height:0}}
-@media(max-width:520px){.hero h1{font-size:clamp(40px,11.5vw,56px)}.top3{padding:18px 18px 12px}.h-facts{gap:6px 24px;font-size:14px}}
+/* hero: compact and still. Headline, one sentence, the action, and a picture of the two forms GLP-1 medication comes in */
+.hero{background:var(--cream);color:var(--ink);padding:clamp(32px,4vw,56px) 0 clamp(28px,3vw,40px)}
+.h-main{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
+.h-copy{grid-column:1/7}
+.hero h1{font:700 clamp(32px,3.5vw,50px)/1.08 var(--disp);letter-spacing:-.025em;margin:0;text-wrap:balance}
+.h-lede{font-size:17px;line-height:1.55;max-width:46ch;margin-top:16px}
+.h-act{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:24px}
+.h-facts{display:flex;flex-wrap:wrap;gap:6px 24px;font-size:14px;color:var(--muted);margin-top:22px}
+.h-facts b{color:var(--ink);font-weight:700}
+.h-pic{grid-column:7/13;margin:0;display:grid;place-items:center}
+.h-pic img{width:100%;max-width:620px;height:auto}
+@media(max-width:860px){.h-copy,.h-pic{grid-column:1/13}.h-copy{grid-row:2}.h-pic{grid-row:1;margin:0 0 8px}.h-pic img{max-width:420px}}
+@media(max-width:520px){.h-pic img{max-width:300px}}
+@media(max-width:520px){.hero h1{font-size:clamp(28px,8vw,34px)}.h-lede{font-size:16px}}
 
 /* what a GLP-1 does: the meal, the gut, the brain, drawn big right under the first screen */
 .glp{background:var(--cream);padding-bottom:clamp(40px,4vw,64px)}
@@ -495,6 +485,94 @@ a.tile:active{transform:scale(.98)}
 .mo .lit .lw{opacity:.18}
 
 @media(prefers-reduced-motion:reduce){.how,.glp-steps i,.tile{transition:none}}
+
+/* v4.1 · compact scale: comparison-site type sizes (h1 ~50px, section titles ~36px, text 16px) and tighter section rhythm */
+body{font-size:16px}
+h2{font-size:clamp(26px,2.5vw,36px);line-height:1.12;letter-spacing:-.02em}
+.stmt{font-size:clamp(18px,1.5vw,21px);line-height:1.4}
+.sec,.list,.obj,.faq,.reads{padding:clamp(48px,5.5vw,80px) 0}
+.isi{padding:clamp(44px,5vw,72px) 0}
+.glp{background:#fff;padding-bottom:clamp(48px,5.5vw,80px)}
+.glp h2{font-size:clamp(26px,2.5vw,36px)}
+.glp-txt .stmt{margin-top:16px}
+.glp-txt p.body{margin-top:16px;font-size:15px}
+.glp-steps{margin-top:20px;gap:8px}
+.glp-steps li{font-size:16px}
+.glp-steps i{width:30px;height:30px;font-size:14px}
+.glp-fig{background:var(--cream);padding:clamp(12px,1.8vw,24px)}
+.glp-fig figcaption{font-size:14px;margin-top:8px}
+/* price board */
+.l-lede{font-size:16px;margin-top:14px}
+.budget{padding:16px 20px 12px}
+.budget output{font-size:30px}
+.l-tools{margin:32px 0 10px}
+.tbl a{padding:14px 16px}
+.n b{font-size:18px}
+.n small,.v small{font-size:14px;margin-top:2px}
+.v b{font-size:19px}
+.k b{font-size:19px}
+.l-note{font-size:14px;margin-top:14px}
+/* how it works */
+.how-in{padding:clamp(56px,6vw,88px) 0}
+.how-head{margin-bottom:clamp(24px,3vw,40px)}
+.how-head p{font-size:16px}
+.step{padding:28px 0}
+.vb{font-size:clamp(40px,4.4vw,64px);line-height:1}
+.cap{font-size:17px;margin-top:14px}
+.how.pin .how-in{padding:clamp(72px,8vh,96px) 0 32px}
+.stage .phone{width:min(270px,calc((100svh - 260px) * 290 / 590))}
+@media(min-width:961px){.how:not(.pin) .st-ph .phone{width:230px}}
+@media(max-width:960px){.st-ph .phone{width:250px;aspect-ratio:290/610}.sc-trk li{padding:9px 0}.st-ph .sc-rk li:nth-child(5),.st-ph .sc-sub{display:none}.st-ph .sc-rk li{padding:8px 10px}}
+@media(max-width:960px){.vb{font-size:clamp(38px,11vw,56px)}.cap{font-size:16px}.st-ph{margin-top:24px}.phone{width:240px}}
+/* before you start */
+.rboard{grid-auto-rows:minmax(170px,auto);gap:10px}
+.tile{padding:20px;gap:10px;border-radius:16px}
+.tile h2{font-size:clamp(26px,2.4vw,34px)}
+.t-head p{font-size:16px}
+.tile b{font-size:18px}
+.tile .ico{width:40px;height:40px}
+.tile.go b{font-size:clamp(22px,2vw,28px)}
+.tile.go svg{width:36px;height:36px}
+@media(min-width:961px){.tile.go{grid-column:span 3}}
+@media(max-width:960px){.tile{min-height:150px}}
+@media(max-width:560px){.tile{min-height:0}}
+/* how we rank */
+.o-head .stmt{margin-top:14px}
+.o-note{font-size:15px}
+.o-body{margin-top:32px;padding:clamp(20px,3vw,40px)}
+.o-ring svg{width:min(240px,100%)}
+.crit li{padding:12px 0}
+.crit h3{font-size:clamp(18px,1.5vw,21px)}
+.crit p{font-size:15px}
+.crit .pts{font-size:clamp(28px,2.6vw,38px)}
+/* faq, close, footer */
+.f-side p{font-size:16px;margin-top:14px}
+.qs details{margin-bottom:6px}
+.qs summary{font-size:clamp(16px,1.25vw,18px);padding:16px 0}
+.qs details p{font-size:16px;padding-bottom:18px}
+.isi h2{font-size:clamp(22px,2vw,28px)}
+.isi .txt{font-size:15px}
+.inv{min-height:0;padding:clamp(48px,5.5vw,80px) 0}
+.inv .w{gap:28px}
+.inv h2{font-size:clamp(34px,4.2vw,58px);line-height:1}
+.inv-foot p{font-size:17px}
+.foot{padding-top:48px}
+.f-links{font-size:17px;margin-bottom:28px}
+.crop{font-size:14vw;margin-top:32px}
+
+/* pinned steps as one list: the active step opens, the others stay as titles, so the left column is never empty */
+.how.pin .rail{display:none}
+.how.pin .steps{grid-row:2;align-self:center;display:flex;flex-direction:column;gap:4px}
+.how.pin .step{position:relative;inset:auto;display:block;padding:12px 0 12px 26px;opacity:.4;transform:none;pointer-events:auto;cursor:pointer;transition:opacity .4s var(--out)}
+.how.pin .step.on,.how.pin .step.past.on{opacity:1;transform:none}
+.how.pin .step.past{transform:none}
+.how.pin .step::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:4px;border-radius:4px;background:rgba(255,255,255,.25);transition:background-color .4s ease}
+.how.pin .step.on::before{background:#fff}
+@media(hover:hover) and (pointer:fine){.how.pin .step:not(.on):hover{opacity:.7}}
+.how.pin .vb{font-size:clamp(34px,3.4vw,50px)}
+.how.pin .cap{max-height:0;overflow:hidden;margin-top:0;opacity:0;transition:max-height .5s var(--out),margin-top .5s var(--out),opacity .4s ease}
+.how.pin .step.on .cap{max-height:7em;margin-top:10px;opacity:1}
+.how.pin .stage .phone{width:min(280px,calc((100svh - 230px) * 290 / 590))}
 </style>
 </head>
 <body>
@@ -515,23 +593,15 @@ a.tile:active{transform:scale(.98)}
     <a class="btn" href="#programs">Compare by price <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="tl" href="#glp1">How a GLP-1 works</a>
    </div>
+   <p class="h-facts"><span><b>7</b> programs reviewed</span><span>Starting prices from <b>$99/mo</b></span><span>Prices checked <b>October 2026</b></span></p>
   </div>
-  <div class="top3">
-   <h2>Top rated in 2026</h2>
-   <ol>
-    <li><a href="../products/best-wl-programs.html#p1"><span class="r">1</span><span><b>DirectMeds</b><small>Featured partner · paid placement</small></span><span class="s">9.6<span>/10</span></span></a></li>
-    <li><a href="../products/best-wl-programs.html#p2"><span class="r">2</span><span><b>TrimRx</b><small>Plans from $168</small></span><span class="s">9.4<span>/10</span></span></a></li>
-    <li><a href="../products/best-wl-programs.html#p3"><span class="r">3</span><span><b>Embody</b><small>From $149/mo</small></span><span class="s">9.3<span>/10</span></span></a></li>
-   </ol>
-   <a class="all tl" href="../products/best-wl-programs.html">See all seven ranked</a>
-  </div>
+  <figure class="h-pic"><img src="../images/home-v4-pen-pills.webp" width="1200" height="551" alt="A GLP-1 injection pen next to tablets" fetchpriority="high" decoding="async"></figure>
  </div>
- <p class="h-facts"><span><b>7</b> programs reviewed</span><span>Starting prices from <b>$99/mo</b></span><span>Prices checked <b>October 2026</b></span><span>Free to read, no sign-up</span></p>
 </div></section>
 
 <section class="glp sec" id="glp1" aria-labelledby="g-h"><div class="w grid">
  <div class="glp-txt">
-  <h2 id="g-h" data-split>What a GLP-1 does after you eat</h2>
+  <h2 id="g-h" data-split>What a <span class="nw">GLP-1</span> does after you eat</h2>
   <p class="stmt" data-r style="--i:1">A hormone your gut releases after a meal. It tells your brain you're full and helps regulate blood sugar.</p>
   <ol class="glp-steps" data-r style="--i:2">
    <li><i>1</i>You eat a meal</li>
@@ -840,13 +910,14 @@ a.tile:active{transform:scale(.98)}
   var mm=g.matchMedia();
   mm.add('(min-width: 961px) and (min-height: 640px)',function(){
    how.classList.add('pin');
-   pinST=ST.create({trigger:inner,pin:true,start:'top top',end:function(){return '+='+Math.round(innerHeight*2.6);},anticipatePin:1,invalidateOnRefresh:true,
+   pinST=ST.create({trigger:inner,pin:true,start:'top top',end:function(){return '+='+Math.round(innerHeight*2.2);},anticipatePin:1,invalidateOnRefresh:true,
     onUpdate:function(s){var p=s.progress*4;go(Math.min(3,Math.floor(p)));fills.forEach(function(f,k){g.set(f,{scaleX:Math.max(0,Math.min(1,p-k))});});},
     onToggle:function(s){if(!s.isActive)loops.forEach(function(l){l.pause();});else if(cur>-1)loops[cur].play();}});
    go(0);
-   btns.forEach(function(b,k){b.onclick=function(){var y=pinST.start+(pinST.end-pinST.start)*((k+.5)/4);W.__lenis?W.__lenis.scrollTo(y,{duration:1}):W.scrollTo({top:y,behavior:'smooth'});};});
+   function jump(k){var y=pinST.start+(pinST.end-pinST.start)*((k+.5)/4);W.__lenis?W.__lenis.scrollTo(y,{duration:1}):W.scrollTo({top:y,behavior:'smooth'});}
+   btns.forEach(function(b,k){b.onclick=function(){jump(k);};});steps.forEach(function(st,k){st.onclick=function(){jump(k);};});
    ST.refresh();
-   return function(){how.classList.remove('pin');how.setAttribute('data-step',0);cur=-1;loops.forEach(function(l){l.pause();});steps.forEach(function(s){s.classList.remove('on','past');});};
+   return function(){steps.forEach(function(st){st.onclick=null;});how.classList.remove('pin');how.setAttribute('data-step',0);cur=-1;loops.forEach(function(l){l.pause();});steps.forEach(function(s){s.classList.remove('on','past');});};
   });
   /* phone layout: the field colour follows the step in view */
   mm.add('(max-width: 960px), (max-height: 639px)',function(){
