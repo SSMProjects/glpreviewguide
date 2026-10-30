@@ -362,8 +362,9 @@ h2{font-size:clamp(34px,4.4vw,64px);line-height:1;letter-spacing:-.03em;text-wra
 .hero h1{font:700 clamp(32px,3.5vw,50px)/1.08 var(--disp);letter-spacing:-.025em;margin:0;text-wrap:balance}
 .h-lede{font-size:17px;line-height:1.55;max-width:46ch;margin-top:16px}
 .h-act{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:24px}
-.h-facts{display:flex;flex-wrap:wrap;gap:6px 24px;font-size:14px;color:var(--muted);margin-top:22px}
-.h-facts b{color:var(--ink);font-weight:700}
+.btn.blue{background:var(--blue);box-shadow:0 3px 0 var(--blue-d)}
+.btn.blue:hover{background:var(--blue-d)}
+.btn.blue:active{box-shadow:0 0 0 var(--blue-d)}
 .h-pic{grid-column:7/13;margin:0;display:grid;place-items:center}
 .h-pic img{width:100%;max-width:620px;height:auto}
 @media(max-width:860px){.h-copy,.h-pic{grid-column:1/13}.h-copy{grid-row:2}.h-pic{grid-row:1;margin:0 0 8px}.h-pic img{max-width:420px}}
@@ -573,6 +574,35 @@ h2{font-size:clamp(26px,2.5vw,36px);line-height:1.12;letter-spacing:-.02em}
 .how.pin .cap{max-height:0;overflow:hidden;margin-top:0;opacity:0;transition:max-height .5s var(--out),margin-top .5s var(--out),opacity .4s ease}
 .how.pin .step.on .cap{max-height:7em;margin-top:10px;opacity:1}
 .how.pin .stage .phone{width:min(280px,calc((100svh - 230px) * 290 / 590))}
+
+/* v4.2 · tight rhythm: about 72px between sections on desktop, 56px on phones */
+.hero{padding:28px 0 32px}
+.sec,.list,.obj,.faq,.reads{padding:clamp(28px,2.6vw,36px) 0}
+.glp{padding:clamp(28px,2.6vw,36px) 0}
+.isi{padding:clamp(28px,2.6vw,36px) 0}
+.inv{padding:clamp(32px,3vw,44px) 0}
+.inv .w{gap:20px}
+.how-in{padding:clamp(36px,3.4vw,48px) 0}
+.how.pin .how-in{padding:72px 0 24px}
+.step{padding:20px 0}
+.l-tools{margin:24px 0 8px}
+.o-body{margin-top:24px}
+.foot{padding-top:36px}
+.f-links{margin-bottom:20px}
+.crop{margin-top:20px}
+.glp-fig figcaption{margin-top:6px}
+
+/* steps without the pin (reduced motion, short screens): four columns side by side, no tall empty rows */
+@media(min-width:961px){
+ .how:not(.pin) .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+ .how:not(.pin) .step{display:flex;flex-direction:column;padding:0}
+ .how:not(.pin) .st-txt,.how:not(.pin) .st-ph{grid-column:auto}
+ .how:not(.pin) .vb{font-size:clamp(32px,3vw,44px)}
+ .how:not(.pin) .cap{font-size:15px;min-height:4.4em}
+ .how:not(.pin) .st-ph{margin-top:18px;justify-items:start}
+ .how:not(.pin) .st-ph{display:block}
+ .how:not(.pin) .st-ph .phone{width:230px;max-width:100%}
+}
 </style>
 </head>
 <body>
@@ -590,10 +620,8 @@ h2{font-size:clamp(26px,2.5vw,36px);line-height:1.12;letter-spacing:-.02em}
    <h1 id="h1">Compare <span class="nw">GLP-1</span> programs before you start</h1>
    <p class="h-lede">We review seven online weight-loss programs on clinical care, medication access, price and support, so you can see what each one costs and who reviews your case before your first intake.</p>
    <div class="h-act">
-    <a class="btn" href="#programs">Compare by price <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="tl" href="#glp1">How a GLP-1 works</a>
+    <a class="btn blue" href="#glp1">How a <span class="nw">GLP-1</span> works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
    </div>
-   <p class="h-facts"><span><b>7</b> programs reviewed</span><span>Starting prices from <b>$99/mo</b></span><span>Prices checked <b>October 2026</b></span></p>
   </div>
   <figure class="h-pic"><img src="../images/home-v4-pen-pills.webp" width="1200" height="551" alt="A GLP-1 injection pen next to tablets" fetchpriority="high" decoding="async"></figure>
  </div>
@@ -732,13 +760,11 @@ h2{font-size:clamp(26px,2.5vw,36px);line-height:1.12;letter-spacing:-.02em}
 <section class="how" id="how" aria-labelledby="v-h" data-step="0"><div class="how-in"><div class="w">
  <div class="how-head"><h2 id="v-h" data-split>How starting online works</h2><p data-r style="--i:1">Most programs follow the same four steps, from your first comparison to a box at your door.</p></div>
  <ol class="steps">
-   <li class="step" data-i="0"><div class="st-txt"><h3 class="vb">Compare</h3><p class="cap">Check the full monthly price at your likely dose, and which medication and pharmacy each program uses.</p></div><div class="st-ph" aria-hidden="true"><div class="phone"><div class="scr"><div class="sc on" data-sc="rank"><span class="ui-tag">Updated Oct 2026</span><p class="sc-h">2026 program report</p><p class="sc-sub">Scores out of 10</p><ol class="sc-list sc-rk"><li class="fp"><span class="n">1</span><b>DirectMeds</b><em>9.6</em><span class="bar"><i style="--w:92%"></i></span><small>Paid placement</small></li><li><span class="n">2</span><b>TrimRx</b><em>9.4</em><span class="bar"><i style="--w:84%"></i></span></li><li><span class="n">3</span><b>Embody</b><em>9.3</em><span class="bar"><i style="--w:80%"></i></span></li><li><span class="n">4</span><b>Wellorithm</b><em>9.1</em><span class="bar"><i style="--w:72%"></i></span></li><li><span class="n">5</span><b>MEDGm</b><em>8.9</em><span class="bar"><i style="--w:64%"></i></span></li></ol></div></div></div></div></li>
-   <li class="step" data-i="1"><div class="st-txt"><h3 class="vb">Answer</h3><p class="cap">Fill in a short online health intake. Most take two to five minutes.</p></div><div class="st-ph" aria-hidden="true"><div class="phone"><div class="scr"><div class="sc on" data-sc="intake"><p class="sc-h">Online intake</p><div class="sc-prog"><i></i></div><ul class="sc-list sc-in"><li><span class="ck"></span>Age and height</li><li><span class="ck"></span>Current weight</li><li><span class="ck"></span>Health history</li><li><span class="ck"></span>Medications you take</li></ul><span class="sc-btn">Send to a clinician</span></div></div></div></div></li>
-   <li class="step" data-i="2"><div class="st-txt"><h3 class="vb">Talk</h3><p class="cap">A licensed clinician reviews your history, often within a day, and decides whether a GLP-1 is right for you.</p></div><div class="st-ph" aria-hidden="true"><div class="phone"><div class="scr"><div class="sc on" data-sc="review"><div class="sc-who"><span class="rv-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a4 4 0 0 0 8 0v-3"/><circle cx="19" cy="11" r="2"/></svg></span><b>Licensed clinician</b><span class="ui-tag">Reviewing</span></div><div class="sc-chat"><p class="bub me">I sent my health history.</p><p class="bub them typing"><i></i><i></i><i></i></p><p class="bub them msg">Thanks. I've reviewed your history. Here's whether a GLP-1 is right for you.</p></div></div></div></div></div></li>
-   <li class="step" data-i="3"><div class="st-txt"><h3 class="vb">Receive</h3><p class="cap">If treatment is authorized, medication usually ships within a few days, with check-ins after.</p></div><div class="st-ph" aria-hidden="true"><div class="phone"><div class="scr"><div class="sc on" data-sc="ship"><span class="ui-tag">Discreet packaging</span><p class="sc-h">Your order</p><div class="sc-trk"><span class="fill"></span><ol><li><span class="sd"></span><span>Authorized<small>By your clinician</small></span></li><li><span class="sd"></span><span>Packed<small>At the pharmacy</small></span></li><li><span class="sd"></span><span>Shipped<small>Usually within a few days</small></span></li><li><span class="sd"></span><span>Delivered<small>Check-ins after</small></span></li></ol></div><div class="sc-box"><span class="sh-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></span><span>Check-ins continue after delivery.</span></div></div></div></div></div></li>
+   <li class="step" data-i="0" data-r style="--i:0"><div class="st-txt"><h3 class="vb">Compare</h3><p class="cap">Check the full monthly price at your likely dose, and which medication and pharmacy each program uses.</p></div><div class="st-ph" aria-hidden="true"><div class="phone"><div class="scr"><div class="sc on" data-sc="rank"><span class="ui-tag">Updated Oct 2026</span><p class="sc-h">2026 program report</p><p class="sc-sub">Scores out of 10</p><ol class="sc-list sc-rk"><li class="fp"><span class="n">1</span><b>DirectMeds</b><em>9.6</em><span class="bar"><i style="--w:92%"></i></span><small>Paid placement</small></li><li><span class="n">2</span><b>TrimRx</b><em>9.4</em><span class="bar"><i style="--w:84%"></i></span></li><li><span class="n">3</span><b>Embody</b><em>9.3</em><span class="bar"><i style="--w:80%"></i></span></li><li><span class="n">4</span><b>Wellorithm</b><em>9.1</em><span class="bar"><i style="--w:72%"></i></span></li><li><span class="n">5</span><b>MEDGm</b><em>8.9</em><span class="bar"><i style="--w:64%"></i></span></li></ol></div></div></div></div></li>
+   <li class="step" data-i="1" data-r style="--i:1"><div class="st-txt"><h3 class="vb">Answer</h3><p class="cap">Fill in a short online health intake. Most take two to five minutes.</p></div><div class="st-ph" aria-hidden="true"><div class="phone"><div class="scr"><div class="sc on" data-sc="intake"><p class="sc-h">Online intake</p><div class="sc-prog"><i></i></div><ul class="sc-list sc-in"><li><span class="ck"></span>Age and height</li><li><span class="ck"></span>Current weight</li><li><span class="ck"></span>Health history</li><li><span class="ck"></span>Medications you take</li></ul><span class="sc-btn">Send to a clinician</span></div></div></div></div></li>
+   <li class="step" data-i="2" data-r style="--i:2"><div class="st-txt"><h3 class="vb">Talk</h3><p class="cap">A licensed clinician reviews your history, often within a day, and decides whether a GLP-1 is right for you.</p></div><div class="st-ph" aria-hidden="true"><div class="phone"><div class="scr"><div class="sc on" data-sc="review"><div class="sc-who"><span class="rv-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a4 4 0 0 0 8 0v-3"/><circle cx="19" cy="11" r="2"/></svg></span><b>Licensed clinician</b><span class="ui-tag">Reviewing</span></div><div class="sc-chat"><p class="bub me">I sent my health history.</p><p class="bub them typing"><i></i><i></i><i></i></p><p class="bub them msg">Thanks. I've reviewed your history. Here's whether a GLP-1 is right for you.</p></div></div></div></div></div></li>
+   <li class="step" data-i="3" data-r style="--i:3"><div class="st-txt"><h3 class="vb">Receive</h3><p class="cap">If treatment is authorized, medication usually ships within a few days, with check-ins after.</p></div><div class="st-ph" aria-hidden="true"><div class="phone"><div class="scr"><div class="sc on" data-sc="ship"><span class="ui-tag">Discreet packaging</span><p class="sc-h">Your order</p><div class="sc-trk"><span class="fill"></span><ol><li><span class="sd"></span><span>Authorized<small>By your clinician</small></span></li><li><span class="sd"></span><span>Packed<small>At the pharmacy</small></span></li><li><span class="sd"></span><span>Shipped<small>Usually within a few days</small></span></li><li><span class="sd"></span><span>Delivered<small>Check-ins after</small></span></li></ol></div><div class="sc-box"><span class="sh-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></span><span>Check-ins continue after delivery.</span></div></div></div></div></div></li>
  </ol>
- <div class="stage" aria-hidden="true"><div class="phone"><div class="scr"><div class="sc" data-sc="rank"><span class="ui-tag">Updated Oct 2026</span><p class="sc-h">2026 program report</p><p class="sc-sub">Scores out of 10</p><ol class="sc-list sc-rk"><li class="fp"><span class="n">1</span><b>DirectMeds</b><em>9.6</em><span class="bar"><i style="--w:92%"></i></span><small>Paid placement</small></li><li><span class="n">2</span><b>TrimRx</b><em>9.4</em><span class="bar"><i style="--w:84%"></i></span></li><li><span class="n">3</span><b>Embody</b><em>9.3</em><span class="bar"><i style="--w:80%"></i></span></li><li><span class="n">4</span><b>Wellorithm</b><em>9.1</em><span class="bar"><i style="--w:72%"></i></span></li><li><span class="n">5</span><b>MEDGm</b><em>8.9</em><span class="bar"><i style="--w:64%"></i></span></li></ol></div><div class="sc" data-sc="intake"><p class="sc-h">Online intake</p><div class="sc-prog"><i></i></div><ul class="sc-list sc-in"><li><span class="ck"></span>Age and height</li><li><span class="ck"></span>Current weight</li><li><span class="ck"></span>Health history</li><li><span class="ck"></span>Medications you take</li></ul><span class="sc-btn">Send to a clinician</span></div><div class="sc" data-sc="review"><div class="sc-who"><span class="rv-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a4 4 0 0 0 8 0v-3"/><circle cx="19" cy="11" r="2"/></svg></span><b>Licensed clinician</b><span class="ui-tag">Reviewing</span></div><div class="sc-chat"><p class="bub me">I sent my health history.</p><p class="bub them typing"><i></i><i></i><i></i></p><p class="bub them msg">Thanks. I've reviewed your history. Here's whether a GLP-1 is right for you.</p></div></div><div class="sc" data-sc="ship"><span class="ui-tag">Discreet packaging</span><p class="sc-h">Your order</p><div class="sc-trk"><span class="fill"></span><ol><li><span class="sd"></span><span>Authorized<small>By your clinician</small></span></li><li><span class="sd"></span><span>Packed<small>At the pharmacy</small></span></li><li><span class="sd"></span><span>Shipped<small>Usually within a few days</small></span></li><li><span class="sd"></span><span>Delivered<small>Check-ins after</small></span></li></ol></div><div class="sc-box"><span class="sh-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></span><span>Check-ins continue after delivery.</span></div></div></div></div></div>
- <div class="rail" aria-label="Steps"><button type="button" data-go="0"><i></i>Compare</button><button type="button" data-go="1"><i></i>Answer</button><button type="button" data-go="2"><i></i>Talk</button><button type="button" data-go="3"><i></i>Receive</button></div>
 </div></div></section>
 
 <section class="reads" aria-labelledby="read-h"><div class="w">
@@ -897,31 +923,11 @@ h2{font-size:clamp(26px,2.5vw,36px);line-height:1.12;letter-spacing:-.02em}
    ST.create({trigger:sc.closest('.st-ph'),start:'top 85%',end:'bottom 10%',onToggle:function(s){s.isActive?tl.restart():tl.pause();}});
   });
 
-  /* desktop: pin the section and walk the steps with one phone */
-  var how=d.querySelector('.how'),inner=how.querySelector('.how-in'),steps=$('.step',how),scs=$('.stage .sc',how),btns=$('.rail button',how),fills=btns.map(function(b){return b.querySelector('i');});
-  var loops=scs.map(loop),cur=-1,pinST=null;
-  function go(i){
-   if(i===cur)return;cur=i;how.setAttribute('data-step',i);
-   steps.forEach(function(s,k){s.classList.toggle('on',k===i);s.classList.toggle('past',k<i);});
-   scs.forEach(function(s,k){s.classList.toggle('on',k===i);});
-   btns.forEach(function(b,k){b.classList.toggle('on',k===i);});
-   loops.forEach(function(l,k){k===i?l.restart():l.pause();});
-  }
-  var mm=g.matchMedia();
-  mm.add('(min-width: 961px) and (min-height: 640px)',function(){
-   how.classList.add('pin');
-   pinST=ST.create({trigger:inner,pin:true,start:'top top',end:function(){return '+='+Math.round(innerHeight*2.2);},anticipatePin:1,invalidateOnRefresh:true,
-    onUpdate:function(s){var p=s.progress*4;go(Math.min(3,Math.floor(p)));fills.forEach(function(f,k){g.set(f,{scaleX:Math.max(0,Math.min(1,p-k))});});},
-    onToggle:function(s){if(!s.isActive)loops.forEach(function(l){l.pause();});else if(cur>-1)loops[cur].play();}});
-   go(0);
-   function jump(k){var y=pinST.start+(pinST.end-pinST.start)*((k+.5)/4);W.__lenis?W.__lenis.scrollTo(y,{duration:1}):W.scrollTo({top:y,behavior:'smooth'});}
-   btns.forEach(function(b,k){b.onclick=function(){jump(k);};});steps.forEach(function(st,k){st.onclick=function(){jump(k);};});
-   ST.refresh();
-   return function(){steps.forEach(function(st){st.onclick=null;});how.classList.remove('pin');how.setAttribute('data-step',0);cur=-1;loops.forEach(function(l){l.pause();});steps.forEach(function(s){s.classList.remove('on','past');});};
-  });
-  /* phone layout: the field colour follows the step in view */
-  mm.add('(max-width: 960px), (max-height: 639px)',function(){
+  /* phones: the field colour follows the step in view (desktop shows all four steps side by side) */
+  var how=d.querySelector('.how'),steps=$('.step',how),mm=g.matchMedia();
+  mm.add('(max-width: 960px)',function(){
    steps.forEach(function(s,k){ST.create({trigger:s,start:'top 55%',end:'bottom 55%',onToggle:function(st){if(st.isActive)how.setAttribute('data-step',k);}});});
+   return function(){how.setAttribute('data-step',0);};
   });
 
   /* the GLP-1 step list lights up with the drawing's own chips */
