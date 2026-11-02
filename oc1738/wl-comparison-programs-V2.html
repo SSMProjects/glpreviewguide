@@ -384,6 +384,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
     if(!ins||!med||!pri){out.innerHTML='<p class="q_warn">Please answer all three questions.</p>';return;}
     var r=pick(ins,med,pri), t=T[r[0]];
     out.innerHTML='<div class="q_card"><span class="q_rank">#'+t.rank+'</span><div><p class="q_lbl">A good place to start</p>'+(t.logo||'')+'<h3>'+t.name+'</h3><p>'+r[1]+'</p>'+(t.url?'<a href="'+t.url+'" rel="sponsored nofollow noopener" target="_blank">See if you qualify</a>':'<a href="#'+t.id+'">See the full breakdown</a>')+'</div></div>';
+    if(window.__GLP1_TRACKING__&&window.__GLP1_TRACKING__.update) window.__GLP1_TRACKING__.update();
   });
 })();
 </script>
