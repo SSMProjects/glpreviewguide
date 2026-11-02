@@ -88,10 +88,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .status.show{display:block}
 .gpc{display:none;margin:0 0 14px;padding:10px 14px;border-radius:10px;background:var(--plum-s);font-size:15px}
 .gpc.show{display:block}
-.form_grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+.form_grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
 .form_grid label{display:flex;flex-direction:column;gap:4px;font-size:14.5px;font-weight:700}
 .form_grid .full{grid-column:1/-1}
-.form_grid input,.form_grid select,.form_grid textarea{font:16px var(--body);padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.form_grid input,.form_grid select,.form_grid textarea{min-width:0;max-width:100%;font:16px var(--body);padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
 @media(max-width:600px){.form_grid{grid-template-columns:minmax(0,1fr)}.form_grid input,.form_grid select,.form_grid textarea{max-width:100%;min-width:0}}
 
 /* team bios */
