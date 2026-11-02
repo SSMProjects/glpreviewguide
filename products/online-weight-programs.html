@@ -113,6 +113,31 @@ section.wl-comparison-hero{padding:16px 0 12px}
 .safety-isi .isi p{margin:0 0 8px}.safety-isi .isi ul{margin:0 0 8px;padding-left:20px}
 #top5 .row.top .promo .badge{white-space:normal;overflow-wrap:anywhere;min-width:0;max-width:100%;text-align:center}
 @media (max-width:400px){#top5 .row.top .promo{justify-content:center;height:auto}#top5 .row.top .promo .badge{font-size:12.5px;justify-content:center}}
+/* mobile compact provider cards (phones only; desktop unchanged) */
+@media(max-width:767px){
+ #top5 article.row .rgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head act" "score act" "feats feats";column-gap:12px;row-gap:6px;align-items:start;padding:12px 14px 14px}
+ #top5 article.row .rhead{grid-area:head;display:flex;align-self:end;padding:0;min-width:0}
+ #top5 article.row .rnumlogo{width:100%;gap:6px}
+ #top5 article.row .rnum{font-size:24px;min-width:14px}
+ #top5 article.row .logo{flex:1 1 auto}
+ #top5 article.row .scorebox{grid-area:score;flex-direction:row;align-items:center;justify-content:center;gap:6px;width:100%;min-width:0;min-height:0;padding:4px 8px;margin:0;transform:none;border-radius:8px;align-self:start}
+ #top5 article.row .scorebox .n{font-size:20px;line-height:1}
+ #top5 article.row .scorebox .stars{margin-top:0;font-size:13px}
+ #top5 article.row .scorebox .l{display:none}
+ #top5 article.row .act{grid-area:act;align-self:center;gap:8px;max-width:none;width:100%;margin:0}
+ #top5 article.row .act .btn{width:100%;font-size:13px;padding:11px 8px;line-height:1.2}
+ #top5 article.row .act .offer{font-size:14px}
+ #top5 article.row .hl{grid-area:feats;margin-top:4px}
+ #top5 article.row .feats{font-size:14px}
+ #top5 article.row .feats li{margin-bottom:4px;line-height:1.35}
+ #top5 article.row .pills{margin-top:6px}
+}
+@media(max-width:379px){#top5 article.row .act .btn{font-size:12px;padding:11px 4px;white-space:nowrap}#top5 article.row .rgrid{column-gap:8px;padding:12px 12px 14px}}
+/* phones: hide intro paragraphs so the #1 card moves up (desktop unchanged) */
+@media(max-width:767px){section.intro{display:none}}
+/* phones: hide hero buttons, editorial disclosure toggle and pre-list safety box; show a one-line Rx note instead (full safety info stays at page bottom; disclosure bar stays at top) */
+.rx-note{display:none}
+@media(max-width:767px){.wl-comparison-hero .hero_actions,.wl-comparison-hero .disc_row,.safety{display:none}.rx-note{display:block;margin:8px 0 0;font-size:12.5px;line-height:1.4;color:var(--muted)}.rx-note a{color:inherit;font-weight:700;text-decoration:underline;white-space:nowrap}}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
@@ -145,6 +170,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  <div class="hero_copy">
   <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
   <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared side by side (2026)</h1>
+  <p class="rx-note">Rx required; not right for everyone. <a href="#isi-h">Important safety info&nbsp;&darr;</a></p>
   <div class="hero_actions"><a class="btn_dark" href="#pick-1">See all 7</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
    <details><summary>Editorial disclosure</summary><p>We research each program ourselves. If you sign up through our links we may earn a commission at no cost to you. Compensation, including paid featured placements, can affect rankings and scores.</p></details>
