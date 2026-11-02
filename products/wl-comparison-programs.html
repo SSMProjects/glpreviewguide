@@ -135,6 +135,9 @@ section.wl-comparison-hero{padding:16px 0 12px}
 @media(max-width:379px){#top5 article.row .act .btn{font-size:12px;padding:11px 4px;white-space:nowrap}#top5 article.row .rgrid{column-gap:8px;padding:12px 12px 14px}}
 /* phones: hide intro paragraphs so the #1 card moves up (desktop unchanged) */
 @media(max-width:767px){section.intro{display:none}}
+/* phones: hide hero buttons, editorial disclosure toggle and pre-list safety box; show a one-line Rx note instead (full safety info stays at page bottom; disclosure bar stays at top) */
+.rx-note{display:none}
+@media(max-width:767px){.wl-comparison-hero .hero_actions,.wl-comparison-hero .disc_row,.safety{display:none}.rx-note{display:block;margin:8px 0 0;font-size:12.5px;line-height:1.4;color:var(--muted)}.rx-note a{color:inherit;font-weight:700;text-decoration:underline;white-space:nowrap}}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
@@ -166,6 +169,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  <div class="hero_copy">
   <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
   <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared side by side (2026)</h1>
+  <p class="rx-note">Rx required; not right for everyone. <a href="#isi-h">Important safety info&nbsp;&darr;</a></p>
   <div class="hero_actions"><a class="btn_dark" href="#pick-1">See all 7</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
    <details><summary>Editorial disclosure</summary><p>We research each program ourselves. If you sign up through our links we may earn a commission at no cost to you. Compensation, including paid featured placements, can affect rankings and scores.</p></details>
