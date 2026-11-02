@@ -6,6 +6,7 @@
   var ALL_ATTR_KEYS = ['gclid', 'wbraid', 'gbraid'].concat(ATTR_KEYS);
 
   var KEYS = ['gclid', 'campaignid', 'adgroupid', 'creative', 'keyword', 'matchtype', 'device', 'network', 'placement', 'targetid'];
+  var BRAID_KEYS = ['wbraid', 'gbraid'];
   var SUBS = ['sub1', 'sub2', 'sub3', 'sub4', 'sub5', 'sub6', 'sub7', 'sub8', 'sub9', 'sub10'];
   var AFFILIATE_SELECTOR = 'a[href*="go.glp1reviewguide.com"], a[href*="www.t8md2lxd.com/23H7P9/"]';
 
@@ -113,16 +114,9 @@
   function getAttributionValue(k) {
     var fromUrl = getUrlParam(k);
     if (fromUrl) return fromUrl;
-    if (k === 'gclid') {
-      var altFromUrl = getUrlParam('wbraid') || getUrlParam('gbraid');
-      if (altFromUrl) return altFromUrl;
-    }
     if (hasAdvertisingConsent()) {
       var stored = getStoredParam(k);
       if (stored) return stored;
-      if (k === 'gclid') {
-        return getStoredParam('wbraid') || getStoredParam('gbraid');
-      }
     }
     return '';
   }
@@ -175,6 +169,11 @@
           } else {
             u.searchParams.delete(sub);
           }
+        });
+        BRAID_KEYS.forEach(function (k) {
+          var bv = consented ? getAttributionValue(k) : '';
+          if (bv) { u.searchParams.set(k, bv); }
+          else { u.searchParams.delete(k); }
         });
         a.href = u.toString();
       } catch (e) {}
