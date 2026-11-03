@@ -24,7 +24,15 @@ header.hdr .brand small{font:500 13px var(--body);color:var(--muted)}
 header.hdr nav{display:flex;align-items:center;gap:22px}
 header.hdr nav a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:500}
 header.hdr nav a:hover{color:var(--blue)}
-@media(max-width:760px){header.hdr nav a{display:none}}
+.nav-toggle{display:none}
+@media(max-width:767px){
+header.hdr nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:0 20px 8px;box-shadow:0 12px 24px -16px rgba(31,27,46,.35)}
+header.hdr.menu-open nav{display:flex}
+header.hdr nav a{display:block;padding:12px 0;border-top:1px solid var(--line);font-size:16px}
+.nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;flex:none;width:44px;height:44px;margin:0 -8px 0 0;padding:0;background:none;border:0;border-radius:8px;cursor:pointer}
+.nav-toggle span{display:block;width:22px;height:2px;border-radius:2px;background:var(--ink)}
+.nav-toggle:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+}
 #top5,#what,#faq{scroll-margin-top:80px}
 .wl-comparison-cards{padding:16px 0 6px}
 .wl-comparison-cards img{max-width:100%;height:auto;display:block}
@@ -100,7 +108,6 @@ section.wl-comparison-hero{padding:10px 0 12px}
  .feat_panel .hc_label{white-space:nowrap;gap:5px;letter-spacing:.02em}
  .wl-comparison-cards #pick-1 .promo .deal{display:none}
  .wl-comparison-cards #pick-1 .rgrid{grid-template-areas:"trust trust" "deal deal" "head score" "feats feats" "act act"}
- .wl-comparison-cards #pick-1 .promo-deal-m{display:inline-block;grid-area:deal;justify-self:center;background:#fff;color:var(--blue);border-radius:999px;padding:3px 12px;font-size:11.21px;font-weight:700}
  .wl-comparison-cards #pick-1 .promo{padding:8px 12px}
  .wl-comparison-cards #pick-1 .promo .badge{white-space:nowrap;font-size:11px;margin:0 auto}
  .wl-comparison-cards #pick-1 .promo .deal{font-size:11.21px}
@@ -116,9 +123,10 @@ section.wl-comparison-hero{padding:10px 0 12px}
  body.m-compact .wl-comparison-cards .tagline{display:none}
  body.m-compact .wl-comparison-cards .rgrid{grid-template-areas:"head score" "act act" "feats feats"}
  body.m-compact .wl-comparison-cards #pick-1 .rgrid{grid-template-areas:"trust trust" "deal deal" "head score" "act act" "feats feats"}
- body.m-compact .adnote{font-size:11px!important;margin:0!important;min-height:0;padding:6px 8px;line-height:1.4;text-align:center;text-wrap:balance}
+ body.m-compact .adnote{font-size:11px!important;margin:0!important;min-height:0;padding:6px 8px;line-height:1.4;text-align:center;text-wrap:balance;background:#EFEFEF}
+ body.m-compact .adnote a{text-decoration:underline}
  body.m-compact .hero_actions,body.m-compact .disc_row{display:none}
- body.m-compact section.wl-comparison-hero{padding-bottom:0}
+ body.m-compact section.wl-comparison-hero{padding:16px 0 12px;background:#EAF0F7}
  body.m-compact #top5{padding-top:12px}
  body.m-compact .intro + .w{display:none}
  body.m-compact .safety-m{display:block}
@@ -143,10 +151,14 @@ section.wl-comparison-hero{padding:10px 0 12px}
 .wl-comparison-hero .disc_row summary{font-size:11.9px}
 @media(max-width:767px){
  .wl-comparison-hero .hero_title_row{padding-right:0;margin-bottom:0}
+ body.m-compact .wl-comparison-hero .hero_copy{display:flex;flex-direction:column}
+ body.m-compact .wl-comparison-hero .hero_title_row{order:1}
+ body.m-compact .wl-comparison-hero .kicker{order:2;margin:10px 0 0;color:#0E7C7B;font-size:13px}
+ body.m-compact .wl-comparison-hero h1{font:700 clamp(22px,6.4vw,28px)/1.2 var(--body);color:var(--ink);margin:0}
  .wl-comparison-hero .hero_pic{display:none}
 }
 @media (max-width:767px){
- body.m-compact article.row.top .rgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-areas:"trust trust" "deal deal" "head act" "score act" "feats feats"!important;column-gap:12px!important;row-gap:8px!important;align-items:start}
+ body.m-compact article.row.top .rgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-areas:"trust trust" "head act" "score act" "feats feats"!important;column-gap:12px!important;row-gap:8px!important;align-items:start}
  body.m-compact article.row.top .rhead{align-self:end}
  body.m-compact article.row.top .scorebox{grid-area:score;flex-direction:row!important;gap:6px;width:100%!important;min-width:0!important;min-height:0!important;padding:4px 8px!important;transform:none!important;border-radius:0 0 10px 10px;justify-content:center;align-self:start;margin-top:-8px!important}
  body.m-compact article.row.top .scorebox .n{font-size:20px!important;line-height:1!important}
@@ -176,7 +188,8 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
 <header class="hdr"><div class="w">
  <a class="brand" href="../index.html"><img src="../images/logo.svg" alt="" width="30" height="30"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
- <nav aria-label="Main"><a href="#top5">Compare</a><a href="#what">What is GLP-1?</a><a href="#faq">FAQ</a></nav>
+ <nav id="site-nav" aria-label="Main"><a href="#top5">Compare</a><a href="#what">What is GLP-1?</a><a href="#faq">FAQ</a></nav>
+ <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu"><span></span><span></span><span></span></button>
 </div></header>
 
 <main>
@@ -433,6 +446,15 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   render();
   setInterval(render,60000);
   document.addEventListener('visibilitychange',render);
+})();
+</script>
+<script>
+(function(){
+  var h=document.querySelector('header.hdr'),b=h.querySelector('.nav-toggle');
+  function set(open){h.classList.toggle('menu-open',open);b.setAttribute('aria-expanded',String(open));}
+  b.addEventListener('click',function(){set(!h.classList.contains('menu-open'));});
+  h.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('menu-open')){set(false);b.focus();}});
 })();
 </script>
 <script src="/google-everflow-tracking.js"></script>
