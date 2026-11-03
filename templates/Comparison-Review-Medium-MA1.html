@@ -129,11 +129,11 @@ section.wl-comparison-hero{padding:10px 0 12px}
 .adnote a{color:var(--blue)}
 .intro{padding:18px 0}
 .safety{margin:8px 0}
-.wl-comparison-hero .kicker{margin-bottom:16px;font-size:11.475px}
+.wl-comparison-hero .kicker{margin-bottom:12px;font-size:11.475px}
 .wl-comparison-hero h1{font-size:clamp(19.5075px,3.1212vw,31.212px)}
-.wl-comparison-hero .hero_title_row{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:20px}
+.wl-comparison-hero .hero_title_row{position:relative;padding-right:332px;margin-bottom:16px}
 .wl-comparison-hero .hero_title_row h1{margin:0;min-width:0}
-.wl-comparison-hero .hero_pic{flex:0 0 300px;margin:0}
+.wl-comparison-hero .hero_pic{position:absolute;top:0;right:0;width:300px;margin:0}
 .wl-comparison-hero .hero_pic img{width:100%;height:auto;mix-blend-mode:multiply;opacity:.9}
 .wl-comparison-hero .hero_actions{margin-bottom:10px}
 .wl-comparison-hero .hero_actions .btn_dark{font-size:11.56px;padding:9.4px 15.9px}
@@ -141,8 +141,8 @@ section.wl-comparison-hero{padding:10px 0 12px}
 .wl-comparison-hero .disc_row details{padding:6px 12px}
 .wl-comparison-hero .disc_row summary{font-size:11.9px}
 @media(max-width:767px){
- .wl-comparison-hero .hero_title_row{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:0}
- .wl-comparison-hero .hero_pic{flex:none;width:min(240px,70%)}
+ .wl-comparison-hero .hero_title_row{padding-right:0;margin-bottom:0}
+ .wl-comparison-hero .hero_pic{position:static;width:min(240px,70%);margin-top:12px}
 }
 @media (max-width:767px){
  body.m-compact article.row.top .rgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-areas:"trust trust" "deal deal" "head act" "score act" "feats feats"!important;column-gap:12px!important;row-gap:8px!important;align-items:start}
