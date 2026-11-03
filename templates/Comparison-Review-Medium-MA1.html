@@ -26,7 +26,7 @@ header.hdr nav a{color:var(--ink);text-decoration:none;font-size:15px;font-weigh
 header.hdr nav a:hover{color:var(--blue)}
 @media(max-width:760px){header.hdr nav a{display:none}}
 #top5,#what,#faq{scroll-margin-top:80px}
-.wl-comparison-cards{padding:24px 0 6px}
+.wl-comparison-cards{padding:16px 0 6px}
 .wl-comparison-cards img{max-width:100%;height:auto;display:block}
 .wl-comparison-cards .row{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 8px 22px -16px rgba(31,27,46,.35);margin:0 0 16px;overflow:hidden;transition:box-shadow .15s}
 .wl-comparison-cards .row:hover{box-shadow:0 14px 30px -16px rgba(31,27,46,.45)}
@@ -91,7 +91,7 @@ footer.foot .pc{display:inline-flex;align-items:center;gap:6px}
 footer.foot .pc img{display:inline-block}
 footer.foot p{color:var(--muted);font-size:12.5px;margin:0 0 8px}
 footer.foot button.linklike{background:none;border:0;padding:0;font:inherit;text-decoration:underline;cursor:pointer}
-section.wl-comparison-hero{padding:16px 0 12px}
+section.wl-comparison-hero{padding:10px 0 12px}
 .intro .dek p{font-size:15.3px}
 .intro .dek p:nth-child(3){font-size:14.45px}
 .wl-comparison-cards #pick-1 .promo-deal-m{display:none}
@@ -125,6 +125,26 @@ section.wl-comparison-hero{padding:16px 0 12px}
 }
 @media(max-width:389px){body.m-compact .adnote{font-size:10.5px!important;padding:6px 6px}}
 @media(max-width:359px){body.m-compact .adnote{font-size:10px!important;padding:6px 6px}}
+.adnote{background:transparent;color:var(--ink);padding:8px 14px}
+.adnote a{color:var(--blue)}
+.intro{padding:18px 0}
+.safety{margin:8px 0}
+.wl-comparison-hero .kicker{margin-bottom:12px;font-size:11.475px}
+.wl-comparison-hero h1{font-size:clamp(19.5075px,3.1212vw,31.212px)}
+.wl-comparison-hero .hero_title_row{position:relative;padding-right:332px;margin-bottom:16px}
+.wl-comparison-hero .hero_title_row h1{margin:0;min-width:0}
+.wl-comparison-hero .hero_pic{position:absolute;top:0;right:0;width:300px;margin:0}
+.wl-comparison-hero .hero_pic img{width:100%;height:auto;mix-blend-mode:multiply;opacity:.9}
+.wl-comparison-hero .hero_actions{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:12px;justify-content:center;width:fit-content;margin:0 0 10px}
+.wl-comparison-hero .hero_actions .btn_dark,.wl-comparison-hero .hero_actions .btn_line{display:flex;align-items:center;justify-content:center;box-sizing:border-box;white-space:nowrap;text-align:center;font-size:11.56px;line-height:1.2;padding:9.4px 15.9px}
+.wl-comparison-hero .hero_actions .btn_dark{background:transparent;color:var(--ink);border-color:var(--ink)}
+.wl-comparison-hero .hero_actions .btn_dark:hover,.wl-comparison-hero .hero_actions .btn_line:hover{background:#fff;border-color:var(--ink)}
+.wl-comparison-hero .disc_row details{padding:6px 12px}
+.wl-comparison-hero .disc_row summary{font-size:11.9px}
+@media(max-width:767px){
+ .wl-comparison-hero .hero_title_row{padding-right:0;margin-bottom:0}
+ .wl-comparison-hero .hero_pic{position:static;width:min(240px,70%);margin-top:12px}
+}
 @media (max-width:767px){
  body.m-compact article.row.top .rgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-areas:"trust trust" "deal deal" "head act" "score act" "feats feats"!important;column-gap:12px!important;row-gap:8px!important;align-items:start}
  body.m-compact article.row.top .rhead{align-self:end}
@@ -152,7 +172,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 </head>
 <body class="m-compact">
 
-<p class="adnote" style="font-size:11px">We earn commissions from providers on this page, and compensation can affect how programs are ranked and scored. <a href="../disclosure.html">Advertising Disclosure</a></p>
+<p class="adnote" style="font-size:11px">We earn commissions from brands listed on this site, which influences how listings are presented. <a href="../disclosure.html">Advertising Disclosure</a></p>
 
 <header class="hdr"><div class="w">
  <a class="brand" href="../index.html"><img src="../images/logo.svg" alt="" width="30" height="30"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
@@ -163,8 +183,11 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <section class="hero wl-comparison-hero"><div class="w hero_grid">
  <div class="hero_copy">
   <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
-  <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared side by side (2026)</h1>
-  <div class="hero_actions"><a class="btn_dark" href="#pick-1">See the top 5</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
+  <div class="hero_title_row">
+   <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared side by side (2026)</h1>
+   <figure class="hero_pic"><img src="../images/home-v4-pen-pills.webp" width="1200" height="551" alt="" decoding="async"></figure>
+  </div>
+  <div class="hero_actions"><a class="btn_dark" href="#pick-1">See our top ones.</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
    <details><summary>Editorial disclosure</summary><p>We research each program ourselves. If you sign up through our links we may earn a commission at no cost to you. Compensation, including paid featured placements, can affect rankings and scores.</p></details>
   </div>
