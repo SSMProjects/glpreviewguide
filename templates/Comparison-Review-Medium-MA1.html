@@ -193,23 +193,25 @@ section.wl-comparison-hero{padding:10px 0 12px}
  .wl-comparison-cards #pick-1 .act .btn{width:75%}
 }
 @media(max-width:767px){
- body.m-compact article.row.top .rgrid{grid-template-columns:auto 131px!important;grid-template-areas:"head score" "act act" "feats feats"!important;justify-content:center;column-gap:6px!important;row-gap:10px!important}
+ body.m-compact article.row.top .rgrid{grid-template-columns:max-content max-content!important;grid-template-areas:"head score" "act act" "feats feats"!important;justify-content:center!important;column-gap:6px!important;row-gap:10px!important}
  .wl-comparison-cards #pick-1{overflow:visible}
  .wl-comparison-cards #pick-1 .rgrid{padding:18px 10px 14px}
- .wl-comparison-cards #pick-1 .rhead{padding:0}
+ .wl-comparison-cards #pick-1 .rhead{padding:0;grid-column:auto;align-self:center}
  .wl-comparison-cards #pick-1 .promo{position:absolute;top:-1px;left:0;right:0;transform:translateY(-50%);justify-content:center;padding:0;z-index:1}
  .wl-comparison-cards #pick-1 .promo .badge svg{width:11.25px;height:11.25px}
  .wl-comparison-cards #pick-1 .score-trust{position:absolute;top:2px;left:calc(50% + 66px);width:auto;grid-area:auto;gap:2px}
  .wl-comparison-cards #pick-1 .trust-full{display:none}
- .wl-comparison-cards #pick-1 .rnumlogo{align-items:center;gap:4px}
+ .wl-comparison-cards #pick-1 .rnumlogo{align-items:center;gap:6px;width:max-content}
  .wl-comparison-cards #pick-1 .rnum{font-size:24px;min-width:0}
- .wl-comparison-cards #pick-1 .logo{flex:none;box-sizing:border-box;width:171px!important;height:55px!important;aspect-ratio:auto;padding:4px;overflow:hidden}
+ .wl-comparison-cards #pick-1 .logo{flex:none;box-sizing:border-box;width:min(148px,calc((100cqw - 44px) * .5606))!important;aspect-ratio:148/49;padding:4px;overflow:hidden}
  .wl-comparison-cards #pick-1 .logo img{width:100%!important;height:100%!important}
- .wl-comparison-cards #pick-1 .scorebox{box-sizing:border-box;width:131px!important;min-width:0!important;height:95px;min-height:0!important;flex-direction:column!important;justify-content:center;align-self:start;padding:0!important;margin:0!important;transform:none!important;border-radius:12px;gap:0}
+ .wl-comparison-cards #pick-1 .scorebox{box-sizing:border-box;width:min(116px,calc((100cqw - 44px) * .4394))!important;min-width:0!important;aspect-ratio:116/82;min-height:0!important;flex-direction:column!important;justify-content:center;align-self:start;padding:0!important;margin:0!important;transform:none!important;border-radius:12px;gap:0}
  .wl-comparison-cards #pick-1 .scorebox .n{font-size:22px!important}
  .wl-comparison-cards #pick-1 .scorebox .stars{margin-top:3px}
- .wl-comparison-cards #pick-1 .act .offer{flex-direction:row;flex-wrap:nowrap;justify-content:center;align-items:baseline;gap:6px;white-space:nowrap}
+ .wl-comparison-cards #pick-1 .act .offer{flex:0 1 auto;min-width:0;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:0 6px;white-space:normal}
  .wl-comparison-cards #pick-1 .offer-note{margin-top:0}
+ .wl-comparison-cards #pick-1{container-type:inline-size}
+ .wl-comparison-cards #pick-1 .hl,.wl-comparison-cards #pick-1 .act{contain:inline-size}
  .wl-comparison-cards #pick-1 .rgrid{align-items:center}
  .wl-comparison-cards #pick-1 .act{flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:center;gap:8px!important}
  .wl-comparison-cards #pick-1 .act .offer{order:-1}
