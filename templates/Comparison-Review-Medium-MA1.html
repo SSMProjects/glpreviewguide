@@ -157,10 +157,16 @@ section.wl-comparison-hero{padding:10px 0 12px}
  body.m-compact .wl-comparison-hero .hero_copy{display:flex;flex-direction:column}
  body.m-compact .wl-comparison-hero .kicker{order:1;margin:0 0 8px}
  body.m-compact .wl-comparison-hero .hero_title_row{order:2}
- body.m-compact .wl-comparison-hero h1{font-family:var(--body);color:#000}
+ body.m-compact .wl-comparison-hero h1{font-family:var(--body);color:#000;font-size:calc(clamp(19.5075px,3.1212vw,31.212px) * 1.15)}
+ body.m-compact .see-below{display:block;order:3;margin:8px 0 0;font-family:var(--body);font-size:15px;font-weight:700;color:#000;text-align:left}
  body.m-compact .wl-comparison-hero .hero-title-accent{color:#000}
  .wl-comparison-hero .hero_pic{display:none}
 }
+.see-below{display:none}
+@media(max-width:767px) and (prefers-reduced-motion:no-preference){
+ .see-below .hand{display:inline-block;animation:see-below-hand 1.2s ease-in-out infinite}
+}
+@keyframes see-below-hand{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @media (max-width:767px){
  body.m-compact article.row.top .rgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-areas:"trust trust" "head act" "score act" "feats feats"!important;column-gap:12px!important;row-gap:8px!important;align-items:start}
  body.m-compact article.row.top .rhead{align-self:end}
@@ -204,6 +210,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
    <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared side by side (2026)</h1>
    <figure class="hero_pic"><img src="../images/home-v4-pen-pills.webp" width="1200" height="551" alt="" decoding="async"></figure>
   </div>
+  <p class="see-below"><span class="hand" aria-hidden="true">👇</span> See below for all programs <span class="hand" aria-hidden="true">👇</span></p>
   <div class="hero_actions"><a class="btn_dark" href="#pick-1">See our top ones.</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
    <details><summary>Editorial disclosure</summary><p>We research each program ourselves. If you sign up through our links we may earn a commission at no cost to you. Compensation, including paid featured placements, can affect rankings and scores.</p></details>
