@@ -123,6 +123,9 @@ section.wl-comparison-hero{padding:10px 0 12px}
  body.m-compact .wl-comparison-cards .tagline{display:none}
  body.m-compact .wl-comparison-cards .rgrid{grid-template-areas:"head score" "act act" "feats feats"}
  body.m-compact .wl-comparison-cards #pick-1 .rgrid{grid-template-areas:"trust trust" "deal deal" "head score" "act act" "feats feats"}
+ body.m-compact .wl-comparison-cards .row:not(.top) .rgrid{padding:12px 14px;row-gap:10px}
+ body.m-compact .wl-comparison-cards .row:not(.top) .scorebox{min-height:0;padding:10px 12px}
+ body.m-compact .wl-comparison-cards .row:not(.top) .act{gap:10px}
  body.m-compact .adnote{font-size:11px!important;margin:0!important;min-height:0;padding:6px 8px;line-height:1.4;text-align:center;text-wrap:balance}
  body.m-compact .adnote a{text-decoration:underline}
  body.m-compact .hero_actions,body.m-compact .disc_row{display:none}
@@ -152,8 +155,10 @@ section.wl-comparison-hero{padding:10px 0 12px}
 @media(max-width:767px){
  .wl-comparison-hero .hero_title_row{padding-right:0;margin-bottom:0}
  body.m-compact .wl-comparison-hero .hero_copy{display:flex;flex-direction:column}
- body.m-compact .wl-comparison-hero .hero_title_row{order:1}
- body.m-compact .wl-comparison-hero .kicker{order:2;margin:10px 0 0}
+ body.m-compact .wl-comparison-hero .kicker{order:1;margin:0 0 8px}
+ body.m-compact .wl-comparison-hero .hero_title_row{order:2}
+ body.m-compact .wl-comparison-hero h1{font-family:var(--body);color:#000}
+ body.m-compact .wl-comparison-hero .hero-title-accent{color:#000}
  .wl-comparison-hero .hero_pic{display:none}
 }
 @media (max-width:767px){
