@@ -187,9 +187,10 @@ section.wl-comparison-hero{padding:10px 0 12px}
  .wl-comparison-cards .score-trust{font-size:12.72px}
  .wl-comparison-cards .score-trust svg{width:13.98px;height:13.98px}
  .wl-comparison-cards .hl .feats li:nth-child(n+5){display:none}
- .wl-comparison-cards .row .act .btn{position:relative;width:63.75%;font-size:8.36px;padding:6.59px 6.08px}
- .wl-comparison-cards .row .act .btn::after{content:"";position:absolute;left:0;right:0;top:-11px;bottom:-11px}
- .wl-comparison-cards #pick-1 .act .btn{width:75%;padding:6.59px 6.08px}
+ .wl-comparison-cards .row .act .btn{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:44px;width:63.75%;padding:0 6.08px;background:none;box-shadow:none;white-space:nowrap;font-size:8.36px;line-height:1.2}
+ .wl-comparison-cards .row .act .btn::before{content:"";position:absolute;inset:10.5px 0;z-index:-1;border-radius:999px;background:var(--coral);box-shadow:0 3px 0 var(--coral-d);transition:background .15s}
+ .wl-comparison-cards .row .act .btn:hover::before{background:var(--coral-d)}
+ .wl-comparison-cards #pick-1 .act .btn{width:75%}
 }
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
