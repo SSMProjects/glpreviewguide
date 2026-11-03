@@ -159,7 +159,7 @@ section.wl-comparison-hero{padding:10px 0 12px}
  body.m-compact .wl-comparison-hero .hero_copy{display:flex;flex-direction:column}
  body.m-compact .wl-comparison-hero .kicker{order:1;margin:0 0 8px;font-size:10.3275px;font-weight:400;color:#000}
  body.m-compact .wl-comparison-hero .hero_title_row{order:2}
- body.m-compact .wl-comparison-hero h1{font-family:var(--body);color:#000;font-size:min(calc(clamp(19.5075px,3.1212vw,31.212px) * 1.4375),5.75vw)}
+ body.m-compact .wl-comparison-hero h1{font-family:var(--body);color:#000;font-size:min(calc(clamp(19.5075px,3.1212vw,31.212px) * 1.653125),6.6125vw)}
  body.m-compact .see-below{display:block;order:3;margin:8px 0 0;font-family:var(--body);font-size:12.75px;font-weight:400;color:#000;text-align:center}
  body.m-compact .wl-comparison-hero .hero-title-accent{color:#000}
  .wl-comparison-hero .hero-title-accent,.wl-comparison-hero .hero-title-desk{display:none}
@@ -193,22 +193,31 @@ section.wl-comparison-hero{padding:10px 0 12px}
  .wl-comparison-cards #pick-1 .act .btn{width:75%}
 }
 @media(max-width:767px){
- body.m-compact article.row.top .rgrid{grid-template-columns:minmax(0,1fr) 104px!important;grid-template-areas:"head score" "act act" "feats feats"!important;column-gap:12px!important;row-gap:10px!important}
+ body.m-compact article.row.top .rgrid{grid-template-columns:auto 120px!important;grid-template-areas:"head score" "act act" "feats feats"!important;justify-content:center;column-gap:6px!important;row-gap:10px!important}
  .wl-comparison-cards #pick-1{overflow:visible}
- .wl-comparison-cards #pick-1 .rgrid{padding:18px 16px 14px}
+ .wl-comparison-cards #pick-1 .rgrid{padding:18px 10px 14px}
+ .wl-comparison-cards #pick-1 .rhead{padding:0}
  .wl-comparison-cards #pick-1 .promo{position:absolute;top:-1px;left:0;right:0;transform:translateY(-50%);justify-content:center;padding:0;z-index:1}
  .wl-comparison-cards #pick-1 .promo .badge svg{width:11.25px;height:11.25px}
- .wl-comparison-cards #pick-1 .score-trust{position:absolute;top:2px;left:calc(50% + 74px);width:auto;grid-area:auto;gap:2px}
+ .wl-comparison-cards #pick-1 .score-trust{position:absolute;top:2px;left:calc(50% + 66px);width:auto;grid-area:auto;gap:2px}
  .wl-comparison-cards #pick-1 .trust-full{display:none}
- .wl-comparison-cards #pick-1 .rnumlogo{align-items:center;gap:6px}
+ .wl-comparison-cards #pick-1 .rnumlogo{align-items:center;gap:4px}
  .wl-comparison-cards #pick-1 .rnum{font-size:24px;min-width:0}
- .wl-comparison-cards #pick-1 .logo{flex:none;box-sizing:border-box;width:104px!important;height:48px!important;aspect-ratio:auto;padding:4px;overflow:hidden}
+ .wl-comparison-cards #pick-1 .logo{flex:none;box-sizing:border-box;width:120px!important;height:55px!important;aspect-ratio:auto;padding:4px;overflow:hidden}
  .wl-comparison-cards #pick-1 .logo img{width:100%!important;height:100%!important}
- .wl-comparison-cards #pick-1 .scorebox{box-sizing:border-box;width:104px!important;min-width:0!important;height:48px;min-height:0!important;flex-direction:column!important;justify-content:center;align-self:start;padding:0!important;margin:0!important;transform:none!important;border-radius:12px;gap:0}
+ .wl-comparison-cards #pick-1 .scorebox{box-sizing:border-box;width:120px!important;min-width:0!important;height:55px;min-height:0!important;flex-direction:column!important;justify-content:center;align-self:start;padding:0!important;margin:0!important;transform:none!important;border-radius:12px;gap:0}
  .wl-comparison-cards #pick-1 .scorebox .n{font-size:22px!important}
  .wl-comparison-cards #pick-1 .scorebox .stars{margin-top:3px}
  .wl-comparison-cards #pick-1 .act .offer{flex-direction:row;flex-wrap:nowrap;justify-content:center;align-items:baseline;gap:6px;white-space:nowrap}
  .wl-comparison-cards #pick-1 .offer-note{margin-top:0}
+ .wl-comparison-cards #pick-1 .act .btn{width:max-content;margin:0 auto;padding:0 12px}
+ .wl-comparison-cards #pick-1 .act .btn::before{background:#EA705E;box-shadow:0 3px 0 #CE5C4B}
+ .wl-comparison-cards #pick-1 .act .btn:hover::before{background:#CE5C4B}
+ .wl-comparison-cards #pick-1 .hl .feats{font-size:12.33px}
+ .wl-comparison-cards #pick-1 .hl .feats li{padding-left:20.4px}
+ .wl-comparison-cards #pick-1 .hl .feats li::before{width:14.45px;height:14.45px}
+ .wl-comparison-cards #pick-1 .hl .feats li:first-child{font-size:13.18px}
+ .wl-comparison-cards #pick-1 .pill{font-size:9.78px;padding:2.55px 7.65px}
 }
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
