@@ -390,16 +390,16 @@ body.ocv1{margin:0;background:#fff;color:var(--ink);font:14px/1.5 var(--body);-w
  <article class="row top" id="pick-1">
   <div class="ctop"><span class="crank">1</span><span class="cribbon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>OUR TOP CHOICE</span></div>
   <div class="rgrid">
-   <div class="rhead"><a class="logo" href="https://www.t8md2lxd.com/23H7P9/62M42X/" rel="sponsored nofollow noopener" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets%2Fefdc4206eb0d4fe2b8d91f656438f104%2F78788a01b0f54994a49e55659b334045?format=webp&amp;width=800&amp;height=1200" alt="DirectMeds" width="184" height="92" style="width:115%;height:115%"></a></div>
-   <div class="hl"><p class="chead"><span class="deal">$150 off your first month</span></p><ul class="feats">
-    <li>No insurance needed, HSA accepted</li>
-    <li>One price covers medication, doctor visits, supplies and shipping</li>
-    <li>Formulation varies by provider</li>
-    <li>Doctor review in 24 hours; ships in 1–2 days</li>
-    <li>Refund policy in <a href="https://directmeds.com/dm-company/terms.html" target="_blank" rel="nofollow noopener">DirectMeds&#39; terms</a></li>
-   </ul><div class="pills"><span class="pill">No membership fee</span><span class="pill">LegitScript certified</span></div></div>
+   <div class="rhead"><a class="logo" href="https://www.t8md2lxd.com/23H7P9/711W2G/" rel="sponsored nofollow noopener" target="_blank"><img src="/images/provider-ro-v3.svg" alt="Ro" width="160" height="80"></a></div>
+   <div class="hl"><p class="chead"><span class="deal">$39 first-month membership</span></p><ul class="feats">
+    <li>FDA-approved GLP-1s, insurance or cash-pay</li>
+    <li>Free insurance check and paperwork help</li>
+    <li>$39 first month; medication from $149/mo</li>
+    <li>Eligibility decided within 2 days</li>
+    <li>$39 refunded if not eligible (Ro&#39;s pricing)</li>
+   </ul><div class="pills"><span class="pill">Insurance help</span><span class="pill">LegitScript certified</span></div></div>
    <div class="scorebox"><span class="n">9.6</span><span class="stars" aria-label="5 out of 5 stars"><i style="width:100%"></i></span><span class="l">Exceptional</span></div>
-   <div class="act"><a class="btn" href="https://www.t8md2lxd.com/23H7P9/62M42X/" rel="sponsored nofollow noopener" target="_blank">SEE IF YOU QUALIFY</a><p class="offer"><span class="offer-price-line"><s>$297</s><strong class="offer-price">$147</strong></span><span class="offer-note">first month</span></p></div>
+   <div class="act"><a class="btn" href="https://www.t8md2lxd.com/23H7P9/711W2G/" rel="sponsored nofollow noopener" target="_blank">SEE IF YOU QUALIFY</a><p class="offer"><span class="offer-price-line"><strong class="offer-price">$149/mo</strong></span><span class="offer-note">medication from</span></p></div>
   </div>
  </article>
 
@@ -530,7 +530,7 @@ body.ocv1{margin:0;background:#fff;color:var(--ink);font:14px/1.5 var(--body);-w
  </div>
 </div></section>
 
-<section class="sec feature"><div class="w">
+<section class="sec feature" id="why-directmeds"><div class="w">
  <div class="feature_grid">
  <aside class="feat_panel">
   <p class="hc_label"><i class="fa-solid fa-crown" aria-hidden="true"></i> Featured partner</p>
@@ -595,7 +595,7 @@ body.ocv1{margin:0;background:#fff;color:var(--ink);font:14px/1.5 var(--body);-w
 
 <script>
 (function(){
-  var T={"DirectMeds":{"rank":1,"id":"pick-1","name":"DirectMeds"},"TrimRx":{"rank":2,"id":"pick-2","name":"TrimRx"},"MEDGm":{"rank":5,"id":"pick-5","name":"MEDGm"},"Pallas Health":{"rank":7,"id":"pick-7","name":"Pallas Health"},"Trimi":{"rank":6,"id":"pick-6","name":"Trimi"}};
+  var T={"DirectMeds":{"rank":"","id":"why-directmeds","name":"DirectMeds"},"TrimRx":{"rank":2,"id":"pick-2","name":"TrimRx"},"MEDGm":{"rank":5,"id":"pick-5","name":"MEDGm"},"Pallas Health":{"rank":7,"id":"pick-7","name":"Pallas Health"},"Trimi":{"rank":6,"id":"pick-6","name":"Trimi"}};
   function pick(ins,med,pri){
     if(ins==='yes') return ['Pallas Health','It doesn\'t bill insurance, but every plan is HSA/FSA eligible and there\'s no membership fee.'];
     if(med==='brand') return ['MEDGm','Offers brand-name medications for a $99 membership plus medication.'];
@@ -610,7 +610,7 @@ body.ocv1{margin:0;background:#fff;color:var(--ink);font:14px/1.5 var(--body);-w
     var ins=v('ins'),med=v('med'),pri=v('pri');
     if(!ins||!med||!pri){out.innerHTML='<p class="q_warn">Please answer all three questions.</p>';return;}
     var r=pick(ins,med,pri), t=T[r[0]];
-    out.innerHTML='<div class="q_card"><span class="q_rank">#'+t.rank+'</span><div><p class="q_lbl">A good place to start</p><h3>'+t.name+'</h3><p>'+r[1]+'</p><a href="#'+t.id+'">See the full breakdown</a></div></div>';
+    out.innerHTML='<div class="q_card"><span class="q_rank">'+(t.rank?'#'+t.rank:'&#9733;')+'</span><div><p class="q_lbl">A good place to start</p><h3>'+t.name+'</h3><p>'+r[1]+'</p><a href="#'+t.id+'">See the full breakdown</a></div></div>';
   });
 })();
 </script>
