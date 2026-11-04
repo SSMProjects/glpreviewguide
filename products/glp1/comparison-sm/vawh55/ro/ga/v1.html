@@ -10,34 +10,38 @@
 <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="/main.css">
 <style>
 /* products/glp1/comparison-sm/vawh55/ro/ga/v1 — page-scoped styles (body.vawh-v1; only this file uses them).
-   Layout, font families and hero image: templates/crs-m2.html (desktop >=1024, tablet 640-1023, mobile <640).
-   Content, colors, font sizes/weights, links and tracking: products/wl-comparison-programs-v3.html.
-   Section styling the source takes from /main.css (quiz, method, feature, intro, safety) is kept; only font families are overridden. */
-body.vawh-v1{--blue:#0000FF;--blue-d:#0000B8;--blue-s:#E8E8FF;--ink:#1F1B2E;--muted:#615B6B;--line:#E6DFD6;--cream:#FBF7F2;--card:#fff;--coral:#E8604C;--coral-d:#C94A37;--sage:#2E8A63;--gold:#FFB400;--herobg:#F4F6FA;
---fr:"Fraunces",Georgia,"Times New Roman",serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--disp:var(--body)}
+   Layout, fonts, text styling, colors, hero, disclosure bar, imagery and #1 label: templates/crs-m2.html
+   (desktop >=1024, tablet 640-1023, mobile <640). Content, providers, links and tracking: unchanged.
+   Sections the page takes from /main.css (quiz, method, feature, intro, safety) keep their layout; their
+   type and colors are mapped to the nearest CRS-M2 equivalent in the "CRS-M2 type and color" block below. */
+body.vawh-v1{--blue:#0000FF;--blue-d:#0000B8;--blue-s:#E8E8FF;--ink:#323738;--ink2:#1F1B2E;--muted:#5F6466;--sub:#727574;--line:#E4E4E5;--hero:#EDF5F9;--herobg:var(--hero);--bar:#EEEEEE;--cream:#FBF7F2;--card:#fff;--coral:#E8604C;--coral-d:#C94A37;--sage:#2E8A63;--sage-l:#2DAD8D;--gold:#FFB400;--link:#5878EB;
+--fr:"Fraunces",Georgia,"Times New Roman",serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--disp:var(--body);
+margin:0;background:#fff;color:var(--ink);font:400 14px/1.5 var(--body);-webkit-text-size-adjust:100%}
+.vawh-v1 a{color:var(--blue)}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 .vawh-v1 .w{max-width:1140px;padding:0 16px}
 .vawh-v1 .w.narrow{max-width:950px}
-.vawh-v1 a:focus-visible,.vawh-v1 button:focus-visible,.vawh-v1 summary:focus-visible,.vawh-v1 input:focus-visible+*,.vawh-v1 .quiz label:focus-within{outline:3px solid var(--coral);outline-offset:2px}
+.vawh-v1 a:focus-visible,.vawh-v1 button:focus-visible,.vawh-v1 summary:focus-visible,.vawh-v1 .btn:focus-visible,.vawh-v1 .quiz label:focus-within{outline:3px solid var(--coral);outline-offset:2px}
 /* CRS-M2 font families: DM Sans throughout, Fraunces only for the wordmark */
 .vawh-v1 .ring text{font-family:var(--body)}
 
-/* disclosure bar (source colors and size; CRS-M2 spacing) */
-.vawh-v1 .adnote{line-height:1.35;padding:4px 12px}
+/* disclosure bar (CRS-M2) */
+.vawh-v1 .adnote{margin:0;background:var(--bar);border-bottom:1px solid rgba(25,60,30,.09);color:#193C1E;text-align:center;font-size:14px!important;line-height:1.35;padding:4px 12px}
+.vawh-v1 .adnote a{color:#193C1E}
 
 /* header */
 .vawh-v1 .hdr{background:#fff;border-bottom:0;position:sticky;top:0;z-index:20;box-shadow:0 4px 14px rgba(0,0,0,.05)}
 .vawh-v1 .hdr .w{display:flex;align-items:center;justify-content:space-between;min-height:58px;gap:16px;position:relative}
-.vawh-v1 .brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font:600 20px var(--fr)}
+.vawh-v1 .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink2);font:600 19px var(--fr)}
 .vawh-v1 .brand b{color:var(--blue);font-weight:700}
-.vawh-v1 .brand small{font:500 13px var(--body);color:var(--muted)}
+.vawh-v1 .brand small{font:500 12.5px var(--body);color:var(--muted)}
 .vawh-v1 .hdr nav{display:flex;align-items:center;gap:40px}
-.vawh-v1 .hdr nav a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;padding:8px 0}
+.vawh-v1 .hdr nav a{color:var(--ink);text-decoration:none;font-size:16px;font-weight:500;padding:8px 0}
 .vawh-v1 .hdr nav a:hover{color:var(--blue)}
 .vawh-v1 .menu-btn{display:none;width:44px;height:44px;margin-right:-8px;border:0;background:none;color:var(--ink);cursor:pointer;align-items:center;justify-content:center;border-radius:8px}
 .vawh-v1 .menu-btn svg{width:24px;height:24px}
@@ -45,18 +49,21 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 .vawh-v1 .menu-btn[aria-expanded="true"] .x{display:block}
 .vawh-v1 .menu-btn[aria-expanded="true"] .bars{display:none}
 
-/* hero: CRS-M2 arrangement and image; source colors and type sizes */
-.vawh-v1 .hero{position:relative;overflow:hidden;min-height:330px;display:flex;align-items:center;padding:38px 0 34px;border-bottom:0}
+/* hero (CRS-M2): background, type, arrangement and image */
+.vawh-v1 .hero{position:relative;overflow:hidden;min-height:330px;display:flex;align-items:center;padding:38px 0 34px;border-bottom:0;background:var(--hero)}
 .vawh-v1 .hero .w{position:relative;z-index:1;width:100%}
 .vawh-v1 .hero_copy{display:flex;flex-direction:column;max-width:min(600px,calc(54vw - 32px))}
-.vawh-v1 .hero h1{order:1;margin:0 0 10px}
-.vawh-v1 .hero .rx-note{order:2}
-.vawh-v1 .hero .kicker{order:3;margin:10px 0 0}
-.vawh-v1 .hero .hero_actions{order:4;margin:16px 0 0}
-.vawh-v1 .hero .disc_row{order:5;margin-top:12px}
+.vawh-v1 .hero h1{order:1;font:600 34px/40px var(--body);color:var(--ink);margin:0 0 10px;max-width:780px;letter-spacing:0;text-align:left}
+.vawh-v1 .hero h1 em{font-style:normal;color:var(--blue)}
+.vawh-v1 .hero .sub{order:2;font-size:16px;line-height:24px;color:var(--ink);max-width:620px;margin:0;text-align:left}
+.vawh-v1 .hero .rx-note{order:3}
+/* last-updated line = CRS-M2 .updated */
+.vawh-v1 .hero .kicker{order:4;display:block;margin:10px 0 0;font-size:14px;line-height:18px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--sage)}
+.vawh-v1 .hero .hero_actions{order:5;margin:16px 0 0}
+.vawh-v1 .hero .disc_row{order:6;margin-top:12px}
 .vawh-v1 .hero-img{position:absolute;top:0;right:0;bottom:0;width:min(46%,760px);margin:0;display:block}
 .vawh-v1 .hero-img img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:30% 40%;display:block}
-.vawh-v1 .hero-img::before{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,var(--herobg),rgba(244,246,250,0));z-index:1}
+.vawh-v1 .hero-img::before{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,var(--hero),rgba(237,245,249,0));z-index:1}
 
 /* intro (no CRS counterpart): CRS .sec rhythm and narrow container */
 .vawh-v1 .intro{padding:24px 0;border-bottom:0}
@@ -66,15 +73,16 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 .vawh-v1 .picks{padding:24px 0 4px}
 .vawh-v1 .picks>.w{max-width:982px}
 .vawh-v1 .picks img{max-width:100%;height:auto;display:block}
-.vawh-v1 .row{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 22px -16px rgba(31,27,46,.35);margin:0 auto 16px;max-width:950px;padding:0 0 10px;transition:box-shadow .15s}
-.vawh-v1 .row:hover{box-shadow:0 14px 30px -16px rgba(31,27,46,.45)}
-.vawh-v1 .row.top{border:2px solid var(--blue);box-shadow:0 18px 40px -20px rgba(0,0,160,.5)}
-.vawh-v1 .ctop{display:flex;align-items:stretch;min-height:20px}
-.vawh-v1 .crank{display:flex;align-items:center;justify-content:center;min-width:34px;padding:0 12px;border-radius:15px 0 0 0;background:var(--cream);border-right:1px solid var(--line);color:var(--ink);font-size:13px;font-weight:700;line-height:1}
-.vawh-v1 .row.top .crank{border-radius:14px 0 0 0;background:var(--blue);border-right:0;color:#fff}
-.vawh-v1 .cribbon{display:inline-flex;align-items:center;gap:6px;margin:0;padding:5px 14px;border-radius:0 0 10px 0;background:#D9D9D9;color:#1F1B2E;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
-.vawh-v1 .row.top .cribbon{background:var(--blue);color:#fff;font-size:15.87px;padding:6px 16px}
-.vawh-v1 .cribbon svg{flex:none;width:15px;height:15px;color:var(--gold)}
+.vawh-v1 .row{position:relative;background:var(--card);border:1px solid var(--sage-l);border-radius:16px;box-shadow:0 0 8px rgba(0,0,0,.12);margin:0 auto 16px;max-width:950px;padding:0 0 10px;transition:box-shadow .15s}
+.vawh-v1 .row:hover{box-shadow:0 4px 15px rgba(0,0,0,.2)}
+.vawh-v1 .row.top{border:2px solid var(--blue);box-shadow:0 4px 15px rgba(0,0,160,.22)}
+.vawh-v1 .ctop{display:flex;align-items:stretch;height:20px}
+.vawh-v1 .crank{display:flex;align-items:center;justify-content:center;min-width:34px;padding:0 12px;border-radius:15px 0 0 0;background:rgba(44,56,98,.2);color:#000;font-size:11px;font-weight:700;line-height:1}
+.vawh-v1 .row.top .crank{border-radius:14px 0 0 0;background:var(--blue);color:#fff}
+/* ribbons and the #1 "OUR TOP CHOICE" label (CRS-M2: compact 20px tab, #1716D1, gold star) */
+.vawh-v1 .cribbon{display:inline-flex;align-items:center;gap:5px;margin:0;padding:0 15px;border-radius:0 0 16px 0;background:#D9D9D9;color:var(--ink2);font-size:11px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.vawh-v1 .row.top .cribbon{background:#1716D1;color:#fff}
+.vawh-v1 .cribbon svg{flex:none;width:11px;height:11px;color:var(--gold)}
 .vawh-v1 .rgrid{display:grid;grid-template-columns:174px minmax(0,1fr) 102px 170px;grid-template-areas:"head feats score act";column-gap:24px;align-items:center;padding:4px 20px 0}
 .vawh-v1 .rhead{grid-area:head;align-self:center}
 .vawh-v1 .hl{grid-area:feats;align-self:start;padding-top:8px;min-width:0}
@@ -82,31 +90,32 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 .vawh-v1 .act{grid-area:act}
 .vawh-v1 .logo{display:flex;align-items:center;justify-content:center;width:174px;height:120px;margin:8px 0 6px;padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:#fff;text-decoration:none;overflow:hidden}
 .vawh-v1 .logo img{width:100%;height:100%;max-width:142px;max-height:90px;object-fit:contain}
-.vawh-v1 .chead{margin:0 0 6px}
-.vawh-v1 .deal{display:inline-block;background:#fff;color:var(--blue);border:1px solid var(--blue);border-radius:999px;padding:3px 12px;font-size:14.95px;font-weight:700;line-height:1.3}
-.vawh-v1 .feats{list-style:none;margin:0;padding:0;font-size:14.5px}
-.vawh-v1 .feats li{position:relative;padding-left:24px;margin:0 0 4px;line-height:1.4}
+.vawh-v1 .chead{display:flex;align-items:flex-start;gap:6px;margin:0 0 6px;font-size:16px;line-height:22px;font-weight:600;color:var(--ink)}
+.vawh-v1 .chead .deal{font:inherit;color:inherit}
+.vawh-v1 .feats{list-style:none;margin:0;padding:0;font-size:13.5px;line-height:19.5px;color:var(--muted)}
+.vawh-v1 .feats li{position:relative;padding-left:22px;margin:0 0 4px}
 .vawh-v1 .feats li:last-child{margin-bottom:0}
-.vawh-v1 .feats li::before{content:"";position:absolute;left:0;top:2px;width:17px;height:17px;border-radius:50%;background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
-.vawh-v1 #pick-1 .hl .feats li:first-child{font-weight:700;font-size:15.5px}
-.vawh-v1 .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.vawh-v1 .pill{font-size:11.5px;font-weight:700;line-height:1.4;border-radius:999px;padding:3px 9px;background:var(--blue-s);color:var(--blue-d)}
-.vawh-v1 .scorebox{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:102px;height:102px;border:1px solid var(--line);border-radius:8px;text-align:center;padding:6px;background:#fff}
-.vawh-v1 .scorebox .n{font-size:38px;font-weight:700;line-height:1;color:var(--ink)}
-.vawh-v1 .scorebox .l{display:block;font-size:12.5px;font-weight:800;line-height:1.2;text-transform:uppercase;letter-spacing:.05em;color:var(--blue)}
-.vawh-v1 .stars{position:relative;display:inline-block;font-size:15px;letter-spacing:1px;line-height:1;color:#D9D3E3}
+.vawh-v1 .feats li::before{content:"";position:absolute;left:0;top:2px;top:calc(.5lh - 8px);width:16px;height:16px;border-radius:50%;background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%232E8A63'/%3E%3Cpath d='M4.6 8.3l2.2 2.2 4.6-4.8' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.vawh-v1 .row.top .feats li:first-child{color:var(--ink);font-weight:600}
+.vawh-v1 .pills{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px}
+.vawh-v1 .pill{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;line-height:14px;color:var(--sage)}
+.vawh-v1 .pill::before{content:"";width:12px;height:12px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='8' fill='none' stroke='%232E8A63' stroke-width='1.8'/%3E%3Cpath d='M6.5 10.3l2.4 2.4 4.6-4.9' fill='none' stroke='%232E8A63' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.vawh-v1 .scorebox{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:102px;height:102px;border:1px solid var(--line);border-radius:8px;text-align:center;padding:6px;background:#fff}
+.vawh-v1 .scorebox .n{font:600 27px/1.1 var(--body);color:var(--ink)}
+.vawh-v1 .scorebox .l{font-size:12px;line-height:16px;font-weight:500;color:var(--ink)}
+.vawh-v1 .stars{position:relative;display:inline-block;font-size:12px;letter-spacing:1px;line-height:1;color:#D9D3E3}
 .vawh-v1 .stars::before{content:"★★★★★"}
 .vawh-v1 .stars i{position:absolute;left:0;top:0;overflow:hidden;white-space:nowrap;color:var(--gold);font-style:normal}
 .vawh-v1 .stars i::before{content:"★★★★★"}
 .vawh-v1 .scorebox .stars{order:3}
 .vawh-v1 .act{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
-.vawh-v1 .act .btn{display:flex;align-items:center;justify-content:center;min-height:40px;width:100%;padding:8.78px 8.1px;border-radius:8px;background:var(--coral);color:#fff;text-decoration:none;font-size:11.14px;font-weight:800;line-height:1.2;box-shadow:0 2px 5px rgba(44,56,98,.09),0 4px 12px rgba(44,56,98,.2);transition:background .15s}
-.vawh-v1 .act .btn:hover{background:var(--coral-d)}
-.vawh-v1 .act .offer{display:flex;flex-direction:column;align-items:center;margin:0;color:var(--ink);font-size:16.5px;line-height:1.3}
-.vawh-v1 .offer-price-line{display:flex;align-items:baseline;justify-content:center;gap:8px}
-.vawh-v1 .offer-price{font-size:20.625px;font-weight:800;line-height:1}
-.vawh-v1 .offer-label,.vawh-v1 .offer-note{margin-top:3px;color:var(--muted);font-size:13.5px;font-weight:500;line-height:1.2}
-.vawh-v1 .act .offer s{color:#9A93A5;font-size:13.5px;font-weight:500}
+.vawh-v1 .act .btn{display:flex;align-items:center;justify-content:center;min-height:40px;width:100%;padding:8px 12px;border-radius:8px;background:var(--coral);color:#fff;text-decoration:none;font-size:14px;font-weight:700;line-height:1.2;letter-spacing:.01em;box-shadow:0 2px 5px rgba(44,56,98,.09),0 4px 12px rgba(44,56,98,.2);transition:filter .15s}
+.vawh-v1 .act .btn:hover{filter:brightness(1.08)}
+.vawh-v1 .act .offer{display:flex;flex-direction:column;align-items:center;margin:0;color:var(--ink);line-height:1.25}
+.vawh-v1 .offer-price-line{display:flex;align-items:baseline;justify-content:center;gap:6px}
+.vawh-v1 .offer-price{font-size:17px;font-weight:700;line-height:1.1}
+.vawh-v1 .offer-label,.vawh-v1 .offer-note{margin-top:2px;color:var(--link);font-size:14px;font-weight:500}
+.vawh-v1 .act .offer s{color:#9A93A5;font-size:13px;font-weight:500}
 
 /* source sections without a CRS-M2 counterpart keep their /main.css styling inside CRS-M2's container */
 .vawh-v1 .safety-wrap{max-width:982px}
@@ -125,24 +134,23 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 @media(max-width:900px){.vawh-v1 .feature_grid{grid-template-columns:300px 1fr}}
 @media(max-width:820px){.vawh-v1 .feature_grid{grid-template-columns:1fr}}
 
-/* FAQ: CRS-M2 disclosure pattern, source colors and sizes */
+/* FAQ (CRS-M2) */
 .vawh-v1 .faq{padding:24px 0}
-.vawh-v1 .faq details{border-radius:12px;margin-bottom:8px}
-.vawh-v1 .faq details{padding:0}
-.vawh-v1 .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px}
+.vawh-v1 .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;padding:0}
+.vawh-v1 .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;font-size:16px;font-weight:600;color:var(--ink)}
 .vawh-v1 .faq summary::-webkit-details-marker{display:none}
 .vawh-v1 .faq summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);margin-top:-4px;transition:transform .15s}
 .vawh-v1 .faq details[open] summary::after{transform:rotate(-135deg);margin-top:4px}
-.vawh-v1 .faq details p{margin:0;padding:0 18px 14px}
+.vawh-v1 .faq details p{margin:0;padding:0 18px 16px;font-size:15px;color:var(--muted)}
 
-/* safety information (source styles) */
+/* safety information (CRS-M2 .isi) */
 .safety-isi{padding:24px 0}
-.safety-isi .isi{background:#fff;border:1px solid #E6DFD6;border-left:5px solid #E8604C;border-radius:12px;padding:16px 20px;font-size:14px}
+.safety-isi .isi{background:#fff;border:1px solid var(--line);border-left:5px solid var(--coral);border-radius:12px;padding:16px 20px;font-size:14px}
 .safety-isi .isi h2{font:800 16px var(--body);text-transform:uppercase;letter-spacing:.03em;margin:0 0 8px}
-.safety-isi .isi p{margin:0 0 8px}.safety-isi .isi ul{margin:0 0 8px;padding-left:20px}
+.safety-isi .isi p{margin:0 0 8px;font-size:14px}.safety-isi .isi ul{margin:0 0 8px;padding-left:20px}
 
-/* footer (source) */
-.vawh-v1 .foot{background:#fff;border-top:1px solid var(--line);margin-top:12px;padding:24px 0 30px;font-size:14px}
+/* footer (CRS-M2) */
+.vawh-v1 .foot{background:#F7F8F9;border-top:1px solid var(--line);margin-top:12px;padding:24px 0 30px;font-size:14px}
 .vawh-v1 .foot .cols{display:flex;flex-wrap:wrap;gap:10px 22px;margin:0 0 14px}
 .vawh-v1 .foot .cols a,.vawh-v1 .foot .cols button{color:var(--ink)}
 .vawh-v1 .foot .pc{display:inline-flex;align-items:center;gap:6px}
@@ -150,53 +158,49 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 .vawh-v1 .foot p{color:var(--muted);font-size:12.5px;margin:0 0 8px}
 .vawh-v1 .linklike{background:none;border:0;padding:0;font:inherit;text-decoration:underline;cursor:pointer}
 
-/* mobile sticky CTA (CRS-M2 structure, built from the #1 card's own content) */
+/* mobile sticky CTA (CRS-M2, built from the #1 card's own content) */
 .vawh-v1 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 18px -10px rgba(0,0,0,.3);padding:9px 14px calc(9px + env(safe-area-inset-bottom));display:none}
 .vawh-v1 .sticky .in{display:flex;align-items:center;gap:12px;max-width:560px;margin:0 auto}
 .vawh-v1 .sticky .t{flex:1;font-size:13.5px;line-height:1.3}
 .vawh-v1 .sticky .t b{display:block;font-size:15px}
-.vawh-v1 .sticky .btn{display:flex;align-items:center;justify-content:center;min-height:40px;padding:10px 18px;border-radius:8px;background:var(--coral);color:#fff;text-decoration:none;font-size:13px;font-weight:800;line-height:1.2;white-space:nowrap;box-shadow:0 2px 5px rgba(44,56,98,.09),0 4px 12px rgba(44,56,98,.2)}
-.vawh-v1 .sticky .btn:hover{background:var(--coral-d)}
+.vawh-v1 .sticky .btn{display:flex;align-items:center;justify-content:center;min-height:40px;padding:10px 18px;border-radius:8px;background:var(--coral);color:#fff;text-decoration:none;font-size:14px;font-weight:700;line-height:1.2;letter-spacing:.01em;white-space:nowrap;box-shadow:0 2px 5px rgba(44,56,98,.09),0 4px 12px rgba(44,56,98,.2);transition:filter .15s}
+.vawh-v1 .sticky .btn:hover{filter:brightness(1.08)}
 @media(max-width:980px){.vawh-v1 .sticky.show{display:block}.vawh-v1 .foot{padding-bottom:90px}}
 body.vawh-v1.has-banner .sticky{display:none!important}
 
 /* tablet 640-1023 (CRS-M2): score moves to a slim strip at the card's top-right */
 @media(max-width:1023px){
+ .vawh-v1 .hero h1{font-size:30px;line-height:36px}
  .vawh-v1 .rgrid{grid-template-columns:150px minmax(0,1fr) 150px;grid-template-areas:"head feats act";column-gap:18px;padding:4px 16px 0}
  .vawh-v1 .logo{width:150px;height:108px}
- .vawh-v1 .ctop{min-height:28px}
- .vawh-v1 .scorebox{position:absolute;top:-1px;right:16px;flex-direction:row;gap:6px;width:auto;height:28px;padding:0 10px;border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px}
+ .vawh-v1 .scorebox{position:absolute;top:-1px;right:16px;flex-direction:row;gap:6px;width:auto;height:22px;padding:0 10px;border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px}
  .vawh-v1 .row.top .scorebox{top:-2px}
- .vawh-v1 .scorebox .n{font-size:20px}
- .vawh-v1 .scorebox .l{order:2}
- .vawh-v1 .scorebox .stars{font-size:13px}
+ .vawh-v1 .scorebox .n{font-size:15px;font-weight:700;line-height:1}
+ .vawh-v1 .scorebox .l{order:2;font-size:11.5px;line-height:1}
+ .vawh-v1 .scorebox .stars{font-size:11px}
  .vawh-v1 .hdr nav{gap:28px}
- .vawh-v1 .row .act .btn{white-space:nowrap}
+ .vawh-v1 .row .act .btn{font-size:13px;padding:8px 6px;letter-spacing:0;white-space:nowrap}
 }
 /* source phone rules (<=767): compact type, hidden extras; safety and disclosures stay visible */
 .vawh-v1 .rx-note{display:none}
 @media(max-width:767px){
  .vawh-v1 section.intro{display:none}
  .vawh-v1 .wl-comparison-hero .hero_actions{display:none}
- .vawh-v1 .rx-note{display:block;margin:8px 0 0;font-size:12.5px;line-height:1.4;color:var(--muted)}
+ .vawh-v1 .rx-note{display:block;margin:10px 0 0;font-size:12.5px;line-height:1.4;color:var(--muted)}
  .vawh-v1 .rx-note a{color:inherit;font-weight:700;text-decoration:underline;white-space:nowrap}
- .vawh-v1 .safety p{font-size:11.7px}
+ .vawh-v1 .safety p{font-size:12.5px}
  .vawh-v1 .feat_panel .hc_label{white-space:nowrap;gap:5px;letter-spacing:.02em}
  .vawh-v1 .row .feats li:nth-child(n+5){display:none}
  .vawh-v1 .row .feats li:nth-child(4){margin-bottom:0}
- .vawh-v1 .row .feats{font-size:14px}
- .vawh-v1 .row .feats li{margin-bottom:4px;line-height:1.35}
  .vawh-v1 .scorebox .l{display:none}
- .vawh-v1 .act .btn{font-size:13px;padding:11px 8px}
- .vawh-v1 .act .offer{font-size:14px}
- .vawh-v1 .row.top .cribbon{font-size:14.3px}
- .vawh-v1 .deal{font-size:11.21px}
 }
-@media(max-width:400px){.vawh-v1 .row.top .cribbon{font-size:12.5px}}
 
 /* mobile <640 (CRS-M2) */
 @media(max-width:639px){
  .vawh-v1 .hero{display:block;min-height:0;padding:24px 0 26px}
+ .vawh-v1 .hero h1{font-size:28px;line-height:34px}
+ .vawh-v1 .hero .sub{font-size:14px;line-height:21px}
+ .vawh-v1 .adnote{font-size:12.5px!important;padding:4px 10px}
  .vawh-v1 .hero-img{display:none}
  .vawh-v1 .hero_copy{max-width:none}
  .vawh-v1 .hdr .w{min-height:56px}
@@ -210,25 +214,80 @@ body.vawh-v1.has-banner .sticky{display:none!important}
  .vawh-v1 .picks>.w,.vawh-v1 .safety-wrap{padding:0 20px}
  .vawh-v1 .safety{max-width:430px;margin-left:auto;margin-right:auto}
  .vawh-v1 .row{max-width:430px;margin-bottom:14px}
- .vawh-v1 .ctop{justify-content:center;position:relative;min-height:20px}
+ .vawh-v1 .ctop{justify-content:center;position:relative;height:20px}
  .vawh-v1 .crank{position:absolute;left:0;top:0;height:20px}
- .vawh-v1 .cribbon{border-radius:0 0 12px 12px;max-width:calc(100% - 80px);text-align:center;justify-content:center;white-space:normal}
+ .vawh-v1 .cribbon{border-radius:0 0 12px 12px;max-width:calc(100% - 80px);text-align:center;justify-content:center;white-space:normal;padding:3px 12px;min-height:20px;height:auto}
  .vawh-v1 .rgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head act" "score act" "feats feats";column-gap:14px;row-gap:0;padding:8px 14px 0;align-items:start}
  .vawh-v1 .rhead{align-self:end}
  .vawh-v1 .logo{width:100%;height:auto;aspect-ratio:147/88;margin:0;padding:10px 12px;border-bottom:0;border-radius:8px 8px 0 0}
  .vawh-v1 .logo img{max-width:100%;max-height:62px}
- .vawh-v1 .scorebox{position:static;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:2px 6px;width:100%;height:auto;min-height:30px;padding:4px 6px;border:1px solid var(--line);border-radius:0 0 8px 8px}
+ .vawh-v1 .scorebox{position:static;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:2px 6px;width:100%;height:auto;min-height:26px;padding:4px 6px;border:1px solid var(--line);border-radius:0 0 8px 8px}
+ .vawh-v1 .scorebox .n{font-size:15px}
+ .vawh-v1 .scorebox .l{font-size:11px}
  .vawh-v1 .act{align-self:center;gap:8px;padding-top:4px}
  .vawh-v1 .act .btn{min-height:44px}
  .vawh-v1 .hl{padding-top:10px}
- .vawh-v1 .chead{text-align:center}
+ .vawh-v1 .chead{justify-content:center;text-align:center;font-size:15px;margin-bottom:6px}
  .vawh-v1 .row .act .btn{white-space:normal}
  .vawh-v1 .intro,.vawh-v1 .method,.vawh-v1 .faq,.safety-isi{padding:20px 0}
  .vawh-v1 .feat_panel,.vawh-v1 .feat_copy{padding:20px}
 }
-@media(max-width:379px){.vawh-v1 .act .btn{font-size:12px;padding:11px 4px}.vawh-v1 .rgrid{column-gap:10px;padding:8px 10px 0}}
+@media(max-width:379px){.vawh-v1 .rgrid{column-gap:10px;padding:8px 10px 0}}
+@media(max-width:359px){.vawh-v1 .act .btn{font-size:13px;padding:8px}}
+/* CRS-M2 type and color for sections taken from /main.css (no direct CRS-M2 counterpart; nearest CRS-M2 element noted) */
+.vawh-v1 h2.sec{font:700 28px/34px var(--body);color:var(--ink);letter-spacing:0}  /* = .sec h2.h */
+.vawh-v1 .sec_dek{font-size:16px;line-height:1.6;color:var(--muted)}            /* = .sec p */
+.vawh-v1 .intro{background:#fff}
+.vawh-v1 .intro .dek{font-size:16px;line-height:1.6;color:var(--ink)}                             /* = .sec p */
+.vawh-v1 .intro .dek p:nth-child(3){font-size:16px}
+.vawh-v1 .intro .dek strong{font-weight:700}
+.vawh-v1 .safety{background:#fff;border-color:var(--line);border-left-color:var(--coral)} /* colors = .isi */
+.vawh-v1 .safety p{line-height:1.5;color:var(--ink)}
+@media(min-width:768px){.vawh-v1 .safety p{font-size:14px}}
+/* hero/quiz buttons: CRS-M2 button type (existing shape kept) */
+.vawh-v1 .btn_dark,.vawh-v1 .btn_line{font:700 14px/1.2 var(--body);letter-spacing:.01em}
+.vawh-v1 a.btn_dark,.vawh-v1 a.btn_dark:hover{color:#fff;text-decoration:none}
+.vawh-v1 a.btn_line,.vawh-v1 a.btn_line:hover{color:var(--ink);text-decoration:none}
+.vawh-v1 .disc_row details{font-size:12.5px;border-color:var(--line)}
+.vawh-v1 .disc_row summary{font-weight:600;color:var(--muted)}
+/* quiz */
+.vawh-v1 .fit h2{font:700 28px/34px var(--body);margin:0 0 12px}
+.vawh-v1 .fit_intro p{font-size:16px;line-height:1.6}
+.vawh-v1 .kicker.light{font-size:11px;letter-spacing:.04em}                       /* = .tp_l .k */
+.vawh-v1 .quiz legend{font-size:16px;font-weight:600;color:var(--ink)}                             /* = .faq summary */
+.vawh-v1 .quiz label{font-size:14.5px;border-color:var(--line)}
+.vawh-v1 .q_card{background:var(--hero)}
+.vawh-v1 .q_card h3{font:700 17px var(--body);color:var(--ink)}                                   /* = .note h3 */
+.vawh-v1 .q_rank{font:700 20px var(--body)}
+/* method */
+.vawh-v1 .weights b{font:700 26px var(--body)}                                                    /* = .how b */
+.vawh-v1 .weights span{font-size:13.5px}
+.vawh-v1 .wdesc p{font-size:15px;line-height:1.55;color:var(--ink)}
+/* feature = CRS-M2 top-pick card (.tp): light left panel, blue pill label, coral CTA */
+.vawh-v1 .feat_panel{background:var(--hero);color:var(--ink)}
+.vawh-v1 .feat_panel .hc_label{display:inline-flex;align-self:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:#1716D1;color:#fff;border-radius:999px;padding:4px 12px} /* = .tp_l .k */
+.vawh-v1 .feat_panel .hc_label i{color:var(--gold)}
+.vawh-v1 .feat_panel .ring circle:first-child{stroke:var(--blue-s)}
+.vawh-v1 .feat_panel .ring circle:nth-child(2){stroke:var(--blue)}
+.vawh-v1 .feat_panel .ring text{fill:var(--ink);font-weight:600}
+.vawh-v1 .feat_panel h2{font:700 26px/1.2 var(--body);color:var(--ink)}
+.vawh-v1 .feat_panel dl div{background:#fff}
+.vawh-v1 .feat_panel dt{font-size:12px;color:var(--muted)}
+.vawh-v1 .feat_panel dd{font:700 17px var(--body);color:var(--ink)}                                /* = .offer-price */
+.vawh-v1 .feat_panel .cta{background:var(--coral);color:#fff;font:700 14px/1.2 var(--body);letter-spacing:.01em;transition:filter .15s} /* type and color = .tp_r .btn */
+.vawh-v1 .feat_panel .cta:hover{background:var(--coral);filter:brightness(1.08)}
+.vawh-v1 .feat_fine{font-size:12px;color:var(--muted)}                                            /* = .tp_r .fine */
+.vawh-v1 .feat_fine a{color:var(--blue)}
+.vawh-v1 .feat_copy h2.sec{font:700 26px/1.2 var(--body)}                                         /* = .tp_r h2 */
+.vawh-v1 .feat_copy p{font-size:15px;line-height:1.55;color:var(--muted)}                         /* = .tp_r p */
+.vawh-v1 .feat_copy h3{font:700 17px var(--body);color:var(--ink)}                                /* = .note h3 */
+@media(max-width:639px){
+ .vawh-v1 h2.sec,.vawh-v1 .fit h2{font-size:24px;line-height:30px}
+ .vawh-v1 .feat_copy h2.sec{font-size:24px;line-height:30px}
+ .vawh-v1 .sec_dek,.vawh-v1 .fit_intro p,.vawh-v1 .intro .dek{font-size:15px}
+}
 @media(min-width:1024px){.vawh-v1 .picks>.w,.vawh-v1 .safety-wrap{max-width:1140px}.vawh-v1 .row{max-width:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.vawh-v1 .row,.vawh-v1 .act .btn,.vawh-v1 .sticky .btn,.vawh-v1 .faq summary::after,.vawh-v1 .quiz label{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.vawh-v1 .row,.vawh-v1 .act .btn,.vawh-v1 .sticky .btn,.vawh-v1 .feat_panel .cta,.vawh-v1 .faq summary::after,.vawh-v1 .quiz label{transition:none}}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
@@ -248,7 +307,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 </head>
 <body class="vawh-v1">
 
-<p class="adnote" style="font-size:11px">We earn commissions from providers on this page, and compensation can affect how programs are ranked and scored. <a href="/disclosure.html">Advertising Disclosure</a></p>
+<p class="adnote" style="font-size:11px;text-align:center">We earn commissions from brands listed on this site, which influences how listings are presented. <a href="/disclosure.html">Advertising Disclosure</a></p>
 
 <header class="hdr"><div class="w">
  <a class="brand" href="/index.html"><img src="/images/logo.svg" alt="GLP1ReviewGuide.com" width="30" height="30"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
@@ -260,7 +319,8 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <section class="hero wl-comparison-hero"><picture class="hero-img" aria-hidden="true"><source media="(max-width:639px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img src="/images/crs-m2-hero.webp" alt="" width="1280" height="640" decoding="async"></picture><div class="w hero_grid">
  <div class="hero_copy">
   <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
-  <h1><span class="hero-title-accent">Online GLP-1 programs,</span> compared side by side (2026)</h1>
+  <h1>Best GLP-1 Weight Loss<br><em>Programs</em> <em>of 2026</em></h1>
+  <p class="sub">We compared online GLP-1 programs on price, medication options, doctor access and ongoing support, so you can find the right fit before you talk to a clinician.</p>
   <p class="rx-note">Rx required; not right for everyone. <a href="#isi-h">Important safety info&nbsp;&darr;</a></p>
   <div class="hero_actions"><a class="btn_dark" href="#pick-1">See all 7</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
@@ -284,7 +344,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <section class="picks wl-comparison-cards" id="top5"><div class="w">
 
  <article class="row top" id="pick-1">
-  <div class="ctop"><span class="crank">1</span><span class="cribbon badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>Featured partner · Our top choice</span></div>
+  <div class="ctop"><span class="crank">1</span><span class="cribbon badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>OUR TOP CHOICE</span></div>
   <div class="rgrid">
    <div class="rhead"><a class="logo" href="https://ro.co/" rel="sponsored nofollow noopener" target="_blank"><img src="/images/provider-ro-v3.svg" alt="Ro" width="160" height="80"></a></div>
    <div class="hl"><p class="chead"><span class="deal">$39 first-month membership</span></p><ul class="feats">
