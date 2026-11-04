@@ -98,13 +98,15 @@ footer.foot .cols a,footer.foot .cols button{color:var(--ink)}
 footer.foot .pc{display:inline-flex;align-items:center;gap:6px}
 footer.foot .pc img{display:inline-block}
 footer.foot p{color:var(--muted);font-size:12.5px;margin:0 0 8px}
+footer.foot .safety{margin:0 0 20px}
+footer.foot .safety p{color:inherit;font-size:13px;margin:0}
 footer.foot button.linklike{background:none;border:0;padding:0;font:inherit;text-decoration:underline;cursor:pointer}
 section.wl-comparison-hero{padding:10px 0 12px}
 .intro .dek p{font-size:15.3px}
 .intro .dek p:nth-child(3){font-size:14.45px}
 .wl-comparison-cards #pick-1 .promo-deal-m{display:none}
 @media(max-width:767px){
- .safety p{font-size:11.7px}
+ footer.foot .safety p{font-size:11.7px}
  .feat_panel .hc_label{white-space:nowrap;gap:5px;letter-spacing:.02em}
  .wl-comparison-cards #pick-1 .promo .deal{display:none}
  .wl-comparison-cards #pick-1 .rgrid{grid-template-areas:"trust trust" "deal deal" "head score" "feats feats" "act act"}
@@ -132,9 +134,7 @@ section.wl-comparison-hero{padding:10px 0 12px}
  body.m-compact .hero_actions,body.m-compact .disc_row{display:none}
  body.m-compact section.wl-comparison-hero{padding-bottom:0}
  body.m-compact #top5{padding-top:12px}
- body.m-compact .intro + .w{display:none}
- body.m-compact .safety-m{display:block}
-}
+  }
 @media(max-width:389px){body.m-compact .adnote{font-size:10.5px!important;padding:6px 6px}}
 @media(max-width:359px){body.m-compact .adnote{font-size:10px!important;padding:6px 6px}}
 .adnote{background:transparent;color:var(--ink);padding:8px 14px}
@@ -276,10 +276,6 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  </div>
 </div></section>
 
-<div class="w">
- <div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications are available only after a medical evaluation by a licensed clinician, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="../disclosure.html#medical">Medical disclaimer</a></p></div>
-</div>
-
 <section class="picks wl-comparison-cards" id="top5"><div class="w">
 
  <article class="row top" id="pick-1">
@@ -390,8 +386,6 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
  </article>
 </div></section>
 
-<div class="w safety-m" hidden><div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications are available only after a medical evaluation by a licensed clinician, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="../disclosure.html#medical">Medical disclaimer</a></p></div></div>
-
 <section class="fit" id="fit"><div class="w fit_grid">
  <div class="fit_intro">
   <p class="kicker light"><i class="fa-solid fa-compass"></i> Find your fit</p>
@@ -466,6 +460,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 </main>
 
 <footer class="foot"><div class="w">
+ <div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications are available only after a medical evaluation by a licensed clinician, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="../disclosure.html#medical">Medical disclaimer</a></p></div>
  <div class="cols">
   <a href="/index.html">Home</a><a href="/about.html">About us</a><a href="/disclosure.html">Advertising disclosure</a><a href="/disclosure.html#medical">Medical disclaimer</a><a href="/privacy.html">Privacy policy</a><a href="/consumer-health-data-privacy.html">Consumer health data privacy</a><a href="/cookie-policy.html">Cookie policy</a><a href="/terms.html">Terms of use</a>
   <a class="pc" href="/your-privacy-choices.html"><img src="/images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices</a>
