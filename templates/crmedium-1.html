@@ -65,16 +65,18 @@ body.crmed-1{margin:0;background:var(--cream);color:var(--ink);font:300 16px/1.6
 .crmed-1 .hero{position:relative;overflow:hidden;display:flex;align-items:center;background:var(--hero);border-bottom:1px solid var(--line);padding:28px 0}
 .crmed-1 .hero .w{position:relative;z-index:1;width:100%;display:flex;flex-direction:column}
 .crmed-1 .hero .w>*{max-width:min(620px,calc(54vw - 32px))}
-.crmed-1 .hero h1{order:1;font:700 clamp(28px,3.1vw,40px)/1.1 var(--disp);letter-spacing:-.015em;color:#000;margin:0 0 12px}
+.crmed-1 .hero h1{order:1;font:700 clamp(26px,2.2vw,32px)/1.12 var(--disp);letter-spacing:-.015em;color:#000;margin:0 0 12px}
+@media(min-width:768px){.crmed-1 .hero .w>h1{max-width:min(760px,calc(60vw - 32px))}}
 .crmed-1 .hero-title-accent{color:var(--blue)}
 .crmed-1 .hero-title-mobile{display:none}
-.crmed-1 .hero .kicker{order:2;display:inline-flex;align-items:center;gap:6px;margin:0;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue)}
+.crmed-1 .hero .kicker{order:0;display:inline-flex;align-items:center;gap:6px;margin:0 0 8px;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue)}
 .crmed-1 .see-below{display:none}
 .crmed-1 .hero_actions{order:4;display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .crmed-1 .btn_dark,.crmed-1 .btn_line{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font:700 13px/1.2 var(--body);padding:9px 18px;border-radius:999px;border:2px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;white-space:nowrap}
 .crmed-1 .btn_dark:hover,.crmed-1 .btn_line:hover{background:#fff}
 .crmed-1 .disc_row{order:5;margin-top:12px}
 .crmed-1 .disc_row details{font-size:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 12px;max-width:420px}
+@media(min-width:768px){.crmed-1 .disc_row details{width:fit-content}}
 .crmed-1 .disc_row summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--muted)}
 .crmed-1 .disc_row p{margin:6px 0 2px;font-size:13.5px}
 .crmed-1 .hero-img{position:absolute;top:0;right:16px;width:300px;margin:0}
@@ -82,6 +84,7 @@ body.crmed-1{margin:0;background:var(--cream);color:var(--ink);font:300 16px/1.6
 
 /* intro + before-you-compare */
 .crmed-1 .intro{background:#fff;border-bottom:1px solid var(--line);padding:18px 0}
+.crmed-1 .intro .w.narrow{max-width:1140px}
 .crmed-1 .intro .dek p{margin:0 0 12px;font-size:16px;line-height:1.6;color:#4F4A57}
 .crmed-1 .intro .dek p:last-child{margin-bottom:0}
 .crmed-1 .safety-wrap{padding-top:14px}
