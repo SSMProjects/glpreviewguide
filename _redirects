@@ -29,3 +29,7 @@
 /weight-guide-programs          /products/weight-guide-programs.html     301!
 /wl-comparison-programs.html    /products/wl-comparison-programs.html    301!
 /wl-comparison-programs         /products/wl-comparison-programs.html    301!
+
+# CRM-M2 page renamed to CRS-M2 (Nov 3, 2026)
+/templates/crm-m2.html    /templates/crs-m2    301!
+/templates/crm-m2         /templates/crs-m2    301!
