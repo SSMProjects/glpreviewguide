@@ -43,12 +43,12 @@ body.crmed-1{margin:0;background:var(--cream);color:var(--ink);font:300 16px/1.6
 .crmed-1 .narrow{max-width:950px}
 
 /* disclosure bar */
-.crmed-1 .adnote{margin:0;background:transparent;color:var(--ink);text-align:center;line-height:1.4;padding:8px 14px}
+.crmed-1 .adnote{margin:0;background:transparent;color:var(--ink);text-align:center;line-height:1.4;padding:6px 14px}
 .crmed-1 .adnote a{color:var(--blue)}
 
 /* header */
 .crmed-1 .hdr{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;box-shadow:0 4px 14px rgba(0,0,0,.05)}
-.crmed-1 .hdr .w{display:flex;align-items:center;justify-content:space-between;min-height:58px;gap:16px;position:relative}
+.crmed-1 .hdr .w{display:flex;align-items:center;justify-content:space-between;min-height:52px;gap:16px;position:relative}
 .crmed-1 .brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font:600 20px var(--disp)}
 .crmed-1 .brand b{color:var(--blue);font-weight:700}
 .crmed-1 .brand small{font:500 13px var(--body);color:var(--muted)}
@@ -62,7 +62,7 @@ body.crmed-1{margin:0;background:var(--cream);color:var(--ink);font:300 16px/1.6
 .crmed-1 .menu-btn[aria-expanded="true"] .bars{display:none}
 
 /* hero */
-.crmed-1 .hero{position:relative;overflow:hidden;min-height:330px;display:flex;align-items:center;background:var(--hero);border-bottom:1px solid var(--line);padding:38px 0 34px}
+.crmed-1 .hero{position:relative;overflow:hidden;display:flex;align-items:center;background:var(--hero);border-bottom:1px solid var(--line);padding:28px 0}
 .crmed-1 .hero .w{position:relative;z-index:1;width:100%;display:flex;flex-direction:column}
 .crmed-1 .hero .w>*{max-width:min(620px,calc(54vw - 32px))}
 .crmed-1 .hero h1{order:1;font:700 clamp(28px,3.1vw,40px)/1.1 var(--disp);letter-spacing:-.015em;color:#000;margin:0 0 12px}
@@ -77,21 +77,21 @@ body.crmed-1{margin:0;background:var(--cream);color:var(--ink);font:300 16px/1.6
 .crmed-1 .disc_row details{font-size:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 12px;max-width:420px}
 .crmed-1 .disc_row summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--muted)}
 .crmed-1 .disc_row p{margin:6px 0 2px;font-size:13.5px}
-.crmed-1 .hero-img{position:absolute;top:0;right:0;bottom:0;width:min(46%,760px);margin:0;display:flex;align-items:center;justify-content:center;padding:24px 32px 24px 0}
-.crmed-1 .hero-img img{width:100%;max-width:560px;height:auto;mix-blend-mode:multiply;opacity:.9}
+.crmed-1 .hero-img{position:absolute;top:0;right:16px;width:300px;margin:0}
+.crmed-1 .hero-img img{width:100%;height:auto;mix-blend-mode:multiply;opacity:.9}
 
 /* intro + before-you-compare */
-.crmed-1 .intro{background:#fff;border-bottom:1px solid var(--line);padding:26px 0}
+.crmed-1 .intro{background:#fff;border-bottom:1px solid var(--line);padding:18px 0}
 .crmed-1 .intro .dek p{margin:0 0 12px;font-size:16px;line-height:1.6;color:#4F4A57}
 .crmed-1 .intro .dek p:last-child{margin-bottom:0}
-.crmed-1 .safety-wrap{padding-top:24px}
+.crmed-1 .safety-wrap{padding-top:14px}
 .crmed-1 .safety-wrap>.w{max-width:982px}
-.crmed-1 .safety{background:#fff;border:1px solid var(--line);border-left:5px solid var(--coral);border-radius:12px;padding:14px 18px;margin:0 auto;max-width:950px}
+.crmed-1 .safety{background:#fff;border:1px solid var(--line);border-left:5px solid var(--coral);border-radius:12px;padding:10px 16px;margin:0 auto;max-width:950px}
 .crmed-1 .safety p{margin:0;font-size:13px;line-height:1.55}
 .crmed-1 .safety-m{display:none}
 
 /* ranked list */
-.crmed-1 .list{padding:28px 0 8px}
+.crmed-1 .list{padding:20px 0 8px}
 .crmed-1 .list>.w{max-width:982px}
 .crmed-1 .row{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 22px -16px rgba(31,27,46,.35);margin:0 auto 24px;max-width:950px;padding:0 0 14px;transition:box-shadow .15s}
 .crmed-1 .row:hover{box-shadow:0 14px 30px -16px rgba(31,27,46,.45)}
@@ -243,7 +243,7 @@ body.crmed-1.has-banner .sticky{display:none!important}
 @media(max-width:767px){
  .crmed-1 .adnote{font-size:11px!important;padding:6px 8px;text-wrap:balance}
  .crmed-1 .adnote a{text-decoration:underline}
- .crmed-1 .intro,.crmed-1 .safety-wrap,.crmed-1 .hero_actions,.crmed-1 .disc_row{display:none}
+ .crmed-1 .intro,.crmed-1 .safety-wrap,.crmed-1 .hero_actions,.crmed-1 .disc_row,.crmed-1 .hero-img{display:none}
  .crmed-1 .safety-m{display:block;padding-top:4px;padding-bottom:8px}
  .crmed-1 .safety p{font-size:11.7px}
  .crmed-1 .hero .kicker{order:0;margin:0 0 8px;font-size:10.5px;font-weight:400;color:#000}
@@ -260,8 +260,7 @@ body.crmed-1.has-banner .sticky{display:none!important}
 
 /* mobile <640 (CRS-M2) */
 @media(max-width:639px){
- .crmed-1 .hero{display:block;min-height:0;padding:20px 0 22px}
- .crmed-1 .hero-img{display:none}
+ .crmed-1 .hero{display:block;padding:20px 0 22px}
  .crmed-1 .hero .w>*{max-width:none}
  .crmed-1 .hdr .w{min-height:56px}
  .crmed-1 .brand{font-size:18px}
@@ -315,7 +314,8 @@ body.crmed-1.has-banner .sticky{display:none!important}
 </div></header>
 
 <main>
-<section class="hero"><figure class="hero-img" aria-hidden="true"><img src="/images/home-v4-pen-pills.webp" width="1200" height="551" alt="" decoding="async"></figure><div class="w">
+<section class="hero"><div class="w">
+ <figure class="hero-img" aria-hidden="true"><img src="/images/home-v4-pen-pills.webp" width="1200" height="551" alt="" decoding="async"></figure>
  <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
  <h1><span class="hero-title-accent">Find Your Fit:</span><span class="hero-title-desk"> Compare Online GLP-1 Programs, Prices &amp; Care for 2026</span><span class="hero-title-mobile">Find Your Fit: Compare<br>Online GLP-1<br>Programs, Prices &amp; Care<br>for 2026&#x20;</span></h1>
  <p class="see-below"><span class="hand" aria-hidden="true">👇</span> Start your journey TODAY <span class="hand" aria-hidden="true">👇</span></p>
