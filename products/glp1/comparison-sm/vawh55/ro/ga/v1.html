@@ -17,7 +17,7 @@
 /* products/glp1/comparison-sm/vawh55/ro/ga/v1 — page-scoped styles (body.vawh-v1; only this file uses them).
    Layout, fonts, text styling, colors, hero, disclosure bar, imagery and #1 label: templates/crs-m2.html
    (desktop >=1024, tablet 640-1023, mobile <640). Content, providers, links and tracking: unchanged.
-   Sections the page takes from /main.css (quiz, method, feature, safety) keep their layout; their
+   Sections the page takes from /main.css (quiz, method, feature) keep their layout; their
    type and colors are mapped to the nearest CRS-M2 equivalent in the "CRS-M2 type and color" block below. */
 body.vawh-v1{--blue:#0000FF;--blue-d:#0000B8;--blue-s:#E8E8FF;--ink:#323738;--ink2:#1F1B2E;--muted:#5F6466;--sub:#727574;--line:#E4E4E5;--hero:#EDF5F9;--herobg:var(--hero);--bar:#EEEEEE;--cream:#FBF7F2;--card:#fff;--coral:#E8604C;--coral-d:#C94A37;--sage:#2E8A63;--sage-l:#2DAD8D;--gold:#FFB400;--link:#5878EB;
 --fr:"Fraunces",Georgia,"Times New Roman",serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--disp:var(--body);
@@ -112,8 +112,6 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 .vawh-v1 .act .offer s{color:#9A93A5;font-size:13px;font-weight:500}
 
 /* source sections without a CRS-M2 counterpart keep their /main.css styling inside CRS-M2's container */
-.vawh-v1 .safety-wrap{max-width:982px}
-.vawh-v1 .safety{margin:8px 0 10px}
 .vawh-v1 .method{padding:24px 0}
 .vawh-v1 .fit{margin-top:12px}
 /* feature = CRS top-pick card: 300px panel + copy inside one bordered box */
@@ -180,7 +178,6 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 @media(max-width:767px){
  .vawh-v1 .rx-note{display:block;margin:10px 0 0;font-size:12.5px;line-height:1.4;color:var(--muted)}
  .vawh-v1 .rx-note a{color:inherit;font-weight:700;text-decoration:underline;white-space:nowrap}
- .vawh-v1 .safety p{font-size:12.5px}
  .vawh-v1 .feat_panel .hc_label{white-space:nowrap;gap:5px;letter-spacing:.02em}
  .vawh-v1 .row .feats li:nth-child(n+5){display:none}
  .vawh-v1 .row .feats li:nth-child(4){margin-bottom:0}
@@ -203,8 +200,7 @@ body.vawh-v1.has-banner .sticky{display:none!important}
  .vawh-v1 .hdr nav a{padding:13px 4px;border-bottom:1px solid var(--line)}
  .vawh-v1 .hdr nav a:last-child{border-bottom:0}
  .vawh-v1 .picks{padding:20px 0 0}
- .vawh-v1 .picks>.w,.vawh-v1 .safety-wrap{padding:0 20px}
- .vawh-v1 .safety{max-width:430px;margin-left:auto;margin-right:auto}
+ .vawh-v1 .picks>.w{padding:0 20px}
  .vawh-v1 .row{max-width:430px;margin-bottom:14px}
  .vawh-v1 .ctop{justify-content:center;position:relative;height:20px}
  .vawh-v1 .crank{position:absolute;left:0;top:0;height:20px}
@@ -229,9 +225,6 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 /* CRS-M2 type and color for sections taken from /main.css (no direct CRS-M2 counterpart; nearest CRS-M2 element noted) */
 .vawh-v1 h2.sec{font:700 28px/34px var(--body);color:var(--ink);letter-spacing:0}  /* = .sec h2.h */
 .vawh-v1 .sec_dek{font-size:16px;line-height:1.6;color:var(--muted)}            /* = .sec p */
-.vawh-v1 .safety{background:#fff;border-color:var(--line);border-left-color:var(--coral)} /* colors = .isi */
-.vawh-v1 .safety p{line-height:1.5;color:var(--ink)}
-@media(min-width:768px){.vawh-v1 .safety p{font-size:14px}}
 /* hero/quiz buttons: CRS-M2 button type (existing shape kept) */
 .vawh-v1 .btn_dark,.vawh-v1 .btn_line{font:700 14px/1.2 var(--body);letter-spacing:.01em}
 .vawh-v1 a.btn_dark,.vawh-v1 a.btn_dark:hover{color:#fff;text-decoration:none}
@@ -272,14 +265,11 @@ body.vawh-v1.has-banner .sticky{display:none!important}
  .vawh-v1 .feat_copy h2.sec{font-size:24px;line-height:30px}
  .vawh-v1 .sec_dek,.vawh-v1 .fit_intro p{font-size:15px}
 }
-@media(min-width:1024px){.vawh-v1 .picks>.w,.vawh-v1 .safety-wrap{max-width:1140px}.vawh-v1 .row{max-width:none}}
+@media(min-width:1024px){.vawh-v1 .picks>.w{max-width:1140px}.vawh-v1 .row{max-width:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.vawh-v1 .row,.vawh-v1 .act .btn,.vawh-v1 .sticky .btn,.vawh-v1 .feat_panel .cta,.vawh-v1 .faq summary::after,.vawh-v1 .quiz label{transition:none}}
 
 /* ---- top of page (above #1 only): spacing matched to /products/glp1/comparison-sm/ohbkey/ro/bs/v1
    Reference section rhythm = 24px (>=640) / 20px (<=639) between blocks, as between its hero and #1. ---- */
-.vawh-v1 .safety-wrap>.safety{margin-top:0;margin-bottom:0}
-@media(max-width:767px){.vawh-v1 .safety-wrap{padding-top:24px}}
-@media(max-width:639px){.vawh-v1 .safety-wrap{padding-top:20px}}
 /* hero extras (no reference equivalent): moved out of the hero into a compact block below it, so the hero itself
    matches the reference (title, intro, Last Updated, image). Same container as the hero text. */
 .vawh-v1 .hero-extras{padding:24px 0 0}
@@ -296,12 +286,11 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 .vawh-v1 .hero-extras>.w{align-items:center}
 @media(max-width:767px){.vawh-v1 .hero-extras>.w{align-items:flex-start}}
 /* ---- round 5 (owner request): on phones (<=767px) the top area goes straight from the hero to #1, like the reference.
-   Rx note, editorial disclosure and the "Before you compare" box are hidden on phones only; tablet/desktop unchanged. ---- */
-@media(max-width:767px){.vawh-v1 .hero-extras{display:none}.vawh-v1 .safety-wrap{display:none}}
-/* the Rx note is display:none at every width, so its wrapper is collapsed rather than reserving empty space;
-   the "Before you compare" box keeps the reference 24px section gap below the hero (tablet/desktop only) */
+   (Rx note wrapper hidden; editorial disclosure and the "Before you compare" box have since been removed.) ---- */
+@media(max-width:767px){.vawh-v1 .hero-extras{display:none}}
+/* the Rx note is display:none at every width, so its wrapper is collapsed rather than reserving empty space.
+   The "Before you compare" box was removed at owner request; the hero now runs straight to #1 at every width, like the reference. */
 .vawh-v1 .hero-extras{display:none}
-@media(min-width:768px){.vawh-v1 .hero-extras+.safety-wrap{padding-top:24px}}
 /* ---- "We earn commissions · Safety info" disclosure control (owner request; option-4 mockup): one underlined line under the
    comparison badge that expands a compact panel in place. Accessible button (aria-expanded/aria-controls), keyboard + focus ring. ---- */
 .vawh-v1 .cs-disc{order:6;display:flex;flex-direction:column;align-items:flex-start}
@@ -363,10 +352,6 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <div class="hero-extras"><div class="w">
   <p class="rx-note">Rx required; not right for everyone. <a href="#isi-h">Important safety info&nbsp;&darr;</a></p>
 </div></div>
-
-<div class="w safety-wrap">
- <div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications are available only after a medical evaluation by a licensed clinician, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="/disclosure.html#medical">Medical disclaimer</a></p></div>
-</div>
 
 <section class="picks wl-comparison-cards" id="top5"><div class="w">
 
