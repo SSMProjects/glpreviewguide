@@ -604,6 +604,27 @@ h2{font-size:clamp(26px,2.5vw,36px);line-height:1.12;letter-spacing:-.02em}
  .how:not(.pin) .st-ph{display:block}
  .how:not(.pin) .st-ph .phone{width:230px;max-width:100%}
 }
+
+/* v4.3 · closing band and footer: one tidy row each, no oversized wordmark */
+.inv{min-height:0;display:block;padding:clamp(28px,3vw,40px) 0}
+.inv .w{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:24px 40px;flex-wrap:wrap}
+.inv h2{font-size:clamp(26px,2.5vw,36px);line-height:1.1;letter-spacing:-.02em}
+.inv-copy p{font-size:16px;color:#E4E4FF;margin-top:6px;max-width:74ch}
+.inv .btn{flex:none}
+.foot{padding:32px 0 28px;overflow:visible}
+.f-top{display:flex;align-items:center;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding-bottom:20px;box-shadow:0 1px 0 rgba(255,255,255,.12)}
+.foot .brand{color:#fff;font-size:19px}
+.foot .brand b{color:#9C9CFF}
+.foot .brand small{color:#B9B4C6}
+.f-nav{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:15px;font-weight:700}
+.f-nav a{text-decoration:none}
+.f-nav a:hover,.legal a:hover,.legal button:hover{text-decoration:underline;text-underline-offset:3px}
+.foot .legal{margin:18px 0 12px;font-size:14px;gap:6px 18px;color:#CFCAD8}
+.foot .legal a,.foot .legal button{color:#CFCAD8;text-decoration:none}
+.foot .fine{font-size:13px;line-height:1.55;max-width:none;color:#A9A3B8}
+.foot .fine.copy{margin-top:8px}
+.crop{display:none}
+@media(max-width:760px){.inv .w{flex-direction:column;align-items:flex-start}.f-top{flex-direction:column;align-items:flex-start}.f-nav{gap:8px 18px;font-size:14px}}
 </style>
 </head>
 <body>
@@ -819,29 +840,31 @@ h2{font-size:clamp(26px,2.5vw,36px);line-height:1.12;letter-spacing:-.02em}
 </div></section>
 
 <section class="inv" aria-labelledby="c-h"><div class="w">
- <h2 id="c-h" data-split>Compare first.<br>Then decide.</h2>
- <div class="inv-foot" data-r style="--i:1">
-  <p>All seven programs, ranked side by side, with the price you'd really pay each month. Free to read, no sign-up.</p>
-  <a class="btn" href="../products/best-wl-programs.html">See the 2026 rankings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ <div class="inv-copy">
+  <h2 id="c-h" data-split>Compare first. Then decide.</h2>
+  <p data-r style="--i:1">All seven programs ranked side by side, with the price you'd really pay each month. Free to read, no sign-up.</p>
  </div>
+ <a class="btn" href="../products/best-wl-programs.html" data-r style="--i:2">See the 2026 rankings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div></section>
 
 </main>
 
 <footer class="foot">
- <div class="w f-top">
-  <ul class="f-links">
-   <li><a href="../products/best-wl-programs.html">Best programs of 2026</a></li><li><a href="../products/wl-comparison-programs.html">Programs compared</a></li><li><a href="../lp/7-things-glp1-online.html">7 things to know first</a></li><li><a href="../lp/online-glp1-programs.html">Choosing a program</a></li><li><a href="../about.html">About us</a></li><li><a href="mailto:hello@glp1reviewguide.com">hello@glp1reviewguide.com</a></li>
-  </ul>
+ <div class="w">
+  <div class="f-top">
+   <a class="brand" href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#0000FF"/><circle cx="18" cy="18" r="8.5" fill="none" stroke="#fff" stroke-width="3.4"/><path d="M24.2 24.2l6.3 6.3" stroke="#fff" stroke-width="3.8" stroke-linecap="round"/><path d="M14.4 18.2l2.6 2.6 4.8-5.4" fill="none" stroke="#FFD27A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
+   <nav class="f-nav" aria-label="Footer">
+    <a href="../products/best-wl-programs.html">Best programs of 2026</a><a href="../products/wl-comparison-programs.html">Programs compared</a><a href="../lp/7-things-glp1-online.html">7 things to know first</a><a href="../lp/online-glp1-programs.html">Choosing a program</a><a href="../about.html">About us</a><a href="mailto:hello@glp1reviewguide.com">hello@glp1reviewguide.com</a>
+   </nav>
+  </div>
   <div class="legal">
-  <a href="../index.html">Home</a><a href="../about.html">About us</a><a href="../disclosure.html">Advertising disclosure</a><a href="../disclosure.html#medical">Medical disclaimer</a><a href="../privacy.html">Privacy policy</a><a href="../consumer-health-data-privacy.html">Consumer health data privacy</a><a href="../cookie-policy.html">Cookie policy</a><a href="../terms.html">Terms of use</a>
-  <a class="pc" href="../your-privacy-choices.html"><img src="../images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices</a>
-  <button type="button" class="linklike" data-gr-open-consent>Cookie settings</button>
+   <a href="../index.html">Home</a><a href="../about.html">About us</a><a href="../disclosure.html">Advertising disclosure</a><a href="../disclosure.html#medical">Medical disclaimer</a><a href="../privacy.html">Privacy policy</a><a href="../consumer-health-data-privacy.html">Consumer health data privacy</a><a href="../cookie-policy.html">Cookie policy</a><a href="../terms.html">Terms of use</a>
+   <a class="pc" href="../your-privacy-choices.html"><img src="../images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices</a>
+   <button type="button" class="linklike" data-gr-open-consent>Cookie settings</button>
+  </div>
+  <p class="fine">Content is for information only and is not medical advice. GLP-1 medications require clinician authorization and are not right for everyone. GLP1ReviewGuide.com is an independent publisher, not a healthcare provider or pharmacy, and does not sell, dispense or authorize medication. We receive advertising fees from programs on this site, which affect rankings and scores. Compounded medications are not FDA-approved. Prices were checked in October 2026 and may change. Trademarks belong to their owners. Photos show models; actor portrayals.</p>
+  <p class="fine copy">&copy; 2026 GLP1ReviewGuide.com</p>
  </div>
- <p class="fine">Content is for information only and is not medical advice. GLP-1 medications require clinician authorization and are not right for everyone. GLP1ReviewGuide.com is an independent publisher, not a healthcare provider or pharmacy, and does not sell, dispense or authorize medication. We receive advertising fees from programs on this site, which affect rankings and scores. Compounded medications are not FDA-approved. Prices were checked in October 2026 and may change. Trademarks belong to their owners. Photos show models; actor portrayals.</p>
- <p class="fine">&copy; 2026 GLP1ReviewGuide.com</p>
- </div>
- <p class="crop" aria-hidden="true">GLP1Review<b>Guide</b></p>
 </footer>
 
 <script>
