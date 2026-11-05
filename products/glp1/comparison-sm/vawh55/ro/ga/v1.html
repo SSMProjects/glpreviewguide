@@ -304,6 +304,22 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 .vawh-v1 .hero .trust{order:5;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .vawh-v1 .hero .trust span{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:500;color:var(--ink)}
 .vawh-v1 .hero .trust svg{width:14px;height:14px;color:var(--sage)}
+/* ---- round 4: top area (above #1 only) aligned to the reference /products/glp1/comparison-sm/ohbkey/ro/bs/v1 ----
+   - target-only extras (buttons, Rx note, disclosure) use the reference CTA button shape/type (.btn) and one pill style
+   - intro paragraphs start on the same left edge as the hero text and the #1 card (same measure as before, so wrapping is unchanged) */
+.vawh-v1 .hero-extras>.w{align-items:center}
+.vawh-v1 .hero-extras .hero_actions{flex-wrap:wrap;gap:10px;margin:0}
+.vawh-v1 .hero-extras .btn_dark,.vawh-v1 .hero-extras .btn_line{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:40px;padding:8px 20px;border-radius:8px;font:700 14px/1.2 var(--body);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:filter .15s}
+.vawh-v1 .hero-extras .btn_dark,.vawh-v1 .hero-extras .btn_dark:hover{background:var(--coral);color:#fff;border:0;box-shadow:0 2px 5px rgba(44,56,98,.09),0 4px 12px rgba(44,56,98,.2)}
+.vawh-v1 .hero-extras .btn_dark:hover{filter:brightness(1.08)}
+.vawh-v1 .hero-extras .btn_line,.vawh-v1 .hero-extras .btn_line:hover{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.vawh-v1 .hero-extras .btn_line:hover{border-color:var(--muted)}
+.vawh-v1 .hero-extras .disc_row details{box-sizing:border-box;min-height:40px;font-size:13.5px;line-height:1.5;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 12px;max-width:420px;color:var(--ink)}
+.vawh-v1 .hero-extras .disc_row summary{cursor:pointer;font-weight:600;color:var(--muted)}
+.vawh-v1 .hero-extras .disc_row p{margin:6px 0 2px;color:var(--muted)}
+.vawh-v1 section.intro>.w.narrow{max-width:1140px}
+.vawh-v1 section.intro .dek{max-width:918px}
+@media(max-width:767px){.vawh-v1 .hero-extras>.w{align-items:flex-start}}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
@@ -334,7 +350,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <main>
 <section class="hero wl-comparison-hero"><picture class="hero-img" aria-hidden="true"><source media="(max-width:639px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img src="/images/crs-m2-hero.webp" alt="" width="1280" height="640" decoding="async"></picture><div class="w hero_grid">
  <div class="hero_copy">
-  <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
+  <p class="kicker">Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
   <h1>Best GLP-1 Weight Loss<br><em>Programs</em> <em>of 2026</em></h1>
   <p class="sub">We compared online GLP-1 programs on price, medication options, doctor access and ongoing support, so you can find the right fit before you talk to a clinician.</p>
   <div class="trust">
