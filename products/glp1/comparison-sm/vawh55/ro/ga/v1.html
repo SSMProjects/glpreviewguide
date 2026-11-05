@@ -288,6 +288,12 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 }
 @media(min-width:1024px){.vawh-v1 .picks>.w,.vawh-v1 .safety-wrap{max-width:1140px}.vawh-v1 .row{max-width:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.vawh-v1 .row,.vawh-v1 .act .btn,.vawh-v1 .sticky .btn,.vawh-v1 .feat_panel .cta,.vawh-v1 .faq summary::after,.vawh-v1 .quiz label{transition:none}}
+
+/* ---- top of page (above #1 only): spacing matched to /products/glp1/comparison-sm/ohbkey/ro/bs/v1
+   Reference section rhythm = 24px (>=640) / 20px (<=639) between blocks, as between its hero and #1. ---- */
+.vawh-v1 .safety-wrap>.safety{margin-top:0;margin-bottom:0}
+@media(max-width:767px){.vawh-v1 .safety-wrap{padding-top:24px}}
+@media(max-width:639px){.vawh-v1 .safety-wrap{padding-top:20px}}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
