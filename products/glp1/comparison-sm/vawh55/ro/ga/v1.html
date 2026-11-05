@@ -320,6 +320,9 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 .vawh-v1 section.intro>.w.narrow{max-width:1140px}
 .vawh-v1 section.intro .dek{max-width:918px}
 @media(max-width:767px){.vawh-v1 .hero-extras>.w{align-items:flex-start}}
+/* ---- round 5 (owner request): on phones (<=767px) the top area goes straight from the hero to #1, like the reference.
+   Rx note, editorial disclosure and the "Before you compare" box are hidden on phones only; tablet/desktop unchanged. ---- */
+@media(max-width:767px){.vawh-v1 .hero-extras{display:none}.vawh-v1 .safety-wrap{display:none}}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
