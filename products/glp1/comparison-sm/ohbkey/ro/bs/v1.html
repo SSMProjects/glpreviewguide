@@ -22,6 +22,35 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <!-- Google Ads tag goes here once real IDs exist. Must stay consent-gated:
 <script type="text/plain" data-gr-consent="advertising" data-src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
 <script type="text/plain" data-gr-consent="advertising">gtag('js',new Date());gtag('config','AW-XXXXXXXXX');</script> -->
+<!-- Microsoft UET 211078769: activated only by consent.js after Advertising consent -->
+<script type="text/plain" data-gr-consent="advertising">
+window.uetq=window.uetq||[];uetq.push('consent','default',{ad_storage:'denied'});uetq.push('consent','update',{ad_storage:'granted'});
+(function(w, d, t, u, o) {
+    w[u] = w[u] || [];
+    o.ts = (new Date).getTime();
+    var n = d.createElement(t);
+    n.src = "https://bat.bing.net/bat.js?ti=" + o.ti +
+        ("uetq" != u ? "&q=" + u : "");
+    n.async = 1;
+    n.onload = n.onreadystatechange = function() {
+        var s = this.readyState;
+        if (!s || s === "loaded" || s === "complete") {
+            n.onload = n.onreadystatechange = null;
+            if (GRConsent.get().advertising) {
+                o.q = w[u];
+                w[u] = new UET(o);
+                w[u].push("pageLoad");
+            }
+        }
+    };
+    var i = d.getElementsByTagName(t)[0];
+    i.parentNode.insertBefore(n, i);
+})(window, document, "script", "uetq", {
+    ti: "211078769",
+    enableAutoSpaTracking: true
+});
+document.addEventListener('gr:consent',function(e){if(!e.detail.advertising&&window.uetq)uetq.push('consent','update',{ad_storage:'denied'});});
+</script>
 <style>
 /* products/glp1/comparison-sm/ohbkey/ro/bs/v1 — page-scoped styles (body.csm-v1; only this file uses them).
    Fonts, colors, text styling, disclosure bar and #1 label: copied from templates/crs-m2.html (renamed .crm-m2 -> .csm-v1).
