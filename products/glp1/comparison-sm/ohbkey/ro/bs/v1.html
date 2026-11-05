@@ -35,10 +35,12 @@ window.uetq=window.uetq||[];uetq.push('consent','default',{ad_storage:'denied'})
     n.onload = n.onreadystatechange = function() {
         var s = this.readyState;
         if (!s || s === "loaded" || s === "complete") {
-            o.q = w[u];
-            w[u] = new UET(o);
-            w[u].push("pageLoad");
             n.onload = n.onreadystatechange = null;
+            if (GRConsent.get().advertising) {
+                o.q = w[u];
+                w[u] = new UET(o);
+                w[u].push("pageLoad");
+            }
         }
     };
     var i = d.getElementsByTagName(t)[0];
