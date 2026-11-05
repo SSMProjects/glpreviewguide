@@ -300,6 +300,10 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 .vawh-v1 .hero-extras .rx-note{margin:0}
 @media(max-width:767px){.vawh-v1 .hero-extras>.w{flex-direction:column;gap:10px}}
 @media(max-width:639px){.vawh-v1 .hero-extras{padding-top:20px}}
+/* comparison badge (added at owner's request): markup and styles = reference .hero .trust; order after the Last Updated line */
+.vawh-v1 .hero .trust{order:5;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.vawh-v1 .hero .trust span{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:500;color:var(--ink)}
+.vawh-v1 .hero .trust svg{width:14px;height:14px;color:var(--sage)}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
@@ -333,6 +337,9 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
   <h1>Best GLP-1 Weight Loss<br><em>Programs</em> <em>of 2026</em></h1>
   <p class="sub">We compared online GLP-1 programs on price, medication options, doctor access and ongoing support, so you can find the right fit before you talk to a clinician.</p>
+  <div class="trust">
+   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>7 programs compared</span>
+  </div>
  </div>
 </div></section>
 
