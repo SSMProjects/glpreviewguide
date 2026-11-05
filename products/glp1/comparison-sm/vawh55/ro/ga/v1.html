@@ -304,6 +304,36 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 .vawh-v1 .hero .trust{order:5;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .vawh-v1 .hero .trust span{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:500;color:var(--ink)}
 .vawh-v1 .hero .trust svg{width:14px;height:14px;color:var(--sage)}
+/* ---- round 4: top area (above #1 only) aligned to the reference /products/glp1/comparison-sm/ohbkey/ro/bs/v1 ----
+   - target-only extras (buttons, Rx note, disclosure) use the reference CTA button shape/type (.btn) and one pill style
+   - intro paragraphs start on the same left edge as the hero text and the #1 card (same measure as before, so wrapping is unchanged) */
+.vawh-v1 .hero-extras>.w{align-items:center}
+.vawh-v1 .hero-extras .hero_actions{flex-wrap:wrap;gap:10px;margin:0}
+.vawh-v1 .hero-extras .btn_dark,.vawh-v1 .hero-extras .btn_line{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:40px;padding:8px 20px;border-radius:8px;font:700 14px/1.2 var(--body);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:filter .15s}
+.vawh-v1 .hero-extras .btn_dark,.vawh-v1 .hero-extras .btn_dark:hover{background:var(--coral);color:#fff;border:0;box-shadow:0 2px 5px rgba(44,56,98,.09),0 4px 12px rgba(44,56,98,.2)}
+.vawh-v1 .hero-extras .btn_dark:hover{filter:brightness(1.08)}
+.vawh-v1 .hero-extras .btn_line,.vawh-v1 .hero-extras .btn_line:hover{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.vawh-v1 .hero-extras .btn_line:hover{border-color:var(--muted)}
+.vawh-v1 .hero-extras .disc_row details{box-sizing:border-box;min-height:40px;font-size:13.5px;line-height:1.5;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 12px;max-width:420px;color:var(--ink)}
+.vawh-v1 .hero-extras .disc_row summary{cursor:pointer;font-weight:600;color:var(--muted)}
+.vawh-v1 .hero-extras .disc_row p{margin:6px 0 2px;color:var(--muted)}
+.vawh-v1 section.intro>.w.narrow{max-width:1140px}
+.vawh-v1 section.intro .dek{max-width:918px}
+@media(max-width:767px){.vawh-v1 .hero-extras>.w{align-items:flex-start}}
+/* ---- round 5 (owner request): on phones (<=767px) the top area goes straight from the hero to #1, like the reference.
+   Rx note, editorial disclosure and the "Before you compare" box are hidden on phones only; tablet/desktop unchanged. ---- */
+@media(max-width:767px){.vawh-v1 .hero-extras{display:none}.vawh-v1 .safety-wrap{display:none}}
+/* ---- "We earn commissions · Safety info" disclosure control (owner request; option-4 mockup): one underlined line under the
+   comparison badge that expands a compact panel in place. Accessible button (aria-expanded/aria-controls), keyboard + focus ring. ---- */
+.vawh-v1 .cs-disc{order:6;display:flex;flex-direction:column;align-items:flex-start}
+.vawh-v1 .cs-disc-btn{display:inline-block;margin:0;padding:11px 0 9px;min-height:44px;box-sizing:border-box;border:0;background:transparent;font:400 13px/1.4 var(--body);color:var(--blue);text-decoration:underline;text-underline-offset:3px;white-space:nowrap;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}
+.vawh-v1 .cs-disc-btn:hover{text-decoration-thickness:2px}
+.vawh-v1 .cs-disc-btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:2px}
+.vawh-v1 .cs-disc-panel{box-sizing:border-box;width:100%;max-width:520px;margin:2px 0 0;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.5;color:var(--ink);text-align:left}
+.vawh-v1 .cs-disc-panel[hidden]{display:none}
+.vawh-v1 .cs-disc-panel p{margin:0 0 6px;font-size:13px;line-height:1.5;color:var(--ink)}
+.vawh-v1 .cs-disc-panel p:last-child{margin-bottom:0}
+.vawh-v1 .cs-disc-panel a{color:var(--blue);font-weight:700;text-decoration:underline;white-space:nowrap}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
@@ -334,12 +364,20 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <main>
 <section class="hero wl-comparison-hero"><picture class="hero-img" aria-hidden="true"><source media="(max-width:639px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img src="/images/crs-m2-hero.webp" alt="" width="1280" height="640" decoding="async"></picture><div class="w hero_grid">
  <div class="hero_copy">
-  <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
+  <p class="kicker">Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
   <h1>Best GLP-1 Weight Loss<br><em>Programs</em> <em>of 2026</em></h1>
   <p class="sub">We compared online GLP-1 programs on price, medication options, doctor access and ongoing support, so you can find the right fit before you talk to a clinician.</p>
   <div class="trust">
    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>7 programs compared</span>
   </div>
+  <div class="cs-disc">
+   <button type="button" class="cs-disc-btn" id="cs-disc-btn" aria-expanded="false" aria-controls="cs-disc-panel">We earn commissions &middot; Safety info</button>
+   <div class="cs-disc-panel" id="cs-disc-panel" hidden>
+    <p>We earn commissions from brands listed here, which influences how listings are presented.</p>
+    <p>Prescription required. A licensed clinician determines eligibility. Treatment has risks and isn&rsquo;t suitable for everyone. <a href="#isi-h">Full Important Safety Information&nbsp;&darr;</a></p>
+   </div>
+  </div>
+  <script>(function(){var b=document.getElementById("cs-disc-btn"),p=document.getElementById("cs-disc-panel");if(!b||!p)return;b.addEventListener("click",function(){var o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",o?"false":"true");p.hidden=o;});})();</script>
  </div>
 </div></section>
 
