@@ -323,6 +323,17 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 /* ---- round 5 (owner request): on phones (<=767px) the top area goes straight from the hero to #1, like the reference.
    Rx note, editorial disclosure and the "Before you compare" box are hidden on phones only; tablet/desktop unchanged. ---- */
 @media(max-width:767px){.vawh-v1 .hero-extras{display:none}.vawh-v1 .safety-wrap{display:none}}
+/* ---- "We earn commissions · Safety info" disclosure control (owner request; option-4 mockup): one underlined line under the
+   comparison badge that expands a compact panel in place. Accessible button (aria-expanded/aria-controls), keyboard + focus ring. ---- */
+.vawh-v1 .cs-disc{order:6;display:flex;flex-direction:column;align-items:flex-start}
+.vawh-v1 .cs-disc-btn{display:inline-block;margin:0;padding:11px 0 9px;min-height:44px;box-sizing:border-box;border:0;background:transparent;font:400 13px/1.4 var(--body);color:var(--blue);text-decoration:underline;text-underline-offset:3px;white-space:nowrap;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}
+.vawh-v1 .cs-disc-btn:hover{text-decoration-thickness:2px}
+.vawh-v1 .cs-disc-btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:2px}
+.vawh-v1 .cs-disc-panel{box-sizing:border-box;width:100%;max-width:520px;margin:2px 0 0;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.5;color:var(--ink);text-align:left}
+.vawh-v1 .cs-disc-panel[hidden]{display:none}
+.vawh-v1 .cs-disc-panel p{margin:0 0 6px;font-size:13px;line-height:1.5;color:var(--ink)}
+.vawh-v1 .cs-disc-panel p:last-child{margin-bottom:0}
+.vawh-v1 .cs-disc-panel a{color:var(--blue);font-weight:700;text-decoration:underline;white-space:nowrap}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
@@ -359,6 +370,14 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <div class="trust">
    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>7 programs compared</span>
   </div>
+  <div class="cs-disc">
+   <button type="button" class="cs-disc-btn" id="cs-disc-btn" aria-expanded="false" aria-controls="cs-disc-panel">We earn commissions &middot; Safety info</button>
+   <div class="cs-disc-panel" id="cs-disc-panel" hidden>
+    <p>We earn commissions from brands listed here, which influences how listings are presented.</p>
+    <p>Prescription required. A licensed clinician determines eligibility. Treatment has risks and isn&rsquo;t suitable for everyone. <a href="#isi-h">Full Important Safety Information&nbsp;&darr;</a></p>
+   </div>
+  </div>
+  <script>(function(){var b=document.getElementById("cs-disc-btn"),p=document.getElementById("cs-disc-panel");if(!b||!p)return;b.addEventListener("click",function(){var o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",o?"false":"true");p.hidden=o;});})();</script>
  </div>
 </div></section>
 
