@@ -56,11 +56,10 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 .vawh-v1 .hero h1{order:1;font:600 34px/40px var(--body);color:var(--ink);margin:0 0 10px;max-width:780px;letter-spacing:0;text-align:left}
 .vawh-v1 .hero h1 em{font-style:normal;color:var(--blue)}
 .vawh-v1 .hero .sub{order:2;font-size:16px;line-height:24px;color:var(--ink);max-width:620px;margin:0;text-align:left}
-.vawh-v1 .hero .rx-note{order:3}
 /* last-updated line = CRS-M2 .updated */
 .vawh-v1 .hero .kicker{order:4;display:block;margin:10px 0 0;font-size:14px;line-height:18px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--sage)}
-.vawh-v1 .hero .hero_actions{order:5;margin:16px 0 0}
-.vawh-v1 .hero .disc_row{order:6;margin-top:12px}
+.vawh-v1 .hero-extras .hero_actions{margin:0}
+.vawh-v1 .hero-extras .disc_row{margin:0}
 .vawh-v1 .hero-img{position:absolute;top:0;right:0;bottom:0;width:min(46%,760px);margin:0;display:block}
 .vawh-v1 .hero-img img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:30% 40%;display:block}
 .vawh-v1 .hero-img::before{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,var(--hero),rgba(237,245,249,0));z-index:1}
@@ -185,7 +184,7 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 .vawh-v1 .rx-note{display:none}
 @media(max-width:767px){
  .vawh-v1 section.intro{display:none}
- .vawh-v1 .wl-comparison-hero .hero_actions{display:none}
+ .vawh-v1 .hero-extras .hero_actions{display:none}
  .vawh-v1 .rx-note{display:block;margin:10px 0 0;font-size:12.5px;line-height:1.4;color:var(--muted)}
  .vawh-v1 .rx-note a{color:inherit;font-weight:700;text-decoration:underline;white-space:nowrap}
  .vawh-v1 .safety p{font-size:12.5px}
@@ -294,6 +293,13 @@ body.vawh-v1.has-banner .sticky{display:none!important}
 .vawh-v1 .safety-wrap>.safety{margin-top:0;margin-bottom:0}
 @media(max-width:767px){.vawh-v1 .safety-wrap{padding-top:24px}}
 @media(max-width:639px){.vawh-v1 .safety-wrap{padding-top:20px}}
+/* hero extras (no reference equivalent): moved out of the hero into a compact block below it, so the hero itself
+   matches the reference (title, intro, Last Updated, image). Same container as the hero text. */
+.vawh-v1 .hero-extras{padding:24px 0 0}
+.vawh-v1 .hero-extras>.w{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 16px}
+.vawh-v1 .hero-extras .rx-note{margin:0}
+@media(max-width:767px){.vawh-v1 .hero-extras>.w{flex-direction:column;gap:10px}}
+@media(max-width:639px){.vawh-v1 .hero-extras{padding-top:20px}}
 </style>
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
@@ -327,13 +333,16 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <p class="kicker"><i class="fa-solid fa-scale-balanced"></i>&nbsp;Last Updated: <time id="updated-date" datetime="2026-10-12">October 12, 2026</time></p>
   <h1>Best GLP-1 Weight Loss<br><em>Programs</em> <em>of 2026</em></h1>
   <p class="sub">We compared online GLP-1 programs on price, medication options, doctor access and ongoing support, so you can find the right fit before you talk to a clinician.</p>
+ </div>
+</div></section>
+
+<div class="hero-extras"><div class="w">
   <p class="rx-note">Rx required; not right for everyone. <a href="#isi-h">Important safety info&nbsp;&darr;</a></p>
   <div class="hero_actions"><a class="btn_dark" href="#pick-1">See all 7</a><a class="btn_line" href="#fit">Find my fit in 3 questions</a></div>
   <div class="disc_row">
    <details><summary>Editorial disclosure</summary><p>We research each program ourselves. If you sign up through our links we may earn a commission at no cost to you. Compensation, including paid featured placements, can affect rankings and scores.</p></details>
   </div>
- </div>
-</div></section>
+</div></div>
 
 <section class="intro"><div class="w narrow">
  <div class="dek">
