@@ -250,10 +250,10 @@ body.ocv1{margin:0;background:#fff;color:var(--ink);font:14px/1.5 var(--body);-w
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ocv1 .row,.ocv1 .btn,.ocv1 .faq summary::after{transition:none}}
 
 /* ---- oc1738/ro/em/v1: content-source sections restyled with CRS-M2 fonts and colors ---- */
-.ocv1 .hero .rx-note{order:5;display:none;margin:8px 0 0;font-size:12.5px;line-height:1.4;color:var(--muted)}
-.ocv1 .hero .rx-note a{color:inherit;font-weight:700;text-decoration:underline;white-space:nowrap}
-.ocv1 .hero .hero_actions{order:6;display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.ocv1 .hero .disc_row{order:7;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.ocv1 .hero-extras .rx-note{display:none;margin:0;font-size:12.5px;line-height:1.4;color:var(--muted)}
+.ocv1 .hero-extras .rx-note a{color:inherit;font-weight:700;text-decoration:underline;white-space:nowrap}
+.ocv1 .hero-extras .hero_actions{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+.ocv1 .hero-extras .disc_row{display:flex;flex-wrap:wrap;gap:8px;margin:0}
 .ocv1 .btn_dark{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 20px;border-radius:8px;font:700 14px/1.2 var(--body);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:filter .15s,background .15s}
 .ocv1 .btn_dark{background:var(--coral);color:#fff;border:0;box-shadow:0 2px 5px rgba(44,56,98,.09),0 4px 12px rgba(44,56,98,.2)}
 .ocv1 .btn_dark:hover{filter:brightness(1.08)}
@@ -284,7 +284,7 @@ body.ocv1{margin:0;background:#fff;color:var(--ink);font:14px/1.5 var(--body);-w
 .ocv1 .wdesc i{color:var(--blue);font-size:17px;margin-top:4px;width:22px;flex:none;text-align:center}
 @media(max-width:700px){.ocv1 .weights{flex-direction:column}.ocv1 .weights div{flex:auto!important}.ocv1 .wdesc{grid-template-columns:1fr}}
 /* phones: content-source rules kept for non-safety content (intro paragraphs and hero buttons hidden, Rx note shown). Safety box and editorial disclosure stay visible. */
-@media(max-width:767px){.ocv1 section.intro{display:none}.ocv1 .hero .hero_actions{display:none}.ocv1 .hero .rx-note{display:block}}
+@media(max-width:767px){.ocv1 section.intro{display:none}.ocv1 .hero-extras .hero_actions{display:none}.ocv1 .hero-extras .rx-note{display:block}}
 @media(max-width:639px){
  .ocv1 .safety p{font-size:12.5px}
 }
@@ -292,6 +292,20 @@ body.ocv1{margin:0;background:#fff;color:var(--ink);font:14px/1.5 var(--body);-w
 @media(max-width:359px){.ocv1 .row .btn{white-space:normal;text-align:center}}
 @media(prefers-reduced-motion:reduce){.ocv1 .btn_dark{transition:none}}
 
+
+/* ---- top of page (above #1 only): spacing and container widths matched to /products/glp1/comparison-sm/ohbkey/ro/bs/v1
+   Reference section rhythm = 24px (>=640) / 20px (<=639) between blocks, as between its hero and #1.
+   Safety box uses the reference's #1-card container edges at every width. ---- */
+.ocv1 .intro{padding-top:24px}
+.ocv1 .safety-pre{padding-top:24px}
+@media(min-width:1024px){.ocv1 .safety-pre .safety{max-width:none}}
+@media(max-width:639px){.ocv1 .safety-pre{padding-top:20px}.ocv1 .safety-pre>.w{padding:0 20px}.ocv1 .safety-pre .safety{max-width:430px}}
+/* hero extras (no reference equivalent): moved out of the hero into a compact block below it, so the hero itself
+   matches the reference (title, intro, Last Updated, badge, image). Same container as the hero text. */
+.ocv1 .hero-extras{padding:24px 0 0}
+.ocv1 .hero-extras>.w{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 16px}
+@media(max-width:767px){.ocv1 .hero-extras>.w{flex-direction:column;gap:10px}}
+@media(max-width:639px){.ocv1 .hero-extras{padding-top:20px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Best Online GLP-1 Weight-Loss Programs (2026): 7 Compared","author":{"@type":"Organization","name":"GLP1ReviewGuide.com Editorial Team","url":"https://glp1reviewguide.com/about.html"},"publisher":{"@type":"Organization","name":"GLP1ReviewGuide.com"},"dateModified":"2026-09-24"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are GLP-1 medications?","acceptedAnswer":{"@type":"Answer","text":"GLP-1 receptor agonists are medications that mimic a hormone involved in appetite and blood sugar regulation. Some are FDA-approved for chronic weight management in adults who meet specific criteria, and others are approved for type 2 diabetes. Only a licensed clinician can decide whether one is appropriate for you."}},{"@type":"Question","name":"Do these programs guarantee treatment?","acceptedAnswer":{"@type":"Answer","text":"No. Every provider on this list requires a medical evaluation, and a clinician may decide a GLP-1 medication is not right for you. Reputable programs will tell you that up front."}},{"@type":"Question","name":"What side effects should I know about?","acceptedAnswer":{"@type":"Answer","text":"Commonly reported side effects include nausea, vomiting, diarrhea and constipation. Serious risks can include pancreatitis, gallbladder problems and, in animal studies, thyroid C-cell tumors. Review the full prescribing information and discuss your health history with a clinician."}},{"@type":"Question","name":"Are compounded versions the same as brand-name medications?","acceptedAnswer":{"@type":"Answer","text":"No. Compounded drugs are not FDA-approved. Ask any provider exactly what medication and pharmacy they use."}},{"@type":"Question","name":"Will insurance cover a GLP-1 medication?","acceptedAnswer":{"@type":"Answer","text":"Coverage varies widely by plan and diagnosis. Some programs help check your benefits or file prior authorization requests, but approval is never guaranteed."}}]}</script>
@@ -314,12 +328,15 @@ body.ocv1{margin:0;background:#fff;color:var(--ink);font:14px/1.5 var(--body);-w
  <div class="trust">
   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>7 programs compared</span>
  </div>
+</div></section>
+
+<div class="hero-extras"><div class="w">
  <p class="rx-note">Rx required; not right for everyone. <a href="#isi-h">Important safety info&nbsp;&darr;</a></p>
  <div class="hero_actions"><a class="btn_dark" href="#pick-1">See all 7</a></div>
  <div class="disc_row">
   <details><summary>Editorial disclosure</summary><p>We research each program ourselves. If you sign up through our links we may earn a commission at no cost to you. Compensation, including paid featured placements, can affect rankings and scores.</p></details>
  </div>
-</div></section>
+</div></div>
 
 <section class="intro"><div class="w narrow">
  <div class="dek">
