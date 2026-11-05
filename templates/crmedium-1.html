@@ -321,6 +321,17 @@ body.crmed-1.has-banner .sticky{display:none!important}
 }
 @keyframes crmed-cta-shine{0%{background-position:120% 0}40%,100%{background-position:-20% 0}}
 @media(prefers-reduced-motion:reduce){html:has(body.crmed-1){scroll-behavior:auto}.crmed-1 .row,.crmed-1 .btn,.crmed-1 .cta,.crmed-1 .faq summary::after{transition:none}}
+/* ---- "We earn commissions · Safety info" disclosure control (owner request; option-4 mockup): one underlined line under the
+   comparison badge that expands a compact panel in place. Accessible button (aria-expanded/aria-controls), keyboard + focus ring. ---- */
+.crmed-1 .cs-disc{order:6;display:flex;flex-direction:column;align-items:flex-start}
+.crmed-1 .cs-disc-btn{display:inline-block;margin:0;padding:11px 0 9px;min-height:44px;box-sizing:border-box;border:0;background:transparent;font:400 13px/1.4 var(--body);color:var(--blue);text-decoration:underline;text-underline-offset:3px;white-space:nowrap;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}
+.crmed-1 .cs-disc-btn:hover{text-decoration-thickness:2px}
+.crmed-1 .cs-disc-btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:2px}
+.crmed-1 .cs-disc-panel{box-sizing:border-box;width:100%;max-width:520px;margin:2px 0 0;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.5;color:var(--ink);text-align:left}
+.crmed-1 .cs-disc-panel[hidden]{display:none}
+.crmed-1 .cs-disc-panel p{margin:0 0 6px;font-size:13px;line-height:1.5;color:var(--ink)}
+.crmed-1 .cs-disc-panel p:last-child{margin-bottom:0}
+.crmed-1 .cs-disc-panel a{color:var(--blue);font-weight:700;text-decoration:underline;white-space:nowrap}
 </style>
 </head>
 <body class="crmed-1">
@@ -343,6 +354,14 @@ body.crmed-1.has-banner .sticky{display:none!important}
  <div class="disc_row">
   <details><summary>Editorial disclosure</summary><p>We research each program ourselves. If you sign up through our links we may earn a commission at no cost to you. Compensation, including paid featured placements, can affect rankings and scores.</p></details>
  </div>
+ <div class="cs-disc">
+  <button type="button" class="cs-disc-btn" id="cs-disc-btn" aria-expanded="false" aria-controls="cs-disc-panel">We earn commissions &middot; Safety info</button>
+  <div class="cs-disc-panel" id="cs-disc-panel" hidden>
+   <p>We earn commissions from brands listed here, which influences how listings are presented.</p>
+   <p>Prescription required. A licensed clinician determines eligibility. Treatment has risks and isn&rsquo;t suitable for everyone. <a href="#safety-info">Safety information&nbsp;&darr;</a></p>
+  </div>
+ </div>
+ <script>(function(){var b=document.getElementById("cs-disc-btn"),p=document.getElementById("cs-disc-panel");if(!b||!p)return;b.addEventListener("click",function(){var o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",o?"false":"true");p.hidden=o;});})();</script>
 </div></section>
 
 <section class="intro"><div class="w narrow">
@@ -536,7 +555,7 @@ body.crmed-1.has-banner .sticky{display:none!important}
 </main>
 
 <footer class="foot"><div class="w">
- <div class="safety"><p><strong>Before you compare:</strong> GLP-1 medications are available only after a medical evaluation by a licensed clinician, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="/disclosure.html#medical">Medical disclaimer</a></p></div>
+ <div class="safety" id="safety-info"><p><strong>Before you compare:</strong> GLP-1 medications are available only after a medical evaluation by a licensed clinician, and they aren't right for everyone, including people with a personal or family history of medullary thyroid carcinoma or MEN 2. Common side effects include nausea, vomiting and diarrhea. Results vary. We're not endorsed by any brand here; trademarks belong to their owners. <a href="/disclosure.html#medical">Medical disclaimer</a></p></div>
  <div class="cols">
   <a href="/index.html">Home</a><a href="/about.html">About us</a><a href="/disclosure.html">Advertising disclosure</a><a href="/disclosure.html#medical">Medical disclaimer</a><a href="/privacy.html">Privacy policy</a><a href="/consumer-health-data-privacy.html">Consumer health data privacy</a><a href="/cookie-policy.html">Cookie policy</a><a href="/terms.html">Terms of use</a>
   <a class="pc" href="/your-privacy-choices.html"><img src="/images/privacy-choices.svg" alt="" width="30" height="14">Your Privacy Choices</a>
