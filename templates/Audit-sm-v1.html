@@ -321,8 +321,23 @@ body.csm-v1.has-banner .sticky{display:none!important}
 .csm-v1 .tag.cmp{background:#FFF1E0;color:#7A3E00}
 .csm-v1 .tag.unk{background:#EEE;color:#3F4345}
 .csm-v1 .act{align-items:stretch;text-align:left;gap:8px;padding-top:8px}
-.csm-v1 .pcond{margin:0;font-size:13px;line-height:1.45;color:var(--muted)}
-.csm-v1 .pcond a{color:var(--link)}
+.csm-v1 .terms{margin:8px 0 0;font-size:13px;line-height:1.45;color:var(--ink)}
+.csm-v1 .terms a{color:var(--link)}
+/* 120% of pre-update sizes: badge text 11px -> 13.2px; score 27px -> 32.4px (>=1024), 15px -> 18px (<=1023) */
+.csm-v1 .ctop{height:auto;min-height:24px}
+.csm-v1 .cribbon{font-size:13.2px;padding-top:4px;padding-bottom:4px}
+.csm-v1 .scorebox .n{font-size:32.4px}
+@media(max-width:1023px){
+ .csm-v1 .scorebox .n{font-size:18px}
+ .csm-v1 .scorebox{height:auto;min-height:26px;padding-top:2px;padding-bottom:2px}
+}
+@media(max-width:639px){.csm-v1 .crank{height:auto;bottom:0}}
+/* provider CTA sweep: one soft diagonal reflection, once per hover/focus, behind the label */
+.csm-v1 #top5 .act>.btn{position:relative;overflow:hidden;isolation:isolate}
+.csm-v1 #top5 .act>.btn::before{content:"";position:absolute;top:0;bottom:0;left:0;width:28%;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.14) 50%,rgba(255,255,255,0));transform:translateX(-130%) skewX(-20deg)}
+.csm-v1 #top5 .act>.btn:hover::before,.csm-v1 #top5 .act>.btn:focus-visible::before{animation:csm-cta-sweep 1.25s ease-in-out 1}
+@keyframes csm-cta-sweep{from{transform:translateX(-130%) skewX(-20deg)}to{transform:translateX(480%) skewX(-20deg)}}
+@media(prefers-reduced-motion:reduce){.csm-v1 #top5 .act>.btn::before{animation:none!important;display:none}}
 .csm-v1 .price{margin:0;font-size:16px;line-height:1.3;font-weight:700;color:var(--ink)}
 .csm-v1 .price b{font-size:21px;font-weight:800}
 .csm-v1 .pill{color:#22704F}
@@ -409,9 +424,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>$39 refunded if not eligible (<a href="https://ro.co/weight-loss/pricing/" target="_blank" rel="nofollow noopener">Ro&#39;s pricing</a>)</li>
        <li>Cash-pay medication $149&ndash;$449/mo by drug and dose; $74/mo membership requires a prepaid 12-month plan</li>
     <li>Example first month at the lowest cash-pay dose: $39 + $149 = $188</li>
-   </ul><div class="pills"><span class="pill">Insurance help</span><span class="pill">LegitScript certified (per Ro)</span></div></div>
+   </ul><div class="pills"><span class="pill">Insurance help</span><span class="pill">LegitScript certified (per Ro)</span></div><p class="terms">Medication billed separately, from $149/mo. Membership then $74&ndash;$149/mo. <a href="#src-ro">Source</a></p></div>
    <div class="scorebox"><span class="n">9.6</span><span class="stars" aria-label="5 out of 5 stars"><i style="width:100%"></i></span><span class="l">Exceptional</span></div>
-   <div class="act"><p class="pcond">Medication billed separately, from $149/mo; membership then $74&ndash;$149/mo. Prescription and eligibility required. <a href="#src-ro">Source</a>, checked Nov 6, 2026.</p><p class="price"><b>$39</b> first-month membership, medication extra</p><a class="btn" href="https://ro.co/" rel="sponsored nofollow noopener" target="_blank">Visit Ro</a></div>
+   <div class="act"><p class="price"><b>$39</b> first-month membership</p><a class="btn" href="https://ro.co/" rel="sponsored nofollow noopener" target="_blank">Visit Ro</a></div>
   </div>
  </article>
 
@@ -424,9 +439,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Online doctor visits and free shipping included</li>
     <li>No insurance required; cancel anytime to stop future orders, but cancelling alone doesn't trigger a refund</li>
        <li>Ask TrimRx which medication you&rsquo;d get, the first charge and what renews, before you pay</li>
-   </ul><div class="pills"><span class="pill">Free shipping</span></div></div>
+   </ul><div class="pills"><span class="pill">Free shipping</span></div><p class="terms">We couldn&rsquo;t verify this offer&rsquo;s price or billing interval; confirm before you pay. <a href="#sources">Pricing details</a></p></div>
    <div class="scorebox"><span class="n">9.4</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Excellent</span></div>
-   <div class="act"><p class="pcond">We couldn&rsquo;t verify this offer&rsquo;s price or billing interval (Nov 6, 2026). Prescription and eligibility required.</p><p class="price">Confirm current plan cost</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/641ZRJ/" rel="sponsored nofollow noopener" target="_blank">Visit TrimRx</a></div>
+   <div class="act"><p class="price">Confirm current plan cost</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/641ZRJ/" rel="sponsored nofollow noopener" target="_blank">Visit TrimRx</a></div>
   </div>
  </article>
 
@@ -439,9 +454,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Licensed-provider review and personalized treatment when medically appropriate</li>
     <li>Medication delivered directly to your door</li>
     <li>24/7 care-team messaging and ongoing care support</li>
-   </ul></div>
+   </ul><p class="terms">Price varies by plan length (4&ndash;52 weeks) and promotion; not verified for this offer. <a href="#sources">Pricing details</a></p></div>
    <div class="scorebox"><span class="n">9.3</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Excellent</span></div>
-   <div class="act"><p class="pcond">Price varies by plan length (4&ndash;52 weeks) and promotion; not verified for this offer (Nov 6, 2026). Prescription and eligibility required.</p><p class="price">Confirm current plan cost</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/6DC976/" rel="sponsored nofollow noopener" target="_blank">Visit Embody</a></div>
+   <div class="act"><p class="price">Confirm current plan cost</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/6DC976/" rel="sponsored nofollow noopener" target="_blank">Visit Embody</a></div>
   </div>
  </article>
 
@@ -456,9 +471,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Virtual consultations and ongoing guidance</li>
        <li>Compounded tirzepatide: $279 first payment, then $399/mo</li>
     <li>Renews monthly; cancel at least 48 hours before renewal</li>
-   </ul></div>
+   </ul><p class="terms">Compounded semaglutide: $179 first payment, then $299/mo. Renews monthly. <a href="#src-wellorithm">Source</a></p></div>
    <div class="scorebox"><span class="n">9.1</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Very good</span></div>
-   <div class="act"><p class="pcond">Compounded semaglutide. Published rates, <a href="#src-wellorithm">source</a> checked Nov 6, 2026; this offer may differ. Prescription and eligibility required.</p><p class="price"><b>$179</b> first payment, then $299/mo</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/6FQ5XR/" rel="sponsored nofollow noopener" target="_blank">Visit Wellorithm</a></div>
+   <div class="act"><p class="price"><b>$179</b> first payment</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/6FQ5XR/" rel="sponsored nofollow noopener" target="_blank">Visit Wellorithm</a></div>
   </div>
  </article>
 
@@ -470,9 +485,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Brand-name medications: $99 membership + medication (Ozempic: $171 membership + medication)</li>
     <li>Labs included, with provider-led coaching</li>
     <li>Full refund if a provider disqualifies you for a medical reason</li>
-   </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Free expedited delivery</span></div></div>
+   </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Free expedited delivery</span></div><p class="terms">Compounded injections; billing interval and any prepayment not published, so confirm at checkout. <a href="#src-medgm">Source</a></p></div>
    <div class="scorebox"><span class="n">8.9</span><span class="stars" aria-label="3.75 out of 5 stars"><i style="width:75%"></i></span><span class="l">Very good</span></div>
-   <div class="act"><p class="pcond">Billing interval and any prepayment: confirm. <a href="#src-medgm">Source</a> checked Nov 6, 2026. Prescription and eligibility required.</p><p class="price"><b>$169</b> compounded injections from</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/69KHPZ/" rel="sponsored nofollow noopener" target="_blank">Visit MEDGm</a></div>
+   <div class="act"><p class="price">Injections from <b>$169</b></p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/69KHPZ/" rel="sponsored nofollow noopener" target="_blank">Visit MEDGm</a></div>
   </div>
  </article>
 
@@ -485,9 +500,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Provider review typically 12&ndash;24 hours after your assessment (per Trimi)</li>
     <li>Free overnight shipping once compounded</li>
        <li>Compounded tirzepatide from $125/mo on annual plans</li>
-   </ul><div class="pills"><span class="pill">LegitScript certified (per Trimi)</span></div></div>
+   </ul><div class="pills"><span class="pill">LegitScript certified (per Trimi)</span></div><p class="terms">Paid upfront: 12 months at $99 = $1,188. Monthly-billing price not shown. <a href="#src-trimi">Source</a></p></div>
    <div class="scorebox"><span class="n">8.8</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Very good</span></div>
-   <div class="act"><p class="pcond">Paid upfront: 12 months at $99 = $1,188; confirm at checkout. Monthly-billing price not shown. <a href="#src-trimi">Source</a>, Nov 6, 2026. Prescription and eligibility required.</p><p class="price"><b>$99/mo</b> equivalent, prepaid 12-month plan</p><a class="btn" href="https://trytrimi.com/" rel="sponsored nofollow noopener" target="_blank">Visit Trimi</a></div>
+   <div class="act"><p class="price"><b>$99/mo</b> equivalent, prepaid 12 months</p><a class="btn" href="https://trytrimi.com/" rel="sponsored nofollow noopener" target="_blank">Visit Trimi</a></div>
   </div>
  </article>
 
@@ -501,9 +516,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Full refund if a clinician doesn't approve your plan; the order is final after a clinician prescribes</li>
        <li>Compounded tirzepatide: $179 first month, then $299 every 4 weeks</li>
     <li>Cancelling stops future billing; it isn&rsquo;t a refund after a prescription is issued</li>
-   </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Brand-name options</span></div></div>
+   </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Brand-name options</span></div><p class="terms">Compounded semaglutide: $139 first month, then $199 every 4 weeks (about 13 charges a year). <a href="#src-pallas">Source</a></p></div>
    <div class="scorebox"><span class="n">8.8</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Very good</span></div>
-   <div class="act"><p class="pcond">Compounded semaglutide; about 13 charges a year. <a href="#src-pallas">Source</a>, Nov 6, 2026. Prescription and eligibility required.</p><p class="price"><b>$139</b> first month, then $199 every 4 weeks</p><a class="btn" href="https://www.pallashealth.co/" rel="sponsored nofollow noopener" target="_blank">Visit Pallas Health</a></div>
+   <div class="act"><p class="price"><b>$139</b> first month</p><a class="btn" href="https://www.pallashealth.co/" rel="sponsored nofollow noopener" target="_blank">Visit Pallas Health</a></div>
   </div>
  </article>
 </div></section>
@@ -600,7 +615,7 @@ body.csm-v1.has-banner .sticky{display:none!important}
 <section class="sec"><div class="w">
  <aside class="isi" aria-labelledby="isi-h">
   <h2 id="isi-h">Important safety information</h2>
-  <p>GLP-1 medications are available only through a licensed clinician and aren't right for everyone. Your clinician decides whether a medication is appropriate for you.</p>
+  <p>A prescription is required for every program on this page, and each provider decides eligibility. GLP-1 medications are available only through a licensed clinician and aren't right for everyone. Your clinician decides whether a medication is appropriate for you.</p>
   <ul>
    <li><b>Possible thyroid tumors, including cancer.</b> In studies with rodents, these medications caused thyroid C-cell tumors. It isn't known whether they cause these tumors in people. Don't use them if you or a family member has had medullary thyroid carcinoma (MTC), or if you have Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).</li>
    <li>Common side effects include nausea, vomiting, diarrhea, constipation and stomach pain.</li>
