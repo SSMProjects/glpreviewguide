@@ -308,7 +308,7 @@ body.csm-v1.has-banner .sticky{display:none!important}
 .csm-v1 .hero .trust a{color:inherit;text-decoration:none}
 .csm-v1 .hero .trust a span{text-decoration:underline;text-underline-offset:2px}
 /* provider rows: logo | facts | score | cost+CTA */
-.csm-v1 .rgrid{grid-template-columns:150px minmax(0,1fr) 102px 230px;align-items:start;padding:8px 20px 4px}
+.csm-v1 .rgrid{grid-template-columns:150px minmax(0,1fr) 102px;grid-template-areas:"head feats score" "act act act";align-items:start;padding:8px 20px 4px}
 .csm-v1 .rhead{align-self:start;margin-top:8px}
 .csm-v1 .logo{width:150px;height:96px;padding:12px 14px}
 .csm-v1 .logo img{max-width:118px;max-height:64px}
@@ -320,9 +320,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
 .csm-v1 .tag.fda{background:#E3F2EA;color:#1D5E40}
 .csm-v1 .tag.cmp{background:#FFF1E0;color:#7A3E00}
 .csm-v1 .tag.unk{background:#EEE;color:#3F4345}
-.csm-v1 .act{align-items:stretch;text-align:left;gap:8px;padding-top:8px}
-.csm-v1 .terms{margin:8px 0 0;font-size:13px;line-height:1.45;color:var(--ink)}
-.csm-v1 .terms a{color:var(--link)}
+/* price + CTA: centred under the card content; button keeps its previous width (240px desktop, 220px tablet, full width mobile) */
+.csm-v1 .act{align-items:center;text-align:center;gap:8px;padding-top:12px;justify-self:center}
+.csm-v1 #top5 .act>.btn{width:240px}
 /* 120% of pre-update sizes: badge text 11px -> 13.2px; score 27px -> 32.4px (>=1024), 15px -> 18px (<=1023) */
 .csm-v1 .ctop{height:auto;min-height:24px}
 .csm-v1 .cribbon{font-size:13.2px;padding-top:4px;padding-bottom:4px}
@@ -338,8 +338,8 @@ body.csm-v1.has-banner .sticky{display:none!important}
 .csm-v1 #top5 .act>.btn:hover::before,.csm-v1 #top5 .act>.btn:focus-visible::before{animation:csm-cta-sweep 1.25s ease-in-out 1}
 @keyframes csm-cta-sweep{from{transform:translateX(-130%) skewX(-20deg)}to{transform:translateX(480%) skewX(-20deg)}}
 @media(prefers-reduced-motion:reduce){.csm-v1 #top5 .act>.btn::before{animation:none!important;display:none}}
-.csm-v1 .price{margin:0;font-size:16px;line-height:1.3;font-weight:700;color:var(--ink)}
-.csm-v1 .price b{font-size:21px;font-weight:800}
+.csm-v1 .price{margin:0;font-size:14px;line-height:1.35;font-weight:700;color:var(--ink)}
+.csm-v1 .price b{font-size:14.7px;font-weight:800}
 .csm-v1 .pill{color:#22704F}
 /* at-a-glance */
 .csm-v1 .glance table{min-width:760px;font-size:14px}
@@ -352,7 +352,8 @@ body.csm-v1.has-banner .sticky{display:none!important}
 .csm-v1 .sticky .btn{min-height:48px;font-size:15px}
 @media(max-width:980px){.csm-v1 .foot{padding-bottom:110px}}
 @media(max-width:1023px){
- .csm-v1 .rgrid{grid-template-columns:130px minmax(0,1fr) 220px;grid-template-areas:"head feats act";column-gap:16px;padding:8px 16px 4px}
+ .csm-v1 .rgrid{grid-template-columns:130px minmax(0,1fr);grid-template-areas:"head feats" "act act";column-gap:16px;padding:8px 16px 4px}
+ .csm-v1 #top5 .act>.btn{width:220px}
  .csm-v1 .logo{width:130px;height:84px}
  .csm-v1 .row .btn{font-size:15px;padding:10px 8px;white-space:normal}
 }
@@ -368,7 +369,8 @@ body.csm-v1.has-banner .sticky{display:none!important}
  .csm-v1 .logo{width:auto;max-width:150px;height:64px;aspect-ratio:auto;border:1px solid var(--line);border-radius:8px;padding:4px 12px;justify-content:flex-start}
  .csm-v1 .logo img{max-width:112px;max-height:56px;object-position:left center}
  .csm-v1 .scorebox{position:static;width:auto;height:auto;min-height:0;flex-direction:row;flex-wrap:nowrap;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;margin:0}
- .csm-v1 .act{padding-top:12px;align-self:stretch}
+ .csm-v1 .act{padding-top:12px;align-self:stretch;justify-self:stretch;align-items:stretch}
+ .csm-v1 #top5 .act>.btn{width:100%}
  .csm-v1 .btn{min-height:48px}
  .csm-v1 .hl{padding-top:0}
  .csm-v1 .chead{justify-content:flex-start;text-align:left}
@@ -379,7 +381,7 @@ body.csm-v1.has-banner .sticky{display:none!important}
  .csm-v1 .cs-disc-btn{padding:6px 0 4px;min-height:44px}
  .csm-v1 .lead{font-size:16px;margin-bottom:6px}
 }
-@media(min-width:1024px){.csm-v1 .rgrid{grid-template-columns:150px minmax(0,1fr) 102px 240px}.csm-v1 .scorebox{align-self:start;margin-top:8px}}
+@media(min-width:1024px){.csm-v1 .rgrid{grid-template-columns:150px minmax(0,1fr) 102px}.csm-v1 .scorebox{align-self:start;margin-top:8px}}
 </style>
 </head>
 <body class="csm-v1">
@@ -421,12 +423,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
    <div class="hl"><p class="lead">Insurance or cash-pay paths for brand-name GLP-1s</p><span class="tag fda">FDA-approved brand-name medications</span><ul class="feats">
     <li>Free insurance check and paperwork help for some brand-name medications; coverage isn&rsquo;t guaranteed</li>
     <li>Cash-pay medication price depends on the drug and dose</li>
-    <li>$39 refunded if not eligible (<a href="https://ro.co/weight-loss/pricing/" target="_blank" rel="nofollow noopener">Ro&#39;s pricing</a>)</li>
-       <li>Cash-pay medication $149&ndash;$449/mo by drug and dose; $74/mo membership requires a prepaid 12-month plan</li>
-    <li>Example first month at the lowest cash-pay dose: $39 + $149 = $188</li>
-   </ul><div class="pills"><span class="pill">Insurance help</span><span class="pill">LegitScript certified (per Ro)</span></div><p class="terms">Medication billed separately, from $149/mo. Membership then $74&ndash;$149/mo. <a href="#src-ro">Source</a></p></div>
+   </ul><div class="pills"><span class="pill">Insurance help</span><span class="pill">LegitScript certified (per Ro)</span></div></div>
    <div class="scorebox"><span class="n">9.6</span><span class="stars" aria-label="5 out of 5 stars"><i style="width:100%"></i></span><span class="l">Exceptional</span></div>
-   <div class="act"><p class="price"><b>$39</b> first-month membership</p><a class="btn" href="https://ro.co/" rel="sponsored nofollow noopener" target="_blank">Visit Ro</a></div>
+   <div class="act"><p class="price"><b>$39</b> first-month membership, medication extra</p><a class="btn" href="https://ro.co/" rel="sponsored nofollow noopener" target="_blank">Visit Ro</a></div>
   </div>
  </article>
 
@@ -439,9 +438,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Online doctor visits and free shipping included</li>
     <li>No insurance required; cancel anytime to stop future orders, but cancelling alone doesn't trigger a refund</li>
        <li>Ask TrimRx which medication you&rsquo;d get, the first charge and what renews, before you pay</li>
-   </ul><div class="pills"><span class="pill">Free shipping</span></div><p class="terms">We couldn&rsquo;t verify this offer&rsquo;s price or billing interval; confirm before you pay. <a href="#sources">Pricing details</a></p></div>
+   </ul><div class="pills"><span class="pill">Free shipping</span></div></div>
    <div class="scorebox"><span class="n">9.4</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Excellent</span></div>
-   <div class="act"><p class="price">Confirm current plan cost</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/641ZRJ/" rel="sponsored nofollow noopener" target="_blank">Visit TrimRx</a></div>
+   <div class="act"><p class="price">See current pricing</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/641ZRJ/" rel="sponsored nofollow noopener" target="_blank">Visit TrimRx</a></div>
   </div>
  </article>
 
@@ -454,9 +453,9 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Licensed-provider review and personalized treatment when medically appropriate</li>
     <li>Medication delivered directly to your door</li>
     <li>24/7 care-team messaging and ongoing care support</li>
-   </ul><p class="terms">Price varies by plan length (4&ndash;52 weeks) and promotion; not verified for this offer. <a href="#sources">Pricing details</a></p></div>
+   </ul></div>
    <div class="scorebox"><span class="n">9.3</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Excellent</span></div>
-   <div class="act"><p class="price">Confirm current plan cost</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/6DC976/" rel="sponsored nofollow noopener" target="_blank">Visit Embody</a></div>
+   <div class="act"><p class="price">See current pricing</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/6DC976/" rel="sponsored nofollow noopener" target="_blank">Visit Embody</a></div>
   </div>
  </article>
 
@@ -469,9 +468,8 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Compounded plans include consultation and shipping; same price across the dose range</li>
     <li>Brand-name path: $49/mo service fee; medication cost depends on coverage</li>
     <li>Virtual consultations and ongoing guidance</li>
-       <li>Compounded tirzepatide: $279 first payment, then $399/mo</li>
     <li>Renews monthly; cancel at least 48 hours before renewal</li>
-   </ul><p class="terms">Compounded semaglutide: $179 first payment, then $299/mo. Renews monthly. <a href="#src-wellorithm">Source</a></p></div>
+   </ul></div>
    <div class="scorebox"><span class="n">9.1</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Very good</span></div>
    <div class="act"><p class="price"><b>$179</b> first payment</p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/6FQ5XR/" rel="sponsored nofollow noopener" target="_blank">Visit Wellorithm</a></div>
   </div>
@@ -485,7 +483,7 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Brand-name medications: $99 membership + medication (Ozempic: $171 membership + medication)</li>
     <li>Labs included, with provider-led coaching</li>
     <li>Full refund if a provider disqualifies you for a medical reason</li>
-   </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Free expedited delivery</span></div><p class="terms">Compounded injections; billing interval and any prepayment not published, so confirm at checkout. <a href="#src-medgm">Source</a></p></div>
+   </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Free expedited delivery</span></div></div>
    <div class="scorebox"><span class="n">8.9</span><span class="stars" aria-label="3.75 out of 5 stars"><i style="width:75%"></i></span><span class="l">Very good</span></div>
    <div class="act"><p class="price">Injections from <b>$169</b></p><a class="btn" href="https://go.glp1reviewguide.com/38JMMX/69KHPZ/" rel="sponsored nofollow noopener" target="_blank">Visit MEDGm</a></div>
   </div>
@@ -500,7 +498,7 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Provider review typically 12&ndash;24 hours after your assessment (per Trimi)</li>
     <li>Free overnight shipping once compounded</li>
        <li>Compounded tirzepatide from $125/mo on annual plans</li>
-   </ul><div class="pills"><span class="pill">LegitScript certified (per Trimi)</span></div><p class="terms">Paid upfront: 12 months at $99 = $1,188. Monthly-billing price not shown. <a href="#src-trimi">Source</a></p></div>
+   </ul><div class="pills"><span class="pill">LegitScript certified (per Trimi)</span></div></div>
    <div class="scorebox"><span class="n">8.8</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Very good</span></div>
    <div class="act"><p class="price"><b>$99/mo</b> equivalent, prepaid 12 months</p><a class="btn" href="https://trytrimi.com/" rel="sponsored nofollow noopener" target="_blank">Visit Trimi</a></div>
   </div>
@@ -516,7 +514,7 @@ body.csm-v1.has-banner .sticky{display:none!important}
     <li>Full refund if a clinician doesn't approve your plan; the order is final after a clinician prescribes</li>
        <li>Compounded tirzepatide: $179 first month, then $299 every 4 weeks</li>
     <li>Cancelling stops future billing; it isn&rsquo;t a refund after a prescription is issued</li>
-   </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Brand-name options</span></div><p class="terms">Compounded semaglutide: $139 first month, then $199 every 4 weeks (about 13 charges a year). <a href="#src-pallas">Source</a></p></div>
+   </ul><div class="pills"><span class="pill">HSA/FSA</span><span class="pill">Brand-name options</span></div></div>
    <div class="scorebox"><span class="n">8.8</span><span class="stars" aria-label="4 out of 5 stars"><i style="width:80%"></i></span><span class="l">Very good</span></div>
    <div class="act"><p class="price"><b>$139</b> first month</p><a class="btn" href="https://www.pallashealth.co/" rel="sponsored nofollow noopener" target="_blank">Visit Pallas Health</a></div>
   </div>
