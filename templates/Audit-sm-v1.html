@@ -397,7 +397,12 @@ body.csm-v1.has-banner .sticky{display:none!important}
 <section class="hero"><picture class="hero-img" aria-hidden="true"><source media="(max-width:639px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img src="/images/crs-m2-hero.webp" alt="" width="1280" height="640" decoding="async"></picture><div class="w">
  <h1 style="text-align:left">Compare Online GLP-1 Programs <em>and Costs</em></h1>
  <p class="sub" style="text-align:left">See first payments, ongoing charges, medication type and insurance options for 7 online programs side by side. We&rsquo;re a publisher, not a provider: a licensed clinician decides whether treatment is right for you.</p>
- <p class="updated">Prices checked <time datetime="2026-11-06">November 6, 2026</time> &middot; offers change, so confirm at checkout</p>
+ <p class="updated">Last Updated: <time id="last-updated" datetime="2026-11-10">November 10, 2026</time></p>
+ <script>(function(){var el=document.getElementById("last-updated");if(!el||!window.Intl)return;var tz="America/Los_Angeles",shown="";
+  function today(){var d=new Date(),p={};new Intl.DateTimeFormat("en-US",{timeZone:tz,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(d).forEach(function(x){p[x.type]=x.value});
+   return {iso:p.year+"-"+p.month+"-"+p.day,text:new Intl.DateTimeFormat("en-US",{timeZone:tz,month:"long",day:"numeric",year:"numeric"}).format(d)};}
+  function update(){try{var t=today();if(t.iso!==shown){shown=t.iso;el.textContent=t.text;el.setAttribute("datetime",t.iso);}}catch(e){}}
+  update();setInterval(update,60000);document.addEventListener("visibilitychange",function(){if(!document.hidden)update();});})();</script>
  <div class="trust">
   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>7 programs compared</span>
   <a href="#how"><span>How we rank</span></a>
