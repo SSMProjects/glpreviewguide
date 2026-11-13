@@ -28,7 +28,7 @@
   function currentClick() {
     if (!consented()) { forget(); return ''; }
     var params = new URL(window.location.href).searchParams;
-    var id = clean(params.get('rdt_cid'));
+    var id = clean(params.get('ler_cid')) || clean(params.get('rdt_cid'));
     // A new Google click must not inherit a previous Reddit click ID.
     if (params.has('gclid') || params.has('wbraid') || params.has('gbraid')) {
       forget();
