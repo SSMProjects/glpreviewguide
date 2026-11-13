@@ -33,7 +33,8 @@ return async function handler(request) {
     return reply(200, { status: "test_received", forwarded_to_reddit: false });
   }
 
-  if (env("REDDIT_FORWARDING_ENABLED") !== "true") {
+  const redditTest = params.get("test") === "reddit";
+  if (!redditTest && env("REDDIT_FORWARDING_ENABLED") !== "true") {
     return reply(503, { error: "Live forwarding is disabled" });
   }
   // Set these only after verifying the offer and the event represent a paid sale.
@@ -49,6 +50,15 @@ return async function handler(request) {
   const conversionId = params.get("conversion_id") || "";
   const clickId = params.get("click_id") || "";
   const time = params.get("event_at_ms") || "";
+  if (redditTest && clickId !== "rs_test_001") {
+    return reply(422, { error: "Reddit testing accepts only rs_test_001" });
+  }
+  if (!redditTest && !clickId) {
+    return reply(200, { status: "skipped_no_reddit_click", forwarded_to_reddit: false });
+  }
+  if (!redditTest && /^(rs_test_|reddit_test_)/i.test(clickId)) {
+    return reply(200, { status: "skipped_test_marker", forwarded_to_reddit: false });
+  }
   if (!/^[a-zA-Z0-9_-]{1,128}$/.test(conversionId) ||
       !clickId || clickId.length > 1024 || /[\s{}]/.test(clickId) ||
       !/^\d{13}$/.test(time)) {
@@ -64,27 +74,36 @@ return async function handler(request) {
   if (!/^a2_[a-zA-Z0-9]+$/.test(pixel) || !token) {
     return reply(503, { error: "Reddit credentials are not configured" });
   }
+  const testId = env("REDDIT_TEST_ID") || "";
+  if (redditTest && !testId) {
+    return reply(503, { error: "Reddit Event Testing ID is not configured" });
+  }
   const dedupId = createHash("sha256")
-    .update(`everflow:${expectedOffer}:${expectedEvent}:${conversionId}`)
+    .update(`everflow:${redditTest ? "test" : "live"}:${expectedOffer}:${expectedEvent}:${conversionId}`)
     .digest("hex");
+  const event = {
+    event_at: eventAt,
+    action_source: "WEBSITE",
+    type: { tracking_type: "PURCHASE" },
+    metadata: { conversion_id: redditTest ? `rs_test_001_${dedupId}` : dedupId },
+  };
+  // The synthetic marker is not a real Reddit click ID and cannot attribute a sale.
+  // In Event Testing it is identified in conversion_id instead of a match key.
+  if (!redditTest) event.click_id = clickId;
+  const data = { events: [event] };
+  if (redditTest) data.test_id = testId;
   try {
     const result = await fetcher(`https://ads-api.reddit.com/api/v3/pixels/${pixel}/conversion_events`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       signal: AbortSignal.timeout(8000),
-      body: JSON.stringify({ data: { events: [{
-        event_at: eventAt,
-        action_source: "WEBSITE",
-        type: { tracking_type: "PURCHASE" },
-        click_id: clickId,
-        metadata: { conversion_id: dedupId },
-      }] } }),
+      body: JSON.stringify({ data }),
     });
     const body = await result.json().catch(() => null);
     if (!result.ok || !body?.data?.message?.includes("Successfully processed 1 conversion events")) {
       return reply(502, { error: "Reddit did not confirm acceptance", reddit_http_status: result.status });
     }
-    return reply(200, { status: "accepted_by_reddit" });
+    return reply(200, { status: redditTest ? "accepted_by_reddit_test" : "accepted_by_reddit" });
   } catch {
     // Never log request URLs, secrets, click IDs, or upstream response bodies.
     return reply(502, { error: "Reddit request failed or timed out" });
