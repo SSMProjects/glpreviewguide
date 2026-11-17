@@ -2,6 +2,10 @@ SITE = "GLP1ReviewGuide.com"
 DOMAIN = "glp1reviewguide.com"
 EMAIL = "hello@glp1reviewguide.com"
 UPDATED = "September 2026"
+# SEO rule: only these generated pages are indexed; everything else gets noindex, follow.
+# Canonicals are the served URL: lowercase, no ".html".
+# Keep sitemap.xml in sync by hand: it lists only index pages with a self-canonical (see the project notes, claude/robots-sitemap-notes.md).
+INDEXED = {"index.html", "about.html", "disclosure.html"}
 
 def page(fname, title, desc, body, canonical=""):
     html = f'''<!DOCTYPE html>
@@ -11,7 +15,8 @@ def page(fname, title, desc, body, canonical=""):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="https://{DOMAIN}/{canonical or fname}">
+<link rel="canonical" href="https://{DOMAIN}/{(canonical or fname).removesuffix(".html").removesuffix("index")}">
+<meta name="robots" content="{"index, follow" if fname in INDEXED else "noindex, follow"}">
 <link rel="icon" href="images/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
