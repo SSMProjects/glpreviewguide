@@ -303,6 +303,75 @@ body.ocv1{margin:0;background:#fff;color:var(--ink);font:14px/1.5 var(--body);-w
 .ocv1 .cs-disc-panel p{margin:0 0 6px;font-size:13px;line-height:1.5;color:var(--ink)}
 .ocv1 .cs-disc-panel p:last-child{margin-bottom:0}
 .ocv1 .cs-disc-panel a{color:var(--blue);font-weight:700;text-decoration:underline;white-space:nowrap}
+
+/* Responsive layout refinements (Craft Anything pass, Nov 17); phone #1 card keeps v1 arrangement so the CTA stays above the fold, and phones show 4 bullets per card. Content, disclosures and consent unchanged. */
+.ocv1 .w{width:100%;padding-inline:clamp(16px,3vw,28px)}
+.ocv1 .rgrid>*,.ocv1 .tp>*,.ocv1 .notes>*,.ocv1 .how>*,.ocv1 .wdesc>*{min-width:0}
+.ocv1 .brand{min-height:44px;min-width:0}
+.ocv1 .brand img{flex:none}
+.ocv1 .hdr nav a{display:flex;align-items:center;min-height:44px}
+.ocv1 .btn{min-height:48px;line-height:1.4;white-space:normal}
+.ocv1 .row .btn{font-size:14px;padding:12px;white-space:normal}
+.ocv1 .rgrid{padding:16px 20px 10px;gap:20px}
+.ocv1 .row{margin-bottom:24px}
+.ocv1 .ctop{height:auto;min-height:24px}
+.ocv1 .crank,.ocv1 .cribbon{min-height:24px;line-height:1.4}
+.ocv1 .cribbon{padding-block:4px}
+.ocv1 .feats{font-size:14px;line-height:1.55}
+.ocv1 .feats li{margin-bottom:6px}
+.ocv1 .pills{gap:8px 12px;margin-top:12px}
+.ocv1 .pill{font-size:12px;line-height:1.5}
+.ocv1 .act{gap:12px}
+.ocv1 .offer-price-line{flex-wrap:wrap}
+.ocv1 .tp{grid-template-columns:minmax(240px,300px) minmax(0,1fr)}
+.ocv1 .tp_r .btn{max-width:100%}
+.ocv1 .cs-disc-panel a{white-space:normal}
+.ocv1 .cs-disc{min-width:0;width:100%}
+.ocv1 .cs-disc-btn{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.ocv1 .cs-disc-panel{overflow-wrap:anywhere}
+.ocv1 .sec{padding-block:32px}
+.ocv1 .how,.ocv1 .notes{gap:16px}
+.ocv1 .foot .cols{gap:8px 24px;align-items:center}
+.ocv1 .foot .cols a,.ocv1 .foot .cols button{display:inline-flex;align-items:center;min-height:44px}
+@media(min-width:640px) and (max-width:1023px){
+ .ocv1 .rgrid{grid-template-columns:140px minmax(0,1fr) 150px;grid-template-areas:"head feats score" "head feats act";gap:16px;align-items:start;padding:16px}
+ .ocv1 .rhead{align-self:start}
+ .ocv1 .logo{width:100%;height:108px;margin:0}
+ .ocv1 .hl{padding-top:0;grid-row:1 / 3}
+ .ocv1 .scorebox{position:static;width:100%;height:auto;min-height:64px;flex-direction:row;flex-wrap:wrap;padding:10px;border:1px solid var(--line);border-radius:8px;gap:6px}
+ .ocv1 .scorebox .n{font-size:22px}
+ .ocv1 .scorebox .l{font-size:12px;line-height:1.4}
+ .ocv1 .scorebox .stars{font-size:12px}
+ .ocv1 .hero .w>*{max-width:54%}
+ .ocv1 .hero h1{font-size:clamp(26px,3.5vw,32px);line-height:1.2}
+ .ocv1 .hero .sub{font-size:16px;line-height:1.5}
+ .ocv1 .hdr nav{gap:20px}
+}
+@media(max-width:820px){.ocv1 .tp{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:639px){
+ .ocv1 .hdr .w{flex-wrap:wrap;gap:0 12px}
+ .ocv1 .menu-btn{flex:none;margin-right:0}
+ .ocv1 .hdr nav{position:static;flex-basis:100%;width:100%;padding-inline:0;box-shadow:none}
+ .ocv1 .hdr:has(nav.open){position:relative}
+ .ocv1 .list>.w{padding-inline:16px}
+ .ocv1 .row{max-width:none;margin-bottom:20px;padding-bottom:0}
+ .ocv1 .ctop{justify-content:flex-start}
+ .ocv1 .crank{position:static;height:auto}
+ .ocv1 .cribbon{max-width:calc(100% - 34px);border-radius:0 0 12px 0;padding:4px 12px}
+ .ocv1 .rgrid{gap:0 14px;padding:12px 14px 0}
+ .ocv1 .hl{padding-top:12px}
+ .ocv1 .chead{justify-content:flex-start;text-align:left;font-size:16px;line-height:1.4;margin-bottom:10px}
+ .ocv1 .hero .sub{font-size:16px;line-height:1.5}
+ .ocv1 .hero h1{font-size:28px;line-height:1.22}
+ .ocv1 .hero .trust svg{flex:none}
+ .ocv1 .tp_l,.ocv1 .tp_r{padding:20px 16px}
+ .ocv1 .tp_l .logo{max-width:100%}
+ .ocv1 .tp_r h2{font-size:24px;line-height:1.3}
+ .ocv1 .sec{padding-block:24px}
+ .ocv1 .weights{gap:8px}
+ .ocv1 .wdesc{gap:16px}
+ .ocv1 .faq summary{padding:16px;min-height:48px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Best Online GLP-1 Weight-Loss Programs (2026): 7 Compared","author":{"@type":"Organization","name":"GLP1ReviewGuide.com Editorial Team","url":"https://glp1reviewguide.com/about.html"},"publisher":{"@type":"Organization","name":"GLP1ReviewGuide.com"},"dateModified":"2026-09-24"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are GLP-1 medications?","acceptedAnswer":{"@type":"Answer","text":"GLP-1 receptor agonists are medications that mimic a hormone involved in appetite and blood sugar regulation. Some are FDA-approved for chronic weight management in adults who meet specific criteria, and others are approved for type 2 diabetes. Only a licensed clinician can decide whether one is appropriate for you."}},{"@type":"Question","name":"Do these programs guarantee treatment?","acceptedAnswer":{"@type":"Answer","text":"No. Every provider on this list requires a medical evaluation, and a clinician may decide a GLP-1 medication is not right for you. Reputable programs will tell you that up front."}},{"@type":"Question","name":"What side effects should I know about?","acceptedAnswer":{"@type":"Answer","text":"Commonly reported side effects include nausea, vomiting, diarrhea and constipation. Serious risks can include pancreatitis, gallbladder problems and, in animal studies, thyroid C-cell tumors. Review the full prescribing information and discuss your health history with a clinician."}},{"@type":"Question","name":"Are compounded versions the same as brand-name medications?","acceptedAnswer":{"@type":"Answer","text":"No. Compounded drugs are not FDA-approved. Ask any provider exactly what medication and pharmacy they use."}},{"@type":"Question","name":"Will insurance cover a GLP-1 medication?","acceptedAnswer":{"@type":"Answer","text":"Coverage varies widely by plan and diagnosis. Some programs help check your benefits or file prior authorization requests, but approval is never guaranteed."}}]}</script>
