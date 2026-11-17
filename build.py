@@ -4,6 +4,7 @@ EMAIL = "hello@glp1reviewguide.com"
 UPDATED = "September 2026"
 # SEO rule: only these generated pages are indexed; everything else gets noindex, follow.
 # Canonicals are the served URL: lowercase, no ".html".
+# Keep sitemap.xml in sync by hand: it lists only index pages with a self-canonical (see the project notes, claude/robots-sitemap-notes.md).
 INDEXED = {"index.html", "about.html", "disclosure.html"}
 
 def page(fname, title, desc, body, canonical=""):
