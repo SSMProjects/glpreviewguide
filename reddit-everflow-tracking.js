@@ -1,7 +1,8 @@
 (function () {
   'use strict';
 
-  // Applies only to the Ro affiliate links on a page that loads this script.
+  // Applies to every SSM affiliate link (go.glp1reviewguide.com/ZZ2GX/<offer>/)
+  // on a page that loads this script.
   // Sends no conversion events. For consented Reddit visits only, Sub2 is
   // campaign, Sub3 is creative, Sub5 is channel; Google retains its mapping.
   var STORAGE_KEY = 'reddit_ro_attribution_v2';
@@ -59,7 +60,7 @@
     try {
       var u = new URL(anchor.getAttribute('href'), window.location.href);
       return u.protocol === 'https:' && u.hostname === 'go.glp1reviewguide.com' &&
-        u.pathname === '/ZZ2GX/711W2G/';
+        /^\/ZZ2GX\/[A-Za-z0-9]+\/$/.test(u.pathname);
     } catch (e) { return false; }
   }
 
