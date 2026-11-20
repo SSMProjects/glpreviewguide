@@ -38,6 +38,13 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/sa/nr.css">
 <style>
+/* Mobile above the fold says less than desktop: short headline, no tagline, no topic label, no dek (the key points just below cover it). Angles: pill, insurance, price. Desktop unchanged. */
+.h-short{display:none}
+@media(max-width:640px){.h-full{display:none}.h-short{display:inline}
+  html[data-angle=pill] .mast .tagline,html[data-angle=insurance] .mast .tagline,html[data-angle=price] .mast .tagline{display:none}
+  html[data-angle=pill] .mast .bar-inner,html[data-angle=insurance] .mast .bar-inner,html[data-angle=price] .mast .bar-inner{padding-bottom:14px}
+  html[data-angle=pill] .kicker .k-cat,html[data-angle=insurance] .kicker .k-cat,html[data-angle=price] .kicker .k-cat{display:none}
+  html[data-angle=pill] .nr-head .dek,html[data-angle=insurance] .nr-head .dek,html[data-angle=price] .nr-head .dek{display:none}}
 /* Page-only additions. Kept here, not in the shared /sa/nr.css. */
 /* Ad angles on this page: over40 (default), price, insurance, pill. nr.css already handles price, insurance and pill. */
 html[data-angle=over40] .hero-v[data-angle=over40],html:not([data-angle]) .hero-v[data-angle=over40]{display:block}
@@ -71,7 +78,7 @@ html[data-angle=price] .figure.dup-price{display:none} /* that photo is already 
 
   <article class="article">
     <div class="nr-head">
-    <div class="kicker">Health · Weight management · Updated <time id="nr-updated" datetime="2026-11-20">November 20, 2026</time></div>
+    <div class="kicker"><span class="k-cat">Health · Weight management · </span>Updated <time id="nr-updated" datetime="2026-11-20">November 20, 2026</time></div>
     <script>
 /* "Updated" date: today's date in Los Angeles, set as the page draws and kept current while it stays open. */
 (function(){var t=document.getElementById('nr-updated');if(!t)return;
@@ -88,15 +95,15 @@ set();setInterval(set,30000);document.addEventListener('visibilitychange',set);}
       <p class="dek">What FDA-approved GLP-1 treatment from home really costs, who may qualify, and why a licensed clinician reviews every request first.</p>
     </div>
     <div class="hero-v" data-angle="price">
-      <h1>GLP-1s Can List Above $1,300 a Month. Online, Starting Doses Begin at $149</h1>
+      <h1><span class="h-full">GLP-1s Can List Above $1,300 a Month. Online, Starting Doses Begin at $149</span><span class="h-short">GLP-1s Can List Over $1,300/mo. Online, Starting Doses From $149</span></h1>
       <p class="dek">Every cost at the online program we reviewed, including the membership fee most ads leave out.</p>
     </div>
     <div class="hero-v" data-angle="insurance">
-      <h1>Does Your Health Plan Cover a GLP-1? Check Free Before You Pay Cash</h1>
+      <h1><span class="h-full">Does Your Health Plan Cover a GLP-1? Check Free Before You Pay Cash</span><span class="h-short">Does Your Health Plan Cover a GLP-1? Check Free</span></h1>
       <p class="dek">Some commercial plans cover weekly GLP-1 injections. The online program we reviewed checks at no charge. Coverage isn't guaranteed.</p>
     </div>
     <div class="hero-v" data-angle="pill">
-      <h1>No Needle: FDA-Approved GLP-1 Pills Now Start at $149 a Month Online</h1>
+      <h1><span class="h-full">No Needle: FDA-Approved GLP-1 Pills Now Start at $149 a Month Online</span><span class="h-short">No Needle: FDA-Approved GLP-1 Pills From $149/mo</span></h1>
       <p class="dek">Once-daily GLP-1 pills are FDA-approved for weight management. Here's how adults get them online, and the full cost with membership.</p>
     </div>
 

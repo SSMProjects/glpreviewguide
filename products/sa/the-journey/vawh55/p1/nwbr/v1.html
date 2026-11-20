@@ -34,6 +34,13 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/sa/nr.css">
 <style>
+/* Mobile above the fold says less than desktop: short headline, no tagline, no topic label, no dek (the key points just below cover it). Angles: pill. Desktop unchanged. */
+.h-short{display:none}
+@media(max-width:640px){.h-full{display:none}.h-short{display:inline}
+  html[data-angle=pill] .mast .tagline{display:none}
+  html[data-angle=pill] .mast .bar-inner{padding-bottom:14px}
+  html[data-angle=pill] .kicker .k-cat{display:none}
+  html[data-angle=pill] .nr-head .dek{display:none}}
 /* Page-only additions. Kept here, not in the shared /sa/nr.css. */
 .nr-early{margin:0 0 22px}
 .glance .checks{margin:0;font-size:16.5px}
@@ -60,7 +67,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
   <article class="article">
     <div class="nr-head">
-    <div class="kicker">Health · Weight management · Updated <time id="nr-updated" datetime="2026-11-20">November 20, 2026</time></div>
+    <div class="kicker"><span class="k-cat">Health · Weight management · </span>Updated <time id="nr-updated" datetime="2026-11-20">November 20, 2026</time></div>
     <script>
 /* "Updated" date: today's date in Los Angeles, set as the page draws and kept current while it stays open. */
 (function(){var t=document.getElementById('nr-updated');if(!t)return;
@@ -73,7 +80,7 @@ set();setInterval(set,30000);document.addEventListener('visibilitychange',set);}
 
     <!-- ===== HERO VARIANTS: one per ad angle. Pick with ?angle=pill | price | safe | insurance (default: pill). ===== -->
     <div class="hero-v" data-angle="pill">
-      <h1>FDA-Approved GLP-1 Pills Are Here — No Needles. What They Cost and Who Qualifies</h1>
+      <h1><span class="h-full">FDA-Approved GLP-1 Pills Are Here — No Needles. What They Cost and Who Qualifies</span><span class="h-short">FDA-Approved GLP-1 Pills Are Here. No Needles.</span></h1>
       <p class="dek">Two once-daily GLP-1 tablets are now approved for weight management. Here's how they compare with the weekly shot, what they really cost without insurance, and how adults are getting them through online programs.</p>
     </div>
     <div class="hero-v" data-angle="price">
