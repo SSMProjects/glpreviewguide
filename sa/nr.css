@@ -411,3 +411,8 @@ body.has-banner .nr-sticky,body.has-banner .sticky-bar{display:none}
 .nr-rail .btn{display:flex;width:100%;min-height:48px;padding:12px 8px;font-size:15px}
 .nr-rail p{margin:8px 0 0;font-size:12px;line-height:1.4;color:var(--muted);text-align:center}
 @media(prefers-reduced-motion:reduce){.nr-sticky,.nr-rail,.nr-b .sticky-bar,.btn,.nr-b .cta{transition:none!important}}
+
+/* author portrait in the byline */
+.author-avatar{overflow:hidden;background:#fff;border:1px solid var(--rule2)}
+.author-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.byline .author-avatar{width:48px;height:48px}
