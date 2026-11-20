@@ -33,18 +33,6 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/sa/nr.css">
-<style>
-/* Page-only additions. Kept here, not in the shared /sa/nr.css. */
-.nr-early{margin:0 0 22px}
-.glance .checks{margin:0;font-size:16.5px}
-/* Button shine: one soft diagonal reflection per hover or keyboard focus. Clipped to the button, behind the label, never on load. */
-.btn{position:relative;overflow:hidden;isolation:isolate}
-.btn::after{content:"";position:absolute;z-index:-1;top:-25%;bottom:-25%;left:0;width:24%;pointer-events:none;opacity:0;
-  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.14) 50%,rgba(255,255,255,0));transform:translateX(-160%) skewX(-20deg)}
-@keyframes nr-shine{0%{opacity:1;transform:translateX(-160%) skewX(-20deg)}100%{opacity:1;transform:translateX(560%) skewX(-20deg)}}
-@media(prefers-reduced-motion:no-preference){.btn:hover::after,.btn:focus-visible::after{animation:nr-shine 1.25s ease-out 1 both}}
-@media(prefers-reduced-motion:reduce){.btn::after{display:none}}
-</style>
 <script src="/sa/nr.js" defer></script>
 </head>
 <body class="nr-a" data-page="sa-glp1-pill-nr">
@@ -60,16 +48,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 
   <article class="article">
     <div class="nr-head">
-    <div class="kicker">Health · Weight management · Updated <time id="nr-updated" datetime="2026-11-20">November 20, 2026</time></div>
-    <script>
-/* "Updated" date: today's date in Los Angeles, set as the page draws and kept current while it stays open. */
-(function(){var t=document.getElementById('nr-updated');if(!t)return;
-function set(){try{var d=new Date(),z='America/Los_Angeles',
-s=new Intl.DateTimeFormat('en-US',{timeZone:z,month:'long',day:'numeric',year:'numeric'}).format(d),
-i=new Intl.DateTimeFormat('en-CA',{timeZone:z,year:'numeric',month:'2-digit',day:'2-digit'}).format(d);
-if(t.textContent!==s){t.textContent=s;t.setAttribute('datetime',i);}}catch(e){}}
-set();setInterval(set,30000);document.addEventListener('visibilitychange',set);})();
-</script>
+    <div class="kicker">Health · Weight management · Updated <time datetime="2026-11-19">November 19, 2026</time></div>
 
     <!-- ===== HERO VARIANTS: one per ad angle. Pick with ?angle=pill | price | safe | insurance (default: pill). ===== -->
     <div class="hero-v" data-angle="pill">
@@ -128,8 +107,6 @@ set();setInterval(set,30000);document.addEventListener('visibilitychange',set);}
       </ul>
       <a class="nr-textcta offerlink" data-cta="key-points" href="#start">Check your eligibility online &rarr;</a>
     </section>
-
-    <div class="inline-cta nr-early"><a class="btn offerlink" data-cta="early" href="#start">See If You Qualify &rarr;</a><div class="cta-sub">About 5 minutes online · $39 first month, refunded if you're not eligible</div></div>
 
     <nav class="nr-chips" aria-label="Jump to a section">
       <span class="nr-chips-h">What do you want to know?</span>
@@ -277,18 +254,6 @@ set();setInterval(set,30000);document.addEventListener('visibilitychange',set);}
       <img src="/sa/img/man-doorway-box.webp" width="1280" height="720" alt="A man in his late 50s holding a delivery box at his front door" loading="lazy" decoding="async">
       <figcaption>AI-generated photo illustration. Model is not a patient.</figcaption>
     </figure>
-
-    <div class="selfcheck glance" id="glance">
-      <div class="sc-head"><b>Program at a glance</b><span>Checked November 2026</span></div>
-      <ul class="checks">
-        <li><b>FDA-approved brand-name medications only.</b> No compounded drugs.</li>
-        <li><b>LegitScript-certified.</b></li>
-        <li><b>Clinician review,</b> typically within 2 days.</li>
-        <li><b>Ships in under a week</b> if prescribed (cash-pay first dose, usually).</li>
-        <li><b>$39 first month,</b> refunded if you're not eligible.</li>
-        <li><b>Medication billed separately,</b> from $149/mo at the starting pill dose.</li>
-      </ul>
-    </div>
 
     <div class="cta" id="start">
       <h3>See if an FDA-approved GLP-1 pill is right for you</h3>
