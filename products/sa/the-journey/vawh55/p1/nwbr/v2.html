@@ -78,16 +78,7 @@ html[data-angle=price] .figure.dup-price{display:none} /* that photo is already 
 
   <article class="article">
     <div class="nr-head">
-    <div class="kicker"><span class="k-cat">Health · Weight management · </span>Updated <time id="nr-updated" datetime="2026-11-20">November 20, 2026</time></div>
-    <script>
-/* "Updated" date: today's date in Los Angeles, set as the page draws and kept current while it stays open. */
-(function(){var t=document.getElementById('nr-updated');if(!t)return;
-function set(){try{var d=new Date(),z='America/Los_Angeles',
-s=new Intl.DateTimeFormat('en-US',{timeZone:z,month:'long',day:'numeric',year:'numeric'}).format(d),
-i=new Intl.DateTimeFormat('en-CA',{timeZone:z,year:'numeric',month:'2-digit',day:'2-digit'}).format(d);
-if(t.textContent!==s){t.textContent=s;t.setAttribute('datetime',i);}}catch(e){}}
-set();setInterval(set,30000);document.addEventListener('visibilitychange',set);})();
-</script>
+    <div class="kicker"><span class="k-cat">Health · Weight management · </span>Updated <time datetime="2026-11-20">November 20, 2026</time></div>
 
     <!-- ===== HERO VARIANTS: one per ad angle. Pick with ?angle=over40 | price | insurance | pill (default: over40). ===== -->
     <div class="hero-v" data-angle="over40">
@@ -95,16 +86,16 @@ set();setInterval(set,30000);document.addEventListener('visibilitychange',set);}
       <p class="dek">What FDA-approved GLP-1 treatment from home really costs, who may qualify, and why a licensed clinician reviews every request first.</p>
     </div>
     <div class="hero-v" data-angle="price">
-      <h1><span class="h-full">GLP-1s Can List Above $1,300 a Month. Online, Starting Doses Begin at $149</span><span class="h-short">GLP-1s Can List Over $1,300/mo. Online, Starting Doses From $149</span></h1>
-      <p class="dek">Every cost at the online program we reviewed, including the membership fee most ads leave out.</p>
+      <h1><span class="h-full">GLP-1s Can List Above $1,300 a Month. Online, You Can Start for $39</span><span class="h-short">GLP-1s List Over $1,300/mo. Online, Start for $39</span></h1>
+      <p class="dek">The $39 is the first month&rsquo;s membership at the online program we reviewed, refunded if you don&rsquo;t qualify. Medication is billed separately, from $149 a month. Here is every cost.</p>
     </div>
     <div class="hero-v" data-angle="insurance">
       <h1><span class="h-full">Does Your Health Plan Cover a GLP-1? Check Free Before You Pay Cash</span><span class="h-short">Does Your Health Plan Cover a GLP-1? Check Free</span></h1>
-      <p class="dek">Some commercial plans cover weekly GLP-1 injections. The online program we reviewed checks at no charge. Coverage isn't guaranteed.</p>
+      <p class="dek">Some commercial plans cover weekly GLP-1 injections. The online program we reviewed checks at no charge, and membership starts at $39 for the first month. Coverage isn't guaranteed.</p>
     </div>
     <div class="hero-v" data-angle="pill">
-      <h1><span class="h-full">No Needle: FDA-Approved GLP-1 Pills Now Start at $149 a Month Online</span><span class="h-short">No Needle: FDA-Approved GLP-1 Pills From $149/mo</span></h1>
-      <p class="dek">Once-daily GLP-1 pills are FDA-approved for weight management. Here's how adults get them online, and the full cost with membership.</p>
+      <h1><span class="h-full">No Needle: FDA-Approved GLP-1 Pills. Start Online for $39</span><span class="h-short">No Needle: GLP-1 Pills. Start Online for $39</span></h1>
+      <p class="dek">Once-daily GLP-1 pills are FDA-approved for weight management. The first month&rsquo;s membership is $39, refunded if you don&rsquo;t qualify; the pill is billed separately, from $149 a month.</p>
     </div>
 
     <div class="byline"><span class="author-avatar"><img src="/sa/author-megan-hollis.webp" width="160" height="160" alt="Megan Hollis, illustrated portrait" decoding="async"></span><div class="author-details"><div>By <strong>Megan Hollis</strong>, Consumer health writer</div><div class="author-role">Prices checked November 2026</div></div></div>
@@ -404,7 +395,7 @@ set();setInterval(set,30000);document.addEventListener('visibilitychange',set);}
 </div></footer>
 <script>
 /* Offer link + NewsBreak click-ID passthrough (same consent rules as the site's Google and Reddit scripts).
-   NewsBreak ad URL: .../products/sa/the-journey/vawh55/p1/nwbr/v2.html?angle=over40&nb_cid={NewsBreak click-ID macro}
+   NewsBreak ad URL: .../products/sa/the-journey/vawh55/p1/nwbr/v2.html?angle=over40&nbclick=__CALLBACK_PARAM__
    With advertising consent (and no Global Privacy Control): sub1 = NewsBreak click ID, sub2 = angle, sub3 = page, sub4 = which button was clicked.
    Without consent: the plain offer link, no IDs. Re-runs when the visitor changes consent. */
 (function(){
@@ -418,7 +409,7 @@ set();setInterval(set,30000);document.addEventListener('visibilitychange',set);}
   }
   function record(){
     if (!consented()) { try{ sessionStorage.removeItem(KEY); }catch(e){} return null; }
-    var q = new URLSearchParams(location.search), r = { cid: clean(q.get('nb_cid')), angle: clean(q.get('angle')) };
+    var q = new URLSearchParams(location.search), r = { cid: clean(q.get('nbclick')), angle: clean(q.get('angle')) };
     if (r.cid) { try{ sessionStorage.setItem(KEY, JSON.stringify(r)); }catch(e){} return r; }
     try { return JSON.parse(sessionStorage.getItem(KEY)) || r; } catch(e){ return r; }
   }
