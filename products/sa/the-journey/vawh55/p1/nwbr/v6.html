@@ -65,7 +65,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   <div class="adflag">Advertorial</div>
 
   <header class="mast"><div class="bar-inner">
-    <span class="brand" role="img" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></span>
+    <a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a>
     <div class="tagline">Consumer Health Guide</div>
   </div></header>
 
@@ -272,7 +272,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <div class="cookie-row"><button type="button" data-gr-open-consent>Cookie settings</button></div>
 
 <footer class="sitefoot"><div class="sf-inner">
-  <div class="sf-brand"><span class="brand" role="img" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></span></div>
+  <div class="sf-brand"><a class="brand" href="https://glp1reviewguide.com/" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></a></div>
   <nav class="sf-links">
     <a href="/about.html">About Us</a>
     <a href="/about.html#contact">Contact</a>
@@ -287,13 +287,11 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <script>
 /* Offer link + NewsBreak click-ID passthrough (same consent rules as the site's Google and Reddit scripts).
    NewsBreak ad URL: .../products/sa/the-journey/vawh55/p1/nwbr/v6.html?angle=after50&nbclick=__CALLBACK_PARAM__
-   Always (no personal data, just which page/angle/button): sub2 = angle, sub3 = page, sub4 = which button was clicked.
-   Only with advertising consent (and no Global Privacy Control): sub1 = NewsBreak click ID. Re-runs when the visitor changes consent. */
+   With advertising consent (and no Global Privacy Control): sub1 = NewsBreak click ID, sub2 = angle, sub3 = page, sub4 = which button was clicked.
+   Without consent: the plain offer link, no IDs. Re-runs when the visitor changes consent. */
 (function(){
   var OFFER_URL = "https://go.glp1reviewguide.com/ZZ2GX/711W2G/";
   var KEY = 'nb_attr_v1';
-  var PAGE_ID = 'nwbr-v6';
-  function pageAngle(){ return clean(new URLSearchParams(location.search).get('angle')) || clean(document.documentElement.getAttribute('data-angle')); }
   function clean(v){ v=(v||'').trim(); return (!v || v.length>200 || /[\s{}%<>"']/.test(v)) ? '' : v; }
   function consented(){
     if (navigator.globalPrivacyControl === true) return false;
@@ -310,9 +308,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
     var r = record();
     document.querySelectorAll('a.offerlink').forEach(function(a){
       var u = new URL(OFFER_URL);
-      if (r && r.cid) u.searchParams.set('sub1', r.cid);
-      var ang = (r && r.angle) || pageAngle(); if (ang) u.searchParams.set('sub2', ang);
-      u.searchParams.set('sub3', PAGE_ID);
+      if (r) { if (r.cid) u.searchParams.set('sub1', r.cid); if (r.angle) u.searchParams.set('sub2', r.angle); u.searchParams.set('sub3', 'the-journey-vawh55-p1-nwbr-v6'); }
       a.href = u.toString(); a.rel = 'nofollow sponsored noopener'; a.target = '_blank';
     });
   }
@@ -323,7 +319,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
     var a = e.target.closest && e.target.closest('a.offerlink'); if (!a) return;
     update();
     var pos = clean(a.getAttribute('data-cta'));
-    if (pos) { var u = new URL(a.href); u.searchParams.set('sub4', pos); a.href = u.toString(); }
+    if (pos && consented()) { var u = new URL(a.href); u.searchParams.set('sub4', pos); a.href = u.toString(); }
   }, true);
 })();
 </script>
