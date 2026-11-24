@@ -116,7 +116,7 @@
       '<div class="gr-cc-prefs" hidden>' +
         '<div class="switch_row"><div><b>Essential</b><p>Needed for security, load balancing and remembering these choices. Always on.</p></div><label class="switch"><input type="checkbox" checked disabled aria-label="Essential cookies, always on"><span></span></label></div>' +
         '<div class="switch_row"><div><b>Analytics</b><p>Aggregate traffic measurement (for example Google Analytics). Never used to build a health profile.</p></div><label class="switch"><input type="checkbox" data-k="analytics" aria-label="Analytics cookies"><span></span></label></div>' +
-        '<div class="switch_row"><div><b>Advertising</b><p>Lets ad partners (Google Ads, Taboola, Outbrain) set cookies and pixels to measure which ads led to a visit. Saving with this off also stops ad click ID attribution. Advertising may count as "sharing" under some state laws.</p></div><label class="switch"><input type="checkbox" data-k="advertising" aria-label="Advertising cookies"' + (gpc ? " disabled" : "") + '><span></span></label></div>' +
+        '<div class="switch_row"><div><b>Advertising</b><p>Lets ad partners (Google Ads, NewsBreak, Reddit, Taboola, Outbrain) set cookies and pixels to measure which ads led to a visit. Saving with this off also stops ad click ID attribution. Advertising may count as "sharing" under some state laws.</p></div><label class="switch"><input type="checkbox" data-k="advertising" aria-label="Advertising cookies"' + (gpc ? " disabled" : "") + '><span></span></label></div>' +
       '</div>' +
       '<div class="gr-cc-actions">' +
         '<button type="button" class="gr-primary" data-act="reject">Reject non-essential</button>' +

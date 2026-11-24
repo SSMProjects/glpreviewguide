@@ -15,6 +15,21 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
 gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 </script>
 <link rel="stylesheet" href="/consent.css">
+<style id="nb-consent-size">
+/* NewsBreak pages: larger, easier-to-read privacy banner. Both choices stay the same size and style. */
+.gr-cc{max-width:820px;padding:26px 28px;font-size:16px}
+.gr-cc h2{font-size:23px;margin-bottom:8px}
+.gr-cc p{font-size:16px;line-height:1.5}
+.gr-cc button{font-size:16.5px;padding:14px 20px;min-height:52px}
+@media(max-width:560px){
+  .gr-cc{padding:20px 18px calc(16px + env(safe-area-inset-bottom));font-size:15.5px;max-height:82vh;border-top:4px solid var(--ink)}
+  .gr-cc h2{font-size:21px;margin-bottom:6px}
+  .gr-cc p{font-size:15px;margin-bottom:12px}
+  .gr-cc .gr-cc-actions{gap:10px}
+  .gr-cc button{flex:1 1 calc(50% - 5px);font-size:15.5px;padding:13px 6px;min-height:52px;white-space:nowrap}
+  .gr-cc button[data-act="custom"]{flex-basis:100%;min-height:44px;font-size:15px}
+}
+</style>
 <script src="/consent.js" defer></script>
 
 <!-- =====================================================================
