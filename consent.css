@@ -35,3 +35,13 @@
 @media(max-width:560px){.gr-cc{left:0;right:0;bottom:0;border-radius:16px 16px 0 0;padding:14px 14px calc(12px + env(safe-area-inset-bottom));font-size:14px;line-height:1.45;max-height:70vh}.gr-cc h2{font-size:17px;margin-bottom:4px}.gr-cc p{font-size:13.5px;margin-bottom:10px}.gr-cc button{flex:1 1 calc(50% - 5px);font-size:14px;padding:9px 12px}}
 @media(prefers-reduced-motion:reduce){.gr-cc .switch span,.gr-cc .switch span::after{transition:none}}
 footer.site .linklike{color:#fff}
+/* Compact banner: shorter text, links on one line, equal Reject/Accept, smaller padding */
+.gr-cc{padding:16px 18px;max-width:700px}
+.gr-cc h2{font:700 18px/1.25 var(--body);margin:0 0 6px}
+.gr-cc p{font-size:13.5px;line-height:1.45;color:var(--ink);margin:0 0 8px}
+.gr-cc p.gr-links{font-size:13px;margin:0 0 12px}
+.gr-cc p.gr-links a{color:var(--ink);text-decoration:underline dotted;text-underline-offset:3px}
+.gr-cc .gr-cc-actions{gap:8px}
+.gr-cc button{font-size:14.5px;padding:9px 14px}
+.gr-cc button[data-act="custom"]{flex-basis:100%}
+@media(max-width:560px){.gr-cc{padding:12px 14px calc(10px + env(safe-area-inset-bottom));max-height:60vh}.gr-cc h2{font-size:16px;margin-bottom:4px}.gr-cc p{font-size:12.5px;margin-bottom:6px}.gr-cc p.gr-links{font-size:12px;margin-bottom:10px}.gr-cc button{flex:1 1 calc(50% - 4px);font-size:13.5px;padding:8px 6px;white-space:nowrap}.gr-cc button[data-act="custom"]{flex-basis:100%}}

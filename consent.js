@@ -110,8 +110,8 @@
     el.hidden = true;
     el.innerHTML =
       '<h2 id="gr-cc-title">Your privacy choices</h2>' +
-      '<p>We use essential cookies to run this site. With your permission, we use analytics and advertising technologies\u2014including ad-click identifiers shared with our tracking partners\u2014to measure visits and referrals. Optional tracking stays off until you accept.</p>' +
-      '<p>See our <a href="https://glp1reviewguide.com/cookie-policy.html">Cookie Policy</a> and <a href="https://glp1reviewguide.com/consumer-health-data-privacy.html">Consumer Health Data Privacy</a>.</p>' +
+      '<p>We use essential cookies to run this site. With your permission, we use analytics and advertising technologies, including click IDs shared with tracking partners, to measure visits and referrals. Optional tracking stays off until you accept.</p>' +
+      '<p class="gr-links"><a href="https://glp1reviewguide.com/cookie-policy.html">Cookie Policy \u2197</a> \u00b7 <a href="https://glp1reviewguide.com/consumer-health-data-privacy.html">Consumer Health Data Privacy \u2197</a></p>' +
       (gpc ? '<p class="gr-note">We detected a Global Privacy Control signal from your browser, so advertising cookies and any sale or sharing of your data are turned off.</p>' : '') +
       '<div class="gr-cc-prefs" hidden>' +
         '<div class="switch_row"><div><b>Essential</b><p>Needed for security, load balancing and remembering these choices. Always on.</p></div><label class="switch"><input type="checkbox" checked disabled aria-label="Essential cookies, always on"><span></span></label></div>' +
