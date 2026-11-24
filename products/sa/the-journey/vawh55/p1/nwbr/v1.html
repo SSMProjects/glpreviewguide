@@ -52,6 +52,15 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 @keyframes nr-shine{0%{opacity:1;transform:translateX(-160%) skewX(-20deg)}100%{opacity:1;transform:translateX(560%) skewX(-20deg)}}
 @media(prefers-reduced-motion:no-preference){.btn:hover::after,.btn:focus-visible::after{animation:nr-shine 1.25s ease-out 1 both}}
 @media(prefers-reduced-motion:reduce){.btn::after{display:none}}
+.goal{font-family:var(--sans);background:var(--paper);border:1px solid var(--rule2);border-top:4px solid var(--cta);border-radius:6px;padding:20px;margin:6px 0 26px;text-align:center}
+.goal h2{margin:0 0 4px!important;padding:0!important;border:0!important;font:700 24px/1.25 var(--serif)}
+.goal p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.goal .goal-perks{color:var(--good);font-weight:600}
+.goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.goal-grid a{display:flex;align-items:center;justify-content:center;min-height:58px;padding:10px;border:2px solid var(--cta);border-radius:8px;background:#fff;color:var(--cta);font:700 17px/1.2 var(--sans);text-decoration:none;transition:background .15s,color .15s}
+.goal-grid a:hover,.goal-grid a:focus-visible{background:var(--cta);color:#fff}
+.goal-grid a.goal-any{grid-column:1/-1;border-color:var(--rule2);color:var(--ink2);font-weight:600}
+.goal small{display:block;margin-top:12px;color:var(--muted);font-size:13px}
 </style>
 <script src="/sa/nr.js" defer></script>
 </head>
@@ -114,6 +123,13 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
     <p class="hero-disc">Paid advertisement. GLP1ReviewGuide.com earns a commission if you sign up through links on this page. GLP-1 medications require a prescription from a licensed clinician and aren't right for everyone. This page is general information, not medical advice. <a href="#isi">Important safety information</a></p>
     </div>
 
+    <section class="goal" id="goal" aria-label="Pick your goal">
+      <h2>How much weight do you want to lose?</h2>
+      <p class="goal-perks">No needles · FDA-approved pill · $39 first month, refunded if you don't qualify</p>
+      <div class="goal-grid"><a class="offerlink" data-cta="goal-1-20" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">Lose 1&ndash;20 lbs</a><a class="offerlink" data-cta="goal-21-50" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">Lose 21&ndash;50 lbs</a><a class="offerlink" data-cta="goal-50plus" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">Lose over 50 lbs</a><a class="offerlink goal-any" data-cta="goal-undecided" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">I haven't decided yet</a></div>
+      <small>About 5 minutes · $39 first month, refunded if you're not eligible · Medication billed separately</small>
+    </section>
+
     <section class="nr-keys" aria-label="Key points">
       <div class="nr-keys-h">Key points</div>
       <ul>
@@ -123,8 +139,6 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
       </ul>
       <a class="nr-textcta offerlink" data-cta="key-points" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">Check your eligibility online &rarr;</a>
     </section>
-
-    <div class="inline-cta nr-early"><a class="btn offerlink" data-cta="early" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">See If You Qualify &rarr;</a><div class="cta-sub">About 5 minutes online · $39 first month, refunded if you're not eligible</div></div>
 
     <nav class="nr-chips" aria-label="Jump to a section">
       <span class="nr-chips-h">What do you want to know?</span>
