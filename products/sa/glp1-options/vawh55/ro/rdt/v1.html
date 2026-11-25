@@ -45,7 +45,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 html[data-angle=over40] .hero-v[data-angle=over40]{display:block}
 html[data-angle=over40] .nr-head>.hero-v[data-angle=over40]{display:contents}
 html[data-angle=over40] .figure.dup-over40{display:none} /* that photo is already the hero on the over40 angle */
-.topdisc{margin:0;padding:8px 16px;background:var(--paper);border-bottom:1px solid var(--rule2);color:var(--muted);text-align:center;font:500 12.5px/1.4 var(--sans)}
+.topdisc{margin:0;padding:4px 16px;background:var(--paper);border-bottom:1px solid var(--rule2);color:var(--muted);text-align:center;font:500 10.5px/1.4 var(--sans)}
 .nr-early{margin:0 0 22px}
 .glance .checks{margin:0;font-size:16.5px}
 /* Button shine: one soft diagonal reflection per hover or keyboard focus. Clipped to the button, behind the label, never on load. */
@@ -64,13 +64,24 @@ html[data-angle=over40] .figure.dup-over40{display:none} /* that photo is alread
 .goal-grid a:hover,.goal-grid a:focus-visible{background:var(--cta);color:#fff}
 .goal-grid a.goal-any{grid-column:1/-1;border-color:var(--rule2);color:var(--ink2);font-weight:600}
 .goal small{display:block;margin-top:12px;color:var(--muted);font-size:13px}
+/* Tight top of page (Reddit): plain Advertorial label, small disclosure, less space down to the headline. */
+.adflag{background:none;color:#000;font-size:7px;padding:4px 16px;border-bottom:1px solid #1F1B2E}
+.mast .bar-inner{padding-top:10px}
+.mast .tagline{margin-top:10px;padding:5px 0}
+.article{padding-top:16px}
+.kicker{margin-bottom:8px}
+@media(max-width:640px){
+  .mast .bar-inner{padding-top:8px}
+  .article{padding-top:12px}
+}
+@media(max-width:640px){html[data-angle=pill] .mast .bar-inner{padding-bottom:8px}}
 </style>
 <script src="/sa/nr.js" defer></script>
 </head>
 <body class="nr-a" data-page="glp1-options-vawh55-ro-rdt-v1">
 
   <div class="adflag">Advertorial</div>
-  <p class="topdisc">Paid advertisement. GLP1ReviewGuide.com earns a commission if you sign up through links on this page.</p>
+  <p class="topdisc">We earn commissions from brands listed on this site, which influences how listings are presented.</p>
 
   <header class="mast"><div class="bar-inner">
     <span class="brand" role="img" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></span>
@@ -124,7 +135,6 @@ html[data-angle=over40] .figure.dup-over40{display:none} /* that photo is alread
     </figure>
     </div>
 
-    <p class="hero-disc">Paid advertisement. GLP1ReviewGuide.com earns a commission if you sign up through links on this page. GLP-1 medications require a prescription from a licensed clinician and aren't right for everyone. This page is general information, not medical advice. <a href="#isi">Important safety information</a></p>
     </div>
 
     <section class="goal" id="goal" aria-label="Pick your goal">
