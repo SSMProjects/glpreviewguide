@@ -398,5 +398,41 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
   });
 })();
 </script>
+<script>
+/* NB_PIXEL_V1 NewsBreak pixel: loads only with advertising consent (no GPC). Events have no parameters. */
+(function(){
+  var ID = 'ID-2108290371330486274', loaded = false;
+  function ok(){
+    if (navigator.globalPrivacyControl === true) return false;
+    try { var c = window.GRConsent && window.GRConsent.get && window.GRConsent.get();
+      return !!(c && c.decided === true && c.advertising === true && !c.saleOptOut && !c.gpc); } catch(e){ return false; }
+  }
+  function load(){
+    if (loaded || !ok()) return;
+    loaded = true;
+    !(function (e, n, t, i, p, a, s) {
+      e[i] || (((p = e[i] = function () { p.process ? p.process.apply(p, arguments) : p.queue.push(arguments); }).queue = []),
+        (p.t = +new Date()), ((a = n.createElement(t)).async = 1),
+        (a.src = 'https://static.newsbreak.com/business/tracking/nbpixel.js?t=' + 864e5 * Math.ceil(new Date() / 864e5)),
+        (s = n.getElementsByTagName(t)[0]).parentNode.insertBefore(a, s));
+    })(window, document, 'script', 'nbpix');
+    window.nbpix('init', ID);
+    window.nbpix('event', 'pageload');
+    window.nbpix('event', 'view_content');
+  }
+  load();
+  document.addEventListener('gr:consent', load);
+  /* click_button: bubble phase, so the page's own link script has already set the final href (sub2-sub4). */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a.offerlink');
+    if (!a || !loaded || !window.nbpix) return;
+    window.nbpix('event', 'click_button');
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();                       /* give the event ~300 ms to send, then continue in the same tab */
+    var href = a.href;
+    setTimeout(function(){ location.href = href; }, 300);
+  });
+})();
+</script>
 </body>
 </html>
