@@ -4,20 +4,10 @@
 <meta charset="UTF-8">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-/* Ad angle (?angle=over40|price|insurance|pill). Set before first paint so the headline and photo that match the ad show at once, with no swap. Unknown or missing = over40. */
-(function(){var m={over40:'woman-kitchen-phone',price:'price-still',insurance:'insurance-card',pill:'pill-water'},a='over40';
-try{a=(new URLSearchParams(location.search).get('angle')||'over40').toLowerCase()}catch(e){}
-if(!m[a])a='over40';document.documentElement.setAttribute('data-angle',a);
-var l=document.createElement('link');l.rel='preload';l.as='image';l.href='/sa/img/'+m[a]+'.webp';l.setAttribute('fetchpriority','high');document.head.appendChild(l);})();
-</script>
+<link rel="preload" as="image" href="/sa/img/pen-vs-pills.webp" fetchpriority="high">
 <meta name="robots" content="noindex, follow">
-<title>After 40, "Eat Less, Move More" Often Stops Working. Here's What's Changed</title>
-<script>
-/* Tab title for the ad angle (same list as the headlines below). */
-(function(){var t={price:"GLP-1 Cost in 2026: List Price vs. the $149 Online Starting Dose",insurance:"Does Your Health Plan Cover a GLP-1? Check Before You Pay Cash",pill:"FDA-Approved GLP-1 Pills From Home: Cost and Who Qualifies"}[document.documentElement.getAttribute('data-angle')];if(t)document.title=t;})();
-</script>
-<meta name="description" content="A plain look at the online route to FDA-approved GLP-1 treatment from home: what it really costs, who may qualify and how a licensed clinician reviews every request.">
+<title>GLP-1 Pill or Weekly Shot? How to Choose, and What Each Costs Now</title>
+<meta name="description" content="Pill or weekly shot: how the two FDA-approved GLP-1 options differ on results, routine and price, and how to find out online which one fits you.">
 <!-- Consent: Google Consent Mode v2 defaults (keep ABOVE any Google tag), banner styles + script -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -28,7 +18,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <script src="/consent.js" defer></script>
 
 <!-- =====================================================================
-     GLP-1 REVIEW GUIDE — advertorial. Standalone editorial page.
+     GLP-1 REVIEW GUIDE — standalone advertorial: nwbr/v2 (unbranded offer). Mirrors the offer page's first question. Built by tools/build_match.py from nwbr/v4.
      Palette: navy #0f1d2e + red #c8102e.
      Image slots use <div class="ph"> — swap each for your own <img loading="lazy" decoding="async">.
 ===================================================================== -->
@@ -39,30 +29,72 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/sa/nr.css">
 <style>
-/* Mobile above the fold says less than desktop: short headline, no tagline, no topic label, no dek (the key points just below cover it). Angles: pill, insurance, price. Desktop unchanged. */
 .h-short{display:none}
-@media(max-width:640px){.h-full{display:none}.h-short{display:inline}
-  html[data-angle=pill] .mast .tagline,html[data-angle=insurance] .mast .tagline,html[data-angle=price] .mast .tagline{display:none}
-  html[data-angle=pill] .mast .bar-inner,html[data-angle=insurance] .mast .bar-inner,html[data-angle=price] .mast .bar-inner{padding-bottom:14px}
-  html[data-angle=pill] .kicker .k-cat,html[data-angle=insurance] .kicker .k-cat,html[data-angle=price] .kicker .k-cat{display:none}
-  html[data-angle=pill] .nr-head .dek,html[data-angle=insurance] .nr-head .dek,html[data-angle=price] .nr-head .dek{display:none}}
-/* Page-only additions. Kept here, not in the shared /sa/nr.css. */
-/* Ad angles on this page: over40 (default), price, insurance, pill. nr.css already handles price, insurance and pill. */
-html[data-angle=over40] .hero-v[data-angle=over40],html:not([data-angle]) .hero-v[data-angle=over40]{display:block}
-html[data-angle=over40] .nr-head>.hero-v[data-angle=over40],html:not([data-angle]) .nr-head>.hero-v[data-angle=over40]{display:contents}
-html:not([data-angle]) .hero-v[data-angle=pill],html:not([data-angle]) .nr-head>.hero-v[data-angle=pill]{display:none}
-html[data-angle=price] .figure.dup-price{display:none} /* that photo is already the hero on the price angle */
-.nr-early{margin:0 0 22px}
-@media(max-width:430px){table.compare.athome th,table.compare.athome td{padding-left:8px;padding-right:8px;font-size:15px}table.compare.athome thead th{font-size:12px;letter-spacing:.03em}}
-.glance .checks{margin:0;font-size:16.5px}
-.nr-a .cta .cta-fine{margin-top:14px!important}
-/* Button shine: one soft diagonal reflection per hover or keyboard focus. Clipped to the button, behind the label, never on load. */
+@media(max-width:640px){.h-full{display:none}.h-short{display:inline}.mast .tagline{display:none}.mast .bar-inner{padding-bottom:14px}.kicker .k-cat{display:none}}
 .btn{position:relative;overflow:hidden;isolation:isolate}
-.btn::after{content:"";position:absolute;z-index:-1;top:-25%;bottom:-25%;left:0;width:24%;pointer-events:none;opacity:0;
-  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.14) 50%,rgba(255,255,255,0));transform:translateX(-160%) skewX(-20deg)}
-@keyframes nr-shine{0%{opacity:1;transform:translateX(-160%) skewX(-20deg)}100%{opacity:1;transform:translateX(560%) skewX(-20deg)}}
-@media(prefers-reduced-motion:no-preference){.btn:hover::after,.btn:focus-visible::after{animation:nr-shine 1.25s ease-out 1 both}}
-@media(prefers-reduced-motion:reduce){.btn::after{display:none}}
+.story p{font-size:19px}
+.story .beat{font:600 21px/1.4 var(--serif);color:var(--ink);margin:26px 0}
+.pull{border-left:4px solid var(--news);margin:28px 0;padding:4px 0 4px 18px;font:italic 600 23px/1.35 var(--serif);color:var(--ink)}
+.qc ul{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:8px}
+.qc label{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--rule2);border-radius:6px;padding:12px 14px;cursor:pointer;font:400 16px/1.4 var(--sans);color:var(--ink2);background:#fff;transition:border-color .15s,background .15s}
+.qc label:hover{border-color:var(--cta)}
+.qc input{width:20px;height:20px;margin:1px 0 0;flex:none;accent-color:var(--cta)}
+.qc label:has(input:checked){border-color:var(--cta);background:var(--cta-tint);color:var(--ink)}
+.qc-count{font:600 14px/1 var(--sans);color:var(--muted);margin:0 0 12px}
+.qc-out:empty{display:none}
+.qc-out{border-top:1px solid var(--rule);padding-top:14px;margin-top:6px;font:400 16px/1.55 var(--sans);color:var(--ink2)}
+.qc-out b{color:var(--ink)}
+.qc-out .btn{margin-top:12px}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 8px;font-family:var(--sans)}
+.stat div{background:var(--paper);border:1px solid var(--rule2);border-top:4px solid var(--navy);border-radius:4px;padding:16px;text-align:center}
+.stat b{display:block;font:700 44px/1 var(--serif);color:var(--ink);margin-bottom:6px}
+.stat div:first-child b{color:var(--cta)}
+.stat span{font-size:14px;color:var(--muted);line-height:1.35;display:block}
+.guar{display:flex;gap:16px;align-items:flex-start;border:2px dashed var(--good);border-radius:8px;padding:18px;margin:26px 0;font-family:var(--sans);background:#f3faf6}
+.guar .seal{flex:none;width:64px;height:64px;border-radius:50%;background:var(--good);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font:800 13px/1.05 var(--sans)}
+.guar b{display:block;font:700 19px/1.3 var(--serif);color:var(--ink);margin-bottom:4px}
+.guar p{margin:0;font-size:15.5px;line-height:1.5;color:var(--ink2)}
+.note-card{background:#f3f1ec;border-radius:6px;padding:18px 20px;margin:26px 0;font-family:var(--sans)}
+.note-card h3{margin:0 0 8px;font:700 21px/1.25 var(--serif)}
+.note-card ol,.note-card ul{margin:0;padding-left:20px;font-size:16px;line-height:1.55;color:var(--ink2)}
+.note-card li{margin:4px 0}
+
+@media(max-width:640px){.nr-head .dek{display:none}}
+.goal{font-family:var(--sans);background:var(--paper);border:1px solid var(--rule2);border-top:4px solid var(--cta);border-radius:6px;padding:20px;margin:6px 0 26px;text-align:center}
+.goal h2{margin:0 0 4px!important;padding:0!important;border:0!important;font:700 24px/1.25 var(--serif)}
+.goal p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.goal .goal-perks{color:var(--good);font-weight:600}
+.goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.goal-grid a{display:flex;align-items:center;justify-content:center;min-height:58px;padding:10px;border:2px solid var(--cta);border-radius:8px;background:#fff;color:var(--cta);font:700 17px/1.2 var(--sans);text-decoration:none;transition:background .15s,color .15s}
+.goal-grid a:hover,.goal-grid a:focus-visible{background:var(--cta);color:#fff}
+.goal-grid a.goal-any{grid-column:1/-1;border-color:var(--rule2);color:var(--ink2);font-weight:600}
+.goal small{display:block;margin-top:12px;color:var(--muted);font-size:13px}
+.benefits{list-style:none;padding:0;margin:16px 0 22px;display:grid;gap:10px;font-family:var(--sans)}
+.benefits li{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;font-size:16px;line-height:1.45;color:var(--ink2)}
+.benefits li b{color:var(--ink)}
+.benefits .ic{flex:none;width:28px;height:28px;border-radius:50%;background:var(--cta-tint);color:var(--cta);display:flex;align-items:center;justify-content:center;font-weight:800}
+
+.choose{font-family:var(--sans);background:#fff;border:1px solid var(--rule2);border-radius:14px;box-shadow:0 6px 22px rgba(15,29,46,.08);padding:20px 18px;margin:6px 0 26px}
+.choose h2{margin:0 0 4px!important;padding:0!important;border:0!important;font:700 23px/1.25 var(--sans);letter-spacing:-.01em;color:var(--ink)}
+.choose-perks{margin:0 0 14px;color:var(--good);font-size:15px;font-weight:600}
+.choose-list{display:grid;gap:10px}
+.choose-list a{display:flex;flex-direction:column;justify-content:center;min-height:54px;padding:12px 16px;border:1.5px solid var(--rule2);border-radius:10px;background:#f7f7f5;color:var(--ink);text-decoration:none;transition:border-color .15s,background .15s}
+.choose-list a span{font:600 16.5px/1.25 var(--sans)}
+.choose-list a i{font:400 13.5px/1.3 var(--sans);color:var(--muted);font-style:normal;margin-top:2px}
+.choose-list a:hover,.choose-list a:focus-visible{border-color:var(--cta);background:var(--cta-tint)}
+.choose small{display:block;margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0;font-family:var(--sans)}
+.vs>div{background:var(--paper);border:1px solid var(--rule2);border-top:4px solid var(--navy);border-radius:6px;padding:16px}
+.vs>div:last-child{border-top-color:var(--cta)}
+.vs h3{margin:0 0 8px;font:700 20px/1.2 var(--serif)}
+.vs ul{margin:0;padding-left:18px;font-size:15.5px;line-height:1.5;color:var(--ink2)}
+.vs li{margin:4px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.pricecards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 10px;font-family:var(--sans)}
+.pricecards>div{background:#fff;border:1px solid var(--rule2);border-radius:10px;padding:16px;text-align:center}
+.pricecards small{display:block;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.pricecards b{display:block;font:700 40px/1.05 var(--serif);color:var(--cta);margin:6px 0 4px}
+.pricecards span{display:block;font-size:14.5px;line-height:1.4;color:var(--ink2)}
 </style>
 <script src="/sa/nr.js" defer></script>
 </head>
@@ -79,274 +111,114 @@ html[data-angle=price] .figure.dup-price{display:none} /* that photo is already 
 
   <article class="article">
     <div class="nr-head">
-    <div class="kicker"><span class="k-cat">Health · Weight management · </span>Updated <time datetime="2026-11-20">November 20, 2026</time></div>
+    <div class="kicker"><span class="k-cat">Health · Weight management · </span>Updated <time datetime="2026-11-28">November 28, 2026</time></div>
+    <h1><span class="h-full">GLP-1 Pill or Weekly Shot? How to Choose, and What Each Costs Now</span><span class="h-short">GLP-1 Pill or Weekly Shot? How to Choose</span></h1>
+    <p class="dek">Both are FDA-approved for weight loss, and both can start online. Here's how they differ on results, routine and price.</p>
+    <div class="byline"><span class="author-avatar"><img src="/sa/author-megan-hollis.webp" width="160" height="160" alt="Megan Hollis, illustrated portrait" decoding="async"></span><div class="author-details"><div>By <strong>Megan Hollis</strong>, Consumer health writer</div><div class="author-role">Prices checked November 2026 · 5 min read</div></div></div>
 
-    <!-- ===== HERO VARIANTS: one per ad angle. Pick with ?angle=over40 | price | insurance | pill (default: over40). ===== -->
-    <div class="hero-v" data-angle="over40">
-      <h1>After 40, &ldquo;Eat Less, Move More&rdquo; Often Stops Working. Here's What's Changed</h1>
-      <p class="dek">What FDA-approved GLP-1 treatment from home really costs, who may qualify, and why a licensed clinician reviews every request first.</p>
-    </div>
-    <div class="hero-v" data-angle="price">
-      <h1><span class="h-full">GLP-1s Can List Above $1,300 a Month. Online, You Can Start for $39</span><span class="h-short">GLP-1s List Over $1,300/mo. Online, Start for $39</span></h1>
-      <p class="dek">The $39 is the first month&rsquo;s membership at the online program we reviewed, refunded if you don&rsquo;t qualify. Medication is billed separately, from $149 a month. Here is every cost.</p>
-    </div>
-    <div class="hero-v" data-angle="insurance">
-      <h1><span class="h-full">Does Your Health Plan Cover a GLP-1? Check Free Before You Pay Cash</span><span class="h-short">Does Your Health Plan Cover a GLP-1? Check Free</span></h1>
-      <p class="dek">Some commercial plans cover weekly GLP-1 injections. The online program we reviewed checks at no charge, and membership starts at $39 for the first month. Coverage isn't guaranteed.</p>
-    </div>
-    <div class="hero-v" data-angle="pill">
-      <h1><span class="h-full">No Needle: FDA-Approved GLP-1 Pills. Start Online for $39</span><span class="h-short">No Needle: GLP-1 Pills. Start Online for $39</span></h1>
-      <p class="dek">Once-daily GLP-1 pills are FDA-approved for weight management. The first month&rsquo;s membership is $39, refunded if you don&rsquo;t qualify; the pill is billed separately, from $149 a month.</p>
-    </div>
-
-    <div class="byline"><span class="author-avatar"><img src="/sa/author-megan-hollis.webp" width="160" height="160" alt="Megan Hollis, illustrated portrait" decoding="async"></span><div class="author-details"><div>By <strong>Megan Hollis</strong>, Consumer health writer</div><div class="author-role">Prices checked November 2026</div></div></div>
-
-    <div class="hero-v" data-angle="over40">
     <figure class="figure figure-hero">
-      <img src="/sa/img/woman-kitchen-phone.webp" width="1280" height="720" alt="A woman in her 50s checking her phone at her kitchen table" loading="lazy" decoding="async">
+      <img src="/sa/img/pen-vs-pills.webp" width="1280" height="720" alt="An unbranded injection pen next to three white tablets and a pill bottle" fetchpriority="high" decoding="async">
     </figure>
-    </div>
-    <div class="hero-v" data-angle="price">
-    <figure class="figure figure-hero">
-      <img src="/sa/img/price-still.webp" width="1280" height="720" alt="An unlabeled pill bottle, folded cash and a calculator on a kitchen table" loading="lazy" decoding="async">
-    </figure>
-    </div>
-    <div class="hero-v" data-angle="insurance">
-    <figure class="figure figure-hero">
-      <img src="/sa/img/insurance-card.webp" width="1280" height="720" alt="A generic health insurance card, a phone and reading glasses on a wooden table" loading="lazy" decoding="async">
-    </figure>
-    </div>
-    <div class="hero-v" data-angle="pill">
-    <figure class="figure figure-hero">
-      <img src="/sa/img/pill-water.webp" width="1280" height="720" alt="A single white tablet beside a glass of water on a sunny kitchen counter" loading="lazy" decoding="async">
-    </figure>
-    </div>
 
     </div>
 
-    <section class="nr-keys" aria-label="Key points">
-      <div class="nr-keys-h">Key points</div>
-      <ul>
-        <li>GLP-1 medications are <b>prescription-only</b>. A licensed clinician reviews your health history first.</li>
-        <li>The online program we reviewed offers <b>FDA-approved brand-name</b> medications from <b>$149 a month</b> at the starting dose, plus membership.</li>
-        <li>Membership is <b>$39 the first month</b>, refunded if you're not eligible.</li>
-      </ul>
-      <a class="nr-textcta offerlink" data-cta="key-points" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">Check your eligibility online &rarr;</a>
+    <section class="choose" id="choose" aria-label="Choose an option">
+      <h2>Which option are you interested in?</h2>
+      <p class="choose-perks">FDA-approved &middot; Start online &middot; $39 first month, refunded if you don't qualify</p>
+      <div class="choose-list"><a class="offerlink" data-cta="opt-pill" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener"><span>GLP-1 pill</span><i>Once a day, no needles</i></a><a class="offerlink" data-cta="opt-shot" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener"><span>GLP-1 shot</span><i>Once a week, at home</i></a><a class="offerlink" data-cta="opt-both" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener"><span>I want to learn about both</span></a><a class="offerlink" data-cta="opt-provider" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener"><span>I want a provider recommendation</span></a></div>
+      <small>About 5 minutes online &middot; Medication billed separately</small>
     </section>
 
-    <div class="inline-cta nr-early"><a class="btn offerlink" data-cta="early" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">See If You Qualify &rarr;</a><div class="cta-sub">About 5 minutes online · $39 first month, refunded if you're not eligible</div></div>
+    <p class="lead">There are now two ways to take a prescription GLP-1 for weight loss: a <strong>once-daily pill</strong>, now FDA-approved, or a <strong>once-weekly shot</strong> you give yourself at home with a small pen. Both work on the same appetite signal. They differ in routine, results in trials and price.</p>
+    <p>If you already know which you'd prefer, pick it above. If you're not sure, the online visit includes a clinician who can recommend one for you.</p>
 
-    <nav class="nr-chips" aria-label="Jump to a section">
-      <span class="nr-chips-h">What do you want to know?</span>
-      <div class="nr-chips-row"><a href="#glp1">What is GLP-1?</a><a href="#cost">What does it cost?</a><a href="#insurance">Will insurance cover it?</a><a href="#qualify">Do I qualify?</a><a href="#how">How does it work?</a><a href="#isi">What are the side effects?</a></div>
-    </nav>
-
-
-    <!-- Lede: one per angle -->
-    <div class="hero-v" data-angle="over40">
-      <p class="lead">You are not lazy. You are not lacking willpower. And if the weight stopped moving somewhere after 40, it probably has far less to do with what you're eating than you've been led to believe.</p>
-    </div>
-    <div class="hero-v" data-angle="price">
-      <p class="lead">If you've ever priced a GLP-1 at the pharmacy counter, you've seen four-figure numbers. List prices are still high. But cash-pay pricing for FDA-approved GLP-1 medications has changed what many people actually pay at the starting dose. Every number is below, along with why so many adults in midlife are asking about these medications in the first place.</p>
-    </div>
-    <div class="hero-v" data-angle="insurance">
-      <p class="lead">Plenty of people assume their insurance won't cover a GLP-1 and go straight to the cheapest cash offer they can find. Sometimes that's the right call. But some commercial plans do cover these medications, and the online program we reviewed will check for you at no charge before you pay for medication.</p>
-    </div>
-    <div class="hero-v" data-angle="pill">
-      <p class="lead">For most of the GLP-1 era, treatment meant a needle: a shot you give yourself every week. For a lot of people, that alone was a dealbreaker. Now there are FDA-approved once-daily GLP-1 pills, and you can ask a licensed clinician about them from home.</p>
-    </div>
-
-    <p>For decades the advice was the same: eat less, move more. For a lot of people it simply stops working in midlife — and the reason has become one of the most talked-about shifts in how modern medicine thinks about weight.</p>
-
-    <h2 id="myth">The "Eat Less, Move More" Myth</h2>
-    <p>It's the advice your doctor gave you. The advice your trainer repeats. The advice every diet book is built around. And for many people over 40, it quietly stops delivering results — not because they're doing it wrong, but because something underneath has changed.</p>
-    <p>People eating carefully and walking every day, still watching the middle expand. The math doesn't add up — which means something other than calories is driving it.</p>
-
-    <figure class="figure">
-      <img src="/images/lp/woman-preparing-healthy-salad-home.jpg" alt="Woman preparing a healthy salad at home, looking tired and discouraged" style="display:block;width:100%;height:auto;border-radius:6px;" width="1200" height="800" loading="lazy" decoding="async">
-    </figure>
-
-    <h2 id="glp1">The Real Reason: A Hormone Called GLP-1</h2>
-    <p>Much of it comes down to a hormone your gut produces every time you eat: <strong>GLP-1</strong> (glucagon-like peptide-1). It does three things at once — and all three tend to weaken with age.</p>
-
-    <div class="keyfind">
-      <div class="lbl">What GLP-1 does</div>
-      <div class="big">3<span>-in-1</span></div>
-      <p>Tells your brain you're full · slows digestion so blood sugar doesn't spike · signals your body to release stored fat for energy.</p>
-    </div>
-
-    <p>In your 30s, your body responds to this appetite-and-metabolism signal at full strength. Later, that response fades. So you can eat less and still feel hungry, and the stubborn fat around the middle simply sits there. It isn't a willpower problem — it's biology. And until recently, the only medical option that targeted this pathway cost a small fortune.</p>
-
-    <h2 id="problem">The $1,200 Problem</h2>
-    <p>You've seen the headlines about <strong>GLP-1 medications</strong>, which work directly on this pathway. The problem was getting them:</p>
-
-    <ul class="reality">
-      <li><span class="ic">✕</span><div><b>Cost:</b> $900–$1,400 a month out of pocket. Most insurance plans deny coverage for weight loss.</div></li>
-      <li><span class="ic">✕</span><div><b>Access:</b> in-person appointments, long waits, and pharmacy shortages reported since 2023.</div></li>
-      <li><span class="ic">✕</span><div><b>Hassle:</b> for many people, it simply wasn't worth the time, the denials, or the price.</div></li>
-    </ul>
-
-    <p>For a lot of people — especially those on fixed incomes, or without weight-loss coverage — that price put the whole thing out of reach. So a different route has opened up.</p>
-
-    <figure class="figure dup-price">
-      <img src="/sa/img/price-still.webp" width="1280" height="720" alt="An unlabeled pill bottle, folded cash and a calculator on a kitchen table" loading="lazy" decoding="async">
-    </figure>
-
-    <div class="inline-cta"><a class="btn offerlink" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">See If You Qualify →</a><div class="cta-sub">About 5 minutes online · $39 first month, refunded if you're not eligible</div></div>
-
-    <h2 id="at-home">The Shift: GLP-1 Treatment, From Home</h2>
-    <p>Licensed US telehealth providers now connect patients with medical professionals entirely online. When it's appropriate, a clinician can prescribe FDA-approved brand-name medications that ship to your door. At the online program we reviewed, it's cash-pay, or a free insurance check for some injections, and starting doses cost far less than the list price.</p>
-
+    <h2 id="glance">Pill vs. shot at a glance</h2>
     <div class="compare-wrap">
-    <table class="compare athome">
-      <thead><tr><th>Reality</th><th>Traditional pharmacy</th><th>Online program</th></tr></thead>
+    <table class="compare">
+      <thead><tr><th></th><th>Daily pill</th><th>Weekly shot</th></tr></thead>
       <tbody>
-        <tr><td>Typical cost</td><td class="no">$900–$1,400 / mo</td><td class="yes">From $149/mo, plus membership*</td></tr>
-        <tr><td>Insurance</td><td>Often denied</td><td class="yes">Cash-pay, or a free insurance check for some injections</td></tr>
-        <tr><td>Doctor visit</td><td>In person</td><td class="yes">100% online</td></tr>
-        <tr><td>Delivery</td><td>Pharmacy pickup</td><td class="yes">To your door</td></tr>
+        <tr><td>How you take it</td><td>A tablet each morning; some must be taken on an empty stomach</td><td>A small pen injection once a week, at home</td></tr>
+        <tr><td>Weight loss in trials</td><td>About 12&ndash;14% on average over 64&ndash;72 weeks</td><td>About 15&ndash;21% on average over 68&ndash;72 weeks, depending on the medication</td></tr>
+        <tr><td>Needles</td><td>None</td><td>A short, fine needle</td></tr>
+        <tr><td>Starting price</td><td><b>$149/mo</b> plus membership</td><td><b>From $199/mo</b> plus membership (limited time)</td></tr>
+        <tr><td>Insurance</td><td>Cash-pay at the program we reviewed</td><td>Free insurance check on commercial plans</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="tnote">*At the online program we reviewed: medication only, at the starting pill dose. A program membership is billed separately ($39 first month), and prices rise at higher doses. Checked November 2026.</p>
+    <p>Trial results are averages from people who also changed their diet and activity. Results vary, and stomach side effects such as nausea were common with both.</p>
 
-    <figure class="figure">
-      <img src="/sa/img/telehealth-call.webp" width="1280" height="720" alt="A woman on a video call with a clinician at her kitchen table" loading="lazy" decoding="async">
-    </figure>
+    <h2 id="which">Which one fits you?</h2>
+    <div class="vs">
+      <div><h3>The pill may suit you if&hellip;</h3><ul><li>You'd rather avoid needles</li><li>A daily routine is easy for you</li><li>You want the lowest starting price</li><li>You're paying cash</li></ul></div>
+      <div><h3>The shot may suit you if&hellip;</h3><ul><li>You want the largest average results seen in trials</li><li>Once a week is easier than every day</li><li>Your insurance might cover it</li><li>You're fine with a small needle</li></ul></div>
+    </div>
+    <p>Still torn? That's normal, and it's the clinician's job. In the online visit you can say you want to learn about both, or ask for a recommendation. They'll look at your health history, goals and budget.</p>
+    <figure class="figure"><img src="/sa/img/telehealth-call.webp" width="1280" height="720" alt="A woman on a video call with a clinician at her kitchen table" loading="lazy" decoding="async"></figure>
 
-    <h2 id="cost">What It Really Costs (the Part Most Ads Leave Out)</h2>
-    <p>Most ads show one number. Here is every number at the online program we reviewed, as listed on its website in November 2026. <strong>Membership and medication are billed separately.</strong></p>
+    <h2 id="cost">What each costs</h2>
     <div class="compare-wrap">
     <table class="compare costs">
-      <thead><tr><th>Cost</th><th>Price</th></tr></thead>
+      <thead><tr><th>Cost at the program we reviewed</th><th>Price</th></tr></thead>
       <tbody>
-        <tr><td>Program membership, first month</td><td><b>$39</b>, refunded if a clinician finds you're not eligible for GLP-1 treatment</td></tr>
-        <tr><td>Membership after month one</td><td>$74/mo on a 12-month prepaid plan<br>$89/mo on a 6-month prepaid plan<br>$99/mo on a 3-month prepaid plan<br>$149/mo billed monthly</td></tr>
-        <tr><td>Once-daily GLP-1 pill, starting dose</td><td><b>From $149/mo</b></td></tr>
-        <tr><td>Weekly GLP-1 injection pen, starting dose</td><td>From $199/mo (limited-time price)</td></tr>
-        <tr><td>Other GLP-1 injection pen, starting dose</td><td>From $299/mo</td></tr>
-        <tr><td>Higher doses</td><td>Prices rise as your dose goes up</td></tr>
+        <tr><td>Membership, first month</td><td><b>$39</b>, refunded if a clinician finds you're not eligible</td></tr>
+        <tr><td>Membership after month one</td><td>$74/mo on a 12-month prepaid plan, up to $149/mo month to month</td></tr>
+        <tr><td>Daily pill, starting dose</td><td><b>$149/mo</b></td></tr>
+        <tr><td>Daily pill, higher doses</td><td>$149&ndash;$299/mo, depending on the medication and dose</td></tr>
+        <tr><td>Weekly shot, starting doses</td><td><b>From $199/mo</b> (limited-time price for new patients who sign up by December 31, 2026)</td></tr>
+        <tr><td>Weekly shot, higher doses</td><td>More than the starting price; varies by medication</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="tnote">Medication is cash-pay and billed monthly, separately from the membership. A clinician sets your dose.</p>
     <div class="callout">
-      <b>The honest math:</b> your first month at the starting pill dose is about <b>$188</b> ($39 membership + $149 medication). After that, plan on roughly <b>$223–$298 a month</b> at the starting pill dose, depending on the membership plan, and more as your dose goes up. That's real money, and it's two separate charges: one for the membership, one for the medication.
+      <b>The honest math for month one:</b> about <b>$188</b> for the pill ($39 + $149) or about <b>$238</b> for the shot ($39 + $199). After that, add the monthly membership ($74&ndash;$149) to the medication price, which rises with the dose. That's real money, and still a fraction of the list prices of more than $1,000 a month.
+    </div>
+    <div class="guar">
+      <div class="seal">$39<br>REFUND</div>
+      <div><b>If you don't qualify, you get the $39 back</b><p>At the program we reviewed, the first month's membership is refunded if a clinician finds you're not eligible for GLP-1 treatment.</p></div>
     </div>
 
-    <p>Many of the lowest-priced GLP-1 ads are for <strong>compounded</strong> drugs, which are not FDA-approved. Compounded options can be legal, and some people choose them. You just deserve to know which one you're getting.</p>
-    <h3 class="subhead">4 questions to ask any GLP-1 program</h3>
-    <ul class="checks">
-      <li><b>Is the medication FDA-approved brand-name, or compounded?</b></li>
-      <li><b>What's the total monthly cost</b>, membership plus medication, at your dose and at higher doses?</li>
-      <li><b>Does a licensed clinician review your health history</b>, and can you message them about side effects?</li>
-      <li><b>Is the company LegitScript-certified?</b> It's the certification Google and Meta require before online pharmacies and telehealth companies can advertise prescription drugs.</li>
-    </ul>
-    <p>The program we reviewed prescribes FDA-approved brand-name medications only and is LegitScript-certified.</p>
-
-    <h2 id="insurance">Could Your Insurance Cover It?</h2>
-    <p>Medication is cash-pay by default at the program we reviewed. But if you have <strong>commercial insurance</strong>, it offers a free insurance check and prior-authorization help for certain weekly GLP-1 injections. Coverage isn't guaranteed. If your plan doesn't cover it, the cash prices above apply.</p>
-
-    <h2 id="how">How It Works</h2>
-    <figure class="figure figure-graphic">
-      <img src="/sa/img/3-steps.webp" width="1280" height="720" alt="Illustration: answering health questions on a phone, a video visit with a clinician, and a package delivered to the door" loading="lazy" decoding="async">
-      <figcaption>How online GLP-1 programs typically work.</figcaption>
-    </figure>
+    <h2 id="how">How to get started online</h2>
     <ul class="steps">
-      <li><span class="n">1</span><div><b>Take a short online health check</b><p>A few minutes about your health history and goals — no clinic visit, no waiting room.</p></div></li>
-      <li><span class="n">2</span><div><b>A licensed clinician reviews it</b><p>A licensed clinician decides whether a prescription is appropriate for you. You'll typically hear whether you're eligible within 2 days.</p></div></li>
-      <li><span class="n">3</span><div><b>If prescribed, it ships to your door</b><p>FDA-approved brand-name medication. A cash-pay first dose usually ships in under a week.</p></div></li>
+      <li><span class="n">1</span><div><b>Pick an option and answer health questions online</b><p>About five minutes from your phone: your health history, current medications and goals.</p></div></li>
+      <li><span class="n">2</span><div><b>A licensed clinician reviews it</b><p>They decide whether a GLP-1 is appropriate and which one. At the program we reviewed, you'll typically hear within 2 days.</p></div></li>
+      <li><span class="n">3</span><div><b>If prescribed, it ships to you</b><p>You can message your care team along the way, and change course with your clinician if a different option suits you better.</p></div></li>
     </ul>
+    <h2 id="qualify">Who may qualify</h2>
+    <ul class="checks">
+      <li>Adults with a <b>BMI of 30 or higher</b>, or</li>
+      <li>A <b>BMI of 27 or higher</b> plus a weight-related condition, such as high blood pressure or high cholesterol</li>
+    </ul>
+    <p>A licensed clinician makes the final call after reviewing your health history. People with a personal or family history of certain thyroid cancers, and people who are pregnant, shouldn't use these medicines.</p>
 
-    <figure class="figure">
-      <img src="/sa/img/man-doorway-box.webp" width="1280" height="720" alt="A man in his late 50s holding a delivery box at his front door" loading="lazy" decoding="async">
-    </figure>
+    <section class="choose" id="choose2" aria-label="Choose an option">
+      <h2>Ready? Which option are you interested in?</h2>
+      <p class="choose-perks">Pick one to start your online visit</p>
+      <div class="choose-list"><a class="offerlink" data-cta="opt-pill" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener"><span>GLP-1 pill</span><i>Once a day, no needles</i></a><a class="offerlink" data-cta="opt-shot" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener"><span>GLP-1 shot</span><i>Once a week, at home</i></a><a class="offerlink" data-cta="opt-both" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener"><span>I want to learn about both</span></a><a class="offerlink" data-cta="opt-provider" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener"><span>I want a provider recommendation</span></a></div>
+      <small>About 5 minutes online &middot; Medication billed separately</small>
+    </section>
 
-    <figure class="figure">
-      <img src="/images/lp/confident-woman-smiling-reflection-bedroom.jpg" alt="Confident woman smiling at her reflection in a bedroom mirror" style="display:block;width:100%;height:auto;border-radius:6px;" width="1200" height="800" loading="lazy" decoding="async">
-    </figure>
-
-    <h2 id="why">Why More People Are Going Online for This</h2>
-    <p>Part of it is convenience: the health questions, the clinician review and the delivery all happen from home, without a waiting room. Part of it is price: cash-pay starting doses of FDA-approved GLP-1 medications now cost far less than the list price. And part of it is choice: there are now once-daily GLP-1 pills as well as weekly injections, so a needle is no longer the only option.</p>
-
-    <figure class="figure">
-      <img src="/images/lp/two-women-talking-over-coffee.jpg" alt="Two women talking over coffee at a kitchen table" style="display:block;width:100%;height:auto;border-radius:6px;" width="1200" height="800" loading="lazy" decoding="async">
-    </figure>
-
-    <div class="callout">
-      <b>Worth knowing before you start:</b> GLP-1 treatment requires a medical evaluation and isn't right for everyone. It can have side effects, and results vary. A licensed provider reviews whether it's appropriate for you — which is why the first step is a short health check, not a checkout page.
-    </div>
-
-    <h2 id="qualify">How to See If You Qualify (And the Catch)</h2>
-    <p>The one "catch" is actually a good one: you can't just buy it off a shelf. Because it's a prescribed treatment, you complete a short online health check first so a clinician can confirm it's appropriate for you. It takes about five minutes. Membership is $39 for the first month, refunded if a clinician finds you're not eligible for GLP-1 treatment.</p>
-    <p>These medications are approved for adults who have obesity (a BMI of 30 or higher), or who are overweight (a BMI of 27 or higher) with at least one weight-related condition, such as high blood pressure or high cholesterol. A licensed clinician makes the final call.</p>
-
-    <figure class="figure">
-      <img src="/images/lp/woman-relaxing-couch-using-phone.jpg" alt="Woman relaxing on her couch using her phone" style="display:block;width:100%;height:auto;border-radius:6px;" width="1200" height="800" loading="lazy" decoding="async">
-    </figure>
-
-    <div class="selfcheck" id="selfcheck">
-      <div class="sc-head"><b>Quick BMI check</b><span>30 seconds</span></div>
-      <form id="bmi-form" class="sc-form" novalidate>
-        <div class="sc-row">
-          <label>Height
-            <span class="sc-pair"><select id="bmi-ft" aria-label="Height, feet"><option value="">ft</option><option>4</option><option selected>5</option><option>6</option><option>7</option></select><select id="bmi-in" aria-label="Height, inches"><option value="">in</option><option>0</option><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select></span>
-          </label>
-          <label>Weight
-            <span class="sc-pair"><input id="bmi-lb" type="number" inputmode="numeric" min="70" max="700" placeholder="lb" aria-label="Weight in pounds"></span>
-          </label>
-        </div>
-        <button type="submit" class="sc-btn">Check my BMI</button>
-      </form>
-      <div class="sc-out" id="bmi-out" aria-live="polite"></div>
-      <p class="sc-note">Your numbers stay on this page. We don't store or send them. BMI is only a screening number; a clinician considers your full health history.</p>
-    </div>
-
-    <div class="selfcheck glance" id="glance">
-      <div class="sc-head"><b>Program at a glance</b><span>Checked November 2026</span></div>
-      <ul class="checks">
-        <li><b>FDA-approved brand-name medications only.</b> No compounded drugs.</li>
-        <li><b>LegitScript-certified.</b></li>
-        <li><b>Clinician review,</b> typically within 2 days.</li>
-        <li><b>Ships in under a week</b> if prescribed (cash-pay first dose, usually).</li>
-        <li><b>$39 first month,</b> refunded if you're not eligible.</li>
-        <li><b>Medication billed separately,</b> from $149/mo at the starting pill dose.</li>
-      </ul>
-    </div>
-
-    <div class="cta" id="start">
-      <h3>See if FDA-approved GLP-1 treatment is right for you</h3>
-      <p>Online assessment · Licensed US clinicians · $39 first month, refunded if you're not eligible</p>
-      <a class="btn offerlink" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">Check My Eligibility →</a>
-      <p class="cta-fine">Medication billed separately (starting doses from $149/mo). Cash-pay, or a free insurance check for some injections. A clinician decides whether a prescription is appropriate. Prices checked November 2026 and may change.</p>
-    </div>
-
-    <h2 id="faq">Questions People Ask</h2>
+    <h2 id="faq">Questions people ask</h2>
     <div class="faq">
+      <details><summary>Is the pill as effective as the shot?</summary><p>In trials, people on the weekly shots lost somewhat more weight on average than people on the daily pills. But results vary a lot from person to person, and a pill you take consistently may work better for you than a shot you dread. Your clinician can help you weigh it.</p></details>
+      <details><summary>Can I switch later?</summary><p>Often, yes. If one isn't working for you, talk to your clinician about changing medication or form.</p></details>
+      <details><summary>Is either covered by insurance?</summary><p>At the program we reviewed, the pills are cash-pay. It offers a free insurance check for the weekly shots on commercial plans. It doesn't accept Medicare.</p></details>
       <details><summary>Do I need a prescription?</summary><p>Yes. Every GLP-1 medication, pill or shot, requires a prescription. Online programs connect you with a licensed clinician who reviews your health history and decides whether a prescription is appropriate.</p></details>
       <details><summary>What if I'm not approved?</summary><p>At the program we reviewed, the $39 first-month membership is refunded if a clinician finds you're not eligible for GLP-1 treatment.</p></details>
-      <details><summary>Can insurance cover it?</summary><p>Sometimes. The program we reviewed offers a free insurance check and prior-authorization help for certain weekly injections on commercial plans. Coverage isn't guaranteed. Otherwise, medication is cash-pay.</p></details>
-      <details><summary>Is this the same as the $69 offers I see online?</summary><p>No. Those are usually compounded drugs, which aren't FDA-approved. The program we reviewed prescribes FDA-approved brand-name medications only.</p></details>
-      <details><summary>What are the side effects?</summary><p>Nausea, vomiting, diarrhea and constipation are the most commonly reported. Serious side effects are possible, and these medications aren't right for everyone. Read the <a href="#isi">important safety information</a> below and talk with a clinician about your own health history.</p></details>
+      <details><summary>Is this the same as the $69 offers I see online?</summary><p>No. Those are usually compounded drugs, which aren't FDA-approved. The prices on this page are for FDA-approved brand-name medications, and the program we reviewed is LegitScript-certified.</p></details>
     </div>
 
-    <h2 id="bottom">The Bottom Line</h2>
-    <p>If weight loss has felt impossible since your 40s, the science has moved past "just eat less." The GLP-1 pathway is real, the treatments that target it are real, and the main reason most people never tried them was the price and the hassle. Online programs have removed much of the hassle, and cash prices for starting doses are now far below list price. It's still a prescription medicine with real side effects and real costs, so the right first step is a short online assessment, not a checkout page.</p>
-
-    <figure class="figure">
-      <img src="/sa/img/couple-walking.webp" width="1280" height="720" alt="A couple in their 50s walking on a tree-lined street in autumn" loading="lazy" decoding="async">
-    </figure>
-
-    <div class="inline-cta"><a class="btn offerlink" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">Check My Eligibility →</a><div class="cta-sub">About 5 minutes online · $39 first month, refunded if you're not eligible</div></div>
-
+    <h2 id="bottom">The bottom line</h2>
+    <p>Pill or shot, both are FDA-approved prescription options with real benefits, real side effects and real costs. The first step is the same for both: a short online visit, $39 for the first month, refunded if you don't qualify.</p>
+<div class="inline-cta"><a class="btn offerlink" data-cta="bottom" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">Find Out Which Fits Me &rarr;</a><div class="cta-sub">About 5 minutes online &middot; $39 first month, refunded if you're not eligible</div></div>
     <aside class="isi" id="isi" aria-labelledby="isi-h">
       <h2 id="isi-h">Important safety information</h2>
       <p>GLP-1 medications are available only with a prescription from a licensed clinician and aren't right for everyone.</p>
       <ul>
-        <li><b>Possible thyroid tumors, including cancer.</b> In studies with rodents, semaglutide and similar medicines caused thyroid C-cell tumors. It isn't known whether they cause these tumors in people. Don't use them if you or a family member has had medullary thyroid carcinoma (MTC), or if you have Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).</li>
+        <li><b>Possible thyroid tumors, including cancer.</b> In studies with rodents, GLP-1 medicines like these caused thyroid C-cell tumors. It isn't known whether they cause these tumors in people. Don't use them if you or a family member has had medullary thyroid carcinoma (MTC), or if you have Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).</li>
         <li>Common side effects include nausea, vomiting, diarrhea, constipation, stomach pain, headache and tiredness.</li>
         <li>Serious side effects can include pancreatitis, gallbladder problems, kidney problems, serious allergic reactions, low blood sugar (especially with insulin or sulfonylureas), increased heart rate, vision changes in people with type 2 diabetes, and depression or thoughts of self-harm. Tell your clinician right away about any of these.</li>
         <li>Don't use these medications if you're pregnant or planning to become pregnant.</li>
+        <li>Weekly injections can cause reactions where the shot is given, such as redness or itching.</li>
         <li>Pills must be taken exactly as directed; some must be taken on an empty stomach with a small amount of water.</li>
       </ul>
       <p>This isn't a complete list. Read the Medication Guide for any medication you're prescribed. Report side effects to the FDA at <a href="https://www.fda.gov/medwatch" rel="noopener">fda.gov/medwatch</a> or 1-800-FDA-1088.</p>
@@ -354,23 +226,21 @@ html[data-angle=price] .figure.dup-price{display:none} /* that photo is already 
   </article>
 
   <div class="legal">
-    <p><b>DISCLAIMER:</b> This is a paid advertisement for promotional purposes and not a news article, editorial, or consumer-protection report. The content is for informational and marketing purposes only. The website owner may receive compensation from purchases or actions made through links on this page.</p>
+    <p><b>ADVERTISEMENT:</b> This page is a paid advertisement (advertorial) published by GLP1ReviewGuide.com. It is not a news article. We earn a commission if you sign up through links on this page.</p>
     <p><b>ABOUT THE PROGRAM:</b> The online program referred to on this page is an independent, LegitScript-certified telehealth company. Prices, offers and policies are as listed on its website in November 2026 and can change at any time; limited-time prices end on dates the company sets. Membership and medication are billed separately. A licensed clinician decides whether treatment is appropriate; not everyone qualifies.</p>
-    <p><b>NOT MEDICAL ADVICE:</b> GLP-1 medications are products a licensed clinician must authorize that require evaluation by a licensed medical provider and are not appropriate for everyone. They may cause side effects, including serious ones. This page does not diagnose, treat, cure, or prevent any disease and is not a substitute for professional medical advice. Always consult a qualified healthcare professional. Do not use GLP-1 medications if you or your family have a history of medullary thyroid carcinoma (MTC) or MEN 2.</p>
-    <p><b>RESULTS:</b> Individual results vary and are not guaranteed. Images may be for illustration only.</p>
-    <p><b>AFFILIATION:</b> This page is an independent advertisement and is not affiliated with Novo Nordisk, Eli Lilly, or the makers of any brand-name GLP-1 medication. All trademarks belong to their respective owners and are used only to describe the medication class.</p>
-    <p class="refs">References: Drucker DJ, "Mechanisms of action and therapeutic application of glucagon-like peptide-1," <i>Cell Metabolism</i> 2018;27(4):740-756.</p>
-    <p><b>IMAGES:</b> Photos and illustrations on this page are AI-generated or stock images used for illustration. People shown are models, not patients. Megan Hollis is a pen name used by the GLP1ReviewGuide.com editorial team.</p>
+    <p><b>NOT MEDICAL ADVICE:</b> This content is general information and is not a substitute for advice from a qualified healthcare professional. GLP-1 medications can cause side effects, including serious ones. Medications are referred to by type or generic name only; all trademarks belong to their owners.</p>
+    <p><b>SOURCES:</b> OASIS 4 trial, Wharton S, et al., N Engl J Med 2025; ATTAIN-1 trial, Wharton S, et al., N Engl J Med 2025; STEP 1 trial, Wilding JPH, et al., N Engl J Med 2021; SURMOUNT-1 trial, Jastreboff AM, et al., N Engl J Med 2022; U.S. Food and Drug Administration (drug approvals and compounded drug information); program pricing as published on the program's website, November 2026.</p>
+    <p><b>IMAGES:</b> Photos and illustrations on this page are AI-generated for illustration. People shown are not patients and products shown are not specific brands. Megan Hollis is a pen name used by the GLP1ReviewGuide.com editorial team.</p>
   </div>
 </main>
 <aside class="nr-rail" id="nrRail" aria-label="In this article">
   <div class="nr-rail-h">In this article</div>
-  <ol><li><a href="#myth">The diet myth</a></li><li><a href="#glp1">What GLP-1 does</a></li><li><a href="#problem">The cost problem</a></li><li><a href="#at-home">The at-home option</a></li><li><a href="#cost">What it really costs</a></li><li><a href="#insurance">Insurance</a></li><li><a href="#how">How it works</a></li><li><a href="#qualify">Who qualifies</a></li><li><a href="#faq">Questions</a></li><li><a href="#isi">Safety information</a></li></ol>
+  <ol><li><a href="#choose">Pill or shot?</a></li><li><a href="#glance">At a glance</a></li><li><a href="#which">Which one fits</a></li><li><a href="#cost">What it costs</a></li><li><a href="#how">How to start</a></li><li><a href="#faq">Questions</a></li></ol>
   <a class="btn offerlink" data-cta="rail" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" rel="nofollow sponsored noopener">See If I Qualify &rarr;</a>
-  <p>$39 first month · medication from $149/mo</p>
+  <p>$39 first month, refunded if you're not eligible</p>
 </aside>
 <div class="nr-sticky" id="nrSticky" aria-hidden="true">
-  <div class="nr-sticky-msg"><b>$39 first month · medication from $149/mo</b></div>
+  <div class="nr-sticky-msg"><b>Pill or shot?</b><span>$39 first month, refunded if you don't qualify</span></div>
   <a class="btn offerlink" data-cta="sticky" href="https://go.glp1reviewguide.com/ZZ2GX/711W2G/" tabindex="-1" rel="nofollow sponsored noopener">See If I Qualify &rarr;</a>
 </div>
 
@@ -380,14 +250,18 @@ html[data-angle=price] .figure.dup-price{display:none} /* that photo is already 
   <div class="sf-brand"><span class="brand" role="img" aria-label="GLP1ReviewGuide.com"><img src="/images/logo.svg" alt="" width="32" height="32"><span>GLP1Review<b>Guide</b><small>.com</small></span></span></div>
   <nav class="sf-links">
     <a href="/about.html">About Us</a>
-    <a href="/terms.html">Terms of Use</a>
+    <a href="/about.html#contact">Contact</a>
+    <a href="/disclosure">Advertising Disclosure</a>
     <a href="/privacy.html">Privacy Policy</a>
+    <a href="/consumer-health-data-privacy.html">Consumer Health Data Privacy</a>
+    <a href="/terms.html">Terms of Use</a>
   </nav>
-  <div class="sf-copy">&copy; 2026 GLP1ReviewGuide.com. All rights reserved.</div>
+  <div class="sf-copy">Contact: <a href="mailto:hello@glp1reviewguide.com">hello@glp1reviewguide.com</a> · &copy; 2026 GLP1ReviewGuide.com. All rights reserved.</div>
 </div></footer>
+
 <script>
 /* Offer link + NewsBreak click-ID passthrough (same consent rules as the site's Google and Reddit scripts).
-   NewsBreak ad URL: .../products/sa/the-journey/vawh55/p1/nwbr/v2.html?angle=over40&nbclick=__CALLBACK_PARAM__
+   NewsBreak ad URL: .../products/sa/the-journey/vawh55/p1/nwbr/v2.html?angle=pillshot&nbclick=__CALLBACK_PARAM__
    Always (no personal data, just which page/angle/button): sub2 = angle, sub3 = page, sub4 = which button was clicked.
    Only with advertising consent (and no Global Privacy Control): sub1 = NewsBreak click ID. Re-runs when the visitor changes consent. */
 (function(){
@@ -403,7 +277,7 @@ html[data-angle=price] .figure.dup-price{display:none} /* that photo is already 
   }
   function record(){
     if (!consented()) { try{ sessionStorage.removeItem(KEY); }catch(e){} return null; }
-    var q = new URLSearchParams(location.search), r = { cid: clean(q.get('nbclick')), angle: clean(q.get('angle')) };
+    var q = new URLSearchParams(location.search), r = { cid: clean(q.get('nbclick')), angle: clean(q.get('angle')) || 'pillshot' };
     if (r.cid) { try{ sessionStorage.setItem(KEY, JSON.stringify(r)); }catch(e){} return r; }
     try { return JSON.parse(sessionStorage.getItem(KEY)) || r; } catch(e){ return r; }
   }
@@ -412,7 +286,7 @@ html[data-angle=price] .figure.dup-price{display:none} /* that photo is already 
     document.querySelectorAll('a.offerlink').forEach(function(a){
       var u = new URL(OFFER_URL);
       if (r && r.cid) u.searchParams.set('sub1', r.cid);
-      var ang = (r && r.angle) || pageAngle(); if (ang) u.searchParams.set('sub2', ang);
+      var ang = (r && r.angle) || pageAngle() || 'pillshot'; if (ang) u.searchParams.set('sub2', ang);
       u.searchParams.set('sub3', PAGE_ID);
       a.href = u.toString(); a.rel = 'nofollow sponsored noopener'; a.removeAttribute('target'); /* same tab: in-app ad browsers (NewsBreak/Nova SDK on iOS) can block new tabs */
     });
@@ -447,6 +321,74 @@ html[data-angle=price] .figure.dup-price{display:none} /* that photo is already 
     if (window.__updateOfferLinks) window.__updateOfferLinks();
     var link = out.querySelector('.offerlink'), src = document.querySelector('.cta .offerlink');
     if (link && src) { link.href = src.href; link.rel = src.rel; link.target = src.target; }
+  });
+})();
+</script>
+<script>
+/* Cost estimator. Prices are the ones in the table above (checked November 2026). Runs only in the browser. */
+(function(){
+  var c = document.getElementById('costcalc'); if (!c) return;
+  function fmt(lo, hi){ return lo === hi ? '$' + lo : '$' + lo + '\u2013$' + hi; }
+  function calc(){
+    var d = c.querySelector('input[name="cc-dose"]:checked').value.split(','), p = +c.querySelector('input[name="cc-plan"]:checked').value;
+    document.getElementById('cc-first').textContent = '$' + (39 + 149);
+    document.getElementById('cc-after').textContent = fmt(+d[0] + p, +d[1] + p);
+  }
+  c.addEventListener('change', calc); calc();
+})();
+</script>
+<script>
+/* Checklist tools (.qc). Runs only in the browser; answers are not stored or sent. Each box sets data-yes (values that show the offer) and data-min. */
+(function(){
+  document.querySelectorAll('.qc').forEach(function(box){
+    var out = box.querySelector('.qc-out'), cnt = box.querySelector('.qc-count'), total = box.querySelectorAll('input').length;
+    var yes = (box.getAttribute('data-yes') || '').split(','), min = +box.getAttribute('data-min') || 3;
+    var good = box.querySelector('template.qc-good'), soft = box.querySelector('template.qc-soft');
+    box.addEventListener('change', function(){
+      var on = [].slice.call(box.querySelectorAll('input:checked')).map(function(i){ return i.value; });
+      cnt.textContent = on.length ? on.length + ' of ' + total + ' checked' : 'Tick any that apply.';
+      if (!on.length) { out.innerHTML = ''; return; }
+      var hit = on.length >= min || on.some(function(v){ return yes.indexOf(v) > -1; });
+      out.innerHTML = (hit ? good : soft).innerHTML;
+      if (window.__updateOfferLinks) window.__updateOfferLinks();
+      try { document.dispatchEvent(new CustomEvent('nr:event', { detail: { nr_action: 'tool_use', nr_label: box.id + '_' + on.length } })); } catch (e) {}
+    });
+  });
+})();
+</script>
+<script>
+/* NB_PIXEL_V1 NewsBreak pixel: loads only with advertising consent (no GPC). Events have no parameters. */
+(function(){
+  var ID = 'ID-2108290371330486274', loaded = false;
+  function ok(){
+    if (navigator.globalPrivacyControl === true) return false;
+    try { var c = window.GRConsent && window.GRConsent.get && window.GRConsent.get();
+      return !!(c && c.decided === true && c.advertising === true && !c.saleOptOut && !c.gpc); } catch(e){ return false; }
+  }
+  function load(){
+    if (loaded || !ok()) return;
+    loaded = true;
+    !(function (e, n, t, i, p, a, s) {
+      e[i] || (((p = e[i] = function () { p.process ? p.process.apply(p, arguments) : p.queue.push(arguments); }).queue = []),
+        (p.t = +new Date()), ((a = n.createElement(t)).async = 1),
+        (a.src = 'https://static.newsbreak.com/business/tracking/nbpixel.js?t=' + 864e5 * Math.ceil(new Date() / 864e5)),
+        (s = n.getElementsByTagName(t)[0]).parentNode.insertBefore(a, s));
+    })(window, document, 'script', 'nbpix');
+    window.nbpix('init', ID);
+    window.nbpix('event', 'pageload');
+    window.nbpix('event', 'view_content');
+  }
+  load();
+  document.addEventListener('gr:consent', load);
+  /* click_button: bubble phase, so the page's own link script has already set the final href (sub2-sub4). */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a.offerlink');
+    if (!a || !loaded || !window.nbpix) return;
+    window.nbpix('event', 'click_button');
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();                       /* give the event ~300 ms to send, then continue in the same tab */
+    var href = a.href;
+    setTimeout(function(){ location.href = href; }, 300);
   });
 })();
 </script>
